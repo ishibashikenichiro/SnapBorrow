@@ -1,0 +1,1796 @@
+# Logfile created on 2016-01-16 16:45:09 +0900 by logger.rb/41954
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 16:52:48 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-04-52-47", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fb201d13c50 @original_filename="2016-01-16-04-52-47.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-04-52-47.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-3173-1vo7djb>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.2ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 105.5ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__828031966133722476__process_action__2024892407388349858__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started POST "/equipment" at 2016-01-16 16:52:51 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mMember Load (2.9ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mManager Load (1.3ms)[0m  SELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 16:52:51', '2016-01-16 16:52:51', 'Web', 1, '2016-01-16 16:52:51', 1)
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 705.9ms (ActiveRecord: 112.1ms)
+
+
+Started GET "/equipment" at 2016-01-16 16:52:52 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mEquipmentClass Load (1.5ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 48 LIMIT 1
+  Rendered equipment/index.html.erb within layouts/application (38.3ms)
+  Rendered layouts/_equipmentheader.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 2828.9ms (Views: 694.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (7ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (6ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (5ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (5ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (4ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (6ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (1ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (1ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (1ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (1ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (3ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (1ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (6ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (1ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (1ms)
+
+
+Started GET "/equipment/rec_img?filename=2016-01-16-04-52-47.jpg" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#rec_img as HTML
+  Parameters: {"filename"=>"2016-01-16-04-52-47.jpg"}
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+Sent file /home/sit-user-15/rails_test/bircle_server3/recognition/2016-01-16-04-52-47.jpg (0.1ms)
+Completed 200 OK in 372.3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/raspberrypi20.jpg" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /raspberrypi20.jpg - 200 OK (20ms)
+
+
+Started GET "/assets/pen0.jpg" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /pen0.jpg - 200 OK (23ms)
+
+
+Started GET "/assets/0.jpg" at 2016-01-16 16:52:55 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /0.jpg - 200 OK (34ms)
+
+
+Started GET "/assets/gg0.jpg" at 2016-01-16 16:52:56 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gg0.jpg - 200 OK (160ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 16:53:18 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'letsnote' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 32.9ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 16:53:35 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (3.1ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'ggg' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 29.2ms (Views: 0.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/group/get_groups?user_id=1" at 2016-01-16 17:11:47 +0900 by 
+Processing by GroupController#get_groups as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mMember Load (4.4ms)[0m  SELECT `members`.* FROM `members` WHERE `members`.`user_id` = 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroup Load (1.5ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1
+Completed 200 OK in 10.9ms (Views: 0.1ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/equipmentregistration/getjson" at 2016-01-16 17:20:11 +0900 by 
+Processing by EquipmentRegistrationController#getjson as HTML
+  Parameters: {"_json"=>[{"id"=>"", "loc"=>"", "desc"=>"", "userid"=>1, "groupid"=>1, "equipmentname"=>"", "registernumber"=>0}], "equipment_registration"=>{"_json"=>[{"id"=>"", "loc"=>"", "desc"=>"", "userid"=>1, "groupid"=>1, "equipmentname"=>"", "registernumber"=>0}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36m (2.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `equipment_classes` (`created_at`, `equipment_classes_name`, `group_id`, `recognizer_number`, `updated_at`) VALUES ('2016-01-16 17:20:11', '', 1, NULL, '2016-01-16 17:20:11')
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO `equipment` (`created_at`, `descr`, `equipment_class_id`, `equipment_location`, `equipment_record_date`, `equipment_recorder_id`, `state`, `unique_id`, `updated_at`) VALUES ('2016-01-16 17:20:11', '', 60, '', NULL, 1, 0, '', '2016-01-16 17:20:11')[0m
+  [1m[35m (3.5ms)[0m  COMMIT
+  [1m[36mEquipmentClass Load (0.2ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 201.3ms
+
+ActionView::MissingTemplate (Missing template equipment_registration/getjson, application/getjson with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:425:in `_run__3202284926780710910__process_action__160696769973540158__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:25:03 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-25-01", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fb201f45aa0 @original_filename="2016-01-16-05-25-01.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-25-01.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-3173-1uy60rb>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.3ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+Completed 500 Internal Server Error in 19.5ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__828031966133722476__process_action__2024892407388349858__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:25:04 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.8ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+  [1m[35mUser Load (2.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mMember Load (0.2ms)[0m  SELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1
+  [1m[36mManager Load (3.3ms)[0m  [1mSELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:25:04', '2016-01-16 17:25:04', 'Web', 1, '2016-01-16 17:25:04', 1)[0m
+  [1m[35m (3.9ms)[0m  COMMIT
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 235.2ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mEquipmentClass Load (5.6ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 1 LIMIT 1[0m
+  Rendered equipment/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_equipmentheader.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 528.1ms (Views: 146.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (0ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (0ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (0ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (0ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (0ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (0ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 17:25:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (0ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (0ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (0ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (0ms)
+
+
+Started GET "/equipment/rec_img?filename=2016-01-16-05-25-01.jpg" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#rec_img as HTML
+  Parameters: {"filename"=>"2016-01-16-05-25-01.jpg"}
+  [1m[35mEquipmentClass Load (3.1ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+Sent file /home/sit-user-15/rails_test/bircle_server3/recognition/2016-01-16-05-25-01.jpg (0.1ms)
+Completed 200 OK in 363.3ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/raspberrypi20.jpg" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /raspberrypi20.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/pen0.jpg" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /pen0.jpg - 200 OK (4ms)
+
+
+Started GET "/assets/0.jpg" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /0.jpg - 200 OK (1ms)
+
+
+Started GET "/assets/gg0.jpg" at 2016-01-16 17:25:06 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gg0.jpg - 200 OK (0ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:25:13 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'ggg' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 23.5ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:25:21 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'ggg' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 26.4ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:25:38 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (1.7ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'letsnote' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 27.4ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:30:10 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-30-09", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fb20217b608 @original_filename="2016-01-16-05-30-09.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-30-09.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-3173-yfv80d>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.3ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+Completed 500 Internal Server Error in 16.5ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__828031966133722476__process_action__2024892407388349858__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.2ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1
+  [1m[36mGroup Load (3.2ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  [1m[35mMember Load (0.3ms)[0m  SELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1
+  [1m[36mManager Load (0.2ms)[0m  [1mSELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:30:13', '2016-01-16 17:30:13', 'Web', 1, '2016-01-16 17:30:13', 1)[0m
+  [1m[35m (3.7ms)[0m  COMMIT
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 238.1ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mEquipmentClass Load (1.5ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 2 LIMIT 1[0m
+  Rendered equipment/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_equipmentheader.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 331.1ms (Views: 161.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (0ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (0ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (0ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (0ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 17:30:13 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (0ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (0ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (0ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (0ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (0ms)
+
+
+Started GET "/equipment/rec_img?filename=2016-01-16-05-30-09.jpg" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#rec_img as HTML
+  Parameters: {"filename"=>"2016-01-16-05-30-09.jpg"}
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+Sent file /home/sit-user-15/rails_test/bircle_server3/recognition/2016-01-16-05-30-09.jpg (0.1ms)
+Completed 200 OK in 147.6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/raspberrypi20.jpg" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /raspberrypi20.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/pen0.jpg" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /pen0.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/gg0.jpg" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gg0.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/0.jpg" at 2016-01-16 17:30:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /0.jpg - 200 OK (0ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:30:22 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"ggg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'ggg' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 31.4ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:30:37 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (3.1ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'letsnote' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 28.1ms (Views: 0.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:32:03 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-32-02", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fb201faed20 @original_filename="2016-01-16-05-32-02.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-32-02.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-3173-1wfuqz>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.2ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 14.1ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__828031966133722476__process_action__2024892407388349858__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:32:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mMember Load (0.2ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mManager Load (0.8ms)[0m  SELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1
+  [1m[36m (1.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:32:05', '2016-01-16 17:32:05', 'Web', 1, '2016-01-16 17:32:05', 1)
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 230.5ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:32:05 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mEquipmentClass Load (4.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 0 LIMIT 1
+Completed 500 Internal Server Error in 220.2ms
+
+NoMethodError (undefined method `equipment_classes_name' for nil:NilClass):
+  app/controllers/equipment_controller.rb:39:in `index'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:32:33 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-32-32", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fb1ec885e00 @original_filename="2016-01-16-05-32-32.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-32-32.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-3173-6ag4r9>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (3.1ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 144.4ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__828031966133722476__process_action__2024892407388349858__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1486855951574497097__call__911270739873959820__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (4.5ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:32:35 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mMember Load (0.2ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mManager Load (4.4ms)[0m  SELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:32:35', '2016-01-16 17:32:35', 'Web', 1, '2016-01-16 17:32:35', 1)
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 228.6ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:32:35 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mEquipmentClass Load (1.5ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 0 LIMIT 1
+Completed 500 Internal Server Error in 116.2ms
+
+NoMethodError (undefined method `equipment_classes_name' for nil:NilClass):
+  app/controllers/equipment_controller.rb:39:in `index'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:33:46 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-33-45", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f78ac45fa98 @original_filename="2016-01-16-05-33-45.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-33-45.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-9505-16mh1y0>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.2ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 41.7ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__293724412898251280__process_action__2845957505275305150__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__3455929726202192114__call__217191658730601579__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:33:48 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mMember Load (1.1ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mManager Load (0.2ms)[0m  SELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:33:49', '2016-01-16 17:33:49', 'Web', 1, '2016-01-16 17:33:49', 1)
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 557.6ms (ActiveRecord: 23.1ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:33:49 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[35mEquipmentClass Load (3.3ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mEquipmentClass Load (0.3ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 1 LIMIT 1
+  Rendered equipment/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_equipmentheader.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 560.4ms (Views: 85.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (121ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (6ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (1ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (1ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (1ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (2ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (1ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (1ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (5ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (6ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (1ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (5ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (1ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (1ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (6ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (1ms)
+
+
+Started GET "/equipment/rec_img?filename=2016-01-16-05-33-45.jpg" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#rec_img as HTML
+  Parameters: {"filename"=>"2016-01-16-05-33-45.jpg"}
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+Sent file /home/sit-user-15/rails_test/bircle_server3/recognition/2016-01-16-05-33-45.jpg (0.1ms)
+Completed 200 OK in 318.4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/raspberrypi20.jpg" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /raspberrypi20.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/0.jpg" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /0.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/pen0.jpg" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /pen0.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/gg0.jpg" at 2016-01-16 17:33:50 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gg0.jpg - 200 OK (2ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:33:58 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'gg' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 29.6ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/equipment/oneupload" at 2016-01-16 17:34:34 +0900 by Dalvik/2.1.0 (Linux; U; Android 5.1; Nexus 7 Build/LMY47O)
+Processing by EquipmentController#oneupload as HTML
+  Parameters: {"USERID"=>"1", "GROUPID"=>"1", "NAME"=>"2016-01-16-05-34-33", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f78ac6e9bd8 @original_filename="2016-01-16-05-34-33.jpg", @content_type="application/octet-stream; charset=UTF-8", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2016-01-16-05-34-33.jpg\"\r\nContent-Type: application/octet-stream; charset=UTF-8\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20160116-9505-klpsl3>>}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.3ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+Completed 500 Internal Server Error in 16.5ms
+
+ActionView::MissingTemplate (Missing template equipment/oneupload, application/oneupload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sit-user-15/rails_test/bircle_server3/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__293724412898251280__process_action__2845957505275305150__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__3455929726202192114__call__217191658730601579__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:58:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:18:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sit-user-15/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started POST "/equipment" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index_android as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (1.5ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`login_id` = 'testuser1' LIMIT 1[0m
+  [1m[35mGroup Load (5.5ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mMember Load (0.2ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 1 AND `members`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mManager Load (0.2ms)[0m  SELECT `managers`.* FROM `managers` WHERE `managers`.`user_id` = 1 AND `managers`.`group_id` = 1 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `action_logs` (`action`, `created_at`, `date`, `device`, `group_id`, `updated_at`, `user_id`) VALUES ('login', '2016-01-16 17:34:37', '2016-01-16 17:34:37', 'Web', 1, '2016-01-16 17:34:37', 1)
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://130.158.80.42/equipment
+Completed 302 Found in 233.8ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/equipment" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#index as HTML
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+  [1m[35mEquipmentClass Load (1.6ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`id` = 2 LIMIT 1
+  Rendered equipment/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_equipmentheader.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 498.4ms (Views: 146.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (0ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 17:34:37 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (0ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (0ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (0ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (0ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (0ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (0ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (0ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (0ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (0ms)
+
+
+Started GET "/equipment/rec_img?filename=2016-01-16-05-34-33.jpg" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#rec_img as HTML
+  Parameters: {"filename"=>"2016-01-16-05-34-33.jpg"}
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1[0m
+Sent file /home/sit-user-15/rails_test/bircle_server3/recognition/2016-01-16-05-34-33.jpg (0.1ms)
+Completed 200 OK in 332.4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/raspberrypi20.jpg" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /raspberrypi20.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/pen0.jpg" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /pen0.jpg - 200 OK (4ms)
+
+
+Started GET "/assets/0.jpg" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /0.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/gg0.jpg" at 2016-01-16 17:34:38 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gg0.jpg - 200 OK (1ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:34:45 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (4.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'gg' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 23.8ms (Views: 0.5ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:35:15 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"hkgg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"hkgg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'hkgg' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 26.3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:35:23 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"gg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'gg' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 24.7ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/group/get_groups?user_id=1" at 2016-01-16 17:35:47 +0900 by 
+Processing by GroupController#get_groups as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mMember Load (5.1ms)[0m  [1mSELECT `members`.* FROM `members` WHERE `members`.`user_id` = 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 9.4ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:35:55 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"nkjhgg"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"nkjhgg"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.4ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'nkjhgg' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 24.6ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/check/equipmentcheck" at 2016-01-16 17:36:07 +0900 by 
+Processing by CheckController#equipmentcheck as HTML
+  Parameters: {"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}], "check"=>{"_json"=>[{"userid"=>1, "groupid"=>1, "equipmentname"=>"letsnote"}]}}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mEquipmentClass Load (0.4ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` = 1 AND `equipment_classes`.`equipment_classes_name` = 'letsnote' LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 21.6ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/equipment/show" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Processing by EquipmentController#show as HTML
+  Parameters: {"login_id"=>"testuser1", "password"=>"[FILTERED]", "group_id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mEquipmentClass Load (0.2ms)[0m  SELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `equipment_classes`.* FROM `equipment_classes` WHERE `equipment_classes`.`group_id` IS NULL[0m
+  Rendered equipment/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_equipmentheader.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 307.3ms (Views: 262.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/book.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book.js - 200 OK (0ms)
+
+
+Started GET "/assets/book_catalog.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /book_catalog.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.css?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrapSlideInMenu-1.0.0.min.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /bootstrapSlideInMenu-1.0.0.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment.js - 200 OK (0ms)
+
+
+Started GET "/assets/equipment_registration.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /equipment_registration.js - 200 OK (0ms)
+
+
+Started GET "/assets/functions.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /functions.js - 200 OK (0ms)
+
+
+Started GET "/assets/gcm.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /gcm.js - 200 OK (0ms)
+
+
+Started GET "/assets/group.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /group.js - 200 OK (0ms)
+
+
+Started GET "/assets/lend_log.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /lend_log.js - 200 OK (0ms)
+
+
+Started GET "/assets/manager.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /manager.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable.js - 200 OK (0ms)
+
+
+Started GET "/assets/member.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /member.js - 200 OK (0ms)
+
+
+Started GET "/assets/roundtable_file.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /roundtable_file.js - 200 OK (0ms)
+
+
+Started GET "/assets/session.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /session.js - 200 OK (0ms)
+
+
+Started GET "/assets/shelf.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /shelf.js - 200 OK (0ms)
+
+
+Started GET "/assets/user.js?body=1" at 2016-01-16 17:36:14 +0900 by Mozilla/5.0 (Linux; Android 5.1; Nexus 7 Build/LMY47O; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/47.0.2526.100 Safari/537.36
+Served asset /user.js - 200 OK (5ms)

@@ -1,0 +1,2350 @@
+# Logfile created on 2016-01-13 14:37:13 +0900 by logger.rb/41954
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (35.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+  [1m[35m (201.3ms)[0m  CREATE TABLE `equipmentregistrations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151209035129')[0m
+Migrating to Equipment (20151224001817)
+  [1m[35m (3.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151224001817')
+Migrating to Addownertoequipment (20151224003103)
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151224003103')[0m
+Migrating to AddownerToequipment (20151224003217)
+  [1m[35m (3.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151224003217')
+Migrating to CreateRegisterpicnames (20160113060342)
+  [1m[36m (33.4ms)[0m  [1mCREATE TABLE `registerpicnames` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `group_id` int(11), `user_id` int(11), `equipment_classes_id` int(11), `picname` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160113060342')
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.3ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `action_logs`[0m
+  [1m[35m (0.4ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ 
+  [1m[36m (0.4ms)[0m  [1mSHOW CREATE TABLE `book_catalogs`[0m
+  [1m[35m (0.4ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ 
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `books`[0m
+  [1m[35m (0.5ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ 
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `device_ids`[0m
+  [1m[35m (0.4ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ 
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `equipment`[0m
+  [1m[35m (0.4ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ 
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `equipment_classes`[0m
+  [1m[35m (0.4ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ 
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `equipment_logs`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `equipment_test_tables`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `equipmentregistrations`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `error_reports`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `fixtures_tests`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `invitation_logs`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `lend_logs`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `managers`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `members`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `notification_logs`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `password_resets`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `registerpicnames`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roundtable_files`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roundtable_presenters`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roundtables`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `shelves`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `temporary_lend_logs`[0m
+  [1m[35m (0.2ms)[0m  
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ 
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113062103)
+  [1m[35m (36.0ms)[0m  CREATE TABLE `recognizepicnames` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160113062103')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.3ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113062103)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.3ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113062103)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113062103)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113063805)
+  [1m[35m (0.5ms)[0m  CREATE TABLE `recognizepicnames` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `group_id` int(11), `user_id` int(11), `picname` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'recognizepicnames' already exists: CREATE TABLE `recognizepicnames` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `group_id` int(11), `user_id` int(11), `picname` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113063805)
+  [1m[35m (23.5ms)[0m  CREATE TABLE `recognizepicnames` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `group_id` int(11), `user_id` int(11), `picname` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160113063805')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20140609033222)
+Migrating to CreateBooks (20140609035418)
+Migrating to CreateBookCatalogs (20140609035437)
+Migrating to CreateGroups (20140609035440)
+Migrating to CreateShelves (20140609035443)
+Migrating to CreateManagers (20140609035539)
+Migrating to CreateMembers (20140609035543)
+Migrating to CreateLendLogs (20140609044701)
+Migrating to AddColumnToLendLog (20140830064806)
+Migrating to CreateDeviceIds (20141007052918)
+Migrating to CreateNotificationLogs (20141009085614)
+Migrating to CreateActionLogs (20141013065227)
+Migrating to CreateTemporaryLendLogs (20141019072000)
+Migrating to AddLenderesToTemporaryLendLogs (20141021041525)
+Migrating to AddPossessorToTemporaryLendLogs (20141021041539)
+Migrating to AddBookcodeToLendLog (20141022004032)
+Migrating to CreateInvitationLogs (20141026171828)
+Migrating to CreateErrorReports (20141112042146)
+Migrating to AddColumnToBookCatalog (20141128021518)
+Migrating to CreatePasswordResets (20141225065806)
+Migrating to ChangeColumnToBookCatalog (20150104214758)
+Migrating to AddGroupidToBookCatalog (20150128042320)
+Migrating to ChangeColumnToUser (20150203041646)
+Migrating to CreateRoundtables (20150529044746)
+Migrating to CreateRoundtableFiles (20150529050119)
+Migrating to RemoveBookCodeFromRoundtableFiles (20150603024511)
+Migrating to AddUploadtimeToRoundtableFiles (20150605033900)
+Migrating to CreateTableRoundtablePresenters (20151016042904)
+Migrating to CreateEquipmentClasses (20151111084200)
+Migrating to CreateEquipmentLogs (20151111112245)
+Migrating to CreateEquipment (20151111120451)
+Migrating to AddStateToEquipment (20151113041841)
+Migrating to CreateEquipmentTestTables (20151128090152)
+Migrating to CreateEquipmentregistrations (20151209035129)
+Migrating to Equipment (20151224001817)
+Migrating to Addownertoequipment (20151224003103)
+Migrating to AddownerToequipment (20151224003217)
+Migrating to CreateRegisterpicnames (20160113060342)
+Migrating to CreateRecognizepicnames (20160113063805)
+Migrating to UpdateEquipmentLogs (20160113065059)
+  [1m[35m (131.6ms)[0m  ALTER TABLE `equipment_logs` ADD `group_id` int(11)
+  [1m[36m (4.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160113065059')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.3ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'action_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `action_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'book_catalogs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `book_catalogs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'books'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `books`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'device_ids'
+ [0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `device_ids`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_classes'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_classes`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipment_test_tables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipment_test_tables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'equipmentregistrations'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `equipmentregistrations`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'error_reports'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `error_reports`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'fixtures_tests'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `fixtures_tests`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'groups'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'invitation_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invitation_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'lend_logs'
+ [0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'managers'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `managers`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'members'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `members`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'notification_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `notification_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'password_resets'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `password_resets`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'recognizepicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `recognizepicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'registerpicnames'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registerpicnames`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_files'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_files`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtable_presenters'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtable_presenters`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'roundtables'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roundtables`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'shelves'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shelves`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'temporary_lend_logs'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `temporary_lend_logs`
+  [1m[36m (0.2ms)[0m  [1m
+ SELECT fk.referenced_table_name as 'to_table'
+ ,fk.referenced_column_name as 'primary_key'
+ ,fk.column_name as 'column'
+ ,fk.constraint_name as 'name'
+ FROM information_schema.key_column_usage fk
+ WHERE fk.referenced_column_name is not null
+ AND fk.table_schema = 'bms_dev'
+ AND fk.table_name = 'users'
+ [0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
