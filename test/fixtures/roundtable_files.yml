@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  roundtable: 
+  book_code: MyString
+  title: MyString
+  keywords: MyString
+  filename: MyString
+
+two:
+  user: 
+  roundtable: 
+  book_code: MyString
+  title: MyString
+  keywords: MyString
+  filename: MyString

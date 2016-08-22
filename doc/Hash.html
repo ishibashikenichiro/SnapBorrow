@@ -1,0 +1,7908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Hash
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Hash.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (H)</a> &raquo;
+    
+    
+    <span class="title">Hash</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Hash
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Hash</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">hash.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A <code>Hash</code> is a collection of key-value pairs. It is similar to an
+<code>Array</code>, except that indexing is done via arbitrary keys of any
+object type, not an integer index. Hashes enumerate their values in the
+order that the corresponding keys were inserted.</p>
+
+<p>Hashes have a <em>default value</em> that is returned when accessing keys
+that do not exist in the hash. By default, that value is <code>nil</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D-class_method" title="[] (class method)">+ (Object) <strong>[]</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new hash populated with the given objects.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#try_convert-class_method" title="try_convert (class method)">+ (Hash<sup>?</sup>) <strong>try_convert</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Try to convert obj into a hash, using to_hash method.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(other_hash) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equality—Two hashes are equal if they each contain the same number of keys
+and if each key-value pair is equal to (according to Object#==) the
+corresponding elements in the other hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D-instance_method" title="#[] (instance method)">- (Object) <strong>[]</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Element Reference—Retrieves the value object corresponding to the key
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D%3D-instance_method" title="#[]= (instance method)">- (Object) <strong>[]=</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Element Assignment—Associates the value given by value with the key given
+by key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assoc-instance_method" title="#assoc (instance method)">- (Array<sup>?</sup>) <strong>assoc</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Searches through the hash comparing <em>obj</em> with the key using ==.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear-instance_method" title="#clear (instance method)">- (Hash) <strong>clear</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes all key-value pairs from hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compare_by_identity-instance_method" title="#compare_by_identity (instance method)">- (Hash) <strong>compare_by_identity</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes hsh compare its keys by their identity, i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compare_by_identity%3F-instance_method" title="#compare_by_identity? (instance method)">- (Boolean) <strong>compare_by_identity?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if hsh will compare its keys by their identity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default-instance_method" title="#default (instance method)">- (Object) <strong>default</strong>(key = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the default value, the value that would be returned by <a
+href="http://key">hsh</a> if key did not exist in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default%3D-instance_method" title="#default= (instance method)">- (Object) <strong>default=</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the default value, the value returned for a key that does not exist in
+the hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_proc-instance_method" title="#default_proc (instance method)">- (Object) <strong>default_proc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If Hash::new was invoked with a block, return that block, otherwise return
+nil.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_proc%3D-instance_method" title="#default_proc= (instance method)">- (Proc) <strong>default_proc=</strong>(proc_obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the default proc to be executed on each key lookup.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes and returns a key-value pair from hsh whose key is equal to key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_if-instance_method" title="#delete_if (instance method)">- (Object) <strong>delete_if</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes every key-value pair from hsh for which block evaluates to true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls block once for each key in hsh, passing the key-value pair as
+parameters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_key-instance_method" title="#each_key (instance method)">- (Object) <strong>each_key</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls block once for each key in hsh, passing the key as a parameter.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_pair-instance_method" title="#each_pair (instance method)">- (Object) <strong>each_pair</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls block once for each key in hsh, passing the key-value pair as
+parameters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_value-instance_method" title="#each_value (instance method)">- (Object) <strong>each_value</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls block once for each key in hsh, passing the value as a parameter.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#empty%3F-instance_method" title="#empty? (instance method)">- (Boolean) <strong>empty?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if hsh contains no key-value pairs.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">- (Boolean) <strong>eql?</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if hash and other are both hashes with the same content.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch-instance_method" title="#fetch (instance method)">- (Object) <strong>fetch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a value from the hash for the given key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flatten-instance_method" title="#flatten (instance method)">- (Object) <strong>flatten</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new array that is a one-dimensional flattening of this hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_key%3F-instance_method" title="#has_key? (instance method)">- (Boolean) <strong>has_key?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given key is present in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_value%3F-instance_method" title="#has_value? (instance method)">- (Boolean) <strong>has_value?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given value is present for some key in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-instance_method" title="#hash (instance method)">- (Fixnum) <strong>hash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compute a hash-code for this hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given key is present in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new, empty hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#replace (instance method)">- (Hash) <strong>replace</strong>(other_hash) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replaces the contents of hsh with the contents of other_hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">- (Object) <strong>inspect</strong> </a>
+    
+
+    
+      (also: #to_s)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return the contents of this hash as a string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invert-instance_method" title="#invert (instance method)">- (Object) <strong>invert</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new hash created by using hsh’s values as keys, and the keys as
+values.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keep_if-instance_method" title="#keep_if (instance method)">- (Object) <strong>keep_if</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes every key-value pair from hsh for which block evaluates to false.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#key-instance_method" title="#key (instance method)">- (Object) <strong>key</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the key of an occurrence of a given value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#key%3F-instance_method" title="#key? (instance method)">- (Boolean) <strong>key?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given key is present in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keys-instance_method" title="#keys (instance method)">- (Array) <strong>keys</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new array populated with the keys from this hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#length-instance_method" title="#length (instance method)">- (Object) <strong>length</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of key-value pairs in the hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#member%3F-instance_method" title="#member? (instance method)">- (Boolean) <strong>member?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given key is present in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#merge-instance_method" title="#merge (instance method)">- (Object) <strong>merge</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new hash containing the contents of other_hash and the contents
+of hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#merge%21-instance_method" title="#merge! (instance method)">- (Object) <strong>merge!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds the contents of other_hash to hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rassoc-instance_method" title="#rassoc (instance method)">- (Array<sup>?</sup>) <strong>rassoc</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Searches through the hash comparing <em>obj</em> with the value using ==.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rehash-instance_method" title="#rehash (instance method)">- (Hash) <strong>rehash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rebuilds the hash based on the current hash values for each key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject-instance_method" title="#reject (instance method)">- (Object) <strong>reject</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Same as Hash#delete_if, but works on (and returns) a copy of the hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject%21-instance_method" title="#reject! (instance method)">- (Object) <strong>reject!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equivalent to Hash#delete_if, but returns nil if no changes were made.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#replace-instance_method" title="#replace (instance method)">- (Hash) <strong>replace</strong>(other_hash) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replaces the contents of hsh with the contents of other_hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select-instance_method" title="#select (instance method)">- (Object) <strong>select</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new hash consisting of entries for which the block returns true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select%21-instance_method" title="#select! (instance method)">- (Object) <strong>select!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equivalent to Hash#keep_if, but returns nil if no changes were made.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shift-instance_method" title="#shift (instance method)">- (Array, Object) <strong>shift</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes a key-value pair from hsh and returns it as the two-item array [
+key, value ], or the hash’s default value if the hash is empty.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#size (instance method)">- (Object) <strong>size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of key-value pairs in the hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#store-instance_method" title="#store (instance method)">- (Object) <strong>store</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Element Assignment—Associates the value given by value with the key given
+by key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_a-instance_method" title="#to_a (instance method)">- (Array) <strong>to_a</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts hsh to a nested array of [ key, value ] arrays.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_hash-instance_method" title="#to_hash (instance method)">- (Hash) <strong>to_hash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>self</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds the contents of other_hash to hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#value%3F-instance_method" title="#value? (instance method)">- (Boolean) <strong>value?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given value is present for some key in hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#values-instance_method" title="#values (instance method)">- (Array) <strong>values</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new array populated with the values from hsh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#values_at-instance_method" title="#values_at (instance method)">- (Array) <strong>values_at</strong>(key, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return an array containing the values associated with the given keys.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(obj) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> {|hash, key| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new, empty hash. If this hash is subsequently accessed by a key
+that doesn’t correspond to a hash entry, the value returned depends on the
+style of <code>new</code> used to create the hash. In the first form, the
+access returns <code>nil</code>. If <em>obj</em> is specified, this single
+object will be used for all <em>default values</em>. If a block is
+specified, it will be called with the hash object and the key, and should
+return the default value. It is the block’s responsibility to store the
+value in the hash if required.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Go Fish&quot;</span>)
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>] = <span class="ruby-value">100</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;b&quot;</span>] = <span class="ruby-value">200</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>]           <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>]           <span class="ruby-comment">#=&gt; &quot;Go Fish&quot;</span>
+<span class="ruby-comment"># The following alters the single default object</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>].<span class="ruby-identifier">upcase!</span>   <span class="ruby-comment">#=&gt; &quot;GO FISH&quot;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;d&quot;</span>]           <span class="ruby-comment">#=&gt; &quot;GO FISH&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span>           <span class="ruby-comment">#=&gt; [&quot;a&quot;, &quot;b&quot;]</span>
+
+<span class="ruby-comment"># While this creates a new default object each time</span>
+<span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-node">&quot;Go Fish: #{key}&quot;</span> }
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>]           <span class="ruby-comment">#=&gt; &quot;Go Fish: c&quot;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>].<span class="ruby-identifier">upcase!</span>   <span class="ruby-comment">#=&gt; &quot;GO FISH: C&quot;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;d&quot;</span>]           <span class="ruby-comment">#=&gt; &quot;Go Fish: d&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span>           <span class="ruby-comment">#=&gt; [&quot;c&quot;, &quot;d&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> {|hash, key| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>hash</tt>, <tt>key</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 327</span>
+
+static VALUE
+rb_hash_initialize(int argc, VALUE *argv, VALUE hash)
+{
+    VALUE ifnone;
+
+    rb_hash_modify(hash);
+    if (rb_block_given_p()) {
+	if (argc &gt; 0) {
+	    rb_raise(rb_eArgError, &quot;wrong number of arguments&quot;);
+	}
+	ifnone = rb_block_proc();
+	default_proc_arity_check(ifnone);
+	RHASH_IFNONE(hash) = ifnone;
+	FL_SET(hash, HASH_PROC_DEFAULT);
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;01&quot;, &amp;ifnone);
+	RHASH_IFNONE(hash) = ifnone;
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]</strong>(key, value, ...) </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]</strong>([ [key, value)) </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]</strong>(object) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new hash populated with the given objects. Equivalent to the
+literal <code>{ <em>key</em> =&gt; <em>value</em>, ... }</code>. In the
+first form, keys and values occur in pairs, so there must be an even number
+of arguments. The second and third form take a single argument which is
+either an array of key-value pairs or an object convertible to a hash.</p>
+
+<pre class="ruby"><span class="ruby-constant">Hash</span>[<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-value">200</span>]             <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200}</span>
+<span class="ruby-constant">Hash</span>[ [ [<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">100</span>], [<span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-value">200</span>] ] ]   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200}</span>
+<span class="ruby-constant">Hash</span>[<span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>]         <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 367</span>
+
+static VALUE
+rb_hash_s_create(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE hash, tmp;
+    int i;
+
+    if (argc == 1) {
+	tmp = rb_hash_s_try_convert(Qnil, argv[0]);
+	if (!NIL_P(tmp)) {
+	    hash = hash_alloc(klass);
+	    if (RHASH(tmp)-&gt;ntbl) {
+		RHASH(hash)-&gt;ntbl = st_copy(RHASH(tmp)-&gt;ntbl);
+	    }
+	    return hash;
+	}
+
+	tmp = rb_check_array_type(argv[0]);
+	if (!NIL_P(tmp)) {
+	    long i;
+
+	    hash = hash_alloc(klass);
+	    for (i = 0; i &lt; RARRAY_LEN(tmp); ++i) {
+		VALUE v = rb_check_array_type(RARRAY_PTR(tmp)[i]);
+		VALUE key, val = Qnil;
+
+		if (NIL_P(v)) continue;
+		switch (RARRAY_LEN(v)) {
+		  case 2:
+		    val = RARRAY_PTR(v)[1];
+		  case 1:
+		    key = RARRAY_PTR(v)[0];
+		    rb_hash_aset(hash, key, val);
+		}
+	    }
+	    return hash;
+	}
+    }
+    if (argc % 2 != 0) {
+	rb_raise(rb_eArgError, &quot;odd number of arguments for Hash&quot;);
+    }
+
+    hash = hash_alloc(klass);
+    for (i=0; i&lt;argc; i+=2) {
+        rb_hash_aset(hash, argv[i], argv[i + 1]);
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="try_convert-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt><sup>?</sup>) <strong>try_convert</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Try to convert <em>obj</em> into a hash, using to_hash method. Returns
+converted hash or nil if <em>obj</em> cannot be converted for any reason.</p>
+
+<pre class="ruby"><span class="ruby-constant">Hash</span>.<span class="ruby-identifier">try_convert</span>({<span class="ruby-value">1</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">2</span>})   <span class="ruby-comment"># =&gt; {1=&gt;2}</span>
+<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">try_convert</span>(<span class="ruby-string">&quot;1=&gt;2&quot;</span>)   <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+439
+440
+441
+442
+443</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 439</span>
+
+static VALUE
+rb_hash_s_try_convert(VALUE dummy, VALUE hash)
+{
+    return rb_check_hash_type(hash);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="==-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(other_hash) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equality—Two hashes are equal if they each contain the same number of keys
+and if each key-value pair is equal to (according to
+<code>Object#==</code>) the corresponding elements in the other hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-value">7</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">35</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> }
+<span class="ruby-identifier">h3</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-value">7</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">35</span> }
+<span class="ruby-identifier">h4</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-string">&quot;f&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">35</span> }
+<span class="ruby-identifier">h1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">h2</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-identifier">h2</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">h3</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h3</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">h4</span>   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1639
+1640
+1641
+1642
+1643</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1639</span>
+
+static VALUE
+rb_hash_equal(VALUE hash1, VALUE hash2)
+{
+    return hash_equal(hash1, hash2, FALSE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="[]-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Element Reference—Retrieves the <em>value</em> object corresponding to the
+<em>key</em> object. If not found, returns the default value (see
+<code>Hash::new</code> for details).</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>]   <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>]   <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 507</span>
+
+VALUE
+rb_hash_aref(VALUE hash, VALUE key)
+{
+    st_data_t val;
+
+    if (!RHASH(hash)-&gt;ntbl || !st_lookup(RHASH(hash)-&gt;ntbl, key, &amp;val)) {
+	if (!FL_TEST(hash, HASH_PROC_DEFAULT) &amp;&amp;
+	    rb_method_basic_definition_p(CLASS_OF(hash), id_default)) {
+	    return RHASH_IFNONE(hash);
+	}
+	else {
+	    return rb_funcall(hash, id_default, 1, key);
+	}
+    }
+    return (VALUE)val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="[]=-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]=</strong>(key) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>store</strong>(key, value) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Element Assignment—Associates the value given by <em>value</em> with the
+key given by <em>key</em>. <em>key</em> should not have its value changed
+while it is in use as a key (a <code>String</code> passed as a key will be
+duplicated and frozen).</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>] = <span class="ruby-value">9</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>] = <span class="ruby-value">4</span>
+<span class="ruby-identifier">h</span>   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;9, &quot;b&quot;=&gt;200, &quot;c&quot;=&gt;4}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1122
+1123
+1124
+1125
+1126
+1127
+1128
+1129
+1130
+1131
+1132
+1133
+1134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1122</span>
+
+VALUE
+rb_hash_aset(VALUE hash, VALUE key, VALUE val)
+{
+    rb_hash_modify(hash);
+    hash_update(hash, key);
+    if (RHASH(hash)-&gt;ntbl-&gt;type == &amp;identhash || rb_obj_class(key) != rb_cString) {
+	st_insert(RHASH(hash)-&gt;ntbl, key, val);
+    }
+    else {
+	st_insert2(RHASH(hash)-&gt;ntbl, key, val, copy_str_key);
+    }
+    return val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="assoc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt><sup>?</sup>) <strong>assoc</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Searches through the hash comparing <em>obj</em> with the key using
+<code>==</code>. Returns the key-value pair (two elements array) or
+<code>nil</code> if no match is found.  See <code>Array#assoc</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = {<span class="ruby-string">&quot;colors&quot;</span>  =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-string">&quot;green&quot;</span>],
+     <span class="ruby-string">&quot;letters&quot;</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-string">&quot;c&quot;</span> ]}
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-string">&quot;letters&quot;</span>)  <span class="ruby-comment">#=&gt; [&quot;letters&quot;, [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]]</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-string">&quot;foo&quot;</span>)      <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1880
+1881
+1882
+1883
+1884
+1885
+1886
+1887
+1888
+1889</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1880</span>
+
+VALUE
+rb_hash_assoc(VALUE hash, VALUE obj)
+{
+    VALUE args[2];
+
+    args[0] = obj;
+    args[1] = Qnil;
+    rb_hash_foreach(hash, assoc_i, (VALUE)args);
+    return args[1];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clear-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>clear</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes all key-value pairs from <em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200}</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">clear</span>                          <span class="ruby-comment">#=&gt; {}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095
+1096</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1082</span>
+
+static VALUE
+rb_hash_clear(VALUE hash)
+{
+    rb_hash_modify_check(hash);
+    if (!RHASH(hash)-&gt;ntbl)
+        return hash;
+    if (RHASH(hash)-&gt;ntbl-&gt;num_entries &gt; 0) {
+	if (RHASH(hash)-&gt;iter_lev &gt; 0)
+	    rb_hash_foreach(hash, clear_i, 0);
+	else
+	    st_clear(RHASH(hash)-&gt;ntbl);
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compare_by_identity-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>compare_by_identity</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes <em>hsh</em> compare its keys by their identity, i.e. it will
+consider exact same objects as same keys.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, :<span class="ruby-identifier">c</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;c&quot;</span> }
+<span class="ruby-identifier">h1</span>[<span class="ruby-string">&quot;a&quot;</span>]        <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">compare_by_identity</span>
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">compare_by_identity?</span> <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h1</span>[<span class="ruby-string">&quot;a&quot;</span>]        <span class="ruby-comment">#=&gt; nil  # different objects.</span>
+<span class="ruby-identifier">h1</span>[:<span class="ruby-identifier">c</span>]         <span class="ruby-comment">#=&gt; &quot;c&quot;  # same symbols are all same.</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1975
+1976
+1977
+1978
+1979
+1980
+1981
+1982</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1975</span>
+
+static VALUE
+rb_hash_compare_by_id(VALUE hash)
+{
+    rb_hash_modify(hash);
+    RHASH(hash)-&gt;ntbl-&gt;type = &amp;identhash;
+    rb_hash_rehash(hash);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="compare_by_identity?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>compare_by_identity?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>hsh</em> will compare its keys by their
+identity.  Also see <code>Hash#compare_by_identity</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1993
+1994
+1995
+1996
+1997
+1998
+1999
+2000
+2001
+2002</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1993</span>
+
+static VALUE
+rb_hash_compare_by_id_p(VALUE hash)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qfalse;
+    if (RHASH(hash)-&gt;ntbl-&gt;type == &amp;identhash) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>default</strong>(key = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the default value, the value that would be returned by <em><a
+href="http://key">hsh</a></em> if <em>key</em> did not exist in
+<em>hsh</em>. See also <code>Hash::new</code> and
+<code>Hash#default=</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>                            <span class="ruby-comment">#=&gt; {}</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>                               <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>(<span class="ruby-value">2</span>)                            <span class="ruby-comment">#=&gt; nil</span>
+
+<span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;cat&quot;</span>)                     <span class="ruby-comment">#=&gt; {}</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>                               <span class="ruby-comment">#=&gt; &quot;cat&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>(<span class="ruby-value">2</span>)                            <span class="ruby-comment">#=&gt; &quot;cat&quot;</span>
+
+<span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_i</span>*<span class="ruby-value">10</span>}   <span class="ruby-comment">#=&gt; {}</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>                               <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span>(<span class="ruby-value">2</span>)                            <span class="ruby-comment">#=&gt; 20</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 625</span>
+
+static VALUE
+rb_hash_default(int argc, VALUE *argv, VALUE hash)
+{
+    VALUE key, ifnone;
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;key);
+    ifnone = RHASH_IFNONE(hash);
+    if (FL_TEST(hash, HASH_PROC_DEFAULT)) {
+	if (argc == 0) return Qnil;
+	return rb_funcall(ifnone, id_yield, 2, hash, key);
+    }
+    return ifnone;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>default=</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the default value, the value returned for a key that does not exist in
+the hash. It is not possible to set the default to a <code>Proc</code> that
+will be executed on each key lookup.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span> = <span class="ruby-string">&quot;Go fish&quot;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>]     <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;z&quot;</span>]     <span class="ruby-comment">#=&gt; &quot;Go fish&quot;</span>
+<span class="ruby-comment"># This doesn't do what you might hope...</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">default</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">key</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-value">2</span>]       <span class="ruby-comment">#=&gt; #&lt;Proc:0x401b3948@-:6&gt;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;cat&quot;</span>]   <span class="ruby-comment">#=&gt; #&lt;Proc:0x401b3948@-:6&gt;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+659
+660
+661
+662
+663
+664
+665
+666</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 659</span>
+
+static VALUE
+rb_hash_set_default(VALUE hash, VALUE ifnone)
+{
+    rb_hash_modify(hash);
+    RHASH_IFNONE(hash) = ifnone;
+    FL_UNSET(hash, HASH_PROC_DEFAULT);
+    return ifnone;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default_proc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>default_proc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If <code>Hash::new</code> was invoked with a block, return that block,
+otherwise return <code>nil</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">k</span>*<span class="ruby-identifier">k</span> }   <span class="ruby-comment">#=&gt; {}</span>
+<span class="ruby-identifier">p</span> = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">default_proc</span>                 <span class="ruby-comment">#=&gt; #&lt;Proc:0x401b3d08@-:1&gt;</span>
+<span class="ruby-identifier">a</span> = []                             <span class="ruby-comment">#=&gt; []</span>
+<span class="ruby-identifier">p</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">a</span>, <span class="ruby-value">2</span>)
+<span class="ruby-identifier">a</span>                                  <span class="ruby-comment">#=&gt; [nil, nil, 4]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+683
+684
+685
+686
+687
+688
+689
+690</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 683</span>
+
+static VALUE
+rb_hash_default_proc(VALUE hash)
+{
+    if (FL_TEST(hash, HASH_PROC_DEFAULT)) {
+	return RHASH_IFNONE(hash);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="default_proc=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Proc.html" title="Proc (class)">Proc</a></span></tt>) <strong>default_proc=</strong>(proc_obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the default proc to be executed on each key lookup.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span>.<span class="ruby-identifier">default_proc</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">key</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-value">2</span>]       <span class="ruby-comment">#=&gt; 4</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;cat&quot;</span>]   <span class="ruby-comment">#=&gt; &quot;catcat&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Proc.html" title="Proc (class)">Proc</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 705</span>
+
+static VALUE
+rb_hash_set_default_proc(VALUE hash, VALUE proc)
+{
+    VALUE b;
+
+    rb_hash_modify(hash);
+    b = rb_check_convert_type(proc, T_DATA, &quot;Proc&quot;, &quot;to_proc&quot;);
+    if (NIL_P(b) || !rb_obj_is_proc(b)) {
+	rb_raise(rb_eTypeError,
+		 &quot;wrong default_proc type %s (expected Proc)&quot;,
+		 rb_obj_classname(proc));
+    }
+    proc = b;
+    default_proc_arity_check(proc);
+    RHASH_IFNONE(hash) = proc;
+    FL_SET(hash, HASH_PROC_DEFAULT);
+    return proc;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete</strong>(key) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete</strong>(key) {|key| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes and returns a key-value pair from <em>hsh</em> whose key is equal
+to <em>key</em>. If the key is not found, returns the <em>default
+value</em>. If the optional code block is given and the key is not found,
+pass in the key and return the result of <em>block</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;a&quot;</span>)                              <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;z&quot;</span>)                              <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;z&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{el} not found&quot;</span> }   <span class="ruby-comment">#=&gt; &quot;z not found&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete</strong>(key) {|key| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 807</span>
+
+VALUE
+rb_hash_delete(VALUE hash, VALUE key)
+{
+    VALUE val;
+
+    rb_hash_modify(hash);
+    val = rb_hash_delete_key(hash, key);
+    if (val != Qundef) return val;
+    if (rb_block_given_p()) {
+	return rb_yield(key);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_if-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete_if</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes every key-value pair from <em>hsh</em> for which <em>block</em>
+evaluates to <code>true</code>.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&quot;b&quot;</span> }   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+903
+904
+905
+906
+907
+908
+909
+910</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 903</span>
+
+VALUE
+rb_hash_delete_if(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    rb_hash_foreach(hash, delete_if_i, hash);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_pair</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_pair</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls <em>block</em> once for each key in <em>hsh</em>, passing the
+key-value pair as parameters.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key} is #{value}&quot;</span> }
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_a'>a</span> <span class='id identifier rubyid_is'>is</span> <span class='int'>100</span>
+<span class='id identifier rubyid_b'>b</span> <span class='id identifier rubyid_is'>is</span> <span class='int'>200</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_pair</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1318
+1319
+1320
+1321
+1322
+1323
+1324</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1318</span>
+
+static VALUE
+rb_hash_each_pair(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_foreach(hash, each_pair_i, 0);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_key-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_key</strong> {|key| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_key</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls <em>block</em> once for each key in <em>hsh</em>, passing the key as
+a parameter.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">each_key</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">key</span> }
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_a'>a</span>
+<span class='id identifier rubyid_b'>b</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_key</strong> {|key| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1280
+1281
+1282
+1283
+1284
+1285
+1286</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1280</span>
+
+static VALUE
+rb_hash_each_key(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_foreach(hash, each_key_i, 0);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_pair-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_pair</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_pair</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls <em>block</em> once for each key in <em>hsh</em>, passing the
+key-value pair as parameters.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key} is #{value}&quot;</span> }
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_a'>a</span> <span class='id identifier rubyid_is'>is</span> <span class='int'>100</span>
+<span class='id identifier rubyid_b'>b</span> <span class='id identifier rubyid_is'>is</span> <span class='int'>200</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_pair</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1318
+1319
+1320
+1321
+1322
+1323
+1324</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1318</span>
+
+static VALUE
+rb_hash_each_pair(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_foreach(hash, each_pair_i, 0);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_value-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_value</strong> {|value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_value</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls <em>block</em> once for each key in <em>hsh</em>, passing the value
+as a parameter.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">each_value</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">value</span> }
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='int'>100</span>
+<span class='int'>200</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>each_value</strong> {|value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1246
+1247
+1248
+1249
+1250
+1251
+1252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1246</span>
+
+static VALUE
+rb_hash_each_value(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_foreach(hash, each_value_i, 0);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="empty?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>empty?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>hsh</em> contains no key-value pairs.</p>
+
+<pre class="ruby">{}.<span class="ruby-identifier">empty?</span>   <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1213
+1214
+1215
+1216
+1217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1213</span>
+
+static VALUE
+rb_hash_empty_p(VALUE hash)
+{
+    return RHASH_EMPTY_P(hash) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eql?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>eql?</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>hash</em> and <em>other</em> are both
+hashes with the same content.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1653
+1654
+1655
+1656
+1657</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1653</span>
+
+static VALUE
+rb_hash_eql(VALUE hash1, VALUE hash2)
+{
+    return hash_equal(hash1, hash2, TRUE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch</strong>(key[, default]) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch</strong>(key) {|key| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a value from the hash for the given key. If the key can’t be found,
+there are several options: With no other arguments, it will raise an
+<code>KeyError</code> exception; if <em>default</em> is given, then that
+will be returned; if the optional code block is specified, then that will
+be run and its result returned.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">&quot;a&quot;</span>)                            <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">&quot;z&quot;</span>, <span class="ruby-string">&quot;go fish&quot;</span>)                 <span class="ruby-comment">#=&gt; &quot;go fish&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">&quot;z&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;go fish, #{el}&quot;</span>}   <span class="ruby-comment">#=&gt; &quot;go fish, z&quot;</span>
+</pre>
+
+<p>The following example shows that an exception is raised if the key is not
+found and a default value is not supplied.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">&quot;z&quot;</span>)
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class="">prog.rb:2:in `fetch': key not found (KeyError)
+ from prog.rb:2</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch</strong>(key[, default]) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch</strong>(key) {|key| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 570</span>
+
+static VALUE
+rb_hash_fetch_m(int argc, VALUE *argv, VALUE hash)
+{
+    VALUE key, if_none;
+    st_data_t val;
+    long block_given;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;key, &amp;if_none);
+
+    block_given = rb_block_given_p();
+    if (block_given &amp;&amp; argc == 2) {
+	rb_warn(&quot;block supersedes default value argument&quot;);
+    }
+    if (!RHASH(hash)-&gt;ntbl || !st_lookup(RHASH(hash)-&gt;ntbl, key, &amp;val)) {
+	if (block_given) return rb_yield(key);
+	if (argc == 1) {
+	    volatile VALUE desc = rb_protect(rb_inspect, key, 0);
+	    if (NIL_P(desc)) {
+		desc = rb_any_to_s(key);
+	    }
+	    desc = rb_str_ellipsize(desc, 65);
+	    rb_raise(rb_eKeyError, &quot;key not found: %s&quot;, RSTRING_PTR(desc));
+	}
+	return if_none;
+    }
+    return (VALUE)val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flatten-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>flatten</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>flatten</strong>(level) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new array that is a one-dimensional flattening of this hash. That
+is, for every key or value that is an array, extract its elements into the
+new array.  Unlike Array#flatten, this method does not flatten recursively
+by default.  The optional <em>level</em> argument determines the level of
+recursion to flatten.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> =  {<span class="ruby-value">1</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-value">2</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">2</span>,<span class="ruby-string">&quot;two&quot;</span>], <span class="ruby-value">3</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;three&quot;</span>}
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">flatten</span>    <span class="ruby-comment"># =&gt; [1, &quot;one&quot;, 2, [2, &quot;two&quot;], 3, &quot;three&quot;]</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">flatten</span>(<span class="ruby-value">2</span>) <span class="ruby-comment"># =&gt; [1, &quot;one&quot;, 2, 2, &quot;two&quot;, 3, &quot;three&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>flatten</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>flatten</strong>(level) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1944
+1945
+1946
+1947
+1948
+1949
+1950
+1951
+1952
+1953
+1954
+1955
+1956
+1957</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1944</span>
+
+static VALUE
+rb_hash_flatten(int argc, VALUE *argv, VALUE hash)
+{
+    VALUE ary, tmp;
+
+    ary = rb_hash_to_a(hash);
+    if (argc == 0) {
+	argc = 1;
+	tmp = INT2FIX(1);
+	argv = &amp;tmp;
+    }
+    rb_funcall2(ary, rb_intern(&quot;flatten!&quot;), argc, argv);
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_key?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given key is present in <em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;z&quot;</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1503
+1504
+1505
+1506
+1507
+1508
+1509
+1510
+1511
+1512</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1503</span>
+
+static VALUE
+rb_hash_has_key(VALUE hash, VALUE key)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qfalse;
+    if (st_lookup(RHASH(hash)-&gt;ntbl, key, 0)) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_value?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_value?</strong>(value) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>value?</strong>(value) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given value is present for some key in
+<em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_value?</span>(<span class="ruby-value">100</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_value?</span>(<span class="ruby-value">999</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_value?</strong>(value) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>value?</strong>(value) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1540
+1541
+1542
+1543
+1544
+1545
+1546
+1547
+1548
+1549</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1540</span>
+
+static VALUE
+rb_hash_has_value(VALUE hash, VALUE val)
+{
+    VALUE data[2];
+
+    data[0] = Qfalse;
+    data[1] = val;
+    rb_hash_foreach(hash, rb_hash_search_value, (VALUE)data);
+    return data[0];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>hash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compute a hash-code for this hash. Two hashes with the same content will
+have the same hash code (and will compare using <code>eql?</code>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1697
+1698
+1699
+1700
+1701</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1697</span>
+
+static VALUE
+rb_hash_hash(VALUE hash)
+{
+    return rb_exec_recursive_outer(recursive_hash, hash, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given key is present in <em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;z&quot;</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1503
+1504
+1505
+1506
+1507
+1508
+1509
+1510
+1511
+1512</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1503</span>
+
+static VALUE
+rb_hash_has_key(VALUE hash, VALUE key)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qfalse;
+    if (st_lookup(RHASH(hash)-&gt;ntbl, key, 0)) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+764
+765
+766
+767
+768
+769</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 764</span>
+
+static VALUE
+rb_hash_index(VALUE hash, VALUE value)
+{
+    rb_warn(&quot;Hash#index is deprecated; use Hash#key&quot;);
+    return rb_hash_key(hash, value);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>replace</strong>(other_hash) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replaces the contents of <em>hsh</em> with the contents of
+<em>other_hash</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">replace</span>({ <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span> })   <span class="ruby-comment">#=&gt; {&quot;c&quot;=&gt;300, &quot;d&quot;=&gt;400}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1158
+1159
+1160
+1161
+1162
+1163
+1164
+1165
+1166
+1167
+1168
+1169
+1170
+1171
+1172
+1173
+1174
+1175
+1176
+1177
+1178
+1179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1158</span>
+
+static VALUE
+rb_hash_replace(VALUE hash, VALUE hash2)
+{
+    rb_hash_modify_check(hash);
+    hash2 = to_hash(hash2);
+    if (hash == hash2) return hash;
+    rb_hash_clear(hash);
+    if (RHASH(hash2)-&gt;ntbl) {
+	rb_hash_tbl(hash);
+	RHASH(hash)-&gt;ntbl-&gt;type = RHASH(hash2)-&gt;ntbl-&gt;type;
+    }
+    rb_hash_foreach(hash2, replace_i, hash);
+    RHASH_IFNONE(hash) = RHASH_IFNONE(hash2);
+    if (FL_TEST(hash2, HASH_PROC_DEFAULT)) {
+	FL_SET(hash, HASH_PROC_DEFAULT);
+    }
+    else {
+	FL_UNSET(hash, HASH_PROC_DEFAULT);
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>inspect</strong> </span>
+    
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='to_s-instance_method'>to_s</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return the contents of this hash as a string.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>  }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">to_s</span>   <span class="ruby-comment">#=&gt; &quot;{\&quot;c\&quot;=&gt;300, \&quot;a\&quot;=&gt;100, \&quot;d\&quot;=&gt;400}&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>inspect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1405
+1406
+1407
+1408
+1409
+1410
+1411</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1405</span>
+
+static VALUE
+rb_hash_inspect(VALUE hash)
+{
+    if (RHASH_EMPTY_P(hash))
+	return rb_usascii_str_new2(&quot;{}&quot;);
+    return rb_exec_recursive(inspect_hash, hash, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>invert</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new hash created by using <em>hsh</em>’s values as keys, and the
+keys as values.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;n&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;m&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;y&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">invert</span>   <span class="ruby-comment">#=&gt; {0=&gt;&quot;a&quot;, 100=&gt;&quot;m&quot;, 200=&gt;&quot;d&quot;, 300=&gt;&quot;y&quot;}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1723
+1724
+1725
+1726
+1727
+1728
+1729
+1730</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1723</span>
+
+static VALUE
+rb_hash_invert(VALUE hash)
+{
+    VALUE h = rb_hash_new();
+
+    rb_hash_foreach(hash, rb_hash_invert_i, h);
+    return h;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keep_if-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>keep_if</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>keep_if</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes every key-value pair from <em>hsh</em> for which <em>block</em>
+evaluates to false.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>keep_if</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1056
+1057
+1058
+1059
+1060
+1061
+1062
+1063</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1056</span>
+
+VALUE
+rb_hash_keep_if(VALUE hash)
+{
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    rb_hash_foreach(hash, keep_if_i, hash);
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="key-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>key</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the key of an occurrence of a given value. If the value is not
+found, returns <code>nil</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">key</span>(<span class="ruby-value">200</span>)   <span class="ruby-comment">#=&gt; &quot;b&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">key</span>(<span class="ruby-value">300</span>)   <span class="ruby-comment">#=&gt; &quot;c&quot;</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">key</span>(<span class="ruby-value">999</span>)   <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 750</span>
+
+static VALUE
+rb_hash_key(VALUE hash, VALUE value)
+{
+    VALUE args[2];
+
+    args[0] = value;
+    args[1] = Qnil;
+
+    rb_hash_foreach(hash, key_i, (VALUE)args);
+
+    return args[1];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="key?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given key is present in <em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;z&quot;</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1503
+1504
+1505
+1506
+1507
+1508
+1509
+1510
+1511
+1512</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1503</span>
+
+static VALUE
+rb_hash_has_key(VALUE hash, VALUE key)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qfalse;
+    if (st_lookup(RHASH(hash)-&gt;ntbl, key, 0)) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keys-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>keys</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new array populated with the keys from this hash. See also
+<code>Hash#values</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span>   <span class="ruby-comment">#=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1446
+1447
+1448
+1449
+1450
+1451
+1452
+1453
+1454
+1455</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1446</span>
+
+static VALUE
+rb_hash_keys(VALUE hash)
+{
+    VALUE ary;
+
+    ary = rb_ary_new();
+    rb_hash_foreach(hash, keys_i, ary);
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="length-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>length</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>size</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of key-value pairs in the hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;e&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">length</span>        <span class="ruby-comment">#=&gt; 4</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; 200</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">length</span>        <span class="ruby-comment">#=&gt; 3</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>length</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>size</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1194
+1195
+1196
+1197
+1198
+1199
+1200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1194</span>
+
+static VALUE
+rb_hash_size(VALUE hash)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return INT2FIX(0);
+    return INT2FIX(RHASH(hash)-&gt;ntbl-&gt;num_entries);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="member?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given key is present in <em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;z&quot;</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>key?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(key) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1503
+1504
+1505
+1506
+1507
+1508
+1509
+1510
+1511
+1512</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1503</span>
+
+static VALUE
+rb_hash_has_key(VALUE hash, VALUE key)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qfalse;
+    if (st_lookup(RHASH(hash)-&gt;ntbl, key, 0)) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="merge-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>merge</strong>(other_hash) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>merge</strong>(other_hash) {|key, oldval, newval| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new hash containing the contents of <em>other_hash</em> and the
+contents of <em>hsh</em>. If no block is specified, the value for entries
+with duplicate keys will be that of <em>other_hash</em>. Otherwise the
+value for each duplicate key is determined by calling the block with the
+key, its value in <em>hsh</em> and its value in <em>other_hash</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">h2</span>)   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;254, &quot;c&quot;=&gt;300}</span>
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">h2</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">oldval</span>, <span class="ruby-identifier">newval</span><span class="ruby-operator">|</span> <span class="ruby-identifier">newval</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">oldval</span>}
+               <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;54,  &quot;c&quot;=&gt;300}</span>
+<span class="ruby-identifier">h1</span>             <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>merge</strong>(other_hash) {|key, oldval, newval| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>oldval</tt>, <tt>newval</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1847
+1848
+1849
+1850
+1851</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1847</span>
+
+static VALUE
+rb_hash_merge(VALUE hash1, VALUE hash2)
+{
+    return rb_hash_update(rb_obj_dup(hash1), hash2);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="merge!-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) {|key, oldval, newval| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) {|key, oldval, newval| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds the contents of <em>other_hash</em> to <em>hsh</em>.  If no block is
+specified, entries with duplicate keys are overwritten with the values from
+<em>other_hash</em>, otherwise the value of each duplicate key is
+determined by calling the block with the key, its value in <em>hsh</em> and
+its value in <em>other_hash</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h2</span>)   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;254, &quot;c&quot;=&gt;300}</span>
+
+<span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h2</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v1</span> }
+                <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200, &quot;c&quot;=&gt;300}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) {|key, oldval, newval| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>oldval</tt>, <tt>newval</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) {|key, oldval, newval| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>oldval</tt>, <tt>newval</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1776</span>
+
+static VALUE
+rb_hash_update(VALUE hash1, VALUE hash2)
+{
+    rb_hash_modify(hash1);
+    hash2 = to_hash(hash2);
+    if (rb_block_given_p()) {
+	rb_hash_foreach(hash2, rb_hash_update_block_i, hash1);
+    }
+    else {
+	rb_hash_foreach(hash2, rb_hash_update_i, hash1);
+    }
+    return hash1;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rassoc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt><sup>?</sup>) <strong>rassoc</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Searches through the hash comparing <em>obj</em> with the value using
+<code>==</code>. Returns the first key-value pair (two-element array) that
+matches. See also <code>Array#rassoc</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = {<span class="ruby-value">1</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-value">2</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;two&quot;</span>, <span class="ruby-value">3</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;three&quot;</span>, <span class="ruby-string">&quot;ii&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;two&quot;</span>}
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">rassoc</span>(<span class="ruby-string">&quot;two&quot;</span>)    <span class="ruby-comment">#=&gt; [2, &quot;two&quot;]</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">rassoc</span>(<span class="ruby-string">&quot;four&quot;</span>)   <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1917
+1918
+1919
+1920
+1921
+1922
+1923
+1924
+1925
+1926</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1917</span>
+
+VALUE
+rb_hash_rassoc(VALUE hash, VALUE obj)
+{
+    VALUE args[2];
+
+    args[0] = obj;
+    args[1] = Qnil;
+    rb_hash_foreach(hash, rassoc_i, (VALUE)args);
+    return args[1];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rehash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>rehash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rebuilds the hash based on the current hash values for each key. If values
+of key objects have changed since they were inserted, this method will
+reindex <em>hsh</em>. If <code>Hash#rehash</code> is called while an
+iterator is traversing the hash, an <code>RuntimeError</code> will be
+raised in the iterator.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = [ <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;b&quot;</span> ]
+<span class="ruby-identifier">c</span> = [ <span class="ruby-string">&quot;c&quot;</span>, <span class="ruby-string">&quot;d&quot;</span> ]
+<span class="ruby-identifier">h</span> = { <span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-identifier">c</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h</span>[<span class="ruby-identifier">a</span>]       <span class="ruby-comment">#=&gt; 100</span>
+<span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">&quot;z&quot;</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-identifier">a</span>]       <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">rehash</span>   <span class="ruby-comment">#=&gt; {[&quot;z&quot;, &quot;b&quot;]=&gt;100, [&quot;c&quot;, &quot;d&quot;]=&gt;300}</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-identifier">a</span>]       <span class="ruby-comment">#=&gt; 100</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 474</span>
+
+static VALUE
+rb_hash_rehash(VALUE hash)
+{
+    st_table *tbl;
+
+    if (RHASH(hash)-&gt;iter_lev &gt; 0) {
+	rb_raise(rb_eRuntimeError, &quot;rehash during iteration&quot;);
+    }
+    rb_hash_modify_check(hash);
+    if (!RHASH(hash)-&gt;ntbl)
+        return hash;
+    tbl = st_init_table_with_size(RHASH(hash)-&gt;ntbl-&gt;type, RHASH(hash)-&gt;ntbl-&gt;num_entries);
+    rb_hash_foreach(hash, rb_hash_rehash_i, (VALUE)tbl);
+    st_free_table(RHASH(hash)-&gt;ntbl);
+    RHASH(hash)-&gt;ntbl = tbl;
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reject-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>reject</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reject</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Same as <code>Hash#delete_if</code>, but works on (and returns) a copy of
+the <em>hsh</em>. Equivalent to <code><em>hsh</em>.dup.delete_if</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>reject</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+947
+948
+949
+950
+951</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 947</span>
+
+static VALUE
+rb_hash_reject(VALUE hash)
+{
+    return rb_hash_delete_if(rb_obj_dup(hash));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reject!-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt><sup>?</sup>) <strong>reject!</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reject!</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equivalent to <code>Hash#delete_if</code>, but returns <code>nil</code> if
+no changes were made.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt><sup>?</sup>) <strong>reject!</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 921</span>
+
+VALUE
+rb_hash_reject_bang(VALUE hash)
+{
+    st_index_t n;
+
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qnil;
+    n = RHASH(hash)-&gt;ntbl-&gt;num_entries;
+    rb_hash_foreach(hash, delete_if_i, hash);
+    if (n == RHASH(hash)-&gt;ntbl-&gt;num_entries) return Qnil;
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="replace-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>replace</strong>(other_hash) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replaces the contents of <em>hsh</em> with the contents of
+<em>other_hash</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">replace</span>({ <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span> })   <span class="ruby-comment">#=&gt; {&quot;c&quot;=&gt;300, &quot;d&quot;=&gt;400}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1158
+1159
+1160
+1161
+1162
+1163
+1164
+1165
+1166
+1167
+1168
+1169
+1170
+1171
+1172
+1173
+1174
+1175
+1176
+1177
+1178
+1179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1158</span>
+
+static VALUE
+rb_hash_replace(VALUE hash, VALUE hash2)
+{
+    rb_hash_modify_check(hash);
+    hash2 = to_hash(hash2);
+    if (hash == hash2) return hash;
+    rb_hash_clear(hash);
+    if (RHASH(hash2)-&gt;ntbl) {
+	rb_hash_tbl(hash);
+	RHASH(hash)-&gt;ntbl-&gt;type = RHASH(hash2)-&gt;ntbl-&gt;type;
+    }
+    rb_hash_foreach(hash2, replace_i, hash);
+    RHASH_IFNONE(hash) = RHASH_IFNONE(hash2);
+    if (FL_TEST(hash2, HASH_PROC_DEFAULT)) {
+	FL_SET(hash, HASH_PROC_DEFAULT);
+    }
+    else {
+	FL_UNSET(hash, HASH_PROC_DEFAULT);
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>select</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>select</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new hash consisting of entries for which the block returns true.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;a&quot;</span>}  <span class="ruby-comment">#=&gt; {&quot;b&quot; =&gt; 200, &quot;c&quot; =&gt; 300}</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">200</span>}  <span class="ruby-comment">#=&gt; {&quot;a&quot; =&gt; 100}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>select</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+999
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 999</span>
+
+VALUE
+rb_hash_select(VALUE hash)
+{
+    VALUE result;
+
+    RETURN_ENUMERATOR(hash, 0, 0);
+    result = rb_hash_new();
+    rb_hash_foreach(hash, select_i, result);
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select!-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt><sup>?</sup>) <strong>select!</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>select!</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equivalent to <code>Hash#keep_if</code>, but returns <code>nil</code> if no
+changes were made.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt><sup>?</sup>) <strong>select!</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1029</span>
+
+VALUE
+rb_hash_select_bang(VALUE hash)
+{
+    st_index_t n;
+
+    RETURN_ENUMERATOR(hash, 0, 0);
+    rb_hash_modify(hash);
+    if (!RHASH(hash)-&gt;ntbl)
+        return Qnil;
+    n = RHASH(hash)-&gt;ntbl-&gt;num_entries;
+    rb_hash_foreach(hash, keep_if_i, hash);
+    if (n == RHASH(hash)-&gt;ntbl-&gt;num_entries) return Qnil;
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shift-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>, <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>shift</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes a key-value pair from <em>hsh</em> and returns it as the two-item
+array <code>[</code> <em>key, value</em> <code>]</code>, or the hash’s
+default value if the hash is empty.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">2</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-value">3</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;c&quot;</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">shift</span>   <span class="ruby-comment">#=&gt; [1, &quot;a&quot;]</span>
+<span class="ruby-identifier">h</span>         <span class="ruby-comment">#=&gt; {2=&gt;&quot;b&quot;, 3=&gt;&quot;c&quot;}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>, <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 850</span>
+
+static VALUE
+rb_hash_shift(VALUE hash)
+{
+    struct shift_var var;
+
+    rb_hash_modify(hash);
+    var.key = Qundef;
+    if (RHASH(hash)-&gt;iter_lev == 0) {
+	if (st_shift(RHASH(hash)-&gt;ntbl, &amp;var.key, &amp;var.val)) {
+	    return rb_assoc_new(var.key, var.val);
+	}
+    }
+    else {
+	rb_hash_foreach(hash, shift_i_safe, (VALUE)&amp;var);
+
+	if (var.key != Qundef) {
+	    rb_hash_delete_key(hash, var.key);
+	    return rb_assoc_new(var.key, var.val);
+	}
+    }
+    if (FL_TEST(hash, HASH_PROC_DEFAULT)) {
+	return rb_funcall(RHASH_IFNONE(hash), id_yield, 2, hash, Qnil);
+    }
+    else {
+	return RHASH_IFNONE(hash);
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>length</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>size</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of key-value pairs in the hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;e&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">length</span>        <span class="ruby-comment">#=&gt; 4</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;a&quot;</span>)   <span class="ruby-comment">#=&gt; 200</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">length</span>        <span class="ruby-comment">#=&gt; 3</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>length</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>size</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1194
+1195
+1196
+1197
+1198
+1199
+1200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1194</span>
+
+static VALUE
+rb_hash_size(VALUE hash)
+{
+    if (!RHASH(hash)-&gt;ntbl)
+        return INT2FIX(0);
+    return INT2FIX(RHASH(hash)-&gt;ntbl-&gt;num_entries);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="store-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]=</strong>(key) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>store</strong>(key, value) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Element Assignment—Associates the value given by <em>value</em> with the
+key given by <em>key</em>. <em>key</em> should not have its value changed
+while it is in use as a key (a <code>String</code> passed as a key will be
+duplicated and frozen).</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;a&quot;</span>] = <span class="ruby-value">9</span>
+<span class="ruby-identifier">h</span>[<span class="ruby-string">&quot;c&quot;</span>] = <span class="ruby-value">4</span>
+<span class="ruby-identifier">h</span>   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;9, &quot;b&quot;=&gt;200, &quot;c&quot;=&gt;4}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1122
+1123
+1124
+1125
+1126
+1127
+1128
+1129
+1130
+1131
+1132
+1133
+1134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1122</span>
+
+VALUE
+rb_hash_aset(VALUE hash, VALUE key, VALUE val)
+{
+    rb_hash_modify(hash);
+    hash_update(hash, key);
+    if (RHASH(hash)-&gt;ntbl-&gt;type == &amp;identhash || rb_obj_class(key) != rb_cString) {
+	st_insert(RHASH(hash)-&gt;ntbl, key, val);
+    }
+    else {
+	st_insert2(RHASH(hash)-&gt;ntbl, key, val, copy_str_key);
+    }
+    return val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_a-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>to_a</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts <em>hsh</em> to a nested array of <code>[</code> <em>key,
+value</em> <code>]</code> arrays.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">400</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>  }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">to_a</span>   <span class="ruby-comment">#=&gt; [[&quot;c&quot;, 300], [&quot;a&quot;, 100], [&quot;d&quot;, 400]]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1345
+1346
+1347
+1348
+1349
+1350
+1351
+1352
+1353
+1354
+1355</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1345</span>
+
+static VALUE
+rb_hash_to_a(VALUE hash)
+{
+    VALUE ary;
+
+    ary = rb_ary_new();
+    rb_hash_foreach(hash, to_a_i, ary);
+    OBJ_INFECT(ary, hash);
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>to_hash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>self</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1420
+1421
+1422
+1423
+1424</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1420</span>
+
+static VALUE
+rb_hash_to_hash(VALUE hash)
+{
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) {|key, oldval, newval| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) {|key, oldval, newval| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds the contents of <em>other_hash</em> to <em>hsh</em>.  If no block is
+specified, entries with duplicate keys are overwritten with the values from
+<em>other_hash</em>, otherwise the value of each duplicate key is
+determined by calling the block with the key, its value in <em>hsh</em> and
+its value in <em>other_hash</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h2</span>)   <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;254, &quot;c&quot;=&gt;300}</span>
+
+<span class="ruby-identifier">h1</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h2</span> = { <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">254</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h1</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h2</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v1</span> }
+                <span class="ruby-comment">#=&gt; {&quot;a&quot;=&gt;100, &quot;b&quot;=&gt;200, &quot;c&quot;=&gt;300}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>merge!</strong>(other_hash) {|key, oldval, newval| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>oldval</tt>, <tt>newval</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>) <strong>update</strong>(other_hash) {|key, oldval, newval| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>oldval</tt>, <tt>newval</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1776</span>
+
+static VALUE
+rb_hash_update(VALUE hash1, VALUE hash2)
+{
+    rb_hash_modify(hash1);
+    hash2 = to_hash(hash2);
+    if (rb_block_given_p()) {
+	rb_hash_foreach(hash2, rb_hash_update_block_i, hash1);
+    }
+    else {
+	rb_hash_foreach(hash2, rb_hash_update_i, hash1);
+    }
+    return hash1;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="value?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>has_value?</strong>(value) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>value?</strong>(value) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given value is present for some key in
+<em>hsh</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_value?</span>(<span class="ruby-value">100</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">has_value?</span>(<span class="ruby-value">999</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>has_value?</strong>(value) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>value?</strong>(value) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1540
+1541
+1542
+1543
+1544
+1545
+1546
+1547
+1548
+1549</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1540</span>
+
+static VALUE
+rb_hash_has_value(VALUE hash, VALUE val)
+{
+    VALUE data[2];
+
+    data[0] = Qfalse;
+    data[1] = val;
+    rb_hash_foreach(hash, rb_hash_search_value, (VALUE)data);
+    return data[0];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="values-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>values</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new array populated with the values from <em>hsh</em>. See also
+<code>Hash#keys</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;b&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">200</span>, <span class="ruby-string">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">values</span>   <span class="ruby-comment">#=&gt; [100, 200, 300]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1477
+1478
+1479
+1480
+1481
+1482
+1483
+1484
+1485
+1486</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 1477</span>
+
+static VALUE
+rb_hash_values(VALUE hash)
+{
+    VALUE ary;
+
+    ary = rb_ary_new();
+    rb_hash_foreach(hash, values_i, ary);
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="values_at-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>values_at</strong>(key, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return an array containing the values associated with the given keys. Also
+see <code>Hash.select</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">h</span> = { <span class="ruby-string">&quot;cat&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;feline&quot;</span>, <span class="ruby-string">&quot;dog&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;canine&quot;</span>, <span class="ruby-string">&quot;cow&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;bovine&quot;</span> }
+<span class="ruby-identifier">h</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-string">&quot;cow&quot;</span>, <span class="ruby-string">&quot;cat&quot;</span>)  <span class="ruby-comment">#=&gt; [&quot;bovine&quot;, &quot;feline&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+964
+965
+966
+967
+968
+969
+970
+971
+972
+973
+974</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'hash.c', line 964</span>
+
+VALUE
+rb_hash_values_at(int argc, VALUE *argv, VALUE hash)
+{
+    VALUE result = rb_ary_new2(argc);
+    long i;
+
+    for (i=0; i&lt;argc; i++) {
+	rb_ary_push(result, rb_hash_aref(hash, argv[i]));
+    }
+    return result;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:31 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

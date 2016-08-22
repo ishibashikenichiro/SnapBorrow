@@ -1,0 +1,17 @@
+<%= render 'shared/redirect_not_login' %>
+
+<div class="alert alert-info h4" role="alert">
+  あなたはグループ <span class="important"><%= @group.name %></span> に招待されています。
+</div>
+<h4>参加しますか？</h4>
+
+<%= form_tag '/member' do %>
+  <div class="hidden-xs">
+    <%= submit_tag "参加する", :class => 'btn btn-primary', :style => "width: 130px"%>
+    <%= link_to "参加しない", "/", :role => "button", :class => "btn btn-default" %>
+  </div>
+  <div class="visible-xs-block">
+    <%= submit_tag "参加する", :class => 'btn btn-primary btn-block' %>
+    <%= link_to "参加しない", "/", :role => "button", :class => "btn btn-default btn-block" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<% if !User.find_by_id(session[:user_id]) %>
+  <% session[:user_id] = nil %>
+<% end %>
+
+<% if Manager.find_by_user_id_and_group_id(session[:user_id], session[:group_id]) %>
+  <% session[:manager] = 1 %>
+<% end %>
+
+<% if session[:user_id] == nil %>
+  <script>
+    window.location.href = "/login"
+  </script>
+<% end %>

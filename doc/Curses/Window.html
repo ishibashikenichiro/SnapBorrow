@@ -1,0 +1,4171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Curses::Window
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Curses/Window.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (W)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Curses.html" title="Curses (module)">Curses</a></span></span>
+     &raquo; 
+    <span class="title">Window</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Curses::Window
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../Data.html" title="Data (class)">Data</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="../Data.html" title="Data (class)">Data</a></span></li>
+          
+            <li class="next">Curses::Window</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/curses/curses.c<span class="defines">,<br />
+  ext/curses/curses.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h2 id="label-Description">Description</h2>
+
+<p>The means by which to create and manage frames or windows. While there may
+be more than one window at a time, only one window will receive input.</p>
+
+<h2 id="label-Usage">Usage</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'curses'</span>
+
+<span class="ruby-constant">Curses</span>.<span class="ruby-identifier">init_screen</span>()
+
+<span class="ruby-identifier">my_str</span> = <span class="ruby-string">&quot;LOOK! PONIES!&quot;</span>
+<span class="ruby-identifier">win</span> = <span class="ruby-constant">Curses</span><span class="ruby-operator">::</span><span class="ruby-constant">Window</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">8</span>, (<span class="ruby-identifier">my_str</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span>),
+                          (<span class="ruby-constant">Curses</span>.<span class="ruby-identifier">lines</span> <span class="ruby-operator">-</span> <span class="ruby-value">8</span>) <span class="ruby-operator">/</span> <span class="ruby-value">2</span>,
+                          (<span class="ruby-constant">Curses</span>.<span class="ruby-identifier">cols</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">my_str</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span>)) <span class="ruby-operator">/</span> <span class="ruby-value">2</span> )
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">box</span>(<span class="ruby-string">&quot;|&quot;</span>, <span class="ruby-string">&quot;-&quot;</span>)
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">setpos</span>(<span class="ruby-value">2</span>,<span class="ruby-value">3</span>)
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">addstr</span>(<span class="ruby-identifier">my_str</span>)
+<span class="ruby-comment"># or even</span>
+<span class="ruby-identifier">win</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\nORLY&quot;</span>
+<span class="ruby-identifier">win</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\nYES!! &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">my_str</span>
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">refresh</span>
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">getch</span>
+<span class="ruby-identifier">win</span>.<span class="ruby-identifier">close</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3C-instance_method" title="#&lt;&lt; (instance method)">- (Object) <strong>&lt;&lt;</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>call-seq:   &lt;&lt;(str).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#addch-instance_method" title="#addch (instance method)">- (Object) <strong>addch</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a character <code>ch</code>, with attributes, to the window, then
+advance the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#addstr-instance_method" title="#addstr (instance method)">- (Object) <strong>addstr</strong>(str) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>add a string of characters <code>str</code>, to the window and advance
+cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attroff-instance_method" title="#attroff (instance method)">- (Object) <strong>attroff</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Turns on the named attributes <code>attrs</code> without affecting any
+others.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attron-instance_method" title="#attron (instance method)">- (Object) <strong>attron</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Turns off the named attributes <code>attrs</code> without turning any other
+attributes on or off.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attrset-instance_method" title="#attrset (instance method)">- (Object) <strong>attrset</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the current attributes of the given window to <code>attrs</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#begx-instance_method" title="#begx (instance method)">- (Object) <strong>begx</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the beginning column (X coord) of the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#begy-instance_method" title="#begy (instance method)">- (Object) <strong>begy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the beginning line (Y coord) of the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bkgd-instance_method" title="#bkgd (instance method)">- (Object) <strong>bkgd</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the background of the current window and apply character Integer
+<code>ch</code> to every character.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bkgdset-instance_method" title="#bkgdset (instance method)">- (Object) <strong>bkgdset</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Manipulate the background of the current window with character Integer
+<code>ch</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#box-instance_method" title="#box (instance method)">- (Object) <strong>box</strong>(vert, hor) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>set the characters to frame the window in.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear-instance_method" title="#clear (instance method)">- (Object) <strong>clear</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Clear the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">- (Object) <strong>close</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes the window, and frees the memory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clrtoeol-instance_method" title="#clrtoeol (instance method)">- (Object) <strong>clrtoeol</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Clear the window to the end of line, that the cursor is currently on.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#color_set-instance_method" title="#color_set (instance method)">- (Object) <strong>color_set</strong>(col) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the current color of the given window to the foreground/background
+combination described by the Fixnum <code>col</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#curx-instance_method" title="#curx (instance method)">- (Object) <strong>curx</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the current column (X coord) of the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cury-instance_method" title="#cury (instance method)">- (Object) <strong>cury</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the current line (Y coord) of the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delch-instance_method" title="#delch (instance method)">- (Object) <strong>delch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete the character under the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deleteln-instance_method" title="#deleteln (instance method)">- (Object) <strong>deleteln</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete the line under the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getbkgd-instance_method" title="#getbkgd (instance method)">- (Object) <strong>getbkgd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an Interer (<code>ch</code>) for the character property in the
+current window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getch-instance_method" title="#getch (instance method)">- (Object) <strong>getch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Read and returns a character from the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getstr-instance_method" title="#getstr (instance method)">- (Object) <strong>getstr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is equivalent to a series f Curses::Window.getch calls.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#idlok-instance_method" title="#idlok (instance method)">- (Object) <strong>idlok</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If <code>bool</code> is <code>true</code> curses considers using the
+hardware insert/delete line feature of terminals so equipped.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inch-instance_method" title="#inch (instance method)">- (Object) <strong>inch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the character at the current position of the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>(height, width, top, left) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Contruct a new Curses::Window with constraints of <code>height</code>
+lines, <code>width</code> columns, begin at <code>top</code> line, and
+begin <code>left</code> most column.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insch-instance_method" title="#insch (instance method)">- (Object) <strong>insch</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Insert a character <code>ch</code>, before the cursor, in the current
+window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insertln-instance_method" title="#insertln (instance method)">- (Object) <strong>insertln</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Inserts a line above the cursor, and the bottom line is lost.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keypad-instance_method" title="#keypad (instance method)">- (Object) <strong>keypad</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the keypad of the user’s terminal.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keypad%3D-instance_method" title="#keypad (instance method)">- (Object) <strong>keypad</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the keypad of the user’s terminal.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#maxx-instance_method" title="#maxx (instance method)">- (Object) <strong>maxx</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the maximum columns for the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#maxy-instance_method" title="#maxy (instance method)">- (Object) <strong>maxy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A getter for the maximum lines for the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#move-instance_method" title="#move (instance method)">- (Object) <strong>move</strong>(y, x) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Moves the window so that the upper left-hand corner is at position
+(<code>y</code>, <code>x</code>).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nodelay%3D-instance_method" title="#nodelay (instance method)">- (Object) <strong>nodelay</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Causes Curses::Window.getch to be a non-blocking call.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#noutrefresh-instance_method" title="#noutrefresh (instance method)">- (Object) <strong>noutrefresh</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Refreshes the windows and lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#refresh-instance_method" title="#refresh (instance method)">- (Object) <strong>refresh</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Refreshes the windows and lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resize-instance_method" title="#resize (instance method)">- (Object) <strong>resize</strong>(lines, cols) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resize the current window to Fixnum <code>lines</code> and Fixnum
+<code>cols</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scrl-instance_method" title="#scrl (instance method)">- (Object) <strong>scrl</strong>(num) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Scrolls the current window Fixnum <code>num</code> lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scroll-instance_method" title="#scroll (instance method)">- (Object) <strong>scroll</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Scrolls the current window up one line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scrollok-instance_method" title="#scrollok (instance method)">- (Object) <strong>scrollok</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Controls what happens when the cursor of a window is moved off the edge of
+the window or scrolling region, either as a result of a newline action on
+the bottom line, or typing the last character of the last line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setpos-instance_method" title="#setpos (instance method)">- (Object) <strong>setpos</strong>(y, x) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A setter for the position of the cursor in the current window, using
+coordinates <code>x</code> and <code>y</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setscrreg-instance_method" title="#setscrreg (instance method)">- (Object) <strong>setscrreg</strong>(top, bottom) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set a software scrolling region in a window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#standend-instance_method" title="#standend (instance method)">- (Object) <strong>standend</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the Normal display (no highlight).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#standout-instance_method" title="#standout (instance method)">- (Object) <strong>standout</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the best highlighting mode of the terminal.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#subwin-instance_method" title="#subwin (instance method)">- (Object) <strong>subwin</strong>(height, width, top, left) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Contruct a new subwindow with constraints of <code>height</code> lines,
+<code>width</code> columns, begin at <code>top</code> line, and begin
+<code>left</code> most column.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#timeout%3D-instance_method" title="#timeout= (instance method)">- (Object) <strong>timeout=</strong>(delay) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets block and non-blocking reads for the window.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(height, width, top, left) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Contruct a new Curses::Window with constraints of <code>height</code>
+lines, <code>width</code> columns, begin at <code>top</code> line, and
+begin <code>left</code> most column.</p>
+
+<p>A new window using full screen is called as 	Curses::Window.new(0,0,0,0)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466
+1467
+1468
+1469</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1454</span>
+
+static VALUE
+window_initialize(VALUE obj, VALUE h, VALUE w, VALUE top, VALUE left)
+{
+    struct windata *winp;
+    WINDOW *window;
+
+    rb_secure(4);
+    curses_init_screen();
+    Data_Get_Struct(obj, struct windata, winp);
+    if (winp-&gt;window) delwin(winp-&gt;window);
+    window = newwin(NUM2INT(h), NUM2INT(w), NUM2INT(top), NUM2INT(left));
+    wclear(window);
+    winp-&gt;window = window;
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="<<-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>&lt;&lt;</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq:</p>
+
+<pre class="code"><code class="">&lt;&lt;(str)</code></pre>
+
+<p>Add String <code>str</code> to the current string.</p>
+
+<p>See also Curses::Window.addstr</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1907
+1908
+1909
+1910
+1911
+1912</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1907</span>
+
+static VALUE
+window_addstr2(VALUE obj, VALUE str)
+{
+    window_addstr(obj, str);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="addch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>addch</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a character <code>ch</code>, with attributes, to the window, then
+advance the cursor.</p>
+
+<p>see also the system manual for curs_addch(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1847
+1848
+1849
+1850
+1851
+1852
+1853
+1854
+1855
+1856</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1847</span>
+
+static VALUE
+window_addch(VALUE obj, VALUE ch)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    waddch(winp-&gt;window, NUM2CH(ch));
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="addstr-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>addstr</strong>(str) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>add a string of characters <code>str</code>, to the window and advance
+cursor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1883
+1884
+1885
+1886
+1887
+1888
+1889
+1890
+1891
+1892
+1893
+1894
+1895</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1883</span>
+
+static VALUE
+window_addstr(VALUE obj, VALUE str)
+{
+    if (!NIL_P(str)) {
+	struct windata *winp;
+
+	StringValue(str);
+	str = rb_str_export_locale(str);
+	GetWINDOW(obj, winp);
+	waddstr(winp-&gt;window, StringValueCStr(str));
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attroff-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>attroff</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Turns on the named attributes <code>attrs</code> without affecting any
+others.</p>
+
+<p>See also Curses::Window.attrset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2192
+2193
+2194
+2195
+2196
+2197
+2198
+2199
+2200
+2201
+2202
+2203</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2192</span>
+
+static VALUE
+window_attroff(VALUE obj, VALUE attrs)
+{
+#ifdef HAVE_WATTROFF
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    return INT2FIX(wattroff(winp-&gt;window,NUM2INT(attrs)));
+#else
+    return Qtrue;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attron-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>attron</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Turns off the named attributes <code>attrs</code> without turning any other
+attributes on or off.</p>
+
+<p>See also Curses::Window.attrset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2214
+2215
+2216
+2217
+2218
+2219
+2220
+2221
+2222
+2223
+2224
+2225
+2226
+2227
+2228
+2229
+2230
+2231
+2232
+2233
+2234</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2214</span>
+
+static VALUE
+window_attron(VALUE obj, VALUE attrs)
+{
+#ifdef HAVE_WATTRON
+    struct windata *winp;
+    VALUE val;
+
+    GetWINDOW(obj,winp);
+    val = INT2FIX(wattron(winp-&gt;window,NUM2INT(attrs)));
+    if (rb_block_given_p()) {
+	rb_yield(val);
+	wattroff(winp-&gt;window,NUM2INT(attrs));
+	return val;
+    }
+    else{
+	return val;
+    }
+#else
+    return Qtrue;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attrset-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>attrset</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the current attributes of the given window to <code>attrs</code>.</p>
+
+<p>The following video attributes, defined in &lt;curses.h&gt;, can be passed
+to the routines Curses::Window.attron, Curses::Window.attroff, and
+Curses::Window.attrset, or OR’d with the characters passed to addch.</p>
+
+<pre class="code"><code class="">A_NORMAL        Normal display (no highlight)
+A_STANDOUT      Best highlighting mode of the terminal.
+A_UNDERLINE     Underlining
+A_REVERSE       Reverse video
+A_BLINK         Blinking
+A_DIM           Half bright
+A_BOLD          Extra bright or bold
+A_PROTECT       Protected mode
+A_INVIS         Invisible or blank mode
+A_ALTCHARSET    Alternate character set
+A_CHARTEXT      Bit-mask to extract a character
+COLOR_PAIR(n)   Color-pair number n</code></pre>
+
+<p>TODO: provide some examples here.</p>
+
+<p>see also system manual curs_attr(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2262
+2263
+2264
+2265
+2266
+2267
+2268
+2269
+2270
+2271
+2272
+2273</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2262</span>
+
+static VALUE
+window_attrset(VALUE obj, VALUE attrs)
+{
+#ifdef HAVE_WATTRSET
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    return INT2FIX(wattrset(winp-&gt;window,NUM2INT(attrs)));
+#else
+    return Qtrue;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="begx-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>begx</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the beginning column (X coord) of the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1728
+1729
+1730
+1731
+1732
+1733
+1734
+1735
+1736
+1737
+1738
+1739
+1740
+1741</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1728</span>
+
+static VALUE
+window_begx(VALUE obj)
+{
+    struct windata *winp;
+    int x, y;
+
+    GetWINDOW(obj, winp);
+#ifdef getbegyx
+    getbegyx(winp-&gt;window, y, x);
+    return INT2FIX(x);
+#else
+    return INT2FIX(winp-&gt;window-&gt;_begx);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="begy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>begy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the beginning line (Y coord) of the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1708
+1709
+1710
+1711
+1712
+1713
+1714
+1715
+1716
+1717
+1718
+1719
+1720
+1721</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1708</span>
+
+static VALUE
+window_begy(VALUE obj)
+{
+    struct windata *winp;
+    int x, y;
+
+    GetWINDOW(obj, winp);
+#ifdef getbegyx
+    getbegyx(winp-&gt;window, y, x);
+    return INT2FIX(y);
+#else
+    return INT2FIX(winp-&gt;window-&gt;_begy);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bkgd-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>bkgd</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the background of the current window and apply character Integer
+<code>ch</code> to every character.</p>
+
+<p>see also Curses.bkgd</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2305
+2306
+2307
+2308
+2309
+2310
+2311
+2312
+2313
+2314
+2315
+2316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2305</span>
+
+static VALUE
+window_bkgd(VALUE obj, VALUE ch)
+{
+#ifdef HAVE_WBKGD
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    return (wbkgd(winp-&gt;window, NUM2CH(ch)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bkgdset-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>bkgdset</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Manipulate the background of the current window with character Integer
+<code>ch</code></p>
+
+<p>see also Curses.bkgdset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2284
+2285
+2286
+2287
+2288
+2289
+2290
+2291
+2292
+2293
+2294</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2284</span>
+
+static VALUE
+window_bkgdset(VALUE obj, VALUE ch)
+{
+#ifdef HAVE_WBKGDSET
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    wbkgdset(winp-&gt;window, NUM2CH(ch));
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="box-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>box</strong>(vert, hor) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>set the characters to frame the window in. The vertical <code>vert</code>
+and horizontal <code>hor</code> character.</p>
+
+<p>win = Curses::Window.new(5,5,5,5) 	win.box(?|, ?-)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1754
+1755
+1756
+1757
+1758
+1759
+1760
+1761
+1762
+1763
+1764
+1765
+1766
+1767
+1768
+1769
+1770
+1771
+1772
+1773
+1774
+1775
+1776
+1777
+1778
+1779
+1780
+1781
+1782
+1783
+1784
+1785</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1754</span>
+
+static VALUE
+window_box(int argc, VALUE *argv, VALUE self)
+{
+    struct windata *winp;
+    VALUE vert, hor, corn;
+
+    rb_scan_args(argc, argv, &quot;21&quot;, &amp;vert, &amp;hor, &amp;corn);
+
+    GetWINDOW(self, winp);
+    box(winp-&gt;window, NUM2CH(vert), NUM2CH(hor));
+
+    if (!NIL_P(corn)) {
+	int cur_x, cur_y, x, y;
+	chtype c;
+
+	c = NUM2CH(corn);
+	getyx(winp-&gt;window, cur_y, cur_x);
+	x = NUM2INT(window_maxx(self)) - 1;
+	y = NUM2INT(window_maxy(self)) - 1;
+	wmove(winp-&gt;window, 0, 0);
+	waddch(winp-&gt;window, c);
+	wmove(winp-&gt;window, y, 0);
+	waddch(winp-&gt;window, c);
+	wmove(winp-&gt;window, y, x);
+	waddch(winp-&gt;window, c);
+	wmove(winp-&gt;window, 0, x);
+	waddch(winp-&gt;window, c);
+	wmove(winp-&gt;window, cur_y, cur_x);
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clear-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>clear</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Clear the window.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1520
+1521
+1522
+1523
+1524
+1525
+1526
+1527
+1528
+1529</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1520</span>
+
+static VALUE
+window_clear(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wclear(winp-&gt;window);
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>close</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes the window, and frees the memory</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1503
+1504
+1505
+1506
+1507
+1508
+1509
+1510
+1511
+1512
+1513</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1503</span>
+
+static VALUE
+window_close(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    delwin(winp-&gt;window);
+    winp-&gt;window = 0;
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clrtoeol-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>clrtoeol</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Clear the window to the end of line, that the cursor is currently on.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1536
+1537
+1538
+1539
+1540
+1541
+1542
+1543
+1544
+1545</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1536</span>
+
+static VALUE
+window_clrtoeol(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wclrtoeol(winp-&gt;window);
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="color_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>color_set</strong>(col) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the current color of the given window to the foreground/background
+combination described by the Fixnum <code>col</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2131
+2132
+2133
+2134
+2135
+2136
+2137
+2138
+2139
+2140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2131</span>
+
+static VALUE
+window_color_set(VALUE obj, VALUE col)
+{
+    struct windata *winp;
+    int res;
+
+    GetWINDOW(obj, winp);
+    res = wcolor_set(winp-&gt;window, NUM2INT(col), NULL);
+    return (res == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="curx-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>curx</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the current column (X coord) of the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1644
+1645
+1646
+1647
+1648
+1649
+1650
+1651
+1652
+1653</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1644</span>
+
+static VALUE
+window_curx(VALUE obj)
+{
+    struct windata *winp;
+    int x, y;
+
+    GetWINDOW(obj, winp);
+    getyx(winp-&gt;window, y, x);
+    return INT2FIX(x);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cury-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>cury</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the current line (Y coord) of the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1628
+1629
+1630
+1631
+1632
+1633
+1634
+1635
+1636
+1637</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1628</span>
+
+static VALUE
+window_cury(VALUE obj)
+{
+    struct windata *winp;
+    int x, y;
+
+    GetWINDOW(obj, winp);
+    getyx(winp-&gt;window, y, x);
+    return INT2FIX(y);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>delch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete the character under the cursor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1996
+1997
+1998
+1999
+2000
+2001
+2002
+2003
+2004</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1996</span>
+
+static VALUE
+window_delch(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wdelch(winp-&gt;window);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deleteln-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>deleteln</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete the line under the cursor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2012</span>
+
+static VALUE
+window_deleteln(VALUE obj)
+{
+#if defined(HAVE_WDELETELN) || defined(wdeleteln)
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wdeleteln(winp-&gt;window);
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getbkgd-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>getbkgd</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an Interer (<code>ch</code>) for the character property in the
+current window.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2323
+2324
+2325
+2326
+2327
+2328
+2329
+2330
+2331
+2332
+2333
+2334
+2335</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2323</span>
+
+static VALUE
+window_getbkgd(VALUE obj)
+{
+#ifdef HAVE_WGETBKGD
+    chtype c;
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    return (c = getbkgd(winp-&gt;window) != ERR) ? CH2FIX(c) : Qnil;
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>getch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Read and returns a character from the window.</p>
+
+<p>See Curses::Key to all the function KEY_* available</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1935
+1936
+1937
+1938
+1939
+1940
+1941
+1942
+1943
+1944
+1945
+1946
+1947
+1948
+1949
+1950
+1951
+1952
+1953</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1935</span>
+
+static VALUE
+window_getch(VALUE obj)
+{
+    struct windata *winp;
+    struct wgetch_arg arg;
+    int c;
+
+    GetWINDOW(obj, winp);
+    arg.win = winp-&gt;window;
+    rb_thread_blocking_region(wgetch_func, (void *)&amp;arg, RUBY_UBF_IO, 0);
+    c = arg.c;
+    if (c == EOF) return Qnil;
+    if (rb_isprint(c)) {
+	char ch = (char)c;
+
+	return rb_locale_str_new(&amp;ch, 1);
+    }
+    return UINT2NUM(c);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getstr-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>getstr</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is equivalent to a series f Curses::Window.getch calls</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1978
+1979
+1980
+1981
+1982
+1983
+1984
+1985
+1986
+1987
+1988</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1978</span>
+
+static VALUE
+window_getstr(VALUE obj)
+{
+    struct windata *winp;
+    struct wgetstr_arg arg;
+
+    GetWINDOW(obj, winp);
+    arg.win = winp-&gt;window;
+    rb_thread_blocking_region(wgetstr_func, (void *)&amp;arg, RUBY_UBF_IO, 0);
+    return rb_locale_str_new_cstr(arg.rtn);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="idlok-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>idlok</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If <code>bool</code> is <code>true</code> curses considers using the
+hardware insert/delete line feature of terminals so equipped.</p>
+
+<p>If <code>bool</code> is <code>false</code>, disables use of line insertion
+and deletion. This option should be enabled only if the application needs
+insert/delete line, for example, for a screen editor.</p>
+
+<p>It is disabled by default because insert/delete line tends to be visually
+annoying when used in applications where it is not really needed. If
+insert/delete line cannot be used, curses redraws the changed portions of
+all lines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2083
+2084
+2085
+2086
+2087
+2088
+2089
+2090
+2091</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2083</span>
+
+static VALUE
+window_idlok(VALUE obj, VALUE bf)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    idlok(winp-&gt;window, RTEST(bf) ? TRUE : FALSE);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>inch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the character at the current position of the window.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1830
+1831
+1832
+1833
+1834
+1835
+1836
+1837</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1830</span>
+
+static VALUE
+window_inch(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    return CH2FIX(winch(winp-&gt;window));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="insch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>insch</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Insert a character <code>ch</code>, before the cursor, in the current
+window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1865
+1866
+1867
+1868
+1869
+1870
+1871
+1872
+1873
+1874</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1865</span>
+
+static VALUE
+window_insch(VALUE obj, VALUE ch)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    winsch(winp-&gt;window, NUM2CH(ch));
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="insertln-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>insertln</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Inserts a line above the cursor, and the bottom line is lost</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2030
+2031
+2032
+2033
+2034
+2035
+2036
+2037
+2038
+2039
+2040</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2030</span>
+
+static VALUE
+window_insertln(VALUE obj)
+{
+#if defined(HAVE_WINSERTLN) || defined(winsertln)
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    winsertln(winp-&gt;window);
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keypad-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>keypad</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the keypad of the user’s terminal.</p>
+
+<p>If enabled (<code>bool</code> is <code>true</code>), the user can press a
+function key (such as an arrow key) and wgetch returns a single value
+representing the function key, as in KEY_LEFT.  If disabled
+(<code>bool</code> is <code>false</code>), curses does not treat function
+keys specially and the program has to interpret the escape sequences
+itself.  If the keypad in the terminal can be turned on (made to transmit)
+and off (made to work locally), turning on this option causes the terminal
+keypad to be turned on when Curses::Window.getch is called.</p>
+
+<p>The default value for keypad is false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2386
+2387
+2388
+2389
+2390
+2391
+2392
+2393
+2394
+2395
+2396
+2397
+2398
+2399
+2400
+2401</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2386</span>
+
+static VALUE
+window_keypad(VALUE obj, VALUE val)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    /* keypad() of NetBSD's libcurses returns no value */
+#if defined(__NetBSD__) &amp;&amp; !defined(NCURSES_VERSION)
+    keypad(winp-&gt;window,(RTEST(val) ? TRUE : FALSE));
+    return Qnil;
+#else
+    /* may have to raise exception on ERR */
+    return (keypad(winp-&gt;window,RTEST(val) ? TRUE : FALSE)) == OK ?
+	Qtrue : Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keypad=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>keypad</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the keypad of the user’s terminal.</p>
+
+<p>If enabled (<code>bool</code> is <code>true</code>), the user can press a
+function key (such as an arrow key) and wgetch returns a single value
+representing the function key, as in KEY_LEFT.  If disabled
+(<code>bool</code> is <code>false</code>), curses does not treat function
+keys specially and the program has to interpret the escape sequences
+itself.  If the keypad in the terminal can be turned on (made to transmit)
+and off (made to work locally), turning on this option causes the terminal
+keypad to be turned on when Curses::Window.getch is called.</p>
+
+<p>The default value for keypad is false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2386
+2387
+2388
+2389
+2390
+2391
+2392
+2393
+2394
+2395
+2396
+2397
+2398
+2399
+2400
+2401</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2386</span>
+
+static VALUE
+window_keypad(VALUE obj, VALUE val)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    /* keypad() of NetBSD's libcurses returns no value */
+#if defined(__NetBSD__) &amp;&amp; !defined(NCURSES_VERSION)
+    keypad(winp-&gt;window,(RTEST(val) ? TRUE : FALSE));
+    return Qnil;
+#else
+    /* may have to raise exception on ERR */
+    return (keypad(winp-&gt;window,RTEST(val) ? TRUE : FALSE)) == OK ?
+	Qtrue : Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="maxx-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>maxx</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the maximum columns for the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1684
+1685
+1686
+1687
+1688
+1689
+1690
+1691
+1692
+1693
+1694
+1695
+1696
+1697
+1698
+1699
+1700
+1701</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1684</span>
+
+static VALUE
+window_maxx(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+#if defined(getmaxx)
+    return INT2FIX(getmaxx(winp-&gt;window));
+#elif defined(getmaxyx)
+    {
+	int x, y;
+	getmaxyx(winp-&gt;window, y, x);
+	return INT2FIX(x);
+    }
+#else
+    return INT2FIX(winp-&gt;window-&gt;_maxx+1);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="maxy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>maxy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A getter for the maximum lines for the window</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1660
+1661
+1662
+1663
+1664
+1665
+1666
+1667
+1668
+1669
+1670
+1671
+1672
+1673
+1674
+1675
+1676
+1677</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1660</span>
+
+static VALUE
+window_maxy(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+#if defined(getmaxy)
+    return INT2FIX(getmaxy(winp-&gt;window));
+#elif defined(getmaxyx)
+    {
+	int x, y;
+	getmaxyx(winp-&gt;window, y, x);
+	return INT2FIX(y);
+    }
+#else
+    return INT2FIX(winp-&gt;window-&gt;_maxy+1);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="move-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>move</strong>(y, x) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Moves the window so that the upper left-hand corner is at position
+(<code>y</code>, <code>x</code>)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1593
+1594
+1595
+1596
+1597
+1598
+1599
+1600
+1601
+1602</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1593</span>
+
+static VALUE
+window_move(VALUE obj, VALUE y, VALUE x)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    mvwin(winp-&gt;window, NUM2INT(y), NUM2INT(x));
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nodelay=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>nodelay</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Causes Curses::Window.getch to be a non-blocking call.  If no input is
+ready, getch returns ERR.</p>
+
+<p>If disabled (<code>bool</code> is <code>false</code>), Curses::Window.getch
+waits until a key is pressed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2416
+2417
+2418
+2419
+2420
+2421
+2422
+2423
+2424
+2425
+2426
+2427
+2428
+2429</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2416</span>
+
+static VALUE
+window_nodelay(VALUE obj, VALUE val)
+{
+    struct windata *winp;
+    GetWINDOW(obj,winp);
+
+    /* nodelay() of NetBSD's libcurses returns no value */
+#if defined(__NetBSD__) &amp;&amp; !defined(NCURSES_VERSION)
+    nodelay(winp-&gt;window, RTEST(val) ? TRUE : FALSE);
+    return Qnil;
+#else
+    return nodelay(winp-&gt;window,RTEST(val) ? TRUE : FALSE) == OK ? Qtrue : Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="noutrefresh-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>noutrefresh</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Refreshes the windows and lines.</p>
+
+<p>Curses::Window.noutrefresh allows multiple updates with more efficiency
+than Curses::Window.refresh alone.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1572
+1573
+1574
+1575
+1576
+1577
+1578
+1579
+1580
+1581
+1582
+1583
+1584
+1585</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1572</span>
+
+static VALUE
+window_noutrefresh(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+#ifdef HAVE_DOUPDATE
+    wnoutrefresh(winp-&gt;window);
+#else
+    wrefresh(winp-&gt;window);
+#endif
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="refresh-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>refresh</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Refreshes the windows and lines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1553
+1554
+1555
+1556
+1557
+1558
+1559
+1560
+1561
+1562</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1553</span>
+
+static VALUE
+window_refresh(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wrefresh(winp-&gt;window);
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>resize</strong>(lines, cols) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resize the current window to Fixnum <code>lines</code> and Fixnum
+<code>cols</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2344
+2345
+2346
+2347
+2348
+2349
+2350
+2351
+2352
+2353
+2354
+2355</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2344</span>
+
+static VALUE
+window_resize(VALUE obj, VALUE lin, VALUE col)
+{
+#if defined(HAVE_WRESIZE)
+    struct windata *winp;
+
+    GetWINDOW(obj,winp);
+    return wresize(winp-&gt;window, NUM2INT(lin), NUM2INT(col)) == OK ? Qtrue : Qfalse;
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scrl-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>scrl</strong>(num) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Scrolls the current window Fixnum <code>num</code> lines. The current
+cursor position is not changed.</p>
+
+<p>For positive <code>num</code>, it scrolls up.</p>
+
+<p>For negative <code>num</code>, it scrolls down.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2170
+2171
+2172
+2173
+2174
+2175
+2176
+2177
+2178
+2179
+2180
+2181
+2182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2170</span>
+
+static VALUE
+window_scrl(VALUE obj, VALUE n)
+{
+#ifdef HAVE_WSCRL
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    /* may have to raise exception on ERR */
+    return (wscrl(winp-&gt;window,NUM2INT(n)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scroll-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>scroll</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Scrolls the current window up one line.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2148
+2149
+2150
+2151
+2152
+2153
+2154
+2155
+2156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2148</span>
+
+static VALUE
+window_scroll(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    /* may have to raise exception on ERR */
+    return (scroll(winp-&gt;window) == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scrollok-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>scrollok</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Controls what happens when the cursor of a window is moved off the edge of
+the window or scrolling region, either as a result of a newline action on
+the bottom line, or typing the last character of the last line.</p>
+
+<p>If disabled, (<code>bool</code> is false), the cursor is left on the bottom
+line.</p>
+
+<p>If enabled, (<code>bool</code> is true), the window is scrolled up one line
+(Note that to get the physical scrolling effect on the terminal, it is also
+necessary to call Curses::Window.idlok)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2057
+2058
+2059
+2060
+2061
+2062
+2063
+2064
+2065</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2057</span>
+
+static VALUE
+window_scrollok(VALUE obj, VALUE bf)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    scrollok(winp-&gt;window, RTEST(bf) ? TRUE : FALSE);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setpos-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>setpos</strong>(y, x) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A setter for the position of the cursor in the current window, using
+coordinates <code>x</code> and <code>y</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1613
+1614
+1615
+1616
+1617
+1618
+1619
+1620
+1621</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1613</span>
+
+static VALUE
+window_setpos(VALUE obj, VALUE y, VALUE x)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wmove(winp-&gt;window, NUM2INT(y), NUM2INT(x));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setscrreg-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>setscrreg</strong>(top, bottom) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set a software scrolling region in a window. <code>top</code> and
+<code>bottom</code> are lines numbers of the margin.</p>
+
+<p>If this option and Curses::Window.scrollok are enabled, an attempt to move
+off the bottom margin line causes all lines in the scrolling region to
+scroll one line in the direction of the first line.  Only the text of the
+window is scrolled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2107
+2108
+2109
+2110
+2111
+2112
+2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2107</span>
+
+static VALUE
+window_setscrreg(VALUE obj, VALUE top, VALUE bottom)
+{
+#ifdef HAVE_WSETSCRREG
+    struct windata *winp;
+    int res;
+
+    GetWINDOW(obj, winp);
+    res = wsetscrreg(winp-&gt;window, NUM2INT(top), NUM2INT(bottom));
+    /* may have to raise exception on ERR */
+    return (res == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="standend-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>standend</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the Normal display (no highlight)</p>
+
+<p>This is equivalent to Curses::Window.attron(A_NORMAL)</p>
+
+<p>see also Curses::Window.attrset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1815
+1816
+1817
+1818
+1819
+1820
+1821
+1822
+1823</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1815</span>
+
+static VALUE
+window_standend(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wstandend(winp-&gt;window);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="standout-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>standout</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the best highlighting mode of the terminal.</p>
+
+<p>This is equivalent to Curses::Window.attron(A_STANDOUT)</p>
+
+<p>see also Curses::Window.attrset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1796
+1797
+1798
+1799
+1800
+1801
+1802
+1803
+1804</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1796</span>
+
+static VALUE
+window_standout(VALUE obj)
+{
+    struct windata *winp;
+
+    GetWINDOW(obj, winp);
+    wstandout(winp-&gt;window);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="subwin-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>subwin</strong>(height, width, top, left) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Contruct a new subwindow with constraints of <code>height</code> lines,
+<code>width</code> columns, begin at <code>top</code> line, and begin
+<code>left</code> most column.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1479
+1480
+1481
+1482
+1483
+1484
+1485
+1486
+1487
+1488
+1489
+1490
+1491
+1492
+1493
+1494
+1495
+1496</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1479</span>
+
+static VALUE
+window_subwin(VALUE obj, VALUE height, VALUE width, VALUE top, VALUE left)
+{
+    struct windata *winp;
+    WINDOW *window;
+    VALUE win;
+    int h, w, t, l;
+
+    h = NUM2INT(height);
+    w = NUM2INT(width);
+    t = NUM2INT(top);
+    l = NUM2INT(left);
+    GetWINDOW(obj, winp);
+    window = subwin(winp-&gt;window, h, w, t, l);
+    win = prep_window(rb_obj_class(obj), window);
+
+    return win;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="timeout=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>timeout=</strong>(delay) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets block and non-blocking reads for the window.</p>
+<ul><li>
+<p>If delay is negative, blocking read is used (i.e., waits indefinitely for
+input).</p>
+</li><li>
+<p>If delay is zero, then non-blocking read is used (i.e., read returns ERR if
+no input is waiting).</p>
+</li><li>
+<p>If delay is positive, then read blocks for delay milliseconds, and returns
+ERR if there is still no input.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2445
+2446
+2447
+2448
+2449
+2450
+2451
+2452
+2453</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 2445</span>
+
+static VALUE
+window_timeout(VALUE obj, VALUE delay)
+{
+    struct windata *winp;
+    GetWINDOW(obj,winp);
+
+    wtimeout(winp-&gt;window,NUM2INT(delay));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:09 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

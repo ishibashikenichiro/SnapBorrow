@@ -1,0 +1,62 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<style>
+  .change_group_form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  text-align:center;
+  }
+
+  .submit {
+  text-align:center;
+  margin-top:10px;
+}
+
+</style>
+
+<% provide(:title, 'グループ一覧') %>
+<h1>グループ一覧</H1>
+
+
+<p style="color:red"><%= flash[:leave_message] %></p>
+
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed change_group_form">
+  <tr>
+    <th class="col-xs-3">現在のグループ</th>
+    <th class="col-xs-3">グループ名</th>
+    <th class="col-xs-6">操作</th>
+  </tr>
+<% @group_ids.each do |id| %>
+  <tr>
+    <td>
+      <% if id.group_id == session[:group_id] %>
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <% end %>
+    </td>
+    <% group_name = Group.find(id.group_id).name %>
+    <td><%= group_name %></td>
+    <td>
+      <div style="float:left">
+          <%= button_to "グループ切替", {:controller => "group", :action => "change", :group_id => id.group_id}, :method => :post, :class => 'btn btn-default', :disabled => (id.group_id == session[:group_id]) %>
+      </div>
+      <div style="float:left">
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">その他<span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <% if @group_ids.size == 1 || id.group_id != session[:group_id] %>
+                  <%= link_to "脱退する", {:controller => "member", :action => "leave", :group_id => id.group_id}, :confirm => "「#{group_name}」から脱退しますがよろしいですか？\nもう一度所属するためには招待を受ける必要があります。", :method => :delete %>
+                <% else %>
+                  <div>脱退するためには他のグループに切替えてください。</div>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </td>
+  </tr>
+<% end %>
+</table>

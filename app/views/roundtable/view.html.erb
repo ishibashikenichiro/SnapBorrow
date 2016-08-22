@@ -1,0 +1,102 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<% provide(:title, '輪講情報') %>
+<h1>輪講情報</h1>
+<br/>
+
+<%  unless @roundtables==nil %>
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed" style="width:80%">
+<tr>
+  <th>輪講名</th>
+  <th>グループ名</th>
+  <th>開始時間</th>
+  <th>終了時間</th>
+</tr>
+<% @roundtables.each do |roundtable| %>
+<tr>
+<th><%= roundtable.title %> </th>
+<th><%= roundtable.group.name %> </th>
+
+<% if roundtable.startdatetime != nil %>
+<th><%= roundtable.startdatetime.strftime("%Y.%m.%d %H:%M:%S") %></th>
+<% else %>
+<th>未定</th>
+<% end %>
+
+<% if roundtable.enddatetime != nil %>
+<th><%= roundtable.enddatetime.strftime("%Y.%m.%d %H:%M:%S") %></th>
+<% else %>
+<th>未定</th>
+<% end %>
+
+</tr>
+</table>
+</div>
+	<% presenters=roundtable.roundtable_presenter
+	if presenters.blank? == false then%>
+	輪講発表者：
+	<%presenters.each_with_index do |presenter, i| %>
+		<%=presenter.user.nickname %><% if i!=presenters.size-1 %>、<% end %>
+	<% end %>
+ 	<% end %>
+<% end %>
+<% end %>
+
+<h2>輪講資料</h2>
+
+<%  unless @roundtables==nil %>
+	<% @roundtables.each do |roundtable| %>
+		<%= form_tag({:controller=>"roundtable_file", :action=>"upload"}, {:multipart => true} ) do %>
+		<%= hidden_field_tag 'roundtable_id', roundtable.id %>
+		<table style="width:100%">
+		<tr>
+		<td style="width:30%">輪講資料名:(必須)</td>
+  		<td >	
+  			<%= text_field_tag :title, flash[:title], :minlength => 4, :maxlength => 128, :style=> 'width:70%', :required => 'required' %>
+		</td>
+		</tr>
+		<tr>
+			<td>輪講資料ファイル:(必須,10MB以下)</td>
+   			<td><%= file_field :upload, :datafile,  :required => 'required' %></td>
+
+		</tr>
+		<tr>
+			<td><%= submit_tag  "アップロード"  %></td>
+		</tr>
+		</table>
+		<% end %>
+		
+		<% roundtable_files = RoundtableFile.where(:roundtable_id=> roundtable.id) %>
+		<% unless  roundtable_files.empty? %>
+			<table class="table table-bordered table-striped table-condensed" style="width:80%">
+			<tr>
+				<th>輪講資料名</th>
+				<th>ファイル名</th>
+				<th>作成者</th>
+				<th>管理</th>	
+			</tr>
+			<% roundtable_files.each do |roundtable_file| %>
+			<tr>
+				<td><%= roundtable_file.title %></td>
+				<td><%= link_to roundtable_file.filename,  :controller=>"roundtable_file", :action =>"download", :file_id=> roundtable_file.id  %></td>
+				<td><%= roundtable_file.user.nickname  %></td>
+				<th>
+				<% if roundtable_file[:user_id] == session[:user_id] || 
+					Manager.find_by_user_id_and_group_id(session[:user_id],roundtable_file.roundtable[:group_id]) %>
+					<%= link_to "削除",  :controller=>"roundtable_file", :action =>"delete", :file_id=> roundtable_file.id  %>
+				<% end %>
+				</th>
+			</tr>
+			<% end %>
+			</table>
+		<% else %>
+			<div>この輪講に使用した輪講資料がありません。</div>
+		<% end %>
+	<% end %>	
+<% end %>
+
+
+
+<%= link_to "前のページに戻る", "javascript:void(0)", :onclick => "history.go(-1)" %>

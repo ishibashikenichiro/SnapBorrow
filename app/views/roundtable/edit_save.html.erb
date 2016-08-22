@@ -1,0 +1,16 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+
+<% provide(:title, '輪講情報の更新') %>
+<h1>輪講情報の更新</h1>
+
+<%= @output %><br />
+<%= @output2 %><br />
+
+<% if @createok == 1 %>
+<%= link_to '輪講情報を見る', {:action => "view", :controller => "roundtable",
+ :id => @newroundtableid } , {:method => :post} %>
+<% end %>
+<br />
+<%= link_to '輪講一覧に戻る', "/roundtable" %>

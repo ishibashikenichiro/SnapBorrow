@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+group1:
+  id: 1
+  name: group1
+  delete_date: 2014-06-09 12:54:54
+
+group2:
+  id: 2
+  name: group2
+  delete_date: 2014-06-09 12:54:54
+
+group3:
+  id: 3
+  name: group3
+  delete_date: 2014-06-09 12:54:54

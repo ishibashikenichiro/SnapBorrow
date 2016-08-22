@@ -1,0 +1,32 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<% provide(:title, '本棚登録') %>
+<h1>本棚登録</h1>
+<%= form_tag shelf_index_path, :class => "form-horizontal", :role =>"form" do %>
+  <span class="help-block">"<span class="mark_of_required">*</span>"が付いている項目は入力必須です．</span>
+  <div class="form-group">
+    <%= label_tag :shelf_name, "", :class => "col-sm-2 control-label" do%>
+      <span class="mark_of_required">*</span>本棚名
+    <% end %>
+    <div class="col-sm-5">
+      <%= text_field_tag :shelf_name, "", :maxlength => 40, :required => 'required', :class => "form-control" %>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_shelf_name" style="display: none; z-index: 2; position:absolute"><b>長さ:</b>40文字以内</div>
+      <% if flash[:message] %>
+        <span class="help-block error_message"><%= flash[:message] %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10 hidden-xs">
+      <%= button_tag "登録", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="visible-xs-block col-xs-12">
+      <%= button_tag "登録", :class => 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+<% end %>

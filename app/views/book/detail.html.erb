@@ -1,0 +1,45 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<% provide(:title, '図書詳細情報') %>
+<h1>図書詳細情報</h1>
+<br>
+<h4>登録情報</h4>
+
+<table border="2" width="700", height="300">
+  <tr>
+    <th rowspan=5 width="200">
+      <% if @catalogs.image %>
+        <%= image_tag @catalogs.image %>
+        <% end %>
+    </th>
+    <th width="100">タイトル：</th>
+    <td><%= @catalogs.title %></td>
+  </tr>
+  <tr>
+     <th>著者：</th>
+     <td><%= @catalogs.authors %></td>
+  </tr>
+  <tr>
+     <th>出版社：</th>
+     <td><%= @catalogs.publisher %></td>
+  </tr>
+  <tr>
+     <th>ISBN：</th>
+     <td><%= @catalogs.book_code %></td>
+  </tr>
+  <tr>
+     <th>発売日：</th>
+     <td>
+       <% if @catalogs.publication_date %>
+         <%= @catalogs.publication_date.to_s(:date_jp) %>
+       <% end %>
+     </td>
+  </tr>
+</table>
+<br>
+
+<%= button_to '輪講画面を開く',{:action => "view", :controller => "roundtable",
+ :book_code=> @catalogs.book_code, :title=> @catalogs.title} , {
+:method => :post} %>
+<%= link_to "前のページに戻る", "javascript:void(0)", :onclick => "history.go(-1)" %>

@@ -1,0 +1,43 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_manager' %>
+<%= render 'shared/redirect_not_group' %>
+
+<h1>図書</h1>
+
+<h4>管理しているグループの図書の削除ができます。</h4>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-condensed">
+    <tr>
+      <th>ISBNコード</th>
+      <th>図書タイトル</th>
+      <th>著者</th>
+      <th>借用状態</th>
+      <th>登録日時</th>
+      <th>削除日時</th>
+      <th>操作</th>
+    </tr>
+    <% @books.each do |book| %>
+    <%  bc = @catalogs.find_by_book_code(book.book_code) %>
+        <tr>
+          <td><%= book.book_code %> </td>
+          <td> <%= bc.title %></td>
+          <td> <%= bc.authors %></td>
+          <td> <% if book.state %>
+              借用中
+              <% else %>
+              本棚にあります
+              <% end %>
+          </td>
+          <td><%= book.created_at.to_s(:date_jp) %></td>
+          <td>
+          <% if book.delete_date %>
+            <%= book.delete_date.to_s(:date_jp) %>
+          <% end %>
+          </td>
+          <td>
+              <%= button_to "削除", {:controller => "book", :action => "delete", :book_to_delete => book.id}, :confirm => "#{bc.title}を削除します。よろしいですか？", :method => "delete", :disabled => book.state || book.delete_date, :class => 'btn btn-default' %>
+          </td>
+        </tr>
+    <% end %>
+  </table>

@@ -1,0 +1,78 @@
+<%= render 'shared/redirect_not_login' %>
+<style>
+  th,td {
+  border: solid 0px;
+  padding: 1px;
+}
+
+  label {
+  font-size:large;
+  }
+
+  .profile_form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align:center;
+  }
+
+  .submit_btn {
+  width:50%;
+  }
+
+  .error_message {
+  color: #ff0044;
+  font-size:small;
+  }
+
+  .message {
+  font-size:small;
+  }
+</style>
+
+<% provide(:title, 'プロフィール変更') %>
+<h1>プロフィール変更</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <table class="profile_form">
+    <%= form_tag "/profile_edit" do %>
+      <tr>
+        <td><%= label_tag :login_id, "ログインID" %></td>
+      <tr></tr>
+      <td><%= text_field_tag :login_id, @user.login_id, :disabled => true %></td>
+      </tr>
+
+     <tr>
+      <td><%= label_tag :nickname, 'ニックネーム' %></td>
+      <tr></tr>
+      <td><%= text_field_tag :nickname, @user.nickname %></td>
+     </tr>
+
+
+      <tr>
+        <td><%= label_tag :mail, "メールアドレス" %></td>
+      <tr></tr>
+        <td><%= email_field_tag :mail, @user.mail %></td>
+      </tr>
+
+      <% if flash[:error] == 3 %>
+        <div class="error_message">
+          <tr><td><%= "このメールアドレスは既に登録されています" %></td></tr>
+          <tr></tr>
+        </div>
+      <% end %>
+
+      <tr>
+        <td><%= submit_tag "変更", :class => 'btn btn-default' %></td>
+      </tr>
+
+    <% end %>
+    </table>
+    <table class="profile_form">
+      <tr>
+        <td> <%= button_to "取消", "/", :class => 'btn btn-default' %></td>
+      </tr>
+    </table>
+  </div>
+</div>

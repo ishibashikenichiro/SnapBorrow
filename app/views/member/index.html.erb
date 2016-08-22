@@ -1,0 +1,30 @@
+<%= render 'shared/redirect_not_login' %>
+<% provide(:title, 'メンバ一覧') %>
+<h1>グループメンバ一覧</h1>
+
+<h4>所属するグループメンバの一覧です</h4>
+<% if session[:manager] %>
+  <p><%= link_to  'メンバの管理', '/member/management' %></p>
+<% end %>
+
+
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed" style="width:30%">
+<tr>
+  <th> メンバ名 </th>
+  <th> 役割 </th>
+</tr>
+
+<% @members.each do |member| %>
+<tr>
+  <td><%= member.user.nickname %></td>
+  <% if @managers.include?(member.user_id) %>
+    <td>マネージャ</td>
+  <% else %>
+    <td>ユーザ</td>
+  <% end %>
+</tr>
+<% end %>
+
+</table>
+</div>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: OpenSSL::Cipher
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!OpenSSL/Cipher.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../OpenSSL.html" title="OpenSSL (module)">OpenSSL</a></span></span>
+     &raquo; 
+    <span class="title">Cipher</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: OpenSSL::Cipher
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">OpenSSL::Cipher</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/openssl/ossl_cipher.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Provides symmetric algorithms for encryption and decryption. The algorithms
+that are available depend on the particular version of OpenSSL that is
+installed.</p>
+
+<h3 id="label-Listing+all+supported+algorithms">Listing all supported algorithms</h3>
+
+<p>A list of supported algorithms can be obtained by</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_puts'>puts</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='period'>.</span><span class='id identifier rubyid_ciphers'>ciphers</span></code></pre>
+
+<h3 id="label-Instantiating+a+Cipher">Instantiating a Cipher</h3>
+
+<p>There are several ways to create a Cipher instance. Generally, a Cipher
+algorithm is categorized by its name, the key length in bits and the cipher
+mode to be used. The most generic way to create a Cipher is the following</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&lt;name&gt;-&lt;key length&gt;-&lt;mode&gt;</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></code></pre>
+
+<p>That is, a string consisting of the hyphenated concatenation of the
+individual components name, key length and mode. Either all uppercase or
+all lowercase strings may be used, for example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>AES-128-CBC</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></code></pre>
+
+<p>For each algorithm supported, there is a class defined under the Cipher
+class that goes by the name of the cipher, e.g. to obtain an instance of
+AES, you could also use</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># these are equivalent
+</span><span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>128</span><span class='comma'>,</span> <span class='symbol'>:CBC</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>128</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>CBC</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>128-CBC</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></code></pre>
+
+<p>Finally, due to its wide-spread use, there are also extra classes defined
+for the different key sizes of AES</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES128</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:CBC</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES192</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:CBC</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Cipher</span><span class='op'>::</span><span class='const'>AES256</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:CBC</span><span class='rparen'>)</span></code></pre>
+
+<h3 id="label-Choosing+either+encryption+or+decryption+mode">Choosing either encryption or decryption mode</h3>
+
+<p>Encryption and decryption are often very similar operations for symmetric
+algorithms, this is reflected by not having to choose different classes for
+either operation, both can be done using the same class. Still, after
+obtaining a Cipher instance, we need to tell the instance what it is that
+we intend to do with it, so we need to call either</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span><span class='period'>.</span><span class='id identifier rubyid_encrypt'>encrypt</span></code></pre>
+
+<p>or</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span><span class='period'>.</span><span class='id identifier rubyid_decrypt'>decrypt</span></code></pre>
+
+<p>on the Cipher instance. This should be the first call after creating the
+instance, otherwise configuration that has already been set could get lost
+in the process.</p>
+
+<h3 id="label-Choosing+a+key">Choosing a key</h3>
+
+<p>Symmetric encryption requires a key that is the same for the encrypting and
+for the decrypting party and after initial key establishment should be kept
+as private information. There are a lot of ways to create insecure keys,
+the most notable is to simply take a password as the key without processing
+the password further. A simple and secure way to create a key for a
+particular Cipher is</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cipher'>cipher</span> <span class='op'>=</span> <span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>AES256</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:CFB</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cipher'>cipher</span><span class='period'>.</span><span class='id identifier rubyid_encrypt'>encrypt</span>
+<span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_cipher'>cipher</span><span class='period'>.</span><span class='id identifier rubyid_random_key'>random_key</span> <span class='comment'># also sets the generated key on the Cipher</span></code></pre>
+
+<p>If you absolutely need to use passwords as encryption keys, you should use
+Password-Based Key Derivation Function 2 (PBKDF2) by generating the key
+with the help of the functionality provided by
+OpenSSL::PKCS5.pbkdf2_hmac_sha1 or OpenSSL::PKCS5.pbkdf2_hmac.</p>
+
+<p>Although there is Cipher#pkcs5_keyivgen, its use is deprecated and it
+should only be used in legacy applications because it does not use the
+newer PKCS#5 v2 algorithms.</p>
+
+<h3 id="label-Choosing+an+IV">Choosing an IV</h3>
+
+<p>The cipher modes CBC, CFB, OFB and CTR all need an “initialization vector”,
+or short, IV. ECB mode is the only mode that does not require an IV, but
+there is almost no legitimate use case for this mode because of the fact
+that it does not sufficiently hide plaintext patterns. Therefore</p>
+
+<p><strong>You should never use ECB mode unless you are absolutely sure that
+you absolutely need it</strong></p>
+
+<p>Because of this, you will end up with a mode that explicitly requires an IV
+in any case. Note that for backwards compatibility reasons, setting an IV
+is not explicitly mandated by the Cipher API. If not set, OpenSSL itself
+defaults to an all-zeroes IV (“\0”, not the character). Although the IV can
+be seen as public information, i.e. it may be transmitted in public once
+generated, it should still stay unpredictable to prevent certain kinds of
+attacks. Therefore, ideally</p>
+
+<p><strong>Always create a secure random IV for every encryption of your
+Cipher</strong></p>
+
+<p>A new, random IV should be created for every encryption of data. Think of
+the IV as a nonce (number used once) - it’s public but random and
+unpredictable. A secure random IV can be created as follows</p>
+
+<pre class="code ruby"><code class="ruby">cipher = ...
+cipher.encrypt
+key = cipher.random_key
+iv = cipher.random_iv # also sets the generated IV on the Cipher
+
+Although the key is generally a random value, too, it is a bad choice
+as an IV. There are elaborate ways how an attacker can take advantage
+of such an IV. As a general rule of thumb, exposing the key directly
+or indirectly should be avoided at all cost and exceptions only be
+made with good reason.</code></pre>
+
+<h3 id="label-Calling+Cipher%23final">Calling Cipher#final</h3>
+
+<p>ECB (which should not be used) and CBC are both block-based modes. This
+means that unlike for the other streaming-based modes, they operate on
+fixed-size blocks of data, and therefore they require a “finalization” step
+to produce or correctly decrypt the last block of data by appropriately
+handling some form of padding. Therefore it is essential to add the output
+of OpenSSL::Cipher#final to your encryption/decryption buffer or you will
+end up with decryption errors or truncated data.</p>
+
+<p>Although this is not really necessary for streaming-mode ciphers, it is
+still recommended to apply the same pattern of adding the output of
+Cipher#final there as well - it also enables you to switch between modes
+more easily in the future.</p>
+
+<h3 id="label-Encrypting+and+decrypting+some+data">Encrypting and decrypting some data</h3>
+
+<pre class="ruby"><span class="ruby-identifier">data</span> = <span class="ruby-string">&quot;Very, very confidential data&quot;</span>
+
+<span class="ruby-identifier">cipher</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Cipher</span><span class="ruby-operator">::</span><span class="ruby-constant">AES</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">128</span>, :<span class="ruby-constant">CBC</span>)
+<span class="ruby-identifier">cipher</span>.<span class="ruby-identifier">encrypt</span>
+<span class="ruby-identifier">key</span> = <span class="ruby-identifier">cipher</span>.<span class="ruby-identifier">random_key</span>
+<span class="ruby-identifier">iv</span> = <span class="ruby-identifier">cipher</span>.<span class="ruby-identifier">random_iv</span>
+
+<span class="ruby-identifier">encrypted</span> = <span class="ruby-identifier">cipher</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">data</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">cipher</span>.<span class="ruby-identifier">final</span>
+<span class="ruby-operator">...</span>
+<span class="ruby-identifier">decipher</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Cipher</span><span class="ruby-operator">::</span><span class="ruby-constant">AES</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">128</span>, :<span class="ruby-constant">CBC</span>)
+<span class="ruby-identifier">decipher</span>.<span class="ruby-identifier">decrypt</span>
+<span class="ruby-identifier">decipher</span>.<span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span>
+<span class="ruby-identifier">decipher</span>.<span class="ruby-identifier">iv</span> = <span class="ruby-identifier">iv</span>
+
+<span class="ruby-identifier">plain</span> = <span class="ruby-identifier">decipher</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">encrypted</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">decipher</span>.<span class="ruby-identifier">final</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">data</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">plain</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:14 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

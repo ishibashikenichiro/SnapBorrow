@@ -1,0 +1,114 @@
+<%= render 'shared/redirect_login' %>
+<% provide(:title, 'Sign up') %>
+<h1>新規登録</h1>
+
+<%= form_tag "/signup_confirmation", :class => "form-horizontal", :role =>"form" do %>
+  <% if flash[:error] == 1 %>
+    <span class="help-block error_message">未入力の項目があります。</span>
+  <% end %>
+  <span class="help-block">
+    "<span class="mark_of_required">*</span>"が付いている項目は入力必須です。
+  </span>
+  <div class="form-group">
+    <%= label_tag :login_id, "", :class => "col-sm-3 control-label" do%>
+      <span class="mark_of_required">*</span>ログインID
+    <% end %>
+    <div class="col-sm-5">
+      <%= text_field_tag :login_id, flash[:login_id], :maxlength => 16, :pattern => '^[0-9A-Za-z][0-9A-Za-z_\'\-]*$', :required => 'required', :class => "form-control" %>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_login_id" style="display: none; z-index: 2; position:absolute">
+        <b>長さ:</b>16文字以内<br>
+        <b>使用できる文字:</b>半角英数字<br>
+        <b>使用できる記号(半角):</b> _ - '<br>
+        <b>先頭文字は英数字</b>
+      </div>
+
+      <% if flash[:error] == 2 %>
+        <span class="help-block error_message">このログインIDは既に使用されています。</span>
+      <% end %>
+      <% if flash[:error] == 6 %>
+        <span class="help-block error_message">ログインIDのフォーマットが間違っています。</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :nickname, "", :class => "col-sm-3 control-label" do%>
+      <span class="mark_of_required">*</span>ニックネーム
+    <% end %>
+    <div class="col-sm-5">
+      <%= text_field_tag :nickname, flash[:nickname], :required => 'required', :maxlength => 40, :class => "form-control"%>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_nickname" style="display: none; z-index: 2; position:absolute">
+        <b>長さ:</b>40文字以内<br>
+        <b> ニックネームはグループ内の他のユーザに公開されます。</b>
+      </div>
+
+      <% if flash[:error] == 7 %>
+        <span class="help-block error_message">ニックネームのフォーマットが間違っています。</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :mail, "", :class => "col-sm-3 control-label" do%>
+      <span class="mark_of_required">*</span>メールアドレス
+    <% end %>
+    <div class="col-sm-5">
+      <%= email_field_tag :mail, flash[:mail], :required => 'required', :class => "form-control"%>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_mail" style="display: none; z-index: 2; position:absolute">
+        <b>パスワードのリセット時に使用します。</b>
+      </div>
+
+      <% if flash[:error] == 8 %>
+        <span class="help-block error_message">メールアドレスの形式が不適切です。</span>
+      <% end %>
+
+      <% if flash[:error] == 3 %>
+        <span class="help-block error_message">このメールアドレスは既に登録されています。</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :password, "", :class => "col-sm-3 control-label" do%>
+      <span class="mark_of_required">*</span>パスワード
+    <% end %>
+    <div class="col-sm-5">
+      <%= password_field_tag :password, '', :required => 'required', :maxlength => 256, :pattern => '^[!-~]{8,}$', :class => "form-control"%>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_password" style="display: none; z-index: 2; position:absolute">
+        <b>長さ:</b>8-256文字<br>
+        <b>使用できる文字:</b>半角英数字<br>
+        <b>使用できる記号(半角):</b> ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+      </div>
+
+      <% if flash[:error] == 5 %>
+        <span class="help-block error_message">パスワードのフォーマットが間違っています。</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :password_confirmation, "", :class => "col-sm-3 control-label" do%>
+      <span class="mark_of_required">*</span>パスワードの確認
+    <% end %>
+    <div class="col-sm-5">
+      <%= password_field_tag :password_confirmation, '', :required => 'required', :maxlength => 256, :pattern => '^[!-~]{8,}$', :class => "form-control"%>
+      <div class="alert alert-info col-xs-offset-2" role="alert" id="info_input_password_confirmation" style="display: none; z-index: 2; position:absolute"><b>確認のため, パスワードをもう一度入力してください。</b></div>
+      <% if flash[:error] == 4 %>
+        <span class="help-block error_message">入力したパスワードが一致しません。</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9 hidden-xs">
+      <%= button_tag "新規登録", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="visible-xs-block col-xs-12">
+      <%= button_tag "新規登録", :class => 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+
+<%end%>

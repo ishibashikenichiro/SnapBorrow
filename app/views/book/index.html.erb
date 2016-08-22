@@ -1,0 +1,132 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<% provide(:title, '図書一覧') %>
+<h1>図書一覧</h1>
+<h4>所属するグループの図書の一覧です</h4>
+
+
+<% if session[:manager] %>
+  <p><%= link_to '図書の管理', '/book/management' %></p>
+<% end %>
+
+<p>ここから図書検索ができます。<br>
+    図書のタイトル，著者名，出版社に部分一致したものを表示します。</p>
+<%= form_tag '/book/search', :class => "form-horizontal", :role =>"form" do%>
+  <div class="form-group">
+    <div class="col-sm-5">
+      <div class="input-group">
+        <%= text_field_tag :keyword, "", :class => "form-control", :required => 'required'%>
+        <span class="input-group-btn">
+          <%= button_tag :type => 'submit', :class => 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            検索
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group pull-right" role="group" aria-label="...">
+      <a href="#tab1" class = "btn btn-default" role = "button" data-toggle = "tab">
+        <span class="glyphicon glyphicon-th-large" aria-hidden="true">
+      </a>
+      <a href="#tab2" class = "btn btn-default" role = "button" data-toggle = "tab">
+       <span class="glyphicon glyphicon-list" aria-hidden="true">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="myTabContent" class="tab-content">
+
+  <div class="tab-pane fade in active" id="tab1">
+    <div class="row book-list">
+      <% formnumber = 1 %>
+      <% @books.each do |book| %>
+        <% bc = @catalogs.find_by_book_code(book.book_code) %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="row one-book">
+
+            <% if bc.image %>
+              <%= image_tag bc.image, :class => "book-image-in-list"%>
+            <% end %>
+
+            <div>
+              <div class="book-title-in-list">
+                <%= form_tag('/book/detail', :id => 'form' + formnumber.to_s) do %>
+                  <input name="book_code" type="hidden" value="<%= book.book_code %>" />
+                  <input name="group_id" type="hidden" value="<%= book.group_id %>" />
+                  <%= link_to  bc.title, "javascript:void(0)", :onclick => "document.forms.form#{formnumber}.submit()"%>
+                <% end %>
+              </div>
+              <% formnumber += 1 %>
+              <div class="book-authors-in-list"><%= bc.authors %></div>
+              <hr>
+              <div class="book-status-in-list">
+                <% if book.state %>
+                  <% logs = LendLog.find_all_by_book_id_and_return_date(book.id, nil) %>
+                  <% if !logs.empty? %>
+                    借用中( <%= User.find(logs.last.user_id).nickname %> )
+                  <% end %>
+                <% elsif book.shelf_id != 0 %>
+                  「
+                  <%= content_tag(:span, :class => "orange") do  %>
+                    <%= book.shelf.name %>
+                <% end %>
+                」本棚にあります
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="tab2">
+    <div class="table-respnsive">
+      <table class="table table-bordered table-striped table-condensed">
+        <tr>
+          <th>図書タイトル</th>
+          <th>著者</th>
+          <th>借用状態</th>
+        </tr>
+        <% formnumber = 1 %>
+        <% @books.each do |book| %>
+          <%  bc = @catalogs.find_by_book_code(book.book_code) %>
+          <tr>
+            <%= form_tag('/book/detail', :id => 'form' + formnumber.to_s) do %>
+              <input name="book_code" type="hidden" value="<%= book.book_code %>" />
+              <input name="group_id" type="hidden" value="<%= book.group_id %>" />
+              <td>
+                <%= link_to bc.title, "javascript:void(0)", :onclick => "document.forms.form#{formnumber}.submit()" %>
+              </td>
+            <% end %>
+            <% formnumber += 1 %>
+            <td> <%= bc.authors %></td>
+            <td>
+              <% if book.state %>
+                <% logs = LendLog.find_all_by_book_id_and_return_date(book.id, nil) %>
+                <% if !logs.empty? %>
+                  借用中( <%= User.find(logs.last.user_id).nickname %> )
+                <% end %>
+                <% elsif book.shelf_id != 0 %>
+                  「<%= content_tag(:span, :class => "orange") do  %>
+                    <%= book.shelf.name %>
+                <% end %>」本棚にあります
+              <% else %>
+                本棚が未登録です
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>

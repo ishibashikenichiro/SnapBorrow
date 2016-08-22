@@ -1,0 +1,31 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+
+<% provide(:title, '輪講情報') %>
+<h1>輪講情報の入力</h1>
+<br>
+<%= form_tag('/roundtable/new_confirm') do %>
+<center>
+	<table border="0">
+		<tr>
+			<td>輪講名</td>
+			<td><%= text_field_tag :title, flash[:title], :size => 30 %></td>
+		</tr>
+		<tr>
+			<td>開始時間</td>
+			<td><%= text_field_tag :starttime, flash[:starttime], :size => 30 %></td>
+		</tr>
+		<tr>
+			<td>終了時間</td>
+			<td><%= text_field_tag :endtime, flash[:endtime], :size => 30 %></td>
+		</tr>
+		<tr>
+			<td>場所</td>
+			<td><%= text_field_tag :place, flash[:place], :size => 30 %></td>
+		</tr>
+	</table>
+</center>
+
+<%= button_tag '確認', :class => 'btn btn-primary' %>
+<% end %>

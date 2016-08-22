@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+catalog1:
+  book_code: 1111111111111
+  title: book1
+  authors: author1
+  publisher: publisher1
+  publication_date: 2014-06-01 12:00:00
+  group_id: 0
+
+
+catalog2:
+  book_code: 2222222222222
+  title: book2
+  authors: author2,author3
+  publisher: publisher2
+  publication_date: 2014-06-01 12:00:00
+  group_id: 0
+
+
+
+catalog3:
+  book_code: 3333333333333
+  title: book3_group1
+  authors:
+  publisher:
+  publication_date: 2014-06-01 12:00:00
+  group_id: 1
+
+
+catalog4:
+  book_code: 3333333333333
+  title: book3_group2
+  authors:
+  publisher:
+  publication_date: 2014-06-01 12:00:00
+  group_id: 2

@@ -1,0 +1,4935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: File
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!File.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (F)</a> &raquo;
+    
+    
+    <span class="title">File</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: File
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></li>
+          
+            <li class="next">File</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">file.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A <code>File</code> is an abstraction of any file object accessible by the
+program and is closely associated with class <code>IO</code>
+<code>File</code> includes the methods of module <code>FileTest</code> as
+class methods, allowing you to write (for example)
+<code>File.exist?(&quot;foo&quot;)</code>.</p>
+
+<p>In the description of File methods, <em>permission bits</em> are a
+platform-specific set of bits that indicate permissions of a file. On
+Unix-based systems, permissions are viewed as a set of three octets, for
+the owner, the group, and the rest of the world. For each of these
+entities, permissions may be set to read, write, or execute the file:</p>
+
+<p>The permission bits <code>0644</code> (in octal) would thus be interpreted
+as read/write for owner, and read-only for group and other. Higher-order
+bits may also be used to indicate the type of file (plain, directory, pipe,
+socket, and so on) and various other special features. If the permissions
+are for a directory, the meaning of the execute bit changes; when set the
+directory can be searched.</p>
+
+<p>On non-Posix operating systems, there may be only the ability to make a
+file read-only or read-write. In this case, the remaining permission bits
+will be synthesized to resemble typical values. For instance, on Windows NT
+the default permission bits are <code>0644</code>, which means read/write
+for owner, read-only for all others. The only change that can be made is to
+make the file read-only, which is reported as <code>0444</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="File/Constants.html" title="File::Constants (module)">Constants</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="File/Stat.html" title="File::Stat (class)">Stat</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="Separator-constant" class="">Separator =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_separator'>separator</span></pre></dd>
+      
+        <dt id="SEPARATOR-constant" class="">SEPARATOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_separator'>separator</span></pre></dd>
+      
+        <dt id="ALT_SEPARATOR-constant" class="">ALT_SEPARATOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Qnil</span></pre></dd>
+      
+        <dt id="PATH_SEPARATOR-constant" class="">PATH_SEPARATOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_rb_obj_freeze'>rb_obj_freeze</span><span class='lparen'>(</span><span class='id identifier rubyid_rb_str_new2'>rb_str_new2</span><span class='lparen'>(</span><span class='const'>PATH_SEP</span><span class='rparen'>)</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#SEEK_CUR-constant" title="IO::SEEK_CUR (constant)">IO::SEEK_CUR</a></span>, <span class='object_link'><a href="IO.html#SEEK_END-constant" title="IO::SEEK_END (constant)">IO::SEEK_END</a></span>, <span class='object_link'><a href="IO.html#SEEK_SET-constant" title="IO::SEEK_SET (constant)">IO::SEEK_SET</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#absolute_path-class_method" title="absolute_path (class method)">+ (Object) <strong>absolute_path</strong>(file_name[, dir_string]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts a pathname to an absolute pathname.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#atime-class_method" title="atime (class method)">+ (Time) <strong>atime</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the last access time for the named file as a Time object).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">atime</span>(<span class="ruby-string">&quot;testfile&quot;</span>)   <span class="ruby-comment">#=&gt; Wed Apr 09 08:51:48 CDT 2003.</span>
+</pre>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#basename-class_method" title="basename (class method)">+ (Object) <strong>basename</strong>(file_name[, suffix]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the last component of the filename given in file_name, which must
+be formed using forward slashes (“/”) regardless of the separator used on
+the local file system.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chmod-class_method" title="chmod (class method)">+ (Integer) <strong>chmod</strong>(mode_int, file_name, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes permission bits on the named file(s) to the bit pattern represented
+by mode_int.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chown-class_method" title="chown (class method)">+ (Integer) <strong>chown</strong>(owner_int, group_int, file_name, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes the owner and group of the named file(s) to the given numeric owner
+and group id’s.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ctime-class_method" title="ctime (class method)">+ (Time) <strong>ctime</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the change time for the named file (the time at which directory
+information about the file was changed, not the file itself).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-class_method" title="delete (class method)">+ (Object) <strong>delete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes the named files, returning the number of names passed as arguments.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dirname-class_method" title="dirname (class method)">+ (Object) <strong>dirname</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns all components of the filename given in file_name except the last
+one.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand_path-class_method" title="expand_path (class method)">+ (Object) <strong>expand_path</strong>(file_name[, dir_string]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts a pathname to an absolute pathname.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extname-class_method" title="extname (class method)">+ (String) <strong>extname</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the extension (the portion of file name in path after the period).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ftype-class_method" title="ftype (class method)">+ (String) <strong>ftype</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Identifies the type of the named file; the return string is one of “file”,
+“directory”, “characterSpecial”, “blockSpecial”, “fifo”, “link”, “socket”,
+or “unknown”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#join-class_method" title="join (class method)">+ (Object) <strong>join</strong>(string, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new string formed by joining the strings using File::SEPARATOR.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lchmod-class_method" title="lchmod (class method)">+ (Integer) <strong>lchmod</strong>(mode_int, file_name, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equivalent to File::chmod, but does not follow symbolic links (so it will
+change the permissions associated with the link, not the file referenced by
+the link).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lchown-class_method" title="lchown (class method)">+ (Integer) <strong>lchown</strong>(owner_int, group_int, file_name, ..) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equivalent to File::chown, but does not follow symbolic links (so it will
+change the owner associated with the link, not the file referenced by the
+link).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#link-class_method" title="link (class method)">+ (0) <strong>link</strong>(old_name, new_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new name for an existing file using a hard link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lstat-class_method" title="lstat (class method)">+ (Object) <strong>lstat</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Same as File::stat, but does not follow the last symbolic link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mtime-class_method" title="mtime (class method)">+ (Time) <strong>mtime</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the modification time for the named file as a Time object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-class_method" title="path (class method)">+ (String) <strong>path</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the string representation of the path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readlink-class_method" title="readlink (class method)">+ (Object) <strong>readlink</strong>(link_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the name of the file referenced by the given link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#realdirpath-class_method" title="realdirpath (class method)">+ (Object) <strong>realdirpath</strong>(pathname[, dir_string]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the real (absolute) pathname of <em>pathname</em> in the actual
+filesystem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#realpath-class_method" title="realpath (class method)">+ (Object) <strong>realpath</strong>(pathname[, dir_string]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the real (absolute) pathname of <em>pathname</em> in the actual 
+filesystem not containing symlinks or useless dots.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rename-class_method" title="rename (class method)">+ (0) <strong>rename</strong>(old_name, new_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Renames the given file to the new name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#split-class_method" title="split (class method)">+ (Array) <strong>split</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Splits the given string into a directory and a file component and returns
+them in a two-element array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stat-class_method" title="stat (class method)">+ (Object) <strong>stat</strong>(file_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a File::Stat object for the named file (see File::Stat).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#symlink-class_method" title="symlink (class method)">+ (0) <strong>symlink</strong>(old_name, new_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a symbolic link called new_name for the existing file old_name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncate-class_method" title="truncate (class method)">+ (0) <strong>truncate</strong>(file_name, integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Truncates the file file_name to be at most integer bytes long.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#umask-class_method" title="umask (class method)">+ (Object) <strong>umask</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current umask value for this process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unlink-class_method" title="unlink (class method)">+ (Object) <strong>unlink</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes the named files, returning the number of names passed as arguments.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#utime-class_method" title="utime (class method)">+ (Integer) <strong>utime</strong>(atime, mtime, file_name, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the access and modification times of each named file to the first two
+arguments.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#atime-instance_method" title="#atime (instance method)">- (Time) <strong>atime</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the last access time (a Time object)  for file, or epoch if file
+has not been accessed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chmod-instance_method" title="#chmod (instance method)">- (0) <strong>chmod</strong>(mode_int) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes permission bits on file to the bit pattern represented by mode_int.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chown-instance_method" title="#chown (instance method)">- (0) <strong>chown</strong>(owner_int, group_int) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes the owner and group of file to the given numeric owner and group
+id’s.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ctime-instance_method" title="#ctime (instance method)">- (Time) <strong>ctime</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the change time for file (that is, the time directory information
+about the file was changed, not the file itself).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flock-instance_method" title="#flock (instance method)">- (Object) <strong>flock</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Locks or unlocks a file according to locking_constant (a logical or of the
+values in the table below).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lstat-instance_method" title="#lstat (instance method)">- (Object) <strong>lstat</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Same as IO#stat, but does not follow the last symbolic link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mtime-instance_method" title="#mtime (instance method)">- (Time) <strong>mtime</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the modification time for file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the pathname used to create file as a string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#size (instance method)">- (Integer) <strong>size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the size of file in bytes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the pathname used to create file as a string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncate-instance_method" title="#truncate (instance method)">- (0) <strong>truncate</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Truncates file to at most integer bytes.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#%3C%3C-instance_method" title="IO#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="IO.html#advise-instance_method" title="IO#advise (method)">#advise</a></span>, <span class='object_link'><a href="IO.html#autoclose%3D-instance_method" title="IO#autoclose= (method)">#autoclose=</a></span>, <span class='object_link'><a href="IO.html#autoclose%3F-instance_method" title="IO#autoclose? (method)">#autoclose?</a></span>, <span class='object_link'><a href="IO.html#binmode-instance_method" title="IO#binmode (method)">#binmode</a></span>, <span class='object_link'><a href="IO.html#binmode%3F-instance_method" title="IO#binmode? (method)">#binmode?</a></span>, <span class='object_link'><a href="IO.html#binread-class_method" title="IO.binread (method)">binread</a></span>, <span class='object_link'><a href="IO.html#binwrite-class_method" title="IO.binwrite (method)">binwrite</a></span>, <span class='object_link'><a href="IO.html#bytes-instance_method" title="IO#bytes (method)">#bytes</a></span>, <span class='object_link'><a href="IO.html#chars-instance_method" title="IO#chars (method)">#chars</a></span>, <span class='object_link'><a href="IO.html#close-instance_method" title="IO#close (method)">#close</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3D-instance_method" title="IO#close_on_exec= (method)">#close_on_exec=</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3F-instance_method" title="IO#close_on_exec? (method)">#close_on_exec?</a></span>, <span class='object_link'><a href="IO.html#close_read-instance_method" title="IO#close_read (method)">#close_read</a></span>, <span class='object_link'><a href="IO.html#close_write-instance_method" title="IO#close_write (method)">#close_write</a></span>, <span class='object_link'><a href="IO.html#closed%3F-instance_method" title="IO#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="IO.html#codepoints-instance_method" title="IO#codepoints (method)">#codepoints</a></span>, <span class='object_link'><a href="IO.html#console-class_method" title="IO.console (method)">console</a></span>, <span class='object_link'><a href="IO.html#cooked-instance_method" title="IO#cooked (method)">#cooked</a></span>, <span class='object_link'><a href="IO.html#cooked%21-instance_method" title="IO#cooked! (method)">#cooked!</a></span>, <span class='object_link'><a href="IO.html#copy_stream-class_method" title="IO.copy_stream (method)">copy_stream</a></span>, <span class='object_link'><a href="IO.html#each-instance_method" title="IO#each (method)">#each</a></span>, <span class='object_link'><a href="IO.html#each_byte-instance_method" title="IO#each_byte (method)">#each_byte</a></span>, <span class='object_link'><a href="IO.html#each_char-instance_method" title="IO#each_char (method)">#each_char</a></span>, <span class='object_link'><a href="IO.html#each_codepoint-instance_method" title="IO#each_codepoint (method)">#each_codepoint</a></span>, <span class='object_link'><a href="IO.html#each_line-instance_method" title="IO#each_line (method)">#each_line</a></span>, <span class='object_link'><a href="IO.html#echo%3D-instance_method" title="IO#echo= (method)">#echo=</a></span>, <span class='object_link'><a href="IO.html#echo%3F-instance_method" title="IO#echo? (method)">#echo?</a></span>, <span class='object_link'><a href="IO.html#eof-instance_method" title="IO#eof (method)">#eof</a></span>, <span class='object_link'><a href="IO.html#eof%3F-instance_method" title="IO#eof? (method)">#eof?</a></span>, <span class='object_link'><a href="IO.html#external_encoding-instance_method" title="IO#external_encoding (method)">#external_encoding</a></span>, <span class='object_link'><a href="IO.html#fcntl-instance_method" title="IO#fcntl (method)">#fcntl</a></span>, <span class='object_link'><a href="IO.html#fdatasync-instance_method" title="IO#fdatasync (method)">#fdatasync</a></span>, <span class='object_link'><a href="IO.html#fileno-instance_method" title="IO#fileno (method)">#fileno</a></span>, <span class='object_link'><a href="IO.html#flush-instance_method" title="IO#flush (method)">#flush</a></span>, <span class='object_link'><a href="IO.html#for_fd-class_method" title="IO.for_fd (method)">for_fd</a></span>, <span class='object_link'><a href="IO.html#foreach-class_method" title="IO.foreach (method)">foreach</a></span>, <span class='object_link'><a href="IO.html#fsync-instance_method" title="IO#fsync (method)">#fsync</a></span>, <span class='object_link'><a href="IO.html#getbyte-instance_method" title="IO#getbyte (method)">#getbyte</a></span>, <span class='object_link'><a href="IO.html#getc-instance_method" title="IO#getc (method)">#getc</a></span>, <span class='object_link'><a href="IO.html#getch-instance_method" title="IO#getch (method)">#getch</a></span>, <span class='object_link'><a href="IO.html#gets-instance_method" title="IO#gets (method)">#gets</a></span>, <span class='object_link'><a href="IO.html#iflush-instance_method" title="IO#iflush (method)">#iflush</a></span>, <span class='object_link'><a href="IO.html#initialize-instance_method" title="IO#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="IO.html#initialize_copy-instance_method" title="IO#initialize_copy (method)">#initialize_copy</a></span>, <span class='object_link'><a href="IO.html#inspect-instance_method" title="IO#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="IO.html#internal_encoding-instance_method" title="IO#internal_encoding (method)">#internal_encoding</a></span>, <span class='object_link'><a href="IO.html#ioctl-instance_method" title="IO#ioctl (method)">#ioctl</a></span>, <span class='object_link'><a href="IO.html#ioflush-instance_method" title="IO#ioflush (method)">#ioflush</a></span>, <span class='object_link'><a href="IO.html#isatty-instance_method" title="IO#isatty (method)">#isatty</a></span>, <span class='object_link'><a href="IO.html#lineno-instance_method" title="IO#lineno (method)">#lineno</a></span>, <span class='object_link'><a href="IO.html#lineno%3D-instance_method" title="IO#lineno= (method)">#lineno=</a></span>, <span class='object_link'><a href="IO.html#lines-instance_method" title="IO#lines (method)">#lines</a></span>, <span class='object_link'><a href="IO.html#new-class_method" title="IO.new (method)">new</a></span>, <span class='object_link'><a href="IO.html#noecho-instance_method" title="IO#noecho (method)">#noecho</a></span>, <span class='object_link'><a href="IO.html#nread-instance_method" title="IO#nread (method)">#nread</a></span>, <span class='object_link'><a href="IO.html#oflush-instance_method" title="IO#oflush (method)">#oflush</a></span>, <span class='object_link'><a href="IO.html#old_thread_select-class_method" title="IO.old_thread_select (method)">old_thread_select</a></span>, <span class='object_link'><a href="IO.html#open-class_method" title="IO.open (method)">open</a></span>, <span class='object_link'><a href="IO.html#pid-instance_method" title="IO#pid (method)">#pid</a></span>, <span class='object_link'><a href="IO.html#pipe-class_method" title="IO.pipe (method)">pipe</a></span>, <span class='object_link'><a href="IO.html#popen-class_method" title="IO.popen (method)">popen</a></span>, <span class='object_link'><a href="IO.html#pos-instance_method" title="IO#pos (method)">#pos</a></span>, <span class='object_link'><a href="IO.html#pos%3D-instance_method" title="IO#pos= (method)">#pos=</a></span>, <span class='object_link'><a href="IO.html#print-instance_method" title="IO#print (method)">#print</a></span>, <span class='object_link'><a href="IO.html#printf-instance_method" title="IO#printf (method)">#printf</a></span>, <span class='object_link'><a href="IO.html#putc-instance_method" title="IO#putc (method)">#putc</a></span>, <span class='object_link'><a href="IO.html#puts-instance_method" title="IO#puts (method)">#puts</a></span>, <span class='object_link'><a href="IO.html#raw-instance_method" title="IO#raw (method)">#raw</a></span>, <span class='object_link'><a href="IO.html#raw%21-instance_method" title="IO#raw! (method)">#raw!</a></span>, <span class='object_link'><a href="IO.html#read-instance_method" title="IO#read (method)">#read</a></span>, <span class='object_link'><a href="IO.html#read-class_method" title="IO.read (method)">read</a></span>, <span class='object_link'><a href="IO.html#read_nonblock-instance_method" title="IO#read_nonblock (method)">#read_nonblock</a></span>, <span class='object_link'><a href="IO.html#readbyte-instance_method" title="IO#readbyte (method)">#readbyte</a></span>, <span class='object_link'><a href="IO.html#readchar-instance_method" title="IO#readchar (method)">#readchar</a></span>, <span class='object_link'><a href="IO.html#readline-instance_method" title="IO#readline (method)">#readline</a></span>, <span class='object_link'><a href="IO.html#readlines-instance_method" title="IO#readlines (method)">#readlines</a></span>, <span class='object_link'><a href="IO.html#readlines-class_method" title="IO.readlines (method)">readlines</a></span>, <span class='object_link'><a href="IO.html#readpartial-instance_method" title="IO#readpartial (method)">#readpartial</a></span>, <span class='object_link'><a href="IO.html#ready%3F-instance_method" title="IO#ready? (method)">#ready?</a></span>, <span class='object_link'><a href="IO.html#reopen-instance_method" title="IO#reopen (method)">#reopen</a></span>, <span class='object_link'><a href="IO.html#rewind-instance_method" title="IO#rewind (method)">#rewind</a></span>, <span class='object_link'><a href="IO.html#seek-instance_method" title="IO#seek (method)">#seek</a></span>, <span class='object_link'><a href="IO.html#select-class_method" title="IO.select (method)">select</a></span>, <span class='object_link'><a href="IO.html#set_encoding-instance_method" title="IO#set_encoding (method)">#set_encoding</a></span>, <span class='object_link'><a href="IO.html#stat-instance_method" title="IO#stat (method)">#stat</a></span>, <span class='object_link'><a href="IO.html#sync-instance_method" title="IO#sync (method)">#sync</a></span>, <span class='object_link'><a href="IO.html#sync%3D-instance_method" title="IO#sync= (method)">#sync=</a></span>, <span class='object_link'><a href="IO.html#sysopen-class_method" title="IO.sysopen (method)">sysopen</a></span>, <span class='object_link'><a href="IO.html#sysread-instance_method" title="IO#sysread (method)">#sysread</a></span>, <span class='object_link'><a href="IO.html#sysseek-instance_method" title="IO#sysseek (method)">#sysseek</a></span>, <span class='object_link'><a href="IO.html#syswrite-instance_method" title="IO#syswrite (method)">#syswrite</a></span>, <span class='object_link'><a href="IO.html#tell-instance_method" title="IO#tell (method)">#tell</a></span>, <span class='object_link'><a href="IO.html#to_io-instance_method" title="IO#to_io (method)">#to_io</a></span>, <span class='object_link'><a href="IO.html#try_convert-class_method" title="IO.try_convert (method)">try_convert</a></span>, <span class='object_link'><a href="IO.html#tty%3F-instance_method" title="IO#tty? (method)">#tty?</a></span>, <span class='object_link'><a href="IO.html#ungetbyte-instance_method" title="IO#ungetbyte (method)">#ungetbyte</a></span>, <span class='object_link'><a href="IO.html#ungetc-instance_method" title="IO#ungetc (method)">#ungetc</a></span>, <span class='object_link'><a href="IO.html#wait-instance_method" title="IO#wait (method)">#wait</a></span>, <span class='object_link'><a href="IO.html#wait_for_single_fd-class_method" title="IO.wait_for_single_fd (method)">wait_for_single_fd</a></span>, <span class='object_link'><a href="IO.html#winsize-instance_method" title="IO#winsize (method)">#winsize</a></span>, <span class='object_link'><a href="IO.html#winsize%3D-instance_method" title="IO#winsize= (method)">#winsize=</a></span>, <span class='object_link'><a href="IO.html#write-instance_method" title="IO#write (method)">#write</a></span>, <span class='object_link'><a href="IO.html#write-class_method" title="IO.write (method)">write</a></span>, <span class='object_link'><a href="IO.html#write_nonblock-instance_method" title="IO#write_nonblock (method)">#write_nonblock</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="IO.html#initialize-instance_method" title="IO#initialize (method)">IO</a></span></p>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="absolute_path-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>absolute_path</strong>(file_name[, dir_string]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts a pathname to an absolute pathname. Relative paths are referenced
+from the current working directory of the process unless
+<em>dir_string</em> is given, in which case it will be used as the starting
+point. If the given pathname starts with a “<code>~</code>” it is NOT
+expanded, it is treated as a normal directory name.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">absolute_path</span>(<span class="ruby-string">&quot;~oracle/bin&quot;</span>)       <span class="ruby-comment">#=&gt; &quot;&lt;relative_path&gt;/~oracle/bin&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3339
+3340
+3341
+3342
+3343
+3344
+3345
+3346
+3347
+3348
+3349
+3350</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3339</span>
+
+VALUE
+rb_file_s_absolute_path(int argc, VALUE *argv)
+{
+    VALUE fname, dname;
+
+    if (argc == 1) {
+	return rb_file_absolute_path(argv[0], Qnil);
+    }
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;fname, &amp;dname);
+
+    return rb_file_absolute_path(fname, dname);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="atime-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>atime</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the last access time for the named file as a Time object).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">atime</span>(<span class="ruby-string">&quot;testfile&quot;</span>)   <span class="ruby-comment">#=&gt; Wed Apr 09 08:51:48 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1806
+1807
+1808
+1809
+1810
+1811
+1812
+1813
+1814
+1815
+1816</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1806</span>
+
+static VALUE
+rb_file_s_atime(VALUE klass, VALUE fname)
+{
+    struct stat st;
+
+    if (rb_stat(fname, &amp;st) &lt; 0) {
+	FilePathValue(fname);
+	rb_sys_fail_path(fname);
+    }
+    return stat_atime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="basename-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>basename</strong>(file_name[, suffix]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the last component of the filename given in <em>file_name</em>,
+which must be formed using forward slashes (“<code>/</code>”) regardless of
+the separator used on the local file system. If <em>suffix</em> is given
+and present at the end of <em>file_name</em>, it is removed.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-string">&quot;/home/gumby/work/ruby.rb&quot;</span>)          <span class="ruby-comment">#=&gt; &quot;ruby.rb&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-string">&quot;/home/gumby/work/ruby.rb&quot;</span>, <span class="ruby-string">&quot;.rb&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;ruby&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3681
+3682
+3683
+3684
+3685
+3686
+3687
+3688
+3689
+3690
+3691
+3692
+3693
+3694
+3695
+3696
+3697
+3698
+3699
+3700
+3701
+3702
+3703
+3704
+3705
+3706
+3707
+3708
+3709
+3710
+3711
+3712
+3713
+3714
+3715
+3716
+3717
+3718
+3719
+3720
+3721
+3722
+3723
+3724
+3725
+3726
+3727
+3728</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3681</span>
+
+static VALUE
+rb_file_s_basename(int argc, VALUE *argv)
+{
+    VALUE fname, fext, basename;
+    const char *name, *p;
+    long f, n;
+    rb_encoding *enc;
+
+    if (rb_scan_args(argc, argv, &quot;11&quot;, &amp;fname, &amp;fext) == 2) {
+	rb_encoding *enc;
+	StringValue(fext);
+	if (!rb_enc_asciicompat(enc = rb_enc_get(fext))) {
+	    rb_raise(rb_eEncCompatError, &quot;ascii incompatible character encodings: %s&quot;,
+		     rb_enc_name(enc));
+	}
+    }
+    FilePathStringValue(fname);
+    if (!NIL_P(fext)) enc = rb_enc_check(fname, fext);
+    else enc = rb_enc_get(fname);
+    if ((n = RSTRING_LEN(fname)) == 0 || !*(name = RSTRING_PTR(fname)))
+	return rb_str_new_shared(fname);
+
+    p = ruby_enc_find_basename(name, &amp;f, &amp;n, enc);
+    if (n &gt;= 0) {
+	if (NIL_P(fext)) {
+	    f = n;
+	}
+	else {
+	    rb_encoding *fenc = rb_enc_get(fext);
+	    const char *fp;
+	    if (enc != fenc &amp;&amp;
+		rb_enc_str_coderange(fext) != ENC_CODERANGE_7BIT) {
+		fext = rb_str_conv_enc(fext, fenc, enc);
+	    }
+	    fp = StringValueCStr(fext);
+	    if (!(f = rmext(p, f, n, fp, RSTRING_LEN(fext), enc))) {
+		f = n;
+	    }
+	    RB_GC_GUARD(fext);
+	}
+	if (f == RSTRING_LEN(fname)) return rb_str_new_shared(fname);
+    }
+
+    basename = rb_str_new(p, f);
+    rb_enc_copy(basename, fname);
+    OBJ_INFECT(basename, fname);
+    return basename;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chmod-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>chmod</strong>(mode_int, file_name, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes permission bits on the named file(s) to the bit pattern represented
+by <em>mode_int</em>. Actual effects are operating system dependent (see
+the beginning of this section). On Unix systems, see <code>chmod(2)</code>
+for details. Returns the number of files processed.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-value">0644</span>, <span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;out&quot;</span>)   <span class="ruby-comment">#=&gt; 2</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1985
+1986
+1987
+1988
+1989
+1990
+1991
+1992
+1993
+1994
+1995
+1996
+1997
+1998
+1999</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1985</span>
+
+static VALUE
+rb_file_s_chmod(int argc, VALUE *argv)
+{
+    VALUE vmode;
+    VALUE rest;
+    int mode;
+    long n;
+
+    rb_secure(2);
+    rb_scan_args(argc, argv, &quot;1*&quot;, &amp;vmode, &amp;rest);
+    mode = NUM2INT(vmode);
+
+    n = apply2files(chmod_internal, rest, &amp;mode);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chown-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>chown</strong>(owner_int, group_int, file_name, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes the owner and group of the named file(s) to the given numeric owner
+and group id’s. Only a process with superuser privileges may change the
+owner of a file. The current owner of a file may change the file’s group to
+any group to which the owner belongs. A <code>nil</code> or -1 owner or
+group id is ignored. Returns the number of files processed.</p>
+
+<pre class="code"><code class=""><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_chown'>chown</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testfile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2104
+2105
+2106
+2107
+2108
+2109
+2110
+2111
+2112
+2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121
+2122
+2123
+2124
+2125
+2126
+2127
+2128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2104</span>
+
+static VALUE
+rb_file_s_chown(int argc, VALUE *argv)
+{
+    VALUE o, g, rest;
+    struct chown_args arg;
+    long n;
+
+    rb_secure(2);
+    rb_scan_args(argc, argv, &quot;2*&quot;, &amp;o, &amp;g, &amp;rest);
+    if (NIL_P(o)) {
+	arg.owner = -1;
+    }
+    else {
+	arg.owner = NUM2UIDT(o);
+    }
+    if (NIL_P(g)) {
+	arg.group = -1;
+    }
+    else {
+	arg.group = NUM2GIDT(g);
+    }
+
+    n = apply2files(chown_internal, rest, &amp;arg);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ctime-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>ctime</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the change time for the named file (the time at which directory
+information about the file was changed, not the file itself).</p>
+
+<p>Note that on Windows (NTFS), returns creation time (birth time).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">ctime</span>(<span class="ruby-string">&quot;testfile&quot;</span>)   <span class="ruby-comment">#=&gt; Wed Apr 09 08:53:13 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1901
+1902
+1903
+1904
+1905
+1906
+1907
+1908
+1909
+1910
+1911</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1901</span>
+
+static VALUE
+rb_file_s_ctime(VALUE klass, VALUE fname)
+{
+    struct stat st;
+
+    if (rb_stat(fname, &amp;st) &lt; 0) {
+	FilePathValue(fname);
+	rb_sys_fail_path(fname);
+    }
+    return stat_ctime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>delete</strong>(file_name, ...) </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>unlink</strong>(file_name, ...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes the named files, returning the number of names passed as arguments.
+Raises an exception on any error. See also <code>Dir::rmdir</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>delete</strong>(file_name, ...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>unlink</strong>(file_name, ...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2507
+2508
+2509
+2510
+2511
+2512
+2513
+2514
+2515</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2507</span>
+
+static VALUE
+rb_file_s_unlink(VALUE klass, VALUE args)
+{
+    long n;
+
+    rb_secure(2);
+    n = apply2files(unlink_internal, args, 0);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dirname-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>dirname</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns all components of the filename given in <em>file_name</em> except
+the last one. The filename must be formed using forward slashes
+(“<code>/</code>”) regardless of the separator used on the local file
+system.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-string">&quot;/home/gumby/work/ruby.rb&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;/home/gumby/work&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3742
+3743
+3744
+3745
+3746</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3742</span>
+
+static VALUE
+rb_file_s_dirname(VALUE klass, VALUE fname)
+{
+    return rb_file_dirname(fname);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="expand_path-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>expand_path</strong>(file_name[, dir_string]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts a pathname to an absolute pathname. Relative paths are referenced
+from the current working directory of the process unless
+<em>dir_string</em> is given, in which case it will be used as the starting
+point. The given pathname may start with a “<code>~</code>”, which expands
+to the process owner’s home directory (the environment variable
+<code>HOME</code> must be set correctly). “<code>~</code><em>user</em>”
+expands to the named user’s home directory.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&quot;~oracle/bin&quot;</span>)           <span class="ruby-comment">#=&gt; &quot;/home/oracle/bin&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">&quot;../../bin&quot;</span>, <span class="ruby-string">&quot;/tmp/x&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;/bin&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3306
+3307
+3308
+3309
+3310
+3311
+3312
+3313
+3314
+3315
+3316
+3317</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3306</span>
+
+VALUE
+rb_file_s_expand_path(int argc, VALUE *argv)
+{
+    VALUE fname, dname;
+
+    if (argc == 1) {
+	return rb_file_expand_path(argv[0], Qnil);
+    }
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;fname, &amp;dname);
+
+    return rb_file_expand_path(fname, dname);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extname-class_method">
+  
+    + (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>extname</strong>(path) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the extension (the portion of file name in <em>path</em> after the
+period).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-string">&quot;test.rb&quot;</span>)         <span class="ruby-comment">#=&gt; &quot;.rb&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-string">&quot;a/b/d/test.rb&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;.rb&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-string">&quot;test&quot;</span>)            <span class="ruby-comment">#=&gt; &quot;&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-string">&quot;.profile&quot;</span>)        <span class="ruby-comment">#=&gt; &quot;&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3877
+3878
+3879
+3880
+3881
+3882
+3883
+3884
+3885
+3886
+3887
+3888
+3889
+3890
+3891
+3892
+3893</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3877</span>
+
+static VALUE
+rb_file_s_extname(VALUE klass, VALUE fname)
+{
+    const char *name, *e;
+    long len;
+    VALUE extname;
+
+    FilePathStringValue(fname);
+    name = StringValueCStr(fname);
+    len = RSTRING_LEN(fname);
+    e = ruby_enc_find_extname(name, &amp;len, rb_enc_get(fname));
+    if (len &lt;= 1)
+	return rb_str_new(0, 0);
+    extname = rb_str_subseq(fname, e - name, len); /* keep the dot, too! */
+    OBJ_INFECT(extname, fname);
+    return extname;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ftype-class_method">
+  
+    + (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>ftype</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Identifies the type of the named file; the return string is one of
+“<code>file</code>”, “<code>directory</code>”,
+“<code>characterSpecial</code>”, “<code>blockSpecial</code>”,
+“<code>fifo</code>”, “<code>link</code>”, “<code>socket</code>”, or
+“<code>unknown</code>”.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">ftype</span>(<span class="ruby-string">&quot;testfile&quot;</span>)            <span class="ruby-comment">#=&gt; &quot;file&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">ftype</span>(<span class="ruby-string">&quot;/dev/tty&quot;</span>)            <span class="ruby-comment">#=&gt; &quot;characterSpecial&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">ftype</span>(<span class="ruby-string">&quot;/tmp/.X11-unix/X0&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;socket&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1781
+1782
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1781</span>
+
+static VALUE
+rb_file_s_ftype(VALUE klass, VALUE fname)
+{
+    struct stat st;
+
+    rb_secure(2);
+    FilePathValue(fname);
+    fname = rb_str_encode_ospath(fname);
+    if (lstat(StringValueCStr(fname), &amp;st) == -1) {
+	rb_sys_fail_path(fname);
+    }
+
+    return rb_file_ftype(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="join-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>join</strong>(string, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new string formed by joining the strings using
+<code>File::SEPARATOR</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;usr&quot;</span>, <span class="ruby-string">&quot;mail&quot;</span>, <span class="ruby-string">&quot;gumby&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;usr/mail/gumby&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4018
+4019
+4020
+4021
+4022</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 4018</span>
+
+static VALUE
+rb_file_s_join(VALUE klass, VALUE args)
+{
+    return rb_file_join(args, separator);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lchmod-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>lchmod</strong>(mode_int, file_name, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equivalent to <code>File::chmod</code>, but does not follow symbolic links
+(so it will change the permissions associated with the link, not the file
+referenced by the link). Often not available.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2058
+2059
+2060
+2061
+2062
+2063
+2064
+2065
+2066
+2067
+2068
+2069
+2070
+2071</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2058</span>
+
+static VALUE
+rb_file_s_lchmod(int argc, VALUE *argv)
+{
+    VALUE vmode;
+    VALUE rest;
+    long mode, n;
+
+    rb_secure(2);
+    rb_scan_args(argc, argv, &quot;1*&quot;, &amp;vmode, &amp;rest);
+    mode = NUM2INT(vmode);
+
+    n = apply2files(lchmod_internal, rest, (void *)(long)mode);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lchown-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>lchown</strong>(owner_int, group_int, file_name, ..) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equivalent to <code>File::chown</code>, but does not follow symbolic links
+(so it will change the owner associated with the link, not the file
+referenced by the link). Often not available. Returns number of files in
+the argument list.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2191
+2192
+2193
+2194
+2195
+2196
+2197
+2198
+2199
+2200
+2201
+2202
+2203
+2204
+2205
+2206
+2207
+2208
+2209
+2210
+2211
+2212
+2213
+2214
+2215</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2191</span>
+
+static VALUE
+rb_file_s_lchown(int argc, VALUE *argv)
+{
+    VALUE o, g, rest;
+    struct chown_args arg;
+    long n;
+
+    rb_secure(2);
+    rb_scan_args(argc, argv, &quot;2*&quot;, &amp;o, &amp;g, &amp;rest);
+    if (NIL_P(o)) {
+	arg.owner = -1;
+    }
+    else {
+	arg.owner = NUM2UIDT(o);
+    }
+    if (NIL_P(g)) {
+	arg.group = -1;
+    }
+    else {
+	arg.group = NUM2GIDT(g);
+    }
+
+    n = apply2files(lchown_internal, rest, &amp;arg);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="link-class_method">
+  
+    + (<tt>0</tt>) <strong>link</strong>(old_name, new_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new name for an existing file using a hard link. Will not
+overwrite <em>new_name</em> if it already exists (raising a subclass of
+<code>SystemCallError</code>). Not available on all platforms.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">link</span>(<span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;.testfile&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-string">&quot;.testfile&quot;</span>)[<span class="ruby-value">0</span>]         <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2388
+2389
+2390
+2391
+2392
+2393
+2394
+2395
+2396
+2397
+2398
+2399
+2400
+2401</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2388</span>
+
+static VALUE
+rb_file_s_link(VALUE klass, VALUE from, VALUE to)
+{
+    rb_secure(2);
+    FilePathValue(from);
+    FilePathValue(to);
+    from = rb_str_encode_ospath(from);
+    to = rb_str_encode_ospath(to);
+
+    if (link(StringValueCStr(from), StringValueCStr(to)) &lt; 0) {
+	sys_fail2(from, to);
+    }
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lstat-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>lstat</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Same as <code>File::stat</code>, but does not follow the last symbolic
+link. Instead, reports on the link itself.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">symlink</span>(<span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;link2test&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">size</span>              <span class="ruby-comment">#=&gt; 66</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">lstat</span>(<span class="ruby-string">&quot;link2test&quot;</span>).<span class="ruby-identifier">size</span>            <span class="ruby-comment">#=&gt; 8</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-string">&quot;link2test&quot;</span>).<span class="ruby-identifier">size</span>             <span class="ruby-comment">#=&gt; 66</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 941</span>
+
+static VALUE
+rb_file_s_lstat(VALUE klass, VALUE fname)
+{
+#ifdef HAVE_LSTAT
+    struct stat st;
+
+    rb_secure(2);
+    FilePathValue(fname);
+    fname = rb_str_encode_ospath(fname);
+    if (lstat(StringValueCStr(fname), &amp;st) == -1) {
+	rb_sys_fail_path(fname);
+    }
+    return stat_new(&amp;st);
+#else
+    return rb_file_s_stat(klass, fname);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mtime-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>mtime</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the modification time for the named file as a Time object.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-string">&quot;testfile&quot;</span>)   <span class="ruby-comment">#=&gt; Tue Apr 08 12:58:04 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1852
+1853
+1854
+1855
+1856
+1857
+1858
+1859
+1860
+1861
+1862</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1852</span>
+
+static VALUE
+rb_file_s_mtime(VALUE klass, VALUE fname)
+{
+    struct stat st;
+
+    if (rb_stat(fname, &amp;st) &lt; 0) {
+	FilePathValue(fname);
+	rb_sys_fail_path(fname);
+    }
+    return stat_mtime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="path-class_method">
+  
+    + (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>path</strong>(path) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the string representation of the path</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">path</span>(<span class="ruby-string">&quot;/dev/null&quot;</span>)          <span class="ruby-comment">#=&gt; &quot;/dev/null&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">path</span>(<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp&quot;</span>)) <span class="ruby-comment">#=&gt; &quot;/tmp&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3906
+3907
+3908
+3909
+3910</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3906</span>
+
+static VALUE
+rb_file_s_path(VALUE klass, VALUE fname)
+{
+    return rb_get_path(fname);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readlink-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>readlink</strong>(link_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the name of the file referenced by the given link. Not available on
+all platforms.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">symlink</span>(<span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;link2test&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">readlink</span>(<span class="ruby-string">&quot;link2test&quot;</span>)              <span class="ruby-comment">#=&gt; &quot;testfile&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2451
+2452
+2453
+2454
+2455</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2451</span>
+
+static VALUE
+rb_file_s_readlink(VALUE klass, VALUE path)
+{
+    return rb_readlink(path);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="realdirpath-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>realdirpath</strong>(pathname[, dir_string]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the real (absolute) pathname of <em>pathname</em> in the actual
+filesystem.</p>
+
+<pre class="code"><code class=""><span class='const'>The</span> <span class='id identifier rubyid_real'>real</span> <span class='id identifier rubyid_pathname'>pathname</span> <span class='id identifier rubyid_doesn'>doesn</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>t contain symlinks or useless dots.
+
+If _dir_string_ is given, it is used as a base directory
+for interpreting relative pathname instead of the current directory.
+
+</span></span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3553
+3554
+3555
+3556
+3557
+3558
+3559</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3553</span>
+
+static VALUE
+rb_file_s_realdirpath(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE path, basedir;
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;path, &amp;basedir);
+    return rb_realpath_internal(basedir, path, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="realpath-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>realpath</strong>(pathname[, dir_string]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the real (absolute) pathname of <em>pathname</em> in the actual</p>
+
+<pre class="code"><code class="">filesystem not containing symlinks or useless dots.
+
+If _dir_string_ is given, it is used as a base directory
+for interpreting relative pathname instead of the current directory.
+
+All components of the pathname must exist when this method is
+called.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3533
+3534
+3535
+3536
+3537
+3538
+3539</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3533</span>
+
+static VALUE
+rb_file_s_realpath(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE path, basedir;
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;path, &amp;basedir);
+    return rb_realpath_internal(basedir, path, 1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rename-class_method">
+  
+    + (<tt>0</tt>) <strong>rename</strong>(old_name, new_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Renames the given file to the new name. Raises a
+<code>SystemCallError</code> if the file cannot be renamed.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span>(<span class="ruby-string">&quot;afile&quot;</span>, <span class="ruby-string">&quot;afile.bak&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2527
+2528
+2529
+2530
+2531
+2532
+2533
+2534
+2535
+2536
+2537
+2538
+2539
+2540
+2541
+2542
+2543
+2544
+2545
+2546
+2547
+2548
+2549
+2550
+2551
+2552
+2553
+2554
+2555
+2556
+2557
+2558
+2559
+2560</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2527</span>
+
+static VALUE
+rb_file_s_rename(VALUE klass, VALUE from, VALUE to)
+{
+    const char *src, *dst;
+    VALUE f, t;
+
+    rb_secure(2);
+    FilePathValue(from);
+    FilePathValue(to);
+    f = rb_str_encode_ospath(from);
+    t = rb_str_encode_ospath(to);
+    src = StringValueCStr(f);
+    dst = StringValueCStr(t);
+#if defined __CYGWIN__
+    errno = 0;
+#endif
+    if (rename(src, dst) &lt; 0) {
+#if defined DOSISH
+	switch (errno) {
+	  case EEXIST:
+#if defined (__EMX__)
+	  case EACCES:
+#endif
+	    if (chmod(dst, 0666) == 0 &amp;&amp;
+		unlink(dst) == 0 &amp;&amp;
+		rename(src, dst) == 0)
+		return INT2FIX(0);
+	}
+#endif
+	sys_fail2(from, to);
+    }
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="split-class_method">
+  
+    + (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>split</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Splits the given string into a directory and a file component and returns
+them in a two-element array. See also <code>File::dirname</code> and
+<code>File::basename</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/home/gumby/.profile&quot;</span>)   <span class="ruby-comment">#=&gt; [&quot;/home/gumby&quot;, &quot;.profile&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3923
+3924
+3925
+3926
+3927
+3928</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 3923</span>
+
+static VALUE
+rb_file_s_split(VALUE klass, VALUE path)
+{
+    FilePathStringValue(path);		/* get rid of converting twice */
+    return rb_assoc_new(rb_file_s_dirname(Qnil, path), rb_file_s_basename(1,&amp;path));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stat-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>stat</strong>(file_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a <code>File::Stat</code> object for the named file (see
+<code>File::Stat</code>).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">mtime</span>   <span class="ruby-comment">#=&gt; Tue Apr 08 12:58:04 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 886</span>
+
+static VALUE
+rb_file_s_stat(VALUE klass, VALUE fname)
+{
+    struct stat st;
+
+    rb_secure(4);
+    FilePathValue(fname);
+    if (rb_stat(fname, &amp;st) &lt; 0) {
+	rb_sys_fail_path(fname);
+    }
+    return stat_new(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="symlink-class_method">
+  
+    + (<tt>0</tt>) <strong>symlink</strong>(old_name, new_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a symbolic link called <em>new_name</em> for the existing file
+<em>old_name</em>. Raises a <code>NotImplemented</code> exception on
+platforms that do not support symbolic links.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">symlink</span>(<span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;link2test&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2419
+2420
+2421
+2422
+2423
+2424
+2425
+2426
+2427
+2428
+2429
+2430
+2431
+2432</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2419</span>
+
+static VALUE
+rb_file_s_symlink(VALUE klass, VALUE from, VALUE to)
+{
+    rb_secure(2);
+    FilePathValue(from);
+    FilePathValue(to);
+    from = rb_str_encode_ospath(from);
+    to = rb_str_encode_ospath(to);
+
+    if (symlink(StringValueCStr(from), StringValueCStr(to)) &lt; 0) {
+	sys_fail2(from, to);
+    }
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncate-class_method">
+  
+    + (<tt>0</tt>) <strong>truncate</strong>(file_name, integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Truncates the file <em>file_name</em> to be at most <em>integer</em> bytes
+long. Not available on all platforms.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;out&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;1234567890&quot;</span>)     <span class="ruby-comment">#=&gt; 10</span>
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>                   <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-string">&quot;out&quot;</span>, <span class="ruby-value">5</span>)   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-string">&quot;out&quot;</span>)          <span class="ruby-comment">#=&gt; 5</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4040
+4041
+4042
+4043
+4044
+4045
+4046
+4047
+4048
+4049
+4050
+4051
+4052
+4053
+4054
+4055
+4056
+4057
+4058
+4059
+4060
+4061
+4062
+4063
+4064
+4065
+4066
+4067
+4068</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 4040</span>
+
+static VALUE
+rb_file_s_truncate(VALUE klass, VALUE path, VALUE len)
+{
+    off_t pos;
+
+    rb_secure(2);
+    pos = NUM2OFFT(len);
+    FilePathValue(path);
+    path = rb_str_encode_ospath(path);
+#ifdef HAVE_TRUNCATE
+    if (truncate(StringValueCStr(path), pos) &lt; 0)
+	rb_sys_fail_path(path);
+#else /* defined(HAVE_CHSIZE) */
+    {
+	int tmpfd;
+
+	if ((tmpfd = open(StringValueCStr(path), 0)) &lt; 0) {
+	    rb_sys_fail_path(path);
+	}
+        rb_update_max_fd(tmpfd);
+	if (chsize(tmpfd, pos) &lt; 0) {
+	    close(tmpfd);
+	    rb_sys_fail_path(path);
+	}
+	close(tmpfd);
+    }
+#endif
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="umask-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>umask</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>umask</strong>(integer) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current umask value for this process. If the optional argument
+is given, set the umask to that value and return the previous value. Umask
+values are <em>subtracted</em> from the default permissions, so a umask of
+<code>0222</code> would make a file read-only for everyone.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">umask</span>(<span class="ruby-value">0006</span>)   <span class="ruby-comment">#=&gt; 18</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">umask</span>         <span class="ruby-comment">#=&gt; 6</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>umask</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>umask</strong>(integer) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2577
+2578
+2579
+2580
+2581
+2582
+2583
+2584
+2585
+2586
+2587
+2588
+2589
+2590
+2591
+2592
+2593
+2594</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2577</span>
+
+static VALUE
+rb_file_s_umask(int argc, VALUE *argv)
+{
+    int omask = 0;
+
+    rb_secure(2);
+    if (argc == 0) {
+	omask = umask(0);
+	umask(omask);
+    }
+    else if (argc == 1) {
+	omask = umask(NUM2INT(argv[0]));
+    }
+    else {
+	rb_raise(rb_eArgError, &quot;wrong number of arguments (%d for 0..1)&quot;, argc);
+    }
+    return INT2FIX(omask);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unlink-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>delete</strong>(file_name, ...) </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>unlink</strong>(file_name, ...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes the named files, returning the number of names passed as arguments.
+Raises an exception on any error. See also <code>Dir::rmdir</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>delete</strong>(file_name, ...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>unlink</strong>(file_name, ...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2507
+2508
+2509
+2510
+2511
+2512
+2513
+2514
+2515</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2507</span>
+
+static VALUE
+rb_file_s_unlink(VALUE klass, VALUE args)
+{
+    long n;
+
+    rb_secure(2);
+    n = apply2files(unlink_internal, args, 0);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="utime-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>utime</strong>(atime, mtime, file_name, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the access and modification times of each named file to the first two
+arguments. Returns the number of file names in the argument list.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2334
+2335
+2336
+2337
+2338
+2339
+2340
+2341
+2342
+2343
+2344
+2345
+2346
+2347
+2348
+2349
+2350
+2351
+2352
+2353
+2354</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2334</span>
+
+static VALUE
+rb_file_s_utime(int argc, VALUE *argv)
+{
+    VALUE rest;
+    struct utime_args args;
+    struct timespec tss[2], *tsp = NULL;
+    long n;
+
+    rb_secure(2);
+    rb_scan_args(argc, argv, &quot;2*&quot;, &amp;args.atime, &amp;args.mtime, &amp;rest);
+
+    if (!NIL_P(args.atime) || !NIL_P(args.mtime)) {
+	tsp = tss;
+	tsp[0] = rb_time_timespec(args.atime);
+	tsp[1] = rb_time_timespec(args.mtime);
+    }
+    args.tsp = tsp;
+
+    n = apply2files(utime_internal, rest, &amp;args);
+    return LONG2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="atime-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>atime</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the last access time (a <code>Time</code> object)</p>
+
+<pre class="ruby"><span class="ruby-identifier">for</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">file</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/i&gt;, or epoch if &lt;i&gt;file&lt;/</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">has</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">been</span> <span class="ruby-identifier">accessed</span>.
+
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">atime</span>   <span class="ruby-comment">#=&gt; Wed Dec 31 18:00:00 CST 1969</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1829
+1830
+1831
+1832
+1833
+1834
+1835
+1836
+1837
+1838
+1839
+1840</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1829</span>
+
+static VALUE
+rb_file_atime(VALUE obj)
+{
+    rb_io_t *fptr;
+    struct stat st;
+
+    GetOpenFile(obj, fptr);
+    if (fstat(fptr-&gt;fd, &amp;st) == -1) {
+	rb_sys_fail_path(fptr-&gt;pathv);
+    }
+    return stat_atime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chmod-instance_method">
+  
+    - (<tt>0</tt>) <strong>chmod</strong>(mode_int) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes permission bits on <em>file</em> to the bit pattern represented by
+<em>mode_int</em>. Actual effects are platform dependent; on Unix systems,
+see <code>chmod(2)</code> for details. Follows symbolic links. Also see
+<code>File#lchmod</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;out&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>);
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-value">0644</span>)   <span class="ruby-comment">#=&gt; 0</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025
+2026
+2027
+2028
+2029
+2030
+2031
+2032
+2033
+2034
+2035
+2036
+2037
+2038</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2014</span>
+
+static VALUE
+rb_file_chmod(VALUE obj, VALUE vmode)
+{
+    rb_io_t *fptr;
+    int mode;
+#ifndef HAVE_FCHMOD
+    VALUE path;
+#endif
+
+    rb_secure(2);
+    mode = NUM2INT(vmode);
+
+    GetOpenFile(obj, fptr);
+#ifdef HAVE_FCHMOD
+    if (fchmod(fptr-&gt;fd, mode) == -1)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#else
+    if (NIL_P(fptr-&gt;pathv)) return Qnil;
+    path = rb_str_encode_ospath(fptr-&gt;pathv);
+    if (chmod(RSTRING_PTR(path), mode) == -1)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#endif
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chown-instance_method">
+  
+    - (<tt>0</tt>) <strong>chown</strong>(owner_int, group_int) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes the owner and group of <em>file</em> to the given numeric owner and
+group id’s. Only a process with superuser privileges may change the owner
+of a file. The current owner of a file may change the file’s group to any
+group to which the owner belongs. A <code>nil</code> or -1 owner or group
+id is ignored. Follows symbolic links. See also <code>File#lchown</code>.</p>
+
+<pre class="code"><code class=""><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testfile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_chown'>chown</span><span class='lparen'>(</span><span class='int'>502</span><span class='comma'>,</span> <span class='int'>1000</span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2145
+2146
+2147
+2148
+2149
+2150
+2151
+2152
+2153
+2154
+2155
+2156
+2157
+2158
+2159
+2160
+2161
+2162
+2163
+2164
+2165
+2166
+2167
+2168
+2169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 2145</span>
+
+static VALUE
+rb_file_chown(VALUE obj, VALUE owner, VALUE group)
+{
+    rb_io_t *fptr;
+    int o, g;
+#ifndef HAVE_FCHOWN
+    VALUE path;
+#endif
+
+    rb_secure(2);
+    o = NIL_P(owner) ? -1 : NUM2INT(owner);
+    g = NIL_P(group) ? -1 : NUM2INT(group);
+    GetOpenFile(obj, fptr);
+#ifndef HAVE_FCHOWN
+    if (NIL_P(fptr-&gt;pathv)) return Qnil;
+    path = rb_str_encode_ospath(fptr-&gt;pathv);
+    if (chown(RSTRING_PTR(path), o, g) == -1)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#else
+    if (fchown(fptr-&gt;fd, o, g) == -1)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#endif
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ctime-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>ctime</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the change time for <em>file</em> (that is, the time directory
+information about the file was changed, not the file itself).</p>
+
+<p>Note that on Windows (NTFS), returns creation time (birth time).</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">ctime</span>   <span class="ruby-comment">#=&gt; Wed Apr 09 08:53:14 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1926
+1927
+1928
+1929
+1930
+1931
+1932
+1933
+1934
+1935
+1936
+1937</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1926</span>
+
+static VALUE
+rb_file_ctime(VALUE obj)
+{
+    rb_io_t *fptr;
+    struct stat st;
+
+    GetOpenFile(obj, fptr);
+    if (fstat(fptr-&gt;fd, &amp;st) == -1) {
+	rb_sys_fail_path(fptr-&gt;pathv);
+    }
+    return stat_ctime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flock-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>flock</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Locks or unlocks a file according to <em>locking_constant</em> (a logical
+<em>or</em> of the values in the table below). Returns <code>false</code>
+if <code>File::LOCK_NB</code> is specified and the operation would
+otherwise have blocked. Not available on all platforms.</p>
+
+<p>Locking constants (in class File):</p>
+
+<pre class="code"><code class="">LOCK_EX   | Exclusive lock. Only one process may hold an
+          | exclusive lock for a given file at a time.
+----------+------------------------------------------------
+LOCK_NB   | Don't block when locking. May be combined
+          | with other lock options using logical or.
+----------+------------------------------------------------
+LOCK_SH   | Shared lock. Multiple processes may each hold a
+          | shared lock for a given file at the same time.
+----------+------------------------------------------------
+LOCK_UN   | Unlock.</code></pre>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># update a counter using write lock</span>
+<span class="ruby-comment"># don't use &quot;w&quot; because it truncates the file before lock.</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;counter&quot;</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">RDWR</span><span class="ruby-operator">|</span><span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">CREAT</span>, <span class="ruby-value">0644</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">flock</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">LOCK_EX</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">rewind</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;#{value}\n&quot;</span>)
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">pos</span>)
+}
+
+<span class="ruby-comment"># read the counter using read lock</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;counter&quot;</span>, <span class="ruby-string">&quot;r&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">flock</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">LOCK_SH</span>)
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4193
+4194
+4195
+4196
+4197
+4198
+4199
+4200
+4201
+4202
+4203
+4204
+4205
+4206
+4207
+4208
+4209
+4210
+4211
+4212
+4213
+4214
+4215
+4216
+4217
+4218
+4219
+4220
+4221
+4222
+4223
+4224
+4225
+4226
+4227
+4228
+4229
+4230</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 4193</span>
+
+static VALUE
+rb_file_flock(VALUE obj, VALUE operation)
+{
+    rb_io_t *fptr;
+    int op[2], op1;
+
+    rb_secure(2);
+    op[1] = op1 = NUM2INT(operation);
+    GetOpenFile(obj, fptr);
+    op[0] = fptr-&gt;fd;
+
+    if (fptr-&gt;mode &amp; FMODE_WRITABLE) {
+	rb_io_flush(obj);
+    }
+    while ((int)rb_thread_io_blocking_region(rb_thread_flock, op, fptr-&gt;fd) &lt; 0) {
+	switch (errno) {
+	  case EAGAIN:
+	  case EACCES:
+#if defined(EWOULDBLOCK) &amp;&amp; EWOULDBLOCK != EAGAIN
+	  case EWOULDBLOCK:
+#endif
+	    if (op1 &amp; LOCK_NB) return Qfalse;
+	    rb_thread_polling();
+	    rb_io_check_closed(fptr);
+	    continue;
+
+	  case EINTR:
+#if defined(ERESTART)
+	  case ERESTART:
+#endif
+	    break;
+
+	  default:
+	    rb_sys_fail_path(fptr-&gt;pathv);
+	}
+    }
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lstat-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>lstat</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Same as <code>IO#stat</code>, but does not follow the last symbolic link.
+Instead, reports on the link itself.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">symlink</span>(<span class="ruby-string">&quot;testfile&quot;</span>, <span class="ruby-string">&quot;link2test&quot;</span>)   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">size</span>              <span class="ruby-comment">#=&gt; 66</span>
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;link2test&quot;</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">lstat</span>.<span class="ruby-identifier">size</span>                            <span class="ruby-comment">#=&gt; 8</span>
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span>                             <span class="ruby-comment">#=&gt; 66</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+973
+974
+975
+976
+977
+978
+979
+980
+981
+982
+983
+984
+985
+986
+987
+988
+989
+990
+991
+992</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 973</span>
+
+static VALUE
+rb_file_lstat(VALUE obj)
+{
+#ifdef HAVE_LSTAT
+    rb_io_t *fptr;
+    struct stat st;
+    VALUE path;
+
+    rb_secure(2);
+    GetOpenFile(obj, fptr);
+    if (NIL_P(fptr-&gt;pathv)) return Qnil;
+    path = rb_str_encode_ospath(fptr-&gt;pathv);
+    if (lstat(RSTRING_PTR(path), &amp;st) == -1) {
+	rb_sys_fail_path(fptr-&gt;pathv);
+    }
+    return stat_new(&amp;st);
+#else
+    return rb_io_stat(obj);
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mtime-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>mtime</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the modification time for <em>file</em>.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">mtime</span>   <span class="ruby-comment">#=&gt; Wed Apr 09 08:53:14 CDT 2003</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1874
+1875
+1876
+1877
+1878
+1879
+1880
+1881
+1882
+1883
+1884
+1885</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1874</span>
+
+static VALUE
+rb_file_mtime(VALUE obj)
+{
+    rb_io_t *fptr;
+    struct stat st;
+
+    GetOpenFile(obj, fptr);
+    if (fstat(fptr-&gt;fd, &amp;st) == -1) {
+	rb_sys_fail_path(fptr-&gt;pathv);
+    }
+    return stat_mtime(&amp;st);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="path-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>path</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the pathname used to create <em>file</em> as a string. Does not
+normalize the name.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">path</span>               <span class="ruby-comment">#=&gt; &quot;testfile&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/../tmp/xxx&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>).<span class="ruby-identifier">path</span>   <span class="ruby-comment">#=&gt; &quot;/tmp/../tmp/xxx&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 251</span>
+
+static VALUE
+rb_file_path(VALUE obj)
+{
+    rb_io_t *fptr;
+
+    fptr = RFILE(rb_io_taint_check(obj))-&gt;fptr;
+    rb_io_check_initialized(fptr);
+    if (NIL_P(fptr-&gt;pathv)) return Qnil;
+    return rb_obj_taint(rb_str_dup(fptr-&gt;pathv));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the size of <em>file</em> in bytes.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">size</span>   <span class="ruby-comment">#=&gt; 66</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1949
+1950
+1951
+1952
+1953
+1954
+1955
+1956
+1957
+1958
+1959
+1960
+1961
+1962
+1963</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 1949</span>
+
+static VALUE
+rb_file_size(VALUE obj)
+{
+    rb_io_t *fptr;
+    struct stat st;
+
+    GetOpenFile(obj, fptr);
+    if (fptr-&gt;mode &amp; FMODE_WRITABLE) {
+	rb_io_flush(obj);
+    }
+    if (fstat(fptr-&gt;fd, &amp;st) == -1) {
+	rb_sys_fail_path(fptr-&gt;pathv);
+    }
+    return OFFT2NUM(st.st_size);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_path-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>path</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the pathname used to create <em>file</em> as a string. Does not
+normalize the name.</p>
+
+<pre class="ruby"><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;testfile&quot;</span>).<span class="ruby-identifier">path</span>               <span class="ruby-comment">#=&gt; &quot;testfile&quot;</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/../tmp/xxx&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>).<span class="ruby-identifier">path</span>   <span class="ruby-comment">#=&gt; &quot;/tmp/../tmp/xxx&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 251</span>
+
+static VALUE
+rb_file_path(VALUE obj)
+{
+    rb_io_t *fptr;
+
+    fptr = RFILE(rb_io_taint_check(obj))-&gt;fptr;
+    rb_io_check_initialized(fptr);
+    if (NIL_P(fptr-&gt;pathv)) return Qnil;
+    return rb_obj_taint(rb_str_dup(fptr-&gt;pathv));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncate-instance_method">
+  
+    - (<tt>0</tt>) <strong>truncate</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Truncates <em>file</em> to at most <em>integer</em> bytes. The file must be
+opened for writing. Not available on all platforms.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;out&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">syswrite</span>(<span class="ruby-string">&quot;1234567890&quot;</span>)   <span class="ruby-comment">#=&gt; 10</span>
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-value">5</span>)              <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>()                  <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-string">&quot;out&quot;</span>)           <span class="ruby-comment">#=&gt; 5</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4088
+4089
+4090
+4091
+4092
+4093
+4094
+4095
+4096
+4097
+4098
+4099
+4100
+4101
+4102
+4103
+4104
+4105
+4106
+4107
+4108
+4109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'file.c', line 4088</span>
+
+static VALUE
+rb_file_truncate(VALUE obj, VALUE len)
+{
+    rb_io_t *fptr;
+    off_t pos;
+
+    rb_secure(2);
+    pos = NUM2OFFT(len);
+    GetOpenFile(obj, fptr);
+    if (!(fptr-&gt;mode &amp; FMODE_WRITABLE)) {
+	rb_raise(rb_eIOError, &quot;not opened for writing&quot;);
+    }
+    rb_io_flush(obj);
+#ifdef HAVE_FTRUNCATE
+    if (ftruncate(fptr-&gt;fd, pos) &lt; 0)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#else /* defined(HAVE_CHSIZE) */
+    if (chsize(fptr-&gt;fd, pos) &lt; 0)
+	rb_sys_fail_path(fptr-&gt;pathv);
+#endif
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:24 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

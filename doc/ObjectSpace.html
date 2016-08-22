@@ -1,0 +1,1092 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ObjectSpace
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ObjectSpace.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (O)</a> &raquo;
+    
+    
+    <span class="title">ObjectSpace</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ObjectSpace
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">gc.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_id2ref-class_method" title="_id2ref (class method)">+ (Object) <strong>_id2ref</strong>(object_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts an object id to a reference to the object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_objects-class_method" title="count_objects (class method)">+ (Hash) <strong>count_objects</strong>([result_hash]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Counts objects for each type.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#define_finalizer-class_method" title="define_finalizer (class method)">+ (Object) <strong>define_finalizer</strong>(obj, aProc = proc()) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds aProc as a finalizer, to be called after obj was destroyed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_object-class_method" title="each_object (class method)">+ (Object) <strong>each_object</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls the block once for each living, nonimmediate object in this Ruby
+process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#garbage_collect-class_method" title="garbage_collect (class method)">+ (Object) <strong>garbage_collect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates garbage collection, unless manually disabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#undefine_finalizer-class_method" title="undefine_finalizer (class method)">+ (Object) <strong>undefine_finalizer</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes all finalizers for obj.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="_id2ref-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_id2ref</strong>(object_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts an object id to a reference to the object. May not be called on an
+object id passed as a parameter to a finalizer.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;I am a string&quot;</span>                    <span class="ruby-comment">#=&gt; &quot;I am a string&quot;</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">_id2ref</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">object_id</span>)   <span class="ruby-comment">#=&gt; &quot;I am a string&quot;</span>
+<span class="ruby-identifier">r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">s</span>                                 <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3174
+3175
+3176
+3177
+3178
+3179
+3180
+3181
+3182
+3183
+3184
+3185
+3186
+3187
+3188
+3189
+3190
+3191
+3192
+3193
+3194
+3195
+3196
+3197
+3198
+3199
+3200
+3201
+3202
+3203
+3204
+3205
+3206
+3207
+3208
+3209
+3210
+3211</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3174</span>
+
+static VALUE
+id2ref(VALUE obj, VALUE objid)
+{
+#if SIZEOF_LONG == SIZEOF_VOIDP
+#define NUM2PTR(x) NUM2ULONG(x)
+#elif SIZEOF_LONG_LONG == SIZEOF_VOIDP
+#define NUM2PTR(x) NUM2ULL(x)
+#endif
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    VALUE ptr;
+    void *p0;
+
+    rb_secure(4);
+    ptr = NUM2PTR(objid);
+    p0 = (void *)ptr;
+
+    if (ptr == Qtrue) return Qtrue;
+    if (ptr == Qfalse) return Qfalse;
+    if (ptr == Qnil) return Qnil;
+    if (FIXNUM_P(ptr)) return (VALUE)ptr;
+    ptr = obj_id_to_ref(objid);
+
+    if ((ptr % sizeof(RVALUE)) == (4 &lt;&lt; 2)) {
+        ID symid = ptr / sizeof(RVALUE);
+        if (rb_id2name(symid) == 0)
+	    rb_raise(rb_eRangeError, &quot;%p is not symbol id value&quot;, p0);
+	return ID2SYM(symid);
+    }
+
+    if (!is_pointer_to_heap(objspace, (void *)ptr) ||
+	BUILTIN_TYPE(ptr) &gt; T_FIXNUM || BUILTIN_TYPE(ptr) == T_ICLASS) {
+	rb_raise(rb_eRangeError, &quot;%p is not id value&quot;, p0);
+    }
+    if (BUILTIN_TYPE(ptr) == 0 || RBASIC(ptr)-&gt;klass == 0) {
+	rb_raise(rb_eRangeError, &quot;%p is recycled object&quot;, p0);
+    }
+    return (VALUE)ptr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count_objects-class_method">
+  
+    + (<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>) <strong>count_objects</strong>([result_hash]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Counts objects for each type.</p>
+
+<p>It returns a hash as: :FREE=&gt;3011, :T_OBJECT=&gt;6,
+:T_CLASS=&gt;404, …</p>
+
+<p>If the optional argument, result_hash, is given, it is overwritten and
+returned. This is intended to avoid probe effect.</p>
+
+<p>The contents of the returned hash is implementation defined. It may be
+changed in future.</p>
+
+<p>This method is not expected to work except C Ruby.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3309
+3310
+3311
+3312
+3313
+3314
+3315
+3316
+3317
+3318
+3319
+3320
+3321
+3322
+3323
+3324
+3325
+3326
+3327
+3328
+3329
+3330
+3331
+3332
+3333
+3334
+3335
+3336
+3337
+3338
+3339
+3340
+3341
+3342
+3343
+3344
+3345
+3346
+3347
+3348
+3349
+3350
+3351
+3352
+3353
+3354
+3355
+3356
+3357
+3358
+3359
+3360
+3361
+3362
+3363
+3364
+3365
+3366
+3367
+3368
+3369
+3370
+3371
+3372
+3373
+3374
+3375
+3376
+3377
+3378
+3379
+3380
+3381
+3382
+3383
+3384
+3385
+3386
+3387
+3388
+3389</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3309</span>
+
+static VALUE
+count_objects(int argc, VALUE *argv, VALUE os)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    size_t counts[T_MASK+1];
+    size_t freed = 0;
+    size_t total = 0;
+    size_t i;
+    VALUE hash;
+
+    if (rb_scan_args(argc, argv, &quot;01&quot;, &amp;hash) == 1) {
+        if (TYPE(hash) != T_HASH)
+            rb_raise(rb_eTypeError, &quot;non-hash given&quot;);
+    }
+
+    for (i = 0; i &lt;= T_MASK; i++) {
+        counts[i] = 0;
+    }
+
+    for (i = 0; i &lt; heaps_used; i++) {
+        RVALUE *p, *pend;
+
+        p = objspace-&gt;heap.sorted[i].start; pend = objspace-&gt;heap.sorted[i].end;
+        for (;p &lt; pend; p++) {
+            if (p-&gt;as.basic.flags) {
+                counts[BUILTIN_TYPE(p)]++;
+            }
+            else {
+                freed++;
+            }
+        }
+        total += objspace-&gt;heap.sorted[i].slot-&gt;limit;
+    }
+
+    if (hash == Qnil) {
+        hash = rb_hash_new();
+    }
+    else if (!RHASH_EMPTY_P(hash)) {
+        st_foreach(RHASH_TBL(hash), set_zero, hash);
+    }
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;TOTAL&quot;)), SIZET2NUM(total));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;FREE&quot;)), SIZET2NUM(freed));
+
+    for (i = 0; i &lt;= T_MASK; i++) {
+        VALUE type;
+        switch (i) {
+#define COUNT_TYPE(t) case (t): type = ID2SYM(rb_intern(#t)); break;
+	    COUNT_TYPE(T_NONE);
+	    COUNT_TYPE(T_OBJECT);
+	    COUNT_TYPE(T_CLASS);
+	    COUNT_TYPE(T_MODULE);
+	    COUNT_TYPE(T_FLOAT);
+	    COUNT_TYPE(T_STRING);
+	    COUNT_TYPE(T_REGEXP);
+	    COUNT_TYPE(T_ARRAY);
+	    COUNT_TYPE(T_HASH);
+	    COUNT_TYPE(T_STRUCT);
+	    COUNT_TYPE(T_BIGNUM);
+	    COUNT_TYPE(T_FILE);
+	    COUNT_TYPE(T_DATA);
+	    COUNT_TYPE(T_MATCH);
+	    COUNT_TYPE(T_COMPLEX);
+	    COUNT_TYPE(T_RATIONAL);
+	    COUNT_TYPE(T_NIL);
+	    COUNT_TYPE(T_TRUE);
+	    COUNT_TYPE(T_FALSE);
+	    COUNT_TYPE(T_SYMBOL);
+	    COUNT_TYPE(T_FIXNUM);
+	    COUNT_TYPE(T_UNDEF);
+	    COUNT_TYPE(T_NODE);
+	    COUNT_TYPE(T_ICLASS);
+	    COUNT_TYPE(T_ZOMBIE);
+#undef COUNT_TYPE
+          default:              type = INT2NUM(i); break;
+        }
+        if (counts[i])
+            rb_hash_aset(hash, type, SIZET2NUM(counts[i]));
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="define_finalizer-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>define_finalizer</strong>(obj, aProc = proc()) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds <em>aProc</em> as a finalizer, to be called after <em>obj</em> was
+destroyed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2928
+2929
+2930
+2931
+2932
+2933
+2934
+2935
+2936
+2937
+2938
+2939
+2940
+2941
+2942
+2943
+2944
+2945
+2946
+2947
+2948
+2949
+2950
+2951
+2952
+2953
+2954
+2955
+2956
+2957
+2958
+2959
+2960
+2961
+2962
+2963</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2928</span>
+
+static VALUE
+define_final(int argc, VALUE *argv, VALUE os)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    VALUE obj, block, table;
+    st_data_t data;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;obj, &amp;block);
+    rb_check_frozen(obj);
+    if (argc == 1) {
+	block = rb_block_proc();
+    }
+    else if (!rb_respond_to(block, rb_intern(&quot;call&quot;))) {
+	rb_raise(rb_eArgError, &quot;wrong type argument %s (should be callable)&quot;,
+		 rb_obj_classname(block));
+    }
+    if (!FL_ABLE(obj)) {
+	rb_raise(rb_eArgError, &quot;cannot define finalizer for %s&quot;,
+		 rb_obj_classname(obj));
+    }
+    RBASIC(obj)-&gt;flags |= FL_FINALIZE;
+
+    block = rb_ary_new3(2, INT2FIX(rb_safe_level()), block);
+    OBJ_FREEZE(block);
+
+    if (st_lookup(finalizer_table, obj, &amp;data)) {
+	table = (VALUE)data;
+	rb_ary_push(table, block);
+    }
+    else {
+	table = rb_ary_new3(1, block);
+	RBASIC(table)-&gt;klass = 0;
+	st_add_direct(finalizer_table, obj, table);
+    }
+    return block;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_object-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>each_object</strong>([) {|obj| ... }</span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_object</strong>([) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls the block once for each living, nonimmediate object in this Ruby
+process. If <em>module</em> is specified, calls the block for only those
+classes or modules that match (or are a subclass of) <em>module</em>.
+Returns the number of objects found. Immediate objects
+(<code>Fixnum</code>s, <code>Symbol</code>s <code>true</code>,
+<code>false</code>, and <code>nil</code>) are never returned. In the
+example below, <code>each_object</code> returns both the numbers we defined
+and several constants defined in the <code>Math</code> module.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-value">102.7</span>
+<span class="ruby-identifier">b</span> = <span class="ruby-value">95</span>       <span class="ruby-comment"># Won't be returned</span>
+<span class="ruby-identifier">c</span> = <span class="ruby-value">12345678987654321</span>
+<span class="ruby-identifier">count</span> = <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">Numeric</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-identifier">x</span> }
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Total count: #{count}&quot;</span>
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='int'>12345678987654321</span>
+<span class='float'>102.7</span>
+<span class='float'>2.71828182845905</span>
+<span class='float'>3.14159265358979</span>
+<span class='float'>2.22044604925031e-16</span>
+<span class='float'>1.7976931348623157e+308</span>
+<span class='float'>2.2250738585072e-308</span>
+<span class='const'>Total</span> <span class='label'>count:</span> <span class='int'>7</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>each_object</strong>([) {|obj| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>obj</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2884
+2885
+2886
+2887
+2888
+2889
+2890
+2891
+2892
+2893
+2894
+2895
+2896
+2897
+2898</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2884</span>
+
+static VALUE
+os_each_obj(int argc, VALUE *argv, VALUE os)
+{
+    VALUE of;
+
+    rb_secure(4);
+    if (argc == 0) {
+	of = 0;
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;01&quot;, &amp;of);
+    }
+    RETURN_ENUMERATOR(os, 1, &amp;of);
+    return os_obj_of(of);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="garbage_collect-class_method">
+  
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>start</strong> </span>
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates garbage collection, unless manually disabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>start</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2643
+2644
+2645
+2646
+2647
+2648</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2643</span>
+
+VALUE
+rb_gc_start(void)
+{
+    rb_gc();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="undefine_finalizer-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>undefine_finalizer</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes all finalizers for <em>obj</em>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2908
+2909
+2910
+2911
+2912
+2913
+2914
+2915
+2916
+2917</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2908</span>
+
+static VALUE
+undefine_final(VALUE os, VALUE obj)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    st_data_t data = obj;
+    rb_check_frozen(obj);
+    st_delete(finalizer_table, &amp;data, 0);
+    FL_UNSET(obj, FL_FINALIZE);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:21 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<% provide(:title, '借用記録') %>
+<h1>借用記録一覧</h1>
+<h4>グループ内の借用記録の一覧です</h4>
+
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed">
+    <tr>
+      <th>タイトル</th>
+      <th>借用メンバー</th>
+      <th>借用日</th>
+      <th>返却日</th>
+    </tr>
+    <% @lend_logs.each do |lend_log| %>
+
+      <tr>
+        <td> <%= @catalogs.find_by_book_code_and_group_id(lend_log.book_code, [0, session[:group_id]]).title %> </td>
+        <td> <%= User.find(lend_log.user_id).nickname %> </td>
+        <td> <%= lend_log.lend_date.to_s %> </td>
+        <td> <%= lend_log.return_date.to_s %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

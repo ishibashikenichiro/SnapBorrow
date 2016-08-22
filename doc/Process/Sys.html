@@ -1,0 +1,1901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Process::Sys
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Process/Sys.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Process.html" title="Process (module)">Process</a></span></span>
+     &raquo; 
+    <span class="title">Sys</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Process::Sys
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">process.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getegid-class_method" title="getegid (class method)">+ (Object) <strong>getegid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the effective group ID for this process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#geteuid-class_method" title="geteuid (class method)">+ (Object) <strong>geteuid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the effective user ID for this process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getgid-class_method" title="getgid (class method)">+ (Object) <strong>getgid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the (real) group ID for this process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getuid-class_method" title="getuid (class method)">+ (Object) <strong>getuid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the (real) user ID of this process.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#issetugid-class_method" title="Process::Sys.issetugid (class method)">+ (Boolean) <strong>Process::Sys.issetugid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the process was created as a result of an
+execve(2) system call which had either of the setuid or setgid bits set
+(and extra privileges were given as a result) or if it has changed any of
+its real, effective or saved user or group IDs since it began execution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setegid-class_method" title="Process::Sys.setegid (class method)">+ (nil) <strong>Process::Sys.setegid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the effective group ID of the calling process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seteuid-class_method" title="Process::Sys.seteuid (class method)">+ (nil) <strong>Process::Sys.seteuid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the effective user ID of the calling process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setgid-class_method" title="Process::Sys.setgid (class method)">+ (nil) <strong>Process::Sys.setgid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the group ID of the current process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setregid-class_method" title="Process::Sys.setregid (class method)">+ (nil) <strong>Process::Sys.setregid</strong>(rid, eid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the (integer) real and/or effective group IDs of the current process
+to rid and eid, respectively.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setresgid-class_method" title="Process::Sys.setresgid (class method)">+ (nil) <strong>Process::Sys.setresgid</strong>(rid, eid, sid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the (integer) real, effective, and saved user IDs of the current
+process to rid, eid, and sid respectively.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setresuid-class_method" title="Process::Sys.setresuid (class method)">+ (nil) <strong>Process::Sys.setresuid</strong>(rid, eid, sid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the (integer) real, effective, and saved user IDs of the current
+process to <em>rid</em>, <em>eid</em>, and <em>sid</em> respectively.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setreuid-class_method" title="Process::Sys.setreuid (class method)">+ (nil) <strong>Process::Sys.setreuid</strong>(rid, eid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the (integer) real and/or effective user IDs of the current process to
+<em>rid</em> and <em>eid</em>, respectively.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setrgid-class_method" title="Process::Sys.setrgid (class method)">+ (nil) <strong>Process::Sys.setrgid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the real group ID of the calling process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setruid-class_method" title="Process::Sys.setruid (class method)">+ (nil) <strong>Process::Sys.setruid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the real user ID of the calling process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setuid-class_method" title="Process::Sys.setuid (class method)">+ (nil) <strong>Process::Sys.setuid</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the user ID of the current process to <em>integer</em>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="getegid-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>egid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::GID.eid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.geteid</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the effective group ID for this process. Not available on all
+platforms.</p>
+
+<pre class="ruby"><span class="ruby-constant">Process</span>.<span class="ruby-identifier">egid</span>   <span class="ruby-comment">#=&gt; 500</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>egid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::GID.eid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.geteid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5262
+5263
+5264
+5265
+5266
+5267
+5268</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 5262</span>
+
+static VALUE
+proc_getegid(VALUE obj)
+{
+    rb_gid_t egid = getegid();
+
+    return GIDT2NUM(egid);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="geteuid-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>euid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::UID.eid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.geteuid</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the effective user ID for this process.</p>
+
+<pre class="ruby"><span class="ruby-constant">Process</span>.<span class="ruby-identifier">euid</span>   <span class="ruby-comment">#=&gt; 501</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>euid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::UID.eid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.geteuid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5143
+5144
+5145
+5146
+5147
+5148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 5143</span>
+
+static VALUE
+proc_geteuid(VALUE obj)
+{
+    rb_uid_t euid = geteuid();
+    return UIDT2NUM(euid);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getgid-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>gid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::GID.rid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.getgid</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the (real) group ID for this process.</p>
+
+<pre class="ruby"><span class="ruby-constant">Process</span>.<span class="ruby-identifier">gid</span>   <span class="ruby-comment">#=&gt; 500</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>gid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::GID.rid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.getgid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4572
+4573
+4574
+4575
+4576
+4577</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4572</span>
+
+static VALUE
+proc_getgid(VALUE obj)
+{
+    rb_gid_t gid = getgid();
+    return GIDT2NUM(gid);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getuid-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>uid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::UID.rid</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.getuid</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the (real) user ID of this process.</p>
+
+<pre class="ruby"><span class="ruby-constant">Process</span>.<span class="ruby-identifier">uid</span>   <span class="ruby-comment">#=&gt; 501</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>uid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::UID.rid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>Process::Sys.getuid</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4190
+4191
+4192
+4193
+4194
+4195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4190</span>
+
+static VALUE
+proc_getuid(VALUE obj)
+{
+    rb_uid_t uid = getuid();
+    return UIDT2NUM(uid);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="issetugid-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>Process::Sys.issetugid</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the process was created as a result of an
+execve(2) system call which had either of the setuid or setgid bits set
+(and extra privileges were given as a result) or if it has changed any of
+its real, effective or saved user or group IDs since it began execution.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4546
+4547
+4548
+4549
+4550
+4551
+4552
+4553
+4554
+4555</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4546</span>
+
+static VALUE
+p_sys_issetugid(VALUE obj)
+{
+    rb_secure(2);
+    if (issetugid()) {
+	return Qtrue;
+    } else {
+	return Qfalse;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setegid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setegid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the effective group ID of the calling process to <em>integer</em>.  Not
+available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4474
+4475
+4476
+4477
+4478
+4479
+4480</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4474</span>
+
+static VALUE
+p_sys_setegid(VALUE obj, VALUE id)
+{
+    check_gid_switch();
+    if (setegid(NUM2GIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seteuid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.seteuid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the effective user ID of the calling process to <em>integer</em>.  Not
+available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4119
+4120
+4121
+4122
+4123
+4124
+4125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4119</span>
+
+static VALUE
+p_sys_seteuid(VALUE obj, VALUE id)
+{
+    check_uid_switch();
+    if (seteuid(NUM2UIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setgid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setgid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the group ID of the current process to <em>integer</em>. Not available
+on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4430
+4431
+4432
+4433
+4434
+4435
+4436</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4430</span>
+
+static VALUE
+p_sys_setgid(VALUE obj, VALUE id)
+{
+    check_gid_switch();
+    if (setgid(NUM2GIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setregid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setregid</strong>(rid, eid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the (integer) real and/or effective group IDs of the current process
+to <em>rid</em> and <em>eid</em>, respectively. A value of <code>-1</code>
+for either means to leave that ID unchanged. Not available on all
+platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4498
+4499
+4500
+4501
+4502
+4503
+4504</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4498</span>
+
+static VALUE
+p_sys_setregid(VALUE obj, VALUE rid, VALUE eid)
+{
+    check_gid_switch();
+    if (setregid(NUM2GIDT(rid),NUM2GIDT(eid)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setresgid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setresgid</strong>(rid, eid, sid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the (integer) real, effective, and saved user IDs of the current
+process to <em>rid</em>, <em>eid</em>, and <em>sid</em> respectively. A
+value of <code>-1</code> for any value means to leave that ID unchanged.
+Not available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4521
+4522
+4523
+4524
+4525
+4526
+4527</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4521</span>
+
+static VALUE
+p_sys_setresgid(VALUE obj, VALUE rid, VALUE eid, VALUE sid)
+{
+    check_gid_switch();
+    if (setresgid(NUM2GIDT(rid),NUM2GIDT(eid),NUM2GIDT(sid)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setresuid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setresuid</strong>(rid, eid, sid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the (integer) real, effective, and saved user IDs of the current
+process to <em>rid</em>, <em>eid</em>, and <em>sid</em> respectively. A
+value of <code>-1</code> for any value means to leave that ID unchanged.
+Not available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4167
+4168
+4169
+4170
+4171
+4172
+4173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4167</span>
+
+static VALUE
+p_sys_setresuid(VALUE obj, VALUE rid, VALUE eid, VALUE sid)
+{
+    check_uid_switch();
+    if (setresuid(NUM2UIDT(rid),NUM2UIDT(eid),NUM2UIDT(sid)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setreuid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setreuid</strong>(rid, eid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the (integer) real and/or effective user IDs of the current process to
+<em>rid</em> and <em>eid</em>, respectively. A value of <code>-1</code> for
+either means to leave that ID unchanged. Not available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4143
+4144
+4145
+4146
+4147
+4148
+4149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4143</span>
+
+static VALUE
+p_sys_setreuid(VALUE obj, VALUE rid, VALUE eid)
+{
+    check_uid_switch();
+    if (setreuid(NUM2UIDT(rid),NUM2UIDT(eid)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setrgid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setrgid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the real group ID of the calling process to <em>integer</em>. Not
+available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4452
+4453
+4454
+4455
+4456
+4457
+4458</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4452</span>
+
+static VALUE
+p_sys_setrgid(VALUE obj, VALUE id)
+{
+    check_gid_switch();
+    if (setrgid(NUM2GIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setruid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setruid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the real user ID of the calling process to <em>integer</em>. Not
+available on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4097
+4098
+4099
+4100
+4101
+4102
+4103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4097</span>
+
+static VALUE
+p_sys_setruid(VALUE obj, VALUE id)
+{
+    check_uid_switch();
+    if (setruid(NUM2UIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setuid-class_method">
+  
+    + (<tt>nil</tt>) <strong>Process::Sys.setuid</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set the user ID of the current process to <em>integer</em>. Not available
+on all platforms.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4075
+4076
+4077
+4078
+4079
+4080
+4081</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'process.c', line 4075</span>
+
+static VALUE
+p_sys_setuid(VALUE obj, VALUE id)
+{
+    check_uid_switch();
+    if (setuid(NUM2UIDT(id)) != 0) rb_sys_fail(0);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:21 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

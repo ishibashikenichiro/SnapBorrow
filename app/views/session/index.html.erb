@@ -1,0 +1,28 @@
+<%= render 'shared/redirect_not_login' %>
+<% provide(:title, 'ホーム') %>
+<H1>ホーム</H1>
+<div class='col-sm-6'>
+  <% if session[:user_id] %>
+    <h3>ようこそ <%= User.find(session[:user_id]).nickname %>さん </h3>
+  <% end %>
+
+  <% unless session[:web_view] %>
+    <p>上のメニューから選択してください。</p>
+  <% else %>
+  <p>左上のメニューボタンでメニューが表示されます。</p>
+  <% end %>
+  <p>自分の名前をクリックすることでプロフィールメニューが開きます。</p>
+  <% if session[:group_id] != 0 %>
+    <p>グループ名をクリックすることでグループメニューが開きます。</p>
+<% else %>
+    <p><%= link_to "グループ作成", "/group/new"  %> をするか、グループマネージャに連絡し招待を受けてください。</p>
+  <% end %>
+</div>
+
+  <div class='col-sm-6'>
+    <H4 class='text-center'><%= link_to "Androidアプリのダウンロードはこちらから", "https://www.dropbox.com/s/db0y9stbk46n8i0/Bircle.apk?dl=1", :target => "_blank" %>
+      <div>(Android端末にてアクセスしてください)</div></H4>
+    <p class='text-center'><%= image_tag('bircle.gif') %></p>
+  </div>
+
+</div>

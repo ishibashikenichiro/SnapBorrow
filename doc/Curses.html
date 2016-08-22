@@ -1,0 +1,5596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Curses
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Curses.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo;
+    
+    
+    <span class="title">Curses</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Curses
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/curses/curses.c<span class="defines">,<br />
+  ext/curses/curses.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h2 id="label-Description">Description</h2>
+
+<p>An implementation of the CRT screen handling and optimization library.</p>
+
+<h2 id="label-Structures+and+such">Structures and such</h2>
+
+<h3 id="label-Classes">Classes</h3>
+<ul><li>
+<p>Curses::Window - class with the means to draw a window or box</p>
+</li><li>
+<p>Curses::MouseEvent - class for collecting mouse events</p>
+</li></ul>
+
+<h3 id="label-Modules">Modules</h3>
+<dl class="rdoc-list note-list"><dt>Curses
+<dd>
+<p>The curses implementation</p>
+</dd><dt>Curses::Key
+<dd>
+<p>Collection of constants for keypress events</p>
+</dd></dl>
+
+<h2 id="label-Examples">Examples</h2>
+<ul><li>
+<p>hello.rb</p>
+
+<pre class="code ruby"><code class="ruby">:include: hello.rb</code></pre>
+</li><li>
+<p>rain.rb</p>
+
+<pre class="code ruby"><code class="ruby">:include: rain.rb</code></pre>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Curses/Key.html" title="Curses::Key (module)">Key</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Curses/MouseEvent.html" title="Curses::MouseEvent (class)">MouseEvent</a></span>, <span class='object_link'><a href="Curses/Window.html" title="Curses::Window (class)">Window</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#addch-class_method" title="addch (class method)">+ (Object) <strong>addch</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add a character <code>ch</code>, with attributes, then advance the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#addstr-class_method" title="addstr (class method)">+ (Object) <strong>addstr</strong>(str) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>add a string of characters <code>str</code>, to the window and advance
+cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attroff-class_method" title="attroff (class method)">+ (Object) <strong>attroff</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Turns on the named attributes <code>attrs</code> without affecting any
+others.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attron-class_method" title="attron (class method)">+ (Object) <strong>attron</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Turns off the named attributes <code>attrs</code> without turning any other
+attributes on or off.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attrset-class_method" title="attrset (class method)">+ (Object) <strong>attrset</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the current attributes of the given window to <code>attrs</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beep-class_method" title="beep (class method)">+ (Object) <strong>beep</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sounds an audible alarm on the terminal, if possible; otherwise it flashes
+the screen (visual bell).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bkgd-class_method" title="bkgd (class method)">+ (Object) <strong>bkgd</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Window background manipulation routines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bkgdset-class_method" title="bkgdset (class method)">+ (Object) <strong>bkgdset</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Manipulate the background of the named window with character Integer
+<code>ch</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#can_change_color%3F-class_method" title="can_change_color? (class method)">+ (Boolean) <strong>can_change_color?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> or <code>false</code> depending on whether the
+terminal can change color attributes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cbreak-class_method" title="cbreak (class method)">+ (Object) <strong>cbreak</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal into cbreak mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear-class_method" title="clear (class method)">+ (Object) <strong>clear</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Clears every position on the screen completely, so that a subsequent call
+by Curses.refresh for the screen/window will be repainted from scratch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close_screen-class_method" title="close_screen (class method)">+ (Object) <strong>close_screen</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A program should always call Curses.close_screen before exiting or escaping
+from curses mode temporarily.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed%3F-class_method" title="closed? (class method)">+ (Boolean) <strong>closed?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the window/screen has been closed, without any
+subsequent Curses.refresh calls, returns <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clrtoeol-class_method" title="clrtoeol (class method)">+ (Object) <strong>clrtoeol</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Clears to the end of line, that the cursor is currently on.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#color_content-class_method" title="color_content (class method)">+ (Object) <strong>color_content</strong>(color) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an 3 item Array of the RGB values in <code>color</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#color_pair-class_method" title="color_pair (class method)">+ (Object) <strong>color_pair</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the color pair attributes to <code>attrs</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#color_pairs-class_method" title="color_pairs (class method)">+ (Object) <strong>color_pairs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the COLOR_PAIRS available, if the curses library supports it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#colors-class_method" title="colors (class method)">+ (Object) <strong>colors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns COLORS.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cols-class_method" title="cols (class method)">+ (Object) <strong>cols</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of columns on the screen.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#crmode-class_method" title="crmode (class method)">+ (Object) <strong>crmode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#curs_set-class_method" title="curs_set (class method)">+ (Object) <strong>curs_set</strong>(visibility) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets Cursor Visibility.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#def_prog_mode-class_method" title="def_prog_mode (class method)">+ (Object) <strong>def_prog_mode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Save the current terminal modes as the “program” state for use by the
+Curses.reset_prog_mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delch-class_method" title="delch (class method)">+ (Object) <strong>delch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete the character under the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deleteln-class_method" title="deleteln (class method)">+ (Object) <strong>deleteln</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delete the line under the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#doupdate-class_method" title="doupdate (class method)">+ (Object) <strong>doupdate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Refreshes the windows and lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#echo-class_method" title="echo (class method)">+ (Object) <strong>echo</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables characters typed by the user to be echoed by Curses.getch as they
+are typed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ESCDELAY-class_method" title="ESCDELAY (class method)">+ (Object) <strong>ESCDELAY</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the total time, in milliseconds, for which curses will await a
+character sequence, e.g., a function key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ESCDELAY%3D-class_method" title="ESCDELAY= (class method)">+ (Object) <strong>ESCDELAY=</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the ESCDELAY to Integer <code>value</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flash-class_method" title="flash (class method)">+ (Object) <strong>flash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Flashs the screen, for visual alarm on the terminal, if possible; otherwise
+it sounds the alert.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getch-class_method" title="getch (class method)">+ (Object) <strong>getch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Read and returns a character from the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getmouse-class_method" title="getmouse (class method)">+ (Object) <strong>getmouse</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns coordinates of the mouse.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getstr-class_method" title="getstr (class method)">+ (Object) <strong>getstr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is equivalent to a series f Curses::Window.getch calls.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_colors%3F-class_method" title="has_colors? (class method)">+ (Boolean) <strong>has_colors?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> or <code>false</code> depending on whether the
+terminal has color capbilities.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inch-class_method" title="inch (class method)">+ (Object) <strong>inch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the character at the current position.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_color-class_method" title="init_color (class method)">+ (Object) <strong>init_color</strong>(color, r, g, b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes the definition of a color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_pair-class_method" title="init_pair (class method)">+ (Object) <strong>init_pair</strong>(pair, f, b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes the definition of a color-pair.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_screen-class_method" title="init_screen (class method)">+ (Object) <strong>init_screen</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initialize a standard screen.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insch-class_method" title="insch (class method)">+ (Object) <strong>insch</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Insert a character <code>ch</code>, before the cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insertln-class_method" title="insertln (class method)">+ (Object) <strong>insertln</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Inserts a line above the cursor, and the bottom line is lost.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keyname-class_method" title="keyname (class method)">+ (Object) <strong>keyname</strong>(c) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the character string corresponding to key <code>c</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lines-class_method" title="lines (class method)">+ (Object) <strong>lines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of lines on the screen.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mouseinterval-class_method" title="mouseinterval (class method)">+ (Object) <strong>mouseinterval</strong>(interval) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The Curses.mouseinterval function sets the maximum time (in thousands of a
+second) that can elapse between press and release events for them to be
+recognized as a click.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mousemask-class_method" title="mousemask (class method)">+ (Object) <strong>mousemask</strong>(mask) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the <code>mask</code> of the reportable events.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nl-class_method" title="nl (class method)">+ (Object) <strong>nl</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enable the underlying display device to translate the return key into
+newline on input, and whether it translates newline into return and
+line-feed on output (in either case, the call Curses.addch(‘n’) does the
+equivalent of return and line feed on the virtual screen).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nocbreak-class_method" title="nocbreak (class method)">+ (Object) <strong>nocbreak</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nocrmode-class_method" title="nocrmode (class method)">+ (Object) <strong>nocrmode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#noecho-class_method" title="noecho (class method)">+ (Object) <strong>noecho</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disables characters typed by the user to be echoed by Curses.getch as they
+are typed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nonl-class_method" title="nonl (class method)">+ (Object) <strong>nonl</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disable the underlying display device to translate the return key into
+newline on input.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#noraw-class_method" title="noraw (class method)">+ (Object) <strong>noraw</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal out of raw mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pair_content-class_method" title="pair_content (class method)">+ (Object) <strong>pair_content</strong>(pair) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a 2 item Array, with the foreground and background color, in
+<code>pair</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pair_number-class_method" title="pair_number (class method)">+ (Object) <strong>pair_number</strong>(attrs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the Fixnum color pair number of attributes <code>attrs</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#raw-class_method" title="raw (class method)">+ (Object) <strong>raw</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Put the terminal into raw mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#refresh-class_method" title="refresh (class method)">+ (Object) <strong>refresh</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Refreshes the windows and lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_prog_mode-class_method" title="reset_prog_mode (class method)">+ (Object) <strong>reset_prog_mode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reset the current terminal modes to the saved state by the
+Curses.def_prog_mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resize-class_method" title="resizeterm (class method)">+ (Object) <strong>resizeterm</strong>(lines, cols) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resize the current term to Fixnum <code>lines</code> and Fixnum
+<code>cols</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resizeterm-class_method" title="resizeterm (class method)">+ (Object) <strong>resizeterm</strong>(lines, cols) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resize the current term to Fixnum <code>lines</code> and Fixnum
+<code>cols</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scrl-class_method" title="scrl (class method)">+ (Object) <strong>scrl</strong>(num) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Scrolls the current window Fixnum <code>num</code> lines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setpos-class_method" title="setpos (class method)">+ (Object) <strong>setpos</strong>(y, x) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A setter for the position of the cursor, using coordinates <code>x</code>
+and <code>y</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setscrreg-class_method" title="setscrreg (class method)">+ (Object) <strong>setscrreg</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>call-seq:   setscrreg(top, bottom).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#standend-class_method" title="standend (class method)">+ (Object) <strong>standend</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the Normal display (no highlight).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#standout-class_method" title="standout (class method)">+ (Object) <strong>standout</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables the best highlighting mode of the terminal.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_color-class_method" title="start_color (class method)">+ (Object) <strong>start_color</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initializes the color attributes, for terminals that support it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stdscr-class_method" title="stdscr (class method)">+ (Object) <strong>stdscr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The Standard Screen.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#TABSIZE-class_method" title="TABSIZE (class method)">+ (Object) <strong>TABSIZE</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of positions in a tab.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#TABSIZE%3D-class_method" title="TABSIZE= (class method)">+ (Object) <strong>TABSIZE=</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the TABSIZE to Integer <code>value</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#timeout%3D-class_method" title="timeout= (class method)">+ (Object) <strong>timeout=</strong>(delay) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets block and non-blocking reads for the window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetch-class_method" title="ungetch (class method)">+ (Object) <strong>ungetch</strong>(ch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Places <code>ch</code> back onto the input queue to be returned by the next
+call to Curses.getch.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetmouse-class_method" title="ungetmouse (class method)">+ (Object) <strong>ungetmouse</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>It pushes a KEY_MOUSE event onto the input queue, and associates with that
+event the given state data and screen-relative character-cell coordinates.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use_default_colors-class_method" title="use_default_colors (class method)">+ (Object) <strong>use_default_colors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>tells the curses library to use terminal’s default colors.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="addch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>addch</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add a character <code>ch</code>, with attributes, then advance the cursor.</p>
+
+<p>see also the system manual for curs_addch(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+578
+579
+580
+581
+582
+583
+584</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 578</span>
+
+static VALUE
+curses_addch(VALUE obj, VALUE ch)
+{
+    curses_stdscr();
+    addch(NUM2CH(ch));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="addstr-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>addstr</strong>(str) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>add a string of characters <code>str</code>, to the window and advance
+cursor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 608</span>
+
+static VALUE
+curses_addstr(VALUE obj, VALUE str)
+{
+    StringValue(str);
+    str = rb_str_export_locale(str);
+    curses_stdscr();
+    if (!NIL_P(str)) {
+	addstr(StringValueCStr(str));
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attroff-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attroff</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Turns on the named attributes <code>attrs</code> without affecting any
+others.</p>
+
+<p>See also Curses::Window.attrset for additional information.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+857
+858
+859
+860
+861
+862
+863</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 857</span>
+
+static VALUE
+curses_attroff(VALUE obj, VALUE attrs)
+{
+    curses_stdscr();
+    return window_attroff(rb_stdscr,attrs);
+    /* return INT2FIX(attroff(NUM2INT(attrs))); */
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attron-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attron</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Turns off the named attributes <code>attrs</code> without turning any other
+attributes on or off.</p>
+
+<p>See also Curses::Window.attrset for additional information.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+874
+875
+876
+877
+878
+879
+880</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 874</span>
+
+static VALUE
+curses_attron(VALUE obj, VALUE attrs)
+{
+    curses_stdscr();
+    return window_attron(rb_stdscr,attrs);
+    /* return INT2FIX(attroff(NUM2INT(attrs))); */
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attrset-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>attrset</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the current attributes of the given window to <code>attrs</code>.</p>
+
+<p>see also Curses::Window.attrset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+891
+892
+893
+894
+895
+896
+897</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 891</span>
+
+static VALUE
+curses_attrset(VALUE obj, VALUE attrs)
+{
+    curses_stdscr();
+    return window_attrset(rb_stdscr,attrs);
+    /* return INT2FIX(attroff(NUM2INT(attrs))); */
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beep-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>beep</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sounds an audible alarm on the terminal, if possible; otherwise it flashes
+the screen (visual bell).</p>
+
+<p>see also Curses.flash</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+437
+438
+439
+440
+441
+442
+443
+444
+445</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 437</span>
+
+static VALUE
+curses_beep(VALUE obj)
+{
+#ifdef HAVE_BEEP
+    curses_stdscr();
+    beep();
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bkgd-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bkgd</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Window background manipulation routines.</p>
+
+<p>Set the background property of the current and then apply the character
+Integer <code>ch</code> setting to every character position in that window.</p>
+
+<p>see also the system manual for curs_bkgd(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 933</span>
+
+static VALUE
+curses_bkgd(VALUE obj, VALUE ch)
+{
+#ifdef HAVE_BKGD
+    curses_stdscr();
+    return (bkgd(NUM2CH(ch)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bkgdset-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bkgdset</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Manipulate the background of the named window with character Integer
+<code>ch</code></p>
+
+<p>The background becomes a property of the character and moves with the
+character through any scrolling and insert/delete line/character
+operations.</p>
+
+<p>see also the system manual for curs_bkgd(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+912
+913
+914
+915
+916
+917
+918
+919
+920</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 912</span>
+
+static VALUE
+curses_bkgdset(VALUE obj, VALUE ch)
+{
+#ifdef HAVE_BKGDSET
+    curses_stdscr();
+    bkgdset(NUM2CH(ch));
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_change_color?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>can_change_color?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> or <code>false</code> depending on whether the
+terminal can change color attributes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1128
+1129
+1130
+1131
+1132
+1133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1128</span>
+
+static VALUE
+curses_can_change_color(VALUE obj)
+{
+    curses_stdscr();
+    return can_change_color() ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cbreak-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cbreak</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal into cbreak mode.</p>
+
+<p>Normally, the tty driver buffers typed characters until a newline or
+carriage return is typed. The Curses.cbreak routine disables line buffering
+and erase/kill character-processing (interrupt and flow control characters
+are unaffected), making characters typed by the user immediately available
+to the program.</p>
+
+<p>The Curses.nocbreak routine returns the terminal to normal (cooked) mode.</p>
+
+<p>Initially the terminal may or may not be in cbreak mode, as the mode is
+inherited; therefore, a program should call Curses.cbreak or
+Curses.nocbreak explicitly. Most interactive programs using curses set the
+cbreak mode. Note that Curses.cbreak overrides Curses.raw.</p>
+
+<p>see also Curses.raw</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+368
+369
+370
+371
+372
+373
+374</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 368</span>
+
+static VALUE
+curses_cbreak(VALUE obj)
+{
+    curses_stdscr();
+    cbreak();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clear-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>clear</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Clears every position on the screen completely, so that a subsequent call
+by Curses.refresh for the screen/window will be repainted from scratch.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228
+229
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 226</span>
+
+static VALUE
+curses_clear(VALUE obj)
+{
+    curses_stdscr();
+    wclear(stdscr);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close_screen-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>close_screen</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A program should always call Curses.close_screen before exiting or escaping
+from curses mode temporarily. This routine restores tty modes, moves the
+cursor to the lower left-hand corner of the screen and resets the terminal
+into the proper non-visual mode.</p>
+
+<p>Calling Curses.refresh or Curses.doupdate after a temporary escape causes
+the program to resume visual mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 166</span>
+
+static VALUE
+curses_close_screen(void)
+{
+    curses_stdscr();
+#ifdef HAVE_ISENDWIN
+    if (!isendwin())
+#endif
+	endwin();
+    rb_stdscr = 0;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>closed?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the window/screen has been closed, without any
+subsequent Curses.refresh calls, returns <code>false</code> otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+206
+207
+208
+209
+210
+211
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 206</span>
+
+static VALUE
+curses_closed(void)
+{
+    curses_stdscr();
+    if (isendwin()) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clrtoeol-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>clrtoeol</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Clears to the end of line, that the cursor is currently on.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+239
+240
+241
+242
+243
+244
+245</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 239</span>
+
+static VALUE
+curses_clrtoeol(void)
+{
+    curses_stdscr();
+    clrtoeol();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="color_content-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>color_content</strong>(color) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an 3 item Array of the RGB values in <code>color</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1156
+1157
+1158
+1159
+1160
+1161
+1162
+1163
+1164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1156</span>
+
+static VALUE
+curses_color_content(VALUE obj, VALUE color)
+{
+    short r,g,b;
+
+    curses_stdscr();
+    color_content(NUM2INT(color),&amp;r,&amp;g,&amp;b);
+    return rb_ary_new3(3,INT2FIX(r),INT2FIX(g),INT2FIX(b));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="color_pair-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>color_pair</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the color pair attributes to <code>attrs</code>.</p>
+
+<p>This should be equivalent to Curses.attrset(COLOR_PAIR(<code>attrs</code>))</p>
+
+<p>TODO: validate that equivalency</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1209
+1210
+1211
+1212
+1213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1209</span>
+
+static VALUE
+curses_color_pair(VALUE obj, VALUE attrs)
+{
+    return INT2FIX(COLOR_PAIR(NUM2INT(attrs)));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="color_pairs-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>color_pairs</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the COLOR_PAIRS available, if the curses library supports it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1173
+1174
+1175
+1176
+1177</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1173</span>
+
+static VALUE
+curses_color_pairs(VALUE obj)
+{
+    return INT2FIX(COLOR_PAIRS);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="colors-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>colors</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>returns COLORS</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1141
+1142
+1143
+1144
+1145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1141</span>
+
+static VALUE
+curses_colors(VALUE obj)
+{
+    return INT2FIX(COLORS);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cols-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>cols</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of columns on the screen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+771
+772
+773
+774
+775</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 771</span>
+
+static VALUE
+curses_cols(void)
+{
+    return INT2FIX(COLS);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="crmode-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>crmode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+
+<p>See Curses.cbreak for more detail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+383
+384
+385
+386
+387
+388
+389</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 383</span>
+
+static VALUE
+curses_nocbreak(VALUE obj)
+{
+    curses_stdscr();
+    nocbreak();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="curs_set-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>curs_set</strong>(visibility) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets Cursor Visibility. 0: invisible 1: visible 2: very visible</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 786</span>
+
+static VALUE
+curses_curs_set(VALUE obj, VALUE visibility)
+{
+#ifdef HAVE_CURS_SET
+    int n;
+    curses_stdscr();
+    return (n = curs_set(NUM2INT(visibility)) != ERR) ? INT2FIX(n) : Qnil;
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="def_prog_mode-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>def_prog_mode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Save the current terminal modes as the “program” state for use by the
+Curses.reset_prog_mode</p>
+
+<p>This is done automatically by Curses.init_screen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1403
+1404
+1405
+1406
+1407
+1408</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1403</span>
+
+static VALUE
+curses_def_prog_mode(VALUE obj)
+{
+    curses_stdscr();
+    return def_prog_mode() == OK ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete the character under the cursor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+689
+690
+691
+692
+693
+694
+695</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 689</span>
+
+static VALUE
+curses_delch(VALUE obj)
+{
+    curses_stdscr();
+    delch();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deleteln-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>deleteln</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delete the line under the cursor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+703
+704
+705
+706
+707
+708
+709
+710
+711</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 703</span>
+
+static VALUE
+curses_deleteln(VALUE obj)
+{
+    curses_stdscr();
+#if defined(HAVE_DELETELN) || defined(deleteln)
+    deleteln();
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="doupdate-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>doupdate</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Refreshes the windows and lines.</p>
+
+<p>Curses.doupdate allows multiple updates with more efficiency than
+Curses.refresh alone.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 269</span>
+
+static VALUE
+curses_doupdate(VALUE obj)
+{
+    curses_stdscr();
+#ifdef HAVE_DOUPDATE
+    doupdate();
+#else
+    refresh();
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="echo-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>echo</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables characters typed by the user to be echoed by Curses.getch as they
+are typed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+287
+288
+289
+290
+291
+292
+293</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 287</span>
+
+static VALUE
+curses_echo(VALUE obj)
+{
+    curses_stdscr();
+    echo();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ESCDELAY-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ESCDELAY</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the total time, in milliseconds, for which curses will await a
+character sequence, e.g., a function key</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1012
+1013
+1014
+1015
+1016</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1012</span>
+
+static VALUE
+curses_escdelay_get(VALUE obj)
+{
+    return INT2NUM(ESCDELAY);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ESCDELAY=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ESCDELAY=</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the ESCDELAY to Integer <code>value</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+997
+998
+999
+1000
+1001
+1002</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 997</span>
+
+static VALUE
+curses_escdelay_set(VALUE obj, VALUE val)
+{
+    ESCDELAY = NUM2INT(val);
+    return INT2NUM(ESCDELAY);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flash-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>flash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Flashs the screen, for visual alarm on the terminal, if possible; otherwise
+it sounds the alert.</p>
+
+<p>see also Curses.beep</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+455
+456
+457
+458
+459
+460
+461
+462
+463</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 455</span>
+
+static VALUE
+curses_flash(VALUE obj)
+{
+#ifdef HAVE_FLASH
+    curses_stdscr();
+    flash();
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Read and returns a character from the window.</p>
+
+<p>See Curses::Key to all the function KEY_* available</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 636</span>
+
+static VALUE
+curses_getch(VALUE obj)
+{
+    int c;
+
+    curses_stdscr();
+    rb_thread_blocking_region(getch_func, (void *)&amp;c, RUBY_UBF_IO, 0);
+    if (c == EOF) return Qnil;
+    if (rb_isprint(c)) {
+	char ch = (char)c;
+
+	return rb_locale_str_new(&amp;ch, 1);
+    }
+    return UINT2NUM(c);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getmouse-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getmouse</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns coordinates of the mouse.</p>
+
+<p>This will read and pop the mouse event data off the queue</p>
+
+<p>See the BUTTON*, ALL_MOUSE_EVENTS and REPORT_MOUSE_POSITION constants, to
+examine the mask of the event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1263
+1264
+1265
+1266
+1267
+1268
+1269
+1270
+1271
+1272
+1273
+1274</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1263</span>
+
+static VALUE
+curses_getmouse(VALUE obj)
+{
+    struct mousedata *mdata;
+    VALUE val;
+
+    curses_stdscr();
+    val = Data_Make_Struct(cMouseEvent,struct mousedata,
+			   0,curses_mousedata_free,mdata);
+    mdata-&gt;mevent = (MEVENT*)xmalloc(sizeof(MEVENT));
+    return (getmouse(mdata-&gt;mevent) == OK) ? val : Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getstr-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getstr</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is equivalent to a series f Curses::Window.getch calls</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+673
+674
+675
+676
+677
+678
+679
+680
+681</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 673</span>
+
+static VALUE
+curses_getstr(VALUE obj)
+{
+    char rtn[GETSTR_BUF_SIZE];
+
+    curses_stdscr();
+    rb_thread_blocking_region(getstr_func, (void *)rtn, RUBY_UBF_IO, 0);
+    return rb_locale_str_new_cstr(rtn);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_colors?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>has_colors?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> or <code>false</code> depending on whether the
+terminal has color capbilities.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1116
+1117
+1118
+1119
+1120
+1121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1116</span>
+
+static VALUE
+curses_has_colors(VALUE obj)
+{
+    curses_stdscr();
+    return has_colors() ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>inch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the character at the current position.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+563
+564
+565
+566
+567
+568</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 563</span>
+
+static VALUE
+curses_inch(VALUE obj)
+{
+    curses_stdscr();
+    return CH2FIX(inch());
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_color-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>init_color</strong>(color, r, g, b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes the definition of a color. It takes four arguments:</p>
+<ul><li>
+<p>the number of the color to be changed, <code>color</code></p>
+</li><li>
+<p>the amount of red, <code>r</code></p>
+</li><li>
+<p>the amount of green, <code>g</code></p>
+</li><li>
+<p>the amount of blue, <code>b</code></p>
+</li></ul>
+
+<p>The value of the first argument must be between 0 and  COLORS. (See the
+section Colors for the default color index.)  Each of the last three
+arguments must be a value between 0 and 1000. When Curses.init_color is
+used, all occurrences of that color on the screen immediately change to the
+new definition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1102
+1103
+1104
+1105
+1106
+1107
+1108
+1109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1102</span>
+
+static VALUE
+curses_init_color(VALUE obj, VALUE color, VALUE r, VALUE g, VALUE b)
+{
+    /* may have to raise exception on ERR */
+    curses_stdscr();
+    return (init_color(NUM2INT(color),NUM2INT(r),
+		       NUM2INT(g),NUM2INT(b)) == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_pair-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>init_pair</strong>(pair, f, b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes the definition of a color-pair.</p>
+
+<p>It takes three arguments: the number of the color-pair to be changed
+<code>pair</code>, the foreground color number <code>f</code>, and the
+background color number <code>b</code>.</p>
+
+<p>If the color-pair was previously initialized, the screen is refreshed and
+all occurrences of that color-pair are changed to the new definition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1078
+1079
+1080
+1081
+1082
+1083
+1084</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1078</span>
+
+static VALUE
+curses_init_pair(VALUE obj, VALUE pair, VALUE f, VALUE b)
+{
+    /* may have to raise exception on ERR */
+    curses_stdscr();
+    return (init_pair(NUM2INT(pair),NUM2INT(f),NUM2INT(b)) == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_screen-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>init_screen</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initialize a standard screen</p>
+
+<p>see also Curses.stdscr</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 127</span>
+
+static VALUE
+curses_init_screen(void)
+{
+    rb_secure(4);
+    if (rb_stdscr) return rb_stdscr;
+    initscr();
+    if (stdscr == 0) {
+	rb_raise(rb_eRuntimeError, &quot;can't initialize curses&quot;);
+    }
+    clear();
+    rb_stdscr = prep_window(cWindow, stdscr);
+    return rb_stdscr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="insch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>insch</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Insert a character <code>ch</code>, before the cursor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+593
+594
+595
+596
+597
+598
+599</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 593</span>
+
+static VALUE
+curses_insch(VALUE obj, VALUE ch)
+{
+    curses_stdscr();
+    insch(NUM2CH(ch));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="insertln-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>insertln</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Inserts a line above the cursor, and the bottom line is lost</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+719
+720
+721
+722
+723
+724
+725
+726
+727</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 719</span>
+
+static VALUE
+curses_insertln(VALUE obj)
+{
+    curses_stdscr();
+#if defined(HAVE_INSERTLN) || defined(insertln)
+    insertln();
+#endif
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keyname-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>keyname</strong>(c) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the character string corresponding to key <code>c</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 735</span>
+
+static VALUE
+curses_keyname(VALUE obj, VALUE c)
+{
+#ifdef HAVE_KEYNAME
+    int cc = curses_char(c);
+    const char *name;
+
+    curses_stdscr();
+    name = keyname(cc);
+    if (name) {
+	return rb_str_new_cstr(name);
+    }
+    else {
+	return Qnil;
+    }
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lines-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>lines</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of lines on the screen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+760
+761
+762
+763
+764</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 760</span>
+
+static VALUE
+curses_lines(void)
+{
+    return INT2FIX(LINES);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mouseinterval-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mouseinterval</strong>(interval) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The Curses.mouseinterval function sets the maximum time (in thousands of a
+second) that can elapse between press and release events for them to be
+recognized as a click.</p>
+
+<p>Use Curses.mouseinterval(0) to disable click resolution. This function
+returns the previous interval value.</p>
+
+<p>Use Curses.mouseinterval(-1) to obtain the interval without altering it.</p>
+
+<p>The default is one sixth of a second.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1310
+1311
+1312
+1313
+1314
+1315</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1310</span>
+
+static VALUE
+curses_mouseinterval(VALUE obj, VALUE interval)
+{
+    curses_stdscr();
+    return mouseinterval(NUM2INT(interval)) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mousemask-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>mousemask</strong>(mask) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the <code>mask</code> of the reportable events</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1323
+1324
+1325
+1326
+1327
+1328</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1323</span>
+
+static VALUE
+curses_mousemask(VALUE obj, VALUE mask)
+{
+    curses_stdscr();
+    return INT2NUM(mousemask(NUM2UINT(mask),NULL));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nl-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nl</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enable the underlying display device to translate the return key into
+newline on input, and whether it translates newline into return and
+line-feed on output (in either case, the call Curses.addch(‘n’) does the
+equivalent of return and line feed on the virtual screen).</p>
+
+<p>Initially, these translations do occur. If you disable them using
+Curses.nonl, curses will be able to make better use of the line-feed
+capability, resulting in faster cursor motion. Also, curses will then be
+able to detect the return key.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+405
+406
+407
+408
+409
+410
+411</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 405</span>
+
+static VALUE
+curses_nl(VALUE obj)
+{
+    curses_stdscr();
+    nl();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nocbreak-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nocbreak</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+
+<p>See Curses.cbreak for more detail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+383
+384
+385
+386
+387
+388
+389</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 383</span>
+
+static VALUE
+curses_nocbreak(VALUE obj)
+{
+    curses_stdscr();
+    nocbreak();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nocrmode-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nocrmode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal into normal mode (out of cbreak mode).</p>
+
+<p>See Curses.cbreak for more detail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+383
+384
+385
+386
+387
+388
+389</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 383</span>
+
+static VALUE
+curses_nocbreak(VALUE obj)
+{
+    curses_stdscr();
+    nocbreak();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="noecho-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>noecho</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disables characters typed by the user to be echoed by Curses.getch as they
+are typed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+301
+302
+303
+304
+305
+306
+307</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 301</span>
+
+static VALUE
+curses_noecho(VALUE obj)
+{
+    curses_stdscr();
+    noecho();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nonl-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>nonl</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disable the underlying display device to translate the return key into
+newline on input</p>
+
+<p>See Curses.nl for more detail</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+421
+422
+423
+424
+425
+426
+427</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 421</span>
+
+static VALUE
+curses_nonl(VALUE obj)
+{
+    curses_stdscr();
+    nonl();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="noraw-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>noraw</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal out of raw mode.</p>
+
+<p>see Curses.raw for more detail</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+338
+339
+340
+341
+342
+343
+344</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 338</span>
+
+static VALUE
+curses_noraw(VALUE obj)
+{
+    curses_stdscr();
+    noraw();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pair_content-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>pair_content</strong>(pair) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a 2 item Array, with the foreground and background color, in
+<code>pair</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1189
+1190
+1191
+1192
+1193
+1194
+1195
+1196
+1197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1189</span>
+
+static VALUE
+curses_pair_content(VALUE obj, VALUE pair)
+{
+    short f,b;
+
+    curses_stdscr();
+    pair_content(NUM2INT(pair),&amp;f,&amp;b);
+    return rb_ary_new3(2,INT2FIX(f),INT2FIX(b));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pair_number-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>pair_number</strong>(attrs) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the Fixnum color pair number of attributes <code>attrs</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1221
+1222
+1223
+1224
+1225
+1226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1221</span>
+
+static VALUE
+curses_pair_number(VALUE obj, VALUE attrs)
+{
+    curses_stdscr();
+    return INT2FIX(PAIR_NUMBER(NUM2INT(attrs)));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="raw-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>raw</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Put the terminal into raw mode.</p>
+
+<p>Raw mode is similar to Curses.cbreak mode, in that characters typed are
+immediately passed through to the user program.</p>
+
+<p>The differences are that in raw mode, the interrupt, quit, suspend, and
+flow control characters are all passed through uninterpreted, instead of
+generating a signal. The behavior of the BREAK key depends on other bits in
+the tty driver that are not set by curses.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+323
+324
+325
+326
+327
+328
+329</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 323</span>
+
+static VALUE
+curses_raw(VALUE obj)
+{
+    curses_stdscr();
+    raw();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="refresh-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>refresh</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Refreshes the windows and lines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+253
+254
+255
+256
+257
+258
+259</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 253</span>
+
+static VALUE
+curses_refresh(VALUE obj)
+{
+    curses_stdscr();
+    refresh();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_prog_mode-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reset_prog_mode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reset the current terminal modes to the saved state by the
+Curses.def_prog_mode</p>
+
+<p>This is done automatically by Curses.close_screen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1422
+1423
+1424
+1425
+1426
+1427</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1422</span>
+
+static VALUE
+curses_reset_prog_mode(VALUE obj)
+{
+    curses_stdscr();
+    return reset_prog_mode() == OK ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resize-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>resizeterm</strong>(lines, cols) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resize the current term to Fixnum <code>lines</code> and Fixnum
+<code>cols</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1036</span>
+
+static VALUE
+curses_resizeterm(VALUE obj, VALUE lin, VALUE col)
+{
+#if defined(HAVE_RESIZETERM)
+    curses_stdscr();
+    return (resizeterm(NUM2INT(lin),NUM2INT(col)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resizeterm-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>resizeterm</strong>(lines, cols) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resize the current term to Fixnum <code>lines</code> and Fixnum
+<code>cols</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1036</span>
+
+static VALUE
+curses_resizeterm(VALUE obj, VALUE lin, VALUE col)
+{
+#if defined(HAVE_RESIZETERM)
+    curses_stdscr();
+    return (resizeterm(NUM2INT(lin),NUM2INT(col)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qnil;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scrl-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>scrl</strong>(num) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Scrolls the current window Fixnum <code>num</code> lines. The current
+cursor position is not changed.</p>
+
+<p>For positive <code>num</code>, it scrolls up.</p>
+
+<p>For negative <code>num</code>, it scrolls down.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 810</span>
+
+static VALUE
+curses_scrl(VALUE obj, VALUE n)
+{
+    /* may have to raise exception on ERR */
+#ifdef HAVE_SCRL
+    curses_stdscr();
+    return (scrl(NUM2INT(n)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setpos-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>setpos</strong>(y, x) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A setter for the position of the cursor, using coordinates <code>x</code>
+and <code>y</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+516
+517
+518
+519
+520
+521
+522</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 516</span>
+
+static VALUE
+curses_setpos(VALUE obj, VALUE y, VALUE x)
+{
+    curses_stdscr();
+    move(NUM2INT(y), NUM2INT(x));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setscrreg-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>setscrreg</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_setscrreg'>setscrreg</span><span class='lparen'>(</span><span class='id identifier rubyid_top'>top</span><span class='comma'>,</span> <span class='id identifier rubyid_bottom'>bottom</span><span class='rparen'>)</span></code></pre>
+
+<p>Set a software scrolling region in a window. <code>top</code> and
+<code>bottom</code> are lines numbers of the margin.</p>
+
+<p>If this option and Curses.scrollok are enabled, an attempt to move off the
+bottom margin line causes all lines in the scrolling region to scroll one
+line in the direction of the first line. Only the text of the window is
+scrolled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 837</span>
+
+static VALUE
+curses_setscrreg(VALUE obj, VALUE top, VALUE bottom)
+{
+    /* may have to raise exception on ERR */
+#ifdef HAVE_SETSCRREG
+    curses_stdscr();
+    return (setscrreg(NUM2INT(top), NUM2INT(bottom)) == OK) ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="standend-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>standend</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the Normal display (no highlight)</p>
+
+<p>This is equivalent to Curses.attron(A_NORMAL)</p>
+
+<p>see also Curses::Window.attrset for additional information.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+550
+551
+552
+553
+554
+555
+556</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 550</span>
+
+static VALUE
+curses_standend(VALUE obj)
+{
+    curses_stdscr();
+    standend();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="standout-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>standout</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables the best highlighting mode of the terminal.</p>
+
+<p>This is equivalent to Curses:Window.attron(A_STANDOUT)</p>
+
+<p>see also Curses::Window.attrset additional information</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+533
+534
+535
+536
+537
+538
+539</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 533</span>
+
+static VALUE
+curses_standout(VALUE obj)
+{
+    curses_stdscr();
+    standout();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start_color-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>start_color</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initializes the color attributes, for terminals that support it.</p>
+
+<p>This must be called, in order to use color attributes. It is good practice
+to call it just after Curses.init_screen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1056
+1057
+1058
+1059
+1060
+1061
+1062</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1056</span>
+
+static VALUE
+curses_start_color(VALUE obj)
+{
+    /* may have to raise exception on ERR */
+    curses_stdscr();
+    return (start_color() == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stdscr-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>stdscr</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The Standard Screen.</p>
+
+<p>Upon initializing curses, a default window called stdscr, which is the size
+of the terminal screen, is created.</p>
+
+<p>Many curses functions use this window.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="TABSIZE-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>TABSIZE</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of positions in a tab.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+982
+983
+984
+985
+986</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 982</span>
+
+static VALUE
+curses_tabsize_get(VALUE ojb)
+{
+    return INT2NUM(TABSIZE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="TABSIZE=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>TABSIZE=</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the TABSIZE to Integer <code>value</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+968
+969
+970
+971
+972
+973</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 968</span>
+
+static VALUE
+curses_tabsize_set(VALUE obj, VALUE val)
+{
+    TABSIZE = NUM2INT(val);
+    return INT2NUM(TABSIZE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="timeout=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>timeout=</strong>(delay) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets block and non-blocking reads for the window.</p>
+<ul><li>
+<p>If delay is negative, blocking read is used (i.e., waits indefinitely for
+input).</p>
+</li><li>
+<p>If delay is zero, then non-blocking read is used (i.e., read returns ERR if
+no input is waiting).</p>
+</li><li>
+<p>If delay is positive, then read blocks for delay milliseconds, and returns
+ERR if there is still no input.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetch-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ungetch</strong>(ch) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Places <code>ch</code> back onto the input queue to be returned by the next
+call to Curses.getch.</p>
+
+<p>There is just one input queue for all windows.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+496
+497
+498
+499
+500
+501
+502
+503</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 496</span>
+
+static VALUE
+curses_ungetch(VALUE obj, VALUE ch)
+{
+    int c = curses_char(ch);
+    curses_stdscr();
+    ungetch(c);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetmouse-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ungetmouse</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>It pushes a KEY_MOUSE event onto the input queue, and associates with that
+event the given state data and screen-relative character-cell coordinates.</p>
+
+<p>The Curses.ungetmouse function behaves analogously to Curses.ungetch.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1284
+1285
+1286
+1287
+1288
+1289
+1290
+1291
+1292</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 1284</span>
+
+static VALUE
+curses_ungetmouse(VALUE obj, VALUE mevent)
+{
+    struct mousedata *mdata;
+
+    curses_stdscr();
+    GetMOUSE(mevent,mdata);
+    return (ungetmouse(mdata-&gt;mevent) == OK) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use_default_colors-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>use_default_colors</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>tells the curses library to use terminal’s default colors.</p>
+
+<p>see also the system manual for default_colors(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+950
+951
+952
+953
+954
+955
+956</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/curses/curses.c', line 950</span>
+
+static VALUE
+curses_use_default_colors(VALUE obj)
+{
+    curses_stdscr();
+    use_default_colors();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:18 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

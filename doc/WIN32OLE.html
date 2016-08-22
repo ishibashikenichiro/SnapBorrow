@@ -1,0 +1,3773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: WIN32OLE
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!WIN32OLE.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (W)</a> &raquo;
+    
+    
+    <span class="title">WIN32OLE</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: WIN32OLE
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">WIN32OLE</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/win32ole/win32ole.c<span class="defines">,<br />
+  ext/win32ole/win32ole.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p><code>WIN32OLE</code> objects represent OLE Automation object in Ruby.</p>
+
+<pre class="ruby"> <span class="ruby-constant">By</span> <span class="ruby-identifier">using</span> <span class="ruby-constant">WIN32OLE</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">access</span> <span class="ruby-constant">OLE</span> <span class="ruby-identifier">server</span> <span class="ruby-identifier">like</span> <span class="ruby-constant">VBScript</span>.
+
+ <span class="ruby-constant">Here</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">sample</span> <span class="ruby-identifier">script</span>.
+
+   <span class="ruby-identifier">require</span> <span class="ruby-string">'win32ole'</span>
+
+   <span class="ruby-identifier">excel</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>)
+   <span class="ruby-identifier">excel</span>.<span class="ruby-identifier">visible</span> = <span class="ruby-keyword">true</span>
+   <span class="ruby-identifier">workbook</span> = <span class="ruby-identifier">excel</span>.<span class="ruby-constant">Workbooks</span>.<span class="ruby-constant">Add</span>();
+   <span class="ruby-identifier">worksheet</span> = <span class="ruby-identifier">workbook</span>.<span class="ruby-constant">Worksheets</span>(<span class="ruby-value">1</span>);
+   <span class="ruby-identifier">worksheet</span>.<span class="ruby-constant">Range</span>(<span class="ruby-string">&quot;A1:D1&quot;</span>).<span class="ruby-identifier">value</span> = [<span class="ruby-string">&quot;North&quot;</span>,<span class="ruby-string">&quot;South&quot;</span>,<span class="ruby-string">&quot;East&quot;</span>,<span class="ruby-string">&quot;West&quot;</span>];
+   <span class="ruby-identifier">worksheet</span>.<span class="ruby-constant">Range</span>(<span class="ruby-string">&quot;A2:B2&quot;</span>).<span class="ruby-identifier">value</span> = [<span class="ruby-value">5.2</span>, <span class="ruby-value">10</span>];
+   <span class="ruby-identifier">worksheet</span>.<span class="ruby-constant">Range</span>(<span class="ruby-string">&quot;C2&quot;</span>).<span class="ruby-identifier">value</span> = <span class="ruby-value">8</span>;
+   <span class="ruby-identifier">worksheet</span>.<span class="ruby-constant">Range</span>(<span class="ruby-string">&quot;D2&quot;</span>).<span class="ruby-identifier">value</span> = <span class="ruby-value">20</span>;
+
+   <span class="ruby-identifier">range</span> = <span class="ruby-identifier">worksheet</span>.<span class="ruby-constant">Range</span>(<span class="ruby-string">&quot;A1:D2&quot;</span>);
+   <span class="ruby-identifier">range</span>.<span class="ruby-identifier">select</span>
+   <span class="ruby-identifier">chart</span> = <span class="ruby-identifier">workbook</span>.<span class="ruby-constant">Charts</span>.<span class="ruby-constant">Add</span>;
+
+   <span class="ruby-identifier">workbook</span>.<span class="ruby-identifier">saved</span> = <span class="ruby-keyword">true</span>;
+
+   <span class="ruby-identifier">excel</span>.<span class="ruby-constant">ActiveWorkbook</span>.<span class="ruby-constant">Close</span>(<span class="ruby-value">0</span>);
+   <span class="ruby-identifier">excel</span>.<span class="ruby-constant">Quit</span>();
+
+<span class="ruby-constant">Unfortunately</span>, <span class="ruby-constant">Win32OLE</span> <span class="ruby-identifier">doesn</span><span class="ruby-string">'t support the argument passed by
+reference directly.
+Instead, Win32OLE provides WIN32OLE::ARGV.
+If you want to get the result value of argument passed by reference,
+you can use WIN32OLE::ARGV.
+
+   oleobj.method(arg1, arg2, refargv3)
+   puts WIN32OLE::ARGV[2]   # the value of refargv3 after called oleobj.method
+</span></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="WIN32OLE/VARIANT.html" title="WIN32OLE::VARIANT (module)">VARIANT</a></span>
+    
+  
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_rb_str_new2'>rb_str_new2</span><span class='lparen'>(</span><span class='const'>WIN32OLE_VERSION</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ARGV-constant" class="">ARGV =
+          
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_rb_ary_new'>rb_ary_new</span><span class='lparen'>(</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_ACP-constant" class="">CP_ACP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_ACP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_OEMCP-constant" class="">CP_OEMCP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_OEMCP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_MACCP-constant" class="">CP_MACCP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_MACCP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_THREAD_ACP-constant" class="">CP_THREAD_ACP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_THREAD_ACP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_SYMBOL-constant" class="">CP_SYMBOL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_SYMBOL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_UTF7-constant" class="">CP_UTF7 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_UTF7</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CP_UTF8-constant" class="">CP_UTF8 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>CP_UTF8</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LOCALE_SYSTEM_DEFAULT-constant" class="">LOCALE_SYSTEM_DEFAULT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>LOCALE_SYSTEM_DEFAULT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LOCALE_USER_DEFAULT-constant" class="">LOCALE_USER_DEFAULT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>LOCALE_USER_DEFAULT</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#codepage-class_method" title="codepage (class method)">+ (Object) <strong>codepage</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns current codepage.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#codepage%3D-class_method" title="codepage= (class method)">+ (Object) <strong>codepage=</strong>(CP) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets current codepage.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connect-class_method" title="connect (class method)">+ (Object) <strong>connect</strong>(ole) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns running OLE Automation object or WIN32OLE object from moniker.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_load-class_method" title="const_load (class method)">+ (Object) <strong>const_load</strong>(ole, mod = WIN32OLE) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Defines the constants of OLE Automation server as mod’s constants.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_guid-class_method" title="create_guid (class method)">+ (Object) <strong>create_guid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates GUID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locale-class_method" title="locale (class method)">+ (Object) <strong>locale</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns current locale id (lcid).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#locale%3D-class_method" title="locale= (class method)">+ (Object) <strong>locale=</strong>(lcid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets current locale id (lcid).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_free-class_method" title="ole_free (class method)">+ (Object) <strong>ole_free</strong>(aWIN32OLE) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Invokes Release method of Dispatch interface of WIN32OLE object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_initialize-class_method" title="ole_initialize (class method)">+ (Object) <strong>ole_initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_reference_count-class_method" title="ole_reference_count (class method)">+ (Object) <strong>ole_reference_count</strong>(aWIN32OLE) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns reference counter of Dispatch interface of WIN32OLE object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_show_help-class_method" title="ole_show_help (class method)">+ (Object) <strong>ole_show_help</strong>(obj[,helpcontext]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays helpfile.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_uninitialize-class_method" title="ole_uninitialize (class method)">+ (Object) <strong>ole_uninitialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D-instance_method" title="#[] (instance method)">- (Object) <strong>[]</strong>(a1, a2, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of Collection specified by a1, a2,.…</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D%3D-instance_method" title="#[]= (instance method)">- (Object) <strong>[]=</strong>(a1, a2, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the value to WIN32OLE object specified by a1, a2, …</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_getproperty-instance_method" title="#_getproperty (instance method)">- (Object) <strong>_getproperty</strong>(dispid, args, types) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs the early binding method to get property.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_invoke-instance_method" title="#_invoke (instance method)">- (Object) <strong>_invoke</strong>(dispid, args, types) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs the early binding method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_setproperty-instance_method" title="#_setproperty (instance method)">- (Object) <strong>_setproperty</strong>(dispid, args, types) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs the early binding method to set property.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> {|i| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Iterates over each item of OLE collection which has IEnumVARIANT interface.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (WIN32OLE object) <strong>new</strong>(server, [host]) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new WIN32OLE object(OLE Automation object).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invoke-instance_method" title="#invoke (instance method)">- (Object) <strong>invoke</strong>(method, [arg1,...]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs OLE method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_missing-instance_method" title="#method_missing (instance method)">- (Object) <strong>method_missing</strong>(id[,arg1, arg2, ...]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls WIN32OLE#invoke method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_activex_initialize-instance_method" title="#ole_activex_initialize (instance method)">- (Qnil) <strong>ole_activex_initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initialize WIN32OLE object(ActiveX Control) by calling
+IPersistMemory::InitNew.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_free-instance_method" title="#ole_free (instance method)">- (Object) <strong>ole_free</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>invokes Release method of Dispatch interface of WIN32OLE object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_func_methods-instance_method" title="#ole_func_methods (instance method)">- (Object) <strong>ole_func_methods</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the array of WIN32OLE_METHOD object .</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_get_methods-instance_method" title="#ole_get_methods (instance method)">- (Object) <strong>ole_get_methods</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the array of WIN32OLE_METHOD object .</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_method-instance_method" title="#ole_method_help (instance method)">- (Object) <strong>ole_method_help</strong>(method) </a>
+    
+
+    
+      (also: #ole_method_help)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns WIN32OLE_METHOD object corresponding with method specified by 1st
+argument.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_methods-instance_method" title="#ole_methods (instance method)">- (Object) <strong>ole_methods</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the array of WIN32OLE_METHOD object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_put_methods-instance_method" title="#ole_put_methods (instance method)">- (Object) <strong>ole_put_methods</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the array of WIN32OLE_METHOD object .</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_query_interface-instance_method" title="#ole_query_interface (instance method)">- (WIN32OLE object) <strong>ole_query_interface</strong>(iid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns WIN32OLE object for a specific dispatch or dual interface specified
+by iid.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_respond_to%3F-instance_method" title="#ole_respond_to? (instance method)">- (Boolean) <strong>ole_respond_to?</strong>(method) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true when OLE object has OLE method, otherwise returns false.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_type-instance_method" title="#ole_type (instance method)">- (Object) <strong>ole_type</strong> </a>
+    
+
+    
+      (also: #ole_obj_help)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns WIN32OLE_TYPE object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ole_typelib-instance_method" title="#ole_typelib (instance method)">- (The WIN32OLE_TYPELIB object) <strong>ole_typelib</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the WIN32OLE_TYPELIB object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setproperty-instance_method" title="#setproperty (instance method)">- (Object) <strong>setproperty</strong>('property', [arg1, arg2,...]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets property of OLE object.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="WIN32OLE (class)">WIN32OLE</a></span> object</tt>) <strong>new</strong>(server, [host]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new WIN32OLE object(OLE Automation object). The first argument
+server specifies OLE Automation server. The first argument should be CLSID
+or PROGID. If second argument host specified, then returns OLE Automation
+object on host.</p>
+
+<pre class="ruby"><span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>) <span class="ruby-comment"># =&gt; Excel OLE Automation WIN32OLE object.</span>
+<span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'{00024500-0000-0000-C000-000000000046}'</span>) <span class="ruby-comment"># =&gt; Excel OLE Automation WIN32OLE object.</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3219
+3220
+3221
+3222
+3223
+3224
+3225
+3226
+3227
+3228
+3229
+3230
+3231
+3232
+3233
+3234
+3235
+3236
+3237
+3238
+3239
+3240
+3241
+3242
+3243
+3244
+3245
+3246
+3247
+3248
+3249
+3250
+3251
+3252
+3253
+3254
+3255
+3256
+3257
+3258
+3259
+3260
+3261
+3262
+3263
+3264
+3265
+3266
+3267
+3268
+3269
+3270
+3271
+3272
+3273</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3219</span>
+
+static VALUE
+fole_initialize(int argc, VALUE *argv, VALUE self)
+{
+    VALUE svr_name;
+    VALUE host;
+    VALUE others;
+    HRESULT hr;
+    CLSID   clsid;
+    OLECHAR *pBuf;
+    IDispatch *pDispatch;
+    void *p;
+    rb_secure(4);
+    rb_call_super(0, 0);
+    rb_scan_args(argc, argv, &quot;11*&quot;, &amp;svr_name, &amp;host, &amp;others);
+
+    SafeStringValue(svr_name);
+    if (rb_safe_level() &gt; 0 &amp;&amp; OBJ_TAINTED(svr_name)) {
+        rb_raise(rb_eSecurityError, &quot;Insecure Object Creation - %s&quot;,
+                 StringValuePtr(svr_name));
+    }
+    if (!NIL_P(host)) {
+	SafeStringValue(host);
+        if (rb_safe_level() &gt; 0 &amp;&amp; OBJ_TAINTED(host)) {
+            rb_raise(rb_eSecurityError, &quot;Insecure Object Creation - %s&quot;,
+                     StringValuePtr(svr_name));
+        }
+        return ole_create_dcom(argc, argv, self);
+    }
+
+    /* get CLSID from OLE server name */
+    pBuf  = ole_vstr2wc(svr_name);
+    hr = CLSIDFromProgID(pBuf, &amp;clsid);
+    if(FAILED(hr)) {
+        hr = CLSIDFromString(pBuf, &amp;clsid);
+    }
+    SysFreeString(pBuf);
+    if(FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;unknown OLE server: `%s'&quot;,
+                  StringValuePtr(svr_name));
+    }
+
+    /* get IDispatch interface */
+    hr = CoCreateInstance(&amp;clsid, NULL, CLSCTX_INPROC_SERVER | CLSCTX_LOCAL_SERVER,
+                          &amp;IID_IDispatch, &amp;p);
+    pDispatch = p;
+    if(FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;failed to create WIN32OLE object from `%s'&quot;,
+                  StringValuePtr(svr_name));
+    }
+
+    ole_set_member(self, pDispatch);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+<div id="method_missing_details" class="method_details_list">
+  <h2>Dynamic Method Handling</h2>
+  <p class="notice this">
+    This class handles dynamic methods through the <tt>method_missing</tt> method
+    
+  </p>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="method_missing-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>method_missing</strong>(id[,arg1, arg2, ...]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls WIN32OLE#invoke method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4066
+4067
+4068
+4069
+4070
+4071
+4072
+4073
+4074
+4075
+4076
+4077
+4078
+4079
+4080
+4081
+4082
+4083
+4084
+4085
+4086
+4087</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4066</span>
+
+static VALUE
+fole_missing(int argc, VALUE *argv, VALUE self)
+{
+    ID id;
+    const char* mname;
+    int n;
+    id = rb_to_id(argv[0]);
+    mname = rb_id2name(id);
+    if(!mname) {
+        rb_raise(rb_eRuntimeError, &quot;fail: unknown method or property&quot;);
+    }
+    n = strlen(mname);
+    if(mname[n-1] == '=') {
+        argv[0] = rb_enc_str_new(mname, n-1, cWIN32OLE_enc);
+
+        return ole_propertyput(self, argv[0], argv[1]);
+    }
+    else {
+        argv[0] = rb_enc_str_new(mname, n, cWIN32OLE_enc);
+        return ole_invoke(argc, argv, self, DISPATCH_METHOD|DISPATCH_PROPERTYGET, FALSE);
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="codepage-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepage</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns current codepage.</p>
+
+<pre class="ruby"><span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">codepage</span> <span class="ruby-comment"># =&gt; WIN32OLE::CP_ACP</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2994
+2995
+2996
+2997
+2998</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2994</span>
+
+static VALUE
+fole_s_get_code_page(VALUE self)
+{
+    return INT2FIX(cWIN32OLE_cp);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="codepage=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepage=</strong>(CP) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets current codepage. The WIN32OLE.codepage is initialized according to
+Encoding.default_internal. If Encoding.default_internal is nil then
+WIN32OLE.codepage is initialized according to Encoding.default_external.</p>
+
+<pre class="code"><code class=""><span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_codepage'>codepage</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='op'>::</span><span class='const'>CP_UTF8</span>
+<span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_codepage'>codepage</span> <span class='op'>=</span> <span class='int'>65001</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3031
+3032
+3033
+3034
+3035
+3036
+3037
+3038
+3039
+3040</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3031</span>
+
+static VALUE
+fole_s_set_code_page(VALUE self, VALUE vcp)
+{
+    UINT cp = FIX2INT(vcp);
+    set_ole_codepage(cp);
+    /*
+     * Should this method return old codepage?
+     */
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="connect-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>connect</strong>(ole) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns running OLE Automation object or WIN32OLE object from moniker. 1st
+argument should be OLE program id or class id or moniker.</p>
+
+<pre class="ruby"><span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-string">'Excel.Application'</span>) <span class="ruby-comment"># =&gt; WIN32OLE object which represents running Excel.</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2693
+2694
+2695
+2696
+2697
+2698
+2699
+2700
+2701
+2702
+2703
+2704
+2705
+2706
+2707
+2708
+2709
+2710
+2711
+2712
+2713
+2714
+2715
+2716
+2717
+2718
+2719
+2720
+2721
+2722
+2723
+2724
+2725
+2726
+2727
+2728
+2729
+2730
+2731
+2732
+2733
+2734
+2735
+2736
+2737
+2738
+2739
+2740
+2741
+2742
+2743
+2744</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2693</span>
+
+static VALUE
+fole_s_connect(int argc, VALUE *argv, VALUE self)
+{
+    VALUE svr_name;
+    VALUE others;
+    HRESULT hr;
+    CLSID   clsid;
+    OLECHAR *pBuf;
+    IDispatch *pDispatch;
+    void *p;
+    IUnknown *pUnknown;
+
+    rb_secure(4);
+    /* initialize to use OLE */
+    ole_initialize();
+
+    rb_scan_args(argc, argv, &quot;1*&quot;, &amp;svr_name, &amp;others);
+    SafeStringValue(svr_name);
+    if (rb_safe_level() &gt; 0 &amp;&amp; OBJ_TAINTED(svr_name)) {
+        rb_raise(rb_eSecurityError, &quot;Insecure Object Connection - %s&quot;,
+		 StringValuePtr(svr_name));
+    }
+
+    /* get CLSID from OLE server name */
+    pBuf = ole_vstr2wc(svr_name);
+    hr = CLSIDFromProgID(pBuf, &amp;clsid);
+    if(FAILED(hr)) {
+        hr = CLSIDFromString(pBuf, &amp;clsid);
+    }
+    SysFreeString(pBuf);
+    if(FAILED(hr)) {
+        return ole_bind_obj(svr_name, argc, argv, self);
+    }
+
+    hr = GetActiveObject(&amp;clsid, 0, &amp;pUnknown);
+    if (FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;OLE server `%s' not running&quot;, StringValuePtr(svr_name));
+    }
+    hr = pUnknown-&gt;lpVtbl-&gt;QueryInterface(pUnknown, &amp;IID_IDispatch, &amp;p);
+    pDispatch = p;
+    if(FAILED(hr)) {
+        OLE_RELEASE(pUnknown);
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;failed to create WIN32OLE server `%s'&quot;,
+                  StringValuePtr(svr_name));
+    }
+
+    OLE_RELEASE(pUnknown);
+
+    return create_win32ole_object(self, pDispatch, argc, argv);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_load-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>const_load</strong>(ole, mod = WIN32OLE) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the constants of OLE Automation server as mod’s constants. The
+first argument is WIN32OLE object or type library name. If 2nd argument is
+omitted, the default is WIN32OLE. The first letter of Ruby’s constant
+variable name is upper case, so constant variable name of WIN32OLE object
+is capitalized. For example, the ‘xlTop’ constant of Excel is changed to
+‘XlTop’ in WIN32OLE. If the first letter of constant variabl is not [A-Z],
+then the constant is defined as CONSTANTS hash element.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">EXCEL_CONST</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">excel</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>)
+<span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">const_load</span>(<span class="ruby-identifier">excel</span>, <span class="ruby-constant">EXCEL_CONST</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">EXCEL_CONST</span><span class="ruby-operator">::</span><span class="ruby-constant">XlTop</span> <span class="ruby-comment"># =&gt; -4160</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">EXCEL_CONST</span><span class="ruby-operator">::</span><span class="ruby-constant">CONSTANTS</span>[<span class="ruby-string">'_xlDialogChartSourceData'</span>] <span class="ruby-comment"># =&gt; 541</span>
+
+<span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">const_load</span>(<span class="ruby-identifier">excel</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">WIN32OLE</span><span class="ruby-operator">::</span><span class="ruby-constant">XlTop</span> <span class="ruby-comment"># =&gt; -4160</span>
+
+<span class="ruby-keyword">module</span> <span class="ruby-constant">MSO</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">const_load</span>(<span class="ruby-string">'Microsoft Office 9.0 Object Library'</span>, <span class="ruby-constant">MSO</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">MSO</span><span class="ruby-operator">::</span><span class="ruby-constant">MsoLineSingle</span> <span class="ruby-comment"># =&gt; 1</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2775
+2776
+2777
+2778
+2779
+2780
+2781
+2782
+2783
+2784
+2785
+2786
+2787
+2788
+2789
+2790
+2791
+2792
+2793
+2794
+2795
+2796
+2797
+2798
+2799
+2800
+2801
+2802
+2803
+2804
+2805
+2806
+2807
+2808
+2809
+2810
+2811
+2812
+2813
+2814
+2815
+2816
+2817
+2818
+2819
+2820
+2821
+2822
+2823
+2824
+2825
+2826
+2827
+2828
+2829
+2830
+2831
+2832
+2833
+2834
+2835
+2836
+2837
+2838
+2839</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2775</span>
+
+static VALUE
+fole_s_const_load(int argc, VALUE *argv, VALUE self)
+{
+    VALUE ole;
+    VALUE klass;
+    struct oledata *pole;
+    ITypeInfo *pTypeInfo;
+    ITypeLib *pTypeLib;
+    unsigned int index;
+    HRESULT hr;
+    OLECHAR *pBuf;
+    VALUE file;
+    LCID    lcid = cWIN32OLE_lcid;
+
+    rb_secure(4);
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;ole, &amp;klass);
+    if (TYPE(klass) != T_CLASS &amp;&amp;
+        TYPE(klass) != T_MODULE &amp;&amp;
+        TYPE(klass) != T_NIL) {
+        rb_raise(rb_eTypeError, &quot;2nd parameter must be Class or Module&quot;);
+    }
+    if (rb_obj_is_kind_of(ole, cWIN32OLE)) {
+        OLEData_Get_Struct(ole, pole);
+        hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;GetTypeInfo(pole-&gt;pDispatch,
+                                                  0, lcid, &amp;pTypeInfo);
+        if(FAILED(hr)) {
+            ole_raise(hr, rb_eRuntimeError, &quot;failed to GetTypeInfo&quot;);
+        }
+        hr = pTypeInfo-&gt;lpVtbl-&gt;GetContainingTypeLib(pTypeInfo, &amp;pTypeLib, &amp;index);
+        if(FAILED(hr)) {
+            OLE_RELEASE(pTypeInfo);
+            ole_raise(hr, rb_eRuntimeError, &quot;failed to GetContainingTypeLib&quot;);
+        }
+        OLE_RELEASE(pTypeInfo);
+        if(TYPE(klass) != T_NIL) {
+            ole_const_load(pTypeLib, klass, self);
+        }
+        else {
+            ole_const_load(pTypeLib, cWIN32OLE, self);
+        }
+        OLE_RELEASE(pTypeLib);
+    }
+    else if(TYPE(ole) == T_STRING) {
+        file = typelib_file(ole);
+        if (file == Qnil) {
+            file = ole;
+        }
+        pBuf = ole_vstr2wc(file);
+        hr = LoadTypeLibEx(pBuf, REGKIND_NONE, &amp;pTypeLib);
+        SysFreeString(pBuf);
+        if (FAILED(hr))
+          ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to LoadTypeLibEx&quot;);
+        if(TYPE(klass) != T_NIL) {
+            ole_const_load(pTypeLib, klass, self);
+        }
+        else {
+            ole_const_load(pTypeLib, cWIN32OLE, self);
+        }
+        OLE_RELEASE(pTypeLib);
+    }
+    else {
+        rb_raise(rb_eTypeError, &quot;1st parameter must be WIN32OLE instance&quot;);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_guid-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>create_guid</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates GUID.</p>
+
+<pre class="ruby"><span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">create_guid</span> <span class="ruby-comment"># =&gt; {1CB530F1-F6B1-404D-BCE6-1959BF91F4A8}</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3112
+3113
+3114
+3115
+3116
+3117
+3118
+3119
+3120
+3121
+3122
+3123
+3124
+3125
+3126
+3127
+3128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3112</span>
+
+static VALUE
+fole_s_create_guid(VALUE self)
+{
+    GUID guid;
+    HRESULT hr;
+    OLECHAR bstr[80];
+    int len = 0;
+    hr = CoCreateGuid(&amp;guid);
+    if (FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to create GUID&quot;);
+    }
+    len = StringFromGUID2(&amp;guid, bstr, sizeof(bstr)/sizeof(OLECHAR));
+    if (len == 0) {
+        rb_raise(rb_eRuntimeError, &quot;failed to create GUID(buffer over)&quot;);
+    }
+    return ole_wc2vstr(bstr, FALSE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="locale-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>locale</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns current locale id (lcid). The default locale is
+LOCALE_SYSTEM_DEFAULT.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_lcid'>lcid</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_locale'>locale</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3051
+3052
+3053
+3054
+3055</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3051</span>
+
+static VALUE
+fole_s_get_locale(VALUE self)
+{
+    return INT2FIX(cWIN32OLE_lcid);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="locale=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>locale=</strong>(lcid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets current locale id (lcid).</p>
+
+<pre class="code"><code class=""><span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_locale'>locale</span> <span class='op'>=</span> <span class='int'>1033</span> <span class='comment'># set locale English(U.S)
+</span><span class='id identifier rubyid_obj'>obj</span> <span class='op'>=</span> <span class='const'>WIN32OLE_VARIANT</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$100,000</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>WIN32OLE</span><span class='op'>::</span><span class='const'>VARIANT</span><span class='op'>::</span><span class='const'>VT_CY</span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3086
+3087
+3088
+3089
+3090
+3091
+3092
+3093
+3094
+3095
+3096
+3097
+3098
+3099
+3100
+3101
+3102
+3103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3086</span>
+
+static VALUE
+fole_s_set_locale(VALUE self, VALUE vlcid)
+{
+    LCID lcid = FIX2INT(vlcid);
+    if (lcid_installed(lcid)) {
+        cWIN32OLE_lcid = lcid;
+    } else {
+        switch (lcid) {
+        case LOCALE_SYSTEM_DEFAULT:
+        case LOCALE_USER_DEFAULT:
+            cWIN32OLE_lcid = lcid;
+            break;
+        default:
+            rb_raise(eWIN32OLERuntimeError, &quot;not installed locale: %u&quot;, (unsigned int)lcid);
+        }
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_free-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_free</strong>(aWIN32OLE) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Invokes Release method of Dispatch interface of WIN32OLE object. You should
+not use this method because this method exists only for debugging WIN32OLE.
+The return value is reference counter of OLE object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2909
+2910
+2911
+2912
+2913
+2914
+2915
+2916
+2917
+2918
+2919
+2920
+2921</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2909</span>
+
+static VALUE
+fole_s_free(VALUE self, VALUE obj)
+{
+    ULONG n = 0;
+    struct oledata * pole;
+    OLEData_Get_Struct(obj, pole);
+    if(pole-&gt;pDispatch) {
+        if (reference_count(pole) &gt; 0) {
+            n = OLE_RELEASE(pole-&gt;pDispatch);
+        }
+    }
+    return INT2NUM(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_initialize-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3151
+3152
+3153
+3154
+3155
+3156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3151</span>
+
+static VALUE
+fole_s_ole_initialize(VALUE self)
+{
+    ole_pure_initialize();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_reference_count-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_reference_count</strong>(aWIN32OLE) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns reference counter of Dispatch interface of WIN32OLE object. You
+should not use this method because this method exists only for debugging
+WIN32OLE.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2892
+2893
+2894
+2895
+2896
+2897
+2898</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2892</span>
+
+static VALUE
+fole_s_reference_count(VALUE self, VALUE obj)
+{
+    struct oledata * pole;
+    OLEData_Get_Struct(obj, pole);
+    return INT2NUM(reference_count(pole));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_show_help-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_show_help</strong>(obj[,helpcontext]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays helpfile. The 1st argument specifies WIN32OLE_TYPE object or
+WIN32OLE_METHOD object or helpfile.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_typeobj'>typeobj</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_type'>ole_type</span>
+<span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_ole_show_help'>ole_show_help</span><span class='lparen'>(</span><span class='id identifier rubyid_typeobj'>typeobj</span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2955
+2956
+2957
+2958
+2959
+2960
+2961
+2962
+2963
+2964
+2965
+2966
+2967
+2968
+2969
+2970
+2971
+2972
+2973
+2974
+2975
+2976
+2977
+2978
+2979
+2980
+2981
+2982
+2983
+2984
+2985</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 2955</span>
+
+static VALUE
+fole_s_show_help(int argc, VALUE *argv, VALUE self)
+{
+    VALUE target;
+    VALUE helpcontext;
+    VALUE helpfile;
+    VALUE name;
+    HWND  hwnd;
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;target, &amp;helpcontext);
+    if (rb_obj_is_kind_of(target, cWIN32OLE_TYPE) ||
+        rb_obj_is_kind_of(target, cWIN32OLE_METHOD)) {
+        helpfile = rb_funcall(target, rb_intern(&quot;helpfile&quot;), 0);
+        if(strlen(StringValuePtr(helpfile)) == 0) {
+            name = rb_ivar_get(target, rb_intern(&quot;name&quot;));
+            rb_raise(rb_eRuntimeError, &quot;no helpfile of `%s'&quot;,
+                     StringValuePtr(name));
+        }
+        helpcontext = rb_funcall(target, rb_intern(&quot;helpcontext&quot;), 0);
+    } else {
+        helpfile = target;
+    }
+    if (TYPE(helpfile) != T_STRING) {
+        rb_raise(rb_eTypeError, &quot;1st parameter must be (String|WIN32OLE_TYPE|WIN32OLE_METHOD)&quot;);
+    }
+    hwnd = ole_show_help(helpfile, helpcontext);
+    if(hwnd == 0) {
+        rb_raise(rb_eRuntimeError, &quot;failed to open help file `%s'&quot;,
+                 StringValuePtr(helpfile));
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_uninitialize-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_uninitialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3159
+3160
+3161
+3162
+3163
+3164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3159</span>
+
+static VALUE
+fole_s_ole_uninitialize(VALUE self)
+{
+    ole_pure_uninitialize();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]</strong>(a1, a2, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of Collection specified by a1, a2,.…</p>
+
+<pre class="ruby"><span class="ruby-identifier">dict</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Scripting.Dictionary'</span>)
+<span class="ruby-identifier">dict</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">'ruby'</span>, <span class="ruby-string">'Ruby'</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">dict</span>[<span class="ruby-string">'ruby'</span>] <span class="ruby-comment"># =&gt; 'Ruby' (same as `puts dict.item('ruby')')</span>
+</pre>
+
+<p>Remark: You can not use this method to get the property.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='comment'># puts excel['Visible']  This is error !!!
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='const'>Visible</span> <span class='comment'># You should to use this style to get the property.</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3882
+3883
+3884
+3885
+3886</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3882</span>
+
+static VALUE
+fole_getproperty_with_bracket(int argc, VALUE *argv, VALUE self)
+{
+    return ole_invoke(argc, argv, self, DISPATCH_PROPERTYGET, TRUE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="[]=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]=</strong>(a1, a2, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the value to WIN32OLE object specified by a1, a2, …</p>
+
+<pre class="ruby"><span class="ruby-identifier">dict</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Scripting.Dictionary'</span>)
+<span class="ruby-identifier">dict</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">'ruby'</span>, <span class="ruby-string">'RUBY'</span>)
+<span class="ruby-identifier">dict</span>[<span class="ruby-string">'ruby'</span>] = <span class="ruby-string">'Ruby'</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">dict</span>[<span class="ruby-string">'ruby'</span>] <span class="ruby-comment"># =&gt; 'Ruby'</span>
+</pre>
+
+<p>Remark: You can not use this method to set the property value.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='comment'># excel['Visible'] = true # This is error !!!
+</span><span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='const'>Visible</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='comment'># You should to use this style to set the property.</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3841
+3842
+3843
+3844
+3845</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3841</span>
+
+static VALUE
+fole_setproperty_with_bracket(int argc, VALUE *argv, VALUE self)
+{
+    return ole_invoke(argc, argv, self, DISPATCH_PROPERTYPUT, TRUE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_getproperty-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_getproperty</strong>(dispid, args, types) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Runs the early binding method to get property. The 1st argument specifies
+dispatch ID, the 2nd argument specifies the array of arguments, the 3rd
+argument specifies the array of the type of arguments.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid__getproperty'>_getproperty</span><span class='lparen'>(</span><span class='int'>558</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># same effect as puts excel.visible</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3799
+3800
+3801
+3802
+3803</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3799</span>
+
+static VALUE
+fole_getproperty2(VALUE self, VALUE dispid, VALUE args, VALUE types)
+{
+    return ole_invoke2(self, dispid, args, types, DISPATCH_PROPERTYGET);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_invoke-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_invoke</strong>(dispid, args, types) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Runs the early binding method. The 1st argument specifies dispatch ID, the
+2nd argument specifies the array of arguments, the 3rd argument specifies
+the array of the type of arguments.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid__invoke'>_invoke</span><span class='lparen'>(</span><span class='int'>302</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'>#  same effect as excel.Quit</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3781
+3782
+3783
+3784
+3785</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3781</span>
+
+static VALUE
+fole_invoke2(VALUE self, VALUE dispid, VALUE args, VALUE types)
+{
+    return ole_invoke2(self, dispid, args, types, DISPATCH_METHOD);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_setproperty-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_setproperty</strong>(dispid, args, types) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Runs the early binding method to set property. The 1st argument specifies
+dispatch ID, the 2nd argument specifies the array of arguments, the 3rd
+argument specifies the array of the type of arguments.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid__setproperty'>_setproperty</span><span class='lparen'>(</span><span class='int'>558</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='const'>WIN32OLE</span><span class='op'>::</span><span class='const'>VARIANT</span><span class='op'>::</span><span class='const'>VT_BOOL</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># same effect as excel.visible = true</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3817
+3818
+3819
+3820
+3821</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3817</span>
+
+static VALUE
+fole_setproperty2(VALUE self, VALUE dispid, VALUE args, VALUE types)
+{
+    return ole_invoke2(self, dispid, args, types, DISPATCH_PROPERTYPUT);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> {|i| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Iterates over each item of OLE collection which has IEnumVARIANT interface.</p>
+
+<pre class="ruby"><span class="ruby-identifier">excel</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>)
+<span class="ruby-identifier">book</span> = <span class="ruby-identifier">excel</span>.<span class="ruby-identifier">workbooks</span>.<span class="ruby-identifier">add</span>
+<span class="ruby-identifier">sheets</span> = <span class="ruby-identifier">book</span>.<span class="ruby-identifier">worksheets</span>(<span class="ruby-value">1</span>)
+<span class="ruby-identifier">cells</span> = <span class="ruby-identifier">sheets</span>.<span class="ruby-identifier">cells</span>(<span class="ruby-string">&quot;A1:A5&quot;</span>)
+<span class="ruby-identifier">cells</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">value</span> = <span class="ruby-value">10</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>i</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4003
+4004
+4005
+4006
+4007
+4008
+4009
+4010
+4011
+4012
+4013
+4014
+4015
+4016
+4017
+4018
+4019
+4020
+4021
+4022
+4023
+4024
+4025
+4026
+4027
+4028
+4029
+4030
+4031
+4032
+4033
+4034
+4035
+4036
+4037
+4038
+4039
+4040
+4041
+4042
+4043
+4044
+4045
+4046
+4047
+4048
+4049
+4050
+4051
+4052
+4053
+4054
+4055
+4056
+4057
+4058</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4003</span>
+
+static VALUE
+fole_each(VALUE self)
+{
+    LCID    lcid = cWIN32OLE_lcid;
+
+    struct oledata *pole;
+
+    unsigned int argErr;
+    EXCEPINFO excepinfo;
+    DISPPARAMS dispParams;
+    VARIANT result;
+    HRESULT hr;
+    IEnumVARIANT *pEnum = NULL;
+    void *p;
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    VariantInit(&amp;result);
+    dispParams.rgvarg = NULL;
+    dispParams.rgdispidNamedArgs = NULL;
+    dispParams.cNamedArgs = 0;
+    dispParams.cArgs = 0;
+    memset(&amp;excepinfo, 0, sizeof(excepinfo));
+
+    OLEData_Get_Struct(self, pole);
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;Invoke(pole-&gt;pDispatch, DISPID_NEWENUM,
+                                         &amp;IID_NULL, lcid,
+                                         DISPATCH_METHOD | DISPATCH_PROPERTYGET,
+                                         &amp;dispParams, &amp;result,
+                                         &amp;excepinfo, &amp;argErr);
+
+    if (FAILED(hr)) {
+        VariantClear(&amp;result);
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to get IEnum Interface&quot;);
+    }
+
+    if (V_VT(&amp;result) == VT_UNKNOWN) {
+        hr = V_UNKNOWN(&amp;result)-&gt;lpVtbl-&gt;QueryInterface(V_UNKNOWN(&amp;result),
+                                                        &amp;IID_IEnumVARIANT,
+                                                        &amp;p);
+        pEnum = p;
+    } else if (V_VT(&amp;result) == VT_DISPATCH) {
+        hr = V_DISPATCH(&amp;result)-&gt;lpVtbl-&gt;QueryInterface(V_DISPATCH(&amp;result),
+                                                         &amp;IID_IEnumVARIANT,
+                                                         &amp;p);
+        pEnum = p;
+    }
+    if (FAILED(hr) || !pEnum) {
+        VariantClear(&amp;result);
+        ole_raise(hr, rb_eRuntimeError, &quot;failed to get IEnum Interface&quot;);
+    }
+
+    VariantClear(&amp;result);
+    rb_ensure(ole_each_sub, (VALUE)pEnum, ole_ienum_free, (VALUE)pEnum);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invoke-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>invoke</strong>(method, [arg1,...]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Runs OLE method. The first argument specifies the method name of OLE
+Automation object. The others specify argument of the <em>method</em>. If
+you can not execute <em>method</em> directly, then use this method instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">excel</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>)
+<span class="ruby-identifier">excel</span>.<span class="ruby-identifier">invoke</span>(<span class="ruby-string">'Quit'</span>)  <span class="ruby-comment"># =&gt; same as excel.Quit</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3573
+3574
+3575
+3576
+3577</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3573</span>
+
+static VALUE
+fole_invoke(int argc, VALUE *argv, VALUE self)
+{
+    return ole_invoke(argc, argv, self, DISPATCH_METHOD|DISPATCH_PROPERTYGET, FALSE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_activex_initialize-instance_method">
+  
+    - (<tt>Qnil</tt>) <strong>ole_activex_initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initialize WIN32OLE object(ActiveX Control) by calling
+IPersistMemory::InitNew.</p>
+
+<p>Before calling OLE method, some kind of the ActiveX controls created with
+MFC should be initialized by calling IPersistXXX::InitNew.</p>
+
+<p>If and only if you received the exception “HRESULT error code: 0x8000ffff
+catastrophic failure”, try this method before invoking any ole_method.</p>
+
+<pre class="code"><code class="">obj = WIN32OLE.new(&quot;ProgID_or_GUID_of_ActiveX_Control&quot;)
+obj.ole_activex_initialize
+obj.method(...)</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Qnil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4765
+4766
+4767
+4768
+4769
+4770
+4771
+4772
+4773
+4774
+4775
+4776
+4777
+4778
+4779
+4780
+4781
+4782
+4783
+4784
+4785
+4786
+4787
+4788
+4789
+4790
+4791</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4765</span>
+
+static VALUE
+fole_activex_initialize(VALUE self)
+{
+    struct oledata *pole;
+    IPersistMemory *pPersistMemory;
+    void *p;
+
+    HRESULT hr = S_OK;
+
+    OLEData_Get_Struct(self, pole);
+
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;QueryInterface(pole-&gt;pDispatch, &amp;IID_IPersistMemory, &amp;p);
+    pPersistMemory = p;
+    if (SUCCEEDED(hr)) {
+        hr = pPersistMemory-&gt;lpVtbl-&gt;InitNew(pPersistMemory);
+        OLE_RELEASE(pPersistMemory);
+        if (SUCCEEDED(hr)) {
+            return Qnil;
+        }
+    }
+
+    if (FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;fail to initialize ActiveX control&quot;);
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_free-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_free</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>invokes Release method of Dispatch interface of WIN32OLE object. Usually,
+you do not need to call this method because Release method called
+automatically when WIN32OLE object garbaged.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3954
+3955
+3956
+3957
+3958
+3959
+3960
+3961
+3962
+3963</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3954</span>
+
+static VALUE
+fole_free(VALUE self)
+{
+    struct oledata *pole;
+    rb_secure(4);
+    OLEData_Get_Struct(self, pole);
+    OLE_FREE(pole-&gt;pDispatch);
+    pole-&gt;pDispatch = NULL;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_func_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_func_methods</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the array of WIN32OLE_METHOD object . The element of the array is
+property (settable) of WIN32OLE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_properties'>properties</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_func_methods'>ole_func_methods</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4346
+4347
+4348
+4349
+4350</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4346</span>
+
+static VALUE
+fole_func_methods(VALUE self)
+{
+    return ole_methods( self, INVOKE_FUNC);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_get_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_get_methods</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the array of WIN32OLE_METHOD object . The element of the array is
+property (gettable) of WIN32OLE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_properties'>properties</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_get_methods'>ole_get_methods</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4313
+4314
+4315
+4316
+4317</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4313</span>
+
+static VALUE
+fole_get_methods(VALUE self)
+{
+    return ole_methods( self, INVOKE_PROPERTYGET);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_method_help</strong>(method) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='ole_method_help-instance_method'>ole_method_help</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns WIN32OLE_METHOD object corresponding with method specified by 1st
+argument.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_method_help'>ole_method_help</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Quit</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4723
+4724
+4725
+4726
+4727
+4728
+4729
+4730
+4731
+4732
+4733
+4734
+4735
+4736
+4737
+4738
+4739
+4740
+4741
+4742
+4743</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4723</span>
+
+static VALUE
+fole_method_help(VALUE self, VALUE cmdname)
+{
+    ITypeInfo *pTypeInfo;
+    HRESULT hr;
+    struct oledata *pole;
+    VALUE method, obj;
+
+    SafeStringValue(cmdname);
+    OLEData_Get_Struct(self, pole);
+    hr = typeinfo_from_ole(pole, &amp;pTypeInfo);
+    if(FAILED(hr))
+        ole_raise(hr, rb_eRuntimeError, &quot;failed to get ITypeInfo&quot;);
+    method = folemethod_s_allocate(cWIN32OLE_METHOD);
+    obj = olemethod_from_typeinfo(method, pTypeInfo, cmdname);
+    OLE_RELEASE(pTypeInfo);
+    if (obj == Qnil)
+        rb_raise(eWIN32OLERuntimeError, &quot;not found %s&quot;,
+                 StringValuePtr(cmdname));
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_methods</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the array of WIN32OLE_METHOD object. The element is OLE method of
+WIN32OLE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_methods'>methods</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_methods'>ole_methods</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4297
+4298
+4299
+4300
+4301</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4297</span>
+
+static VALUE
+fole_methods(VALUE self)
+{
+    return ole_methods( self, INVOKE_FUNC | INVOKE_PROPERTYGET | INVOKE_PROPERTYPUT | INVOKE_PROPERTYPUTREF);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_put_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_put_methods</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the array of WIN32OLE_METHOD object . The element of the array is
+property (settable) of WIN32OLE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_properties'>properties</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_put_methods'>ole_put_methods</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4329
+4330
+4331
+4332
+4333</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4329</span>
+
+static VALUE
+fole_put_methods(VALUE self)
+{
+    return ole_methods( self, INVOKE_PROPERTYPUT|INVOKE_PROPERTYPUTREF);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_query_interface-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="WIN32OLE (class)">WIN32OLE</a></span> object</tt>) <strong>ole_query_interface</strong>(iid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns WIN32OLE object for a specific dispatch or dual interface specified
+by iid.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ie_web_app</span> = <span class="ruby-identifier">ie</span>.<span class="ruby-identifier">ole_query_interface</span>(<span class="ruby-string">'{0002DF05-0000-0000-C000-000000000046}'</span>) <span class="ruby-comment"># =&gt; WIN32OLE object for dispinterface IWebBrowserApp</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="WIN32OLE (class)">WIN32OLE</a></span> object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4469
+4470
+4471
+4472
+4473
+4474
+4475
+4476
+4477
+4478
+4479
+4480
+4481
+4482
+4483
+4484
+4485
+4486
+4487
+4488
+4489
+4490
+4491
+4492
+4493
+4494
+4495
+4496
+4497
+4498
+4499
+4500
+4501
+4502
+4503</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4469</span>
+
+static VALUE
+fole_query_interface(VALUE self, VALUE str_iid)
+{
+    HRESULT hr;
+    OLECHAR *pBuf;
+    IID iid;
+    struct oledata *pole;
+    IDispatch *pDispatch;
+    void *p;
+
+    pBuf  = ole_vstr2wc(str_iid);
+    hr = CLSIDFromString(pBuf, &amp;iid);
+    SysFreeString(pBuf);
+    if(FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;invalid iid: `%s'&quot;,
+                  StringValuePtr(str_iid));
+    }
+
+    OLEData_Get_Struct(self, pole);
+    if(!pole-&gt;pDispatch) {
+        rb_raise(rb_eRuntimeError, &quot;failed to get dispatch interface&quot;);
+    }
+
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;QueryInterface(pole-&gt;pDispatch, &amp;iid,
+                                                 &amp;p);
+    if(FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError,
+                  &quot;failed to get interface `%s'&quot;,
+                  StringValuePtr(str_iid));
+    }
+
+    pDispatch = p;
+    return create_win32ole_object(cWIN32OLE, pDispatch, 0, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_respond_to?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ole_respond_to?</strong>(method) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true when OLE object has OLE method, otherwise returns false.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ie</span>.<span class="ruby-identifier">ole_respond_to?</span>(<span class="ruby-string">&quot;gohome&quot;</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4514
+4515
+4516
+4517
+4518
+4519
+4520
+4521
+4522
+4523
+4524
+4525
+4526
+4527
+4528
+4529
+4530
+4531
+4532
+4533
+4534</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4514</span>
+
+static VALUE
+fole_respond_to(VALUE self, VALUE method)
+{
+    struct oledata *pole;
+    BSTR wcmdname;
+    DISPID DispID;
+    HRESULT hr;
+    rb_secure(4);
+    if(TYPE(method) != T_STRING &amp;&amp; TYPE(method) != T_SYMBOL) {
+	rb_raise(rb_eTypeError, &quot;wrong argument type (expected String or Symbol)&quot;);
+    }
+    if (TYPE(method) == T_SYMBOL) {
+	method = rb_sym_to_s(method);
+    }
+    OLEData_Get_Struct(self, pole);
+    wcmdname = ole_vstr2wc(method);
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;GetIDsOfNames( pole-&gt;pDispatch, &amp;IID_NULL,
+	    &amp;wcmdname, 1, cWIN32OLE_lcid, &amp;DispID);
+    SysFreeString(wcmdname);
+    return SUCCEEDED(hr) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_type-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>ole_type</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='ole_obj_help-instance_method'>ole_obj_help</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns WIN32OLE_TYPE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tobj'>tobj</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_type'>ole_type</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4385
+4386
+4387
+4388
+4389
+4390
+4391
+4392
+4393
+4394
+4395
+4396
+4397
+4398
+4399
+4400
+4401
+4402
+4403
+4404
+4405
+4406</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4385</span>
+
+static VALUE
+fole_type(VALUE self)
+{
+    ITypeInfo *pTypeInfo;
+    HRESULT hr;
+    struct oledata *pole;
+    LCID  lcid = cWIN32OLE_lcid;
+    VALUE type = Qnil;
+
+    OLEData_Get_Struct(self, pole);
+
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;GetTypeInfo( pole-&gt;pDispatch, 0, lcid, &amp;pTypeInfo );
+    if(FAILED(hr)) {
+        ole_raise(hr, rb_eRuntimeError, &quot;failed to GetTypeInfo&quot;);
+    }
+    type = ole_type_from_itypeinfo(pTypeInfo);
+    OLE_RELEASE(pTypeInfo);
+    if (type == Qnil) {
+        rb_raise(rb_eRuntimeError, &quot;failed to create WIN32OLE_TYPE obj from ITypeInfo&quot;);
+    }
+    return type;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ole_typelib-instance_method">
+  
+    - (<tt>The <span class='object_link'><a href="WIN32OLE_TYPELIB.html" title="WIN32OLE_TYPELIB (class)">WIN32OLE_TYPELIB</a></span> object</tt>) <strong>ole_typelib</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the WIN32OLE_TYPELIB object. The object represents the type library
+which contains the WIN32OLE object.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_excel'>excel</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Excel.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tlib'>tlib</span> <span class='op'>=</span> <span class='id identifier rubyid_excel'>excel</span><span class='period'>.</span><span class='id identifier rubyid_ole_typelib'>ole_typelib</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_tlib'>tlib</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>  <span class='comment'># -&gt; 'Microsoft Excel 9.0 Object Library'</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>The <span class='object_link'><a href="WIN32OLE_TYPELIB.html" title="WIN32OLE_TYPELIB (class)">WIN32OLE_TYPELIB</a></span> object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4436
+4437
+4438
+4439
+4440
+4441
+4442
+4443
+4444
+4445
+4446
+4447
+4448
+4449
+4450
+4451
+4452
+4453
+4454
+4455
+4456
+4457</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 4436</span>
+
+static VALUE
+fole_typelib(VALUE self)
+{
+    struct oledata *pole;
+    HRESULT hr;
+    ITypeInfo *pTypeInfo;
+    LCID  lcid = cWIN32OLE_lcid;
+    VALUE vtlib = Qnil;
+
+    OLEData_Get_Struct(self, pole);
+    hr = pole-&gt;pDispatch-&gt;lpVtbl-&gt;GetTypeInfo(pole-&gt;pDispatch,
+                                              0, lcid, &amp;pTypeInfo);
+    if(FAILED(hr)) {
+        ole_raise(hr, rb_eRuntimeError, &quot;failed to GetTypeInfo&quot;);
+    }
+    vtlib = ole_typelib_from_itypeinfo(pTypeInfo);
+    OLE_RELEASE(pTypeInfo);
+    if (vtlib == Qnil) {
+        rb_raise(rb_eRuntimeError, &quot;failed to get type library info.&quot;);
+    }
+    return vtlib;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setproperty-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>setproperty</strong>('property', [arg1, arg2,...]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets property of OLE object. When you want to set property with argument,
+you can use this method.</p>
+
+<pre class="ruby"><span class="ruby-identifier">excel</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Excel.Application'</span>)
+<span class="ruby-identifier">excel</span>.<span class="ruby-constant">Visible</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-identifier">book</span> = <span class="ruby-identifier">excel</span>.<span class="ruby-identifier">workbooks</span>.<span class="ruby-identifier">add</span>
+<span class="ruby-identifier">sheet</span> = <span class="ruby-identifier">book</span>.<span class="ruby-identifier">worksheets</span>(<span class="ruby-value">1</span>)
+<span class="ruby-identifier">sheet</span>.<span class="ruby-identifier">setproperty</span>(<span class="ruby-string">'Cells'</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; The B1 cell value is 10.</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3860
+3861
+3862
+3863
+3864</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 3860</span>
+
+static VALUE
+fole_setproperty(int argc, VALUE *argv, VALUE self)
+{
+    return ole_invoke(argc, argv, self, DISPATCH_PROPERTYPUT, FALSE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:05 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group: 
+  title: MyString
+  keywords: MyString
+  bool_code: MyString
+  startdatetime: 2015-05-29 13:47:46
+  enddatetime: 2015-05-29 13:47:46
+  place: MyString
+
+two:
+  group: 
+  title: MyString
+  keywords: MyString
+  bool_code: MyString
+  startdatetime: 2015-05-29 13:47:46
+  enddatetime: 2015-05-29 13:47:46
+  place: MyString

@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: WIN32OLE_EVENT
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!WIN32OLE_EVENT.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (W)</a> &raquo;
+    
+    
+    <span class="title">WIN32OLE_EVENT</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: WIN32OLE_EVENT
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">WIN32OLE_EVENT</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/win32ole/win32ole.c<span class="defines">,<br />
+  ext/win32ole/win32ole.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p><code>WIN32OLE_EVENT</code> objects controls OLE event.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#message_loop-class_method" title="message_loop (class method)">+ (Object) <strong>message_loop</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Translates and dispatches Windows message.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handler-instance_method" title="#handler (instance method)">- (Object) <strong>handler</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns handler object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handler%3D-instance_method" title="#handler= (instance method)">- (Object) <strong>handler=</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>sets event handler object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>(ole, event) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns OLE event object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#off_event-instance_method" title="#off_event (instance method)">- (Object) <strong>off_event</strong>([event]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>removes the callback of event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_event-instance_method" title="#on_event (instance method)">- (Object) <strong>on_event</strong>([event]) { ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Defines the callback event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_event_with_outargs-instance_method" title="#on_event_with_outargs (instance method)">- (Object) <strong>on_event_with_outargs</strong>([event]) { ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Defines the callback of event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unadvise-instance_method" title="#unadvise (instance method)">- (nil) <strong>unadvise</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>disconnects OLE server.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(ole, event) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns OLE event object. The first argument specifies WIN32OLE object. The
+second argument specifies OLE event name.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_ie'>ie</span> <span class='op'>=</span> <span class='const'>WIN32OLE</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>InternetExplorer.Application</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_ev'>ev</span> <span class='op'>=</span> <span class='const'>WIN32OLE_EVENT</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_ie'>ie</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DWebBrowserEvents</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8370
+8371
+8372
+8373
+8374
+8375
+8376
+8377
+8378</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8370</span>
+
+static VALUE
+fev_initialize(int argc, VALUE *argv, VALUE self)
+{
+    ev_advise(argc, argv, self);
+    evs_push(self);
+    rb_ivar_set(self, id_events, rb_ary_new());
+    fev_set_handler(self, Qnil);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="message_loop-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>message_loop</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Translates and dispatches Windows message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8386
+8387
+8388
+8389
+8390
+8391</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8386</span>
+
+static VALUE
+fev_s_msg_loop(VALUE klass)
+{
+    ole_msg_loop();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="handler-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>handler</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>returns handler object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8630
+8631
+8632
+8633
+8634</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8630</span>
+
+static VALUE
+fev_get_handler(VALUE self)
+{
+    return rb_ivar_get(self, rb_intern(&quot;handler&quot;));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handler=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>handler=</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>sets event handler object. If handler object has onXXX method according to
+XXX event, then onXXX method is called when XXX event occurs.</p>
+
+<p>If handler object has method_missing and there is no method according to
+the event, then method_missing called and 1-st argument is event name.</p>
+
+<p>If handler object has onXXX method and there is block defined by
+WIN32OLE_EVENT#on_event(‘XXX’){}, then block is executed but handler object
+method is not called when XXX event occurs.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Handler</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">onStatusTextChange</span>(<span class="ruby-identifier">text</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;StatusTextChanged&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">onPropertyChange</span>(<span class="ruby-identifier">prop</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;PropertyChanged&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">ev</span>, *<span class="ruby-identifier">arg</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;other event #{ev}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">handler</span> = <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ev</span> = <span class="ruby-constant">WIN32OLE_EVENT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ie</span>)
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>(<span class="ruby-string">&quot;StatusTextChange&quot;</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;this block executed.&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;handler.onStatusTextChange method is not called.&quot;</span>
+}
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">handler</span> = <span class="ruby-identifier">handler</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8617
+8618
+8619
+8620
+8621</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8617</span>
+
+static VALUE
+fev_set_handler(VALUE self, VALUE val)
+{
+    return rb_ivar_set(self, rb_intern(&quot;handler&quot;), val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="off_event-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>off_event</strong>([event]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>removes the callback of event.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ev</span> = <span class="ruby-constant">WIN32OLE_EVENT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ie</span>)
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>(<span class="ruby-string">'BeforeNavigate2'</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">6</span>] = <span class="ruby-keyword">true</span>
+}
+  <span class="ruby-operator">...</span>
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">off_event</span>(<span class="ruby-string">'BeforeNavigate2'</span>)
+  <span class="ruby-operator">...</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8499
+8500
+8501
+8502
+8503
+8504
+8505
+8506
+8507
+8508
+8509
+8510
+8511
+8512
+8513
+8514
+8515
+8516
+8517
+8518
+8519
+8520
+8521</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8499</span>
+
+static VALUE
+fev_off_event(int argc, VALUE *argv, VALUE self)
+{
+    VALUE event = Qnil;
+    VALUE events;
+
+    rb_secure(4);
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;event);
+    if(!NIL_P(event)) {
+	if(TYPE(event) != T_STRING &amp;&amp; TYPE(event) != T_SYMBOL) {
+	    rb_raise(rb_eTypeError, &quot;wrong argument type (expected String or Symbol)&quot;);
+	}
+	if (TYPE(event) == T_SYMBOL) {
+	    event = rb_sym_to_s(event);
+	}
+    }
+    events = rb_ivar_get(self, id_events);
+    if (NIL_P(events)) {
+	return Qnil;
+    }
+    ole_delete_event(events, event);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_event-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>on_event</strong>([event]) { ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the callback event. If argument is omitted, this method defines the
+callback of all events. If you want to modify reference argument in
+callback, return hash in callback. If you want to return value to OLE
+server as result of callback use `return’ or :return.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ev</span> = <span class="ruby-constant">WIN32OLE_EVENT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ie</span>)
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>(<span class="ruby-string">&quot;NavigateComplete&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">url</span>}
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>() {<span class="ruby-operator">|</span><span class="ruby-identifier">ev</span>, *<span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{ev} fired&quot;</span>}
+
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>(<span class="ruby-string">&quot;BeforeNavigate2&quot;</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+  <span class="ruby-comment"># set true to BeforeNavigate reference argument `Cancel'.</span>
+  <span class="ruby-comment"># Cancel is 7-th argument of BeforeNavigate,</span>
+  <span class="ruby-comment"># so you can use 6 as key of hash instead of 'Cancel'.</span>
+  <span class="ruby-comment"># The argument is counted from 0.</span>
+  <span class="ruby-comment"># The hash key of 0 means first argument.)</span>
+  {:<span class="ruby-constant">Cancel</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}  <span class="ruby-comment"># or {'Cancel' =&gt; true} or {6 =&gt; true}</span>
+}
+
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event</span>(<span class="ruby-operator">...</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+  {:<span class="ruby-keyword">return</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">xxx</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">yyy</span>}
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8458
+8459
+8460
+8461
+8462</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8458</span>
+
+static VALUE
+fev_on_event(int argc, VALUE *argv, VALUE self)
+{
+    return ev_on_event(argc, argv, self, Qfalse);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_event_with_outargs-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>on_event_with_outargs</strong>([event]) { ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the callback of event. If you want modify argument in callback, you
+could use this method instead of WIN32OLE_EVENT#on_event.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ie</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'InternetExplorer.Application'</span>)
+<span class="ruby-identifier">ev</span> = <span class="ruby-constant">WIN32OLE_EVENT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ie</span>)
+<span class="ruby-identifier">ev</span>.<span class="ruby-identifier">on_event_with_outargs</span>(<span class="ruby-string">'BeforeNavigate2'</span>) {<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">6</span>] = <span class="ruby-keyword">true</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8478
+8479
+8480
+8481
+8482</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8478</span>
+
+static VALUE
+fev_on_event_with_outargs(int argc, VALUE *argv, VALUE self)
+{
+    return ev_on_event(argc, argv, self, Qtrue);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unadvise-instance_method">
+  
+    - (<tt>nil</tt>) <strong>unadvise</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>disconnects OLE server. If this method called, then the WIN32OLE_EVENT
+object does not receive the OLE server event any more. This method is trial
+implementation.</p>
+
+<pre class="code"><code class="">ie = WIN32OLE.new('InternetExplorer.Application')
+ev = WIN32OLE_EVENT.new(ie)
+ev.on_event() {...}
+   ...
+ev.unadvise</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8538
+8539
+8540
+8541
+8542
+8543
+8544
+8545
+8546
+8547
+8548
+8549
+8550
+8551</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/win32ole/win32ole.c', line 8538</span>
+
+static VALUE
+fev_unadvise(VALUE self)
+{
+    struct oleeventdata *poleev;
+    Data_Get_Struct(self, struct oleeventdata, poleev);
+    if (poleev-&gt;pConnectionPoint) {
+        ole_msg_loop();
+        evs_delete(poleev-&gt;event_id);
+        poleev-&gt;pConnectionPoint-&gt;lpVtbl-&gt;Unadvise(poleev-&gt;pConnectionPoint, poleev-&gt;dwCookie);
+        OLE_RELEASE(poleev-&gt;pConnectionPoint);
+        poleev-&gt;pConnectionPoint = NULL;
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:07 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,3 @@
+InvitationMailer#sendmail_invite
+
+Hi, find me in app/views/invitation_mailer/sendmail_invite

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class LendLogController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/lend_log_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-array_to_json">#array_to_json</a>
+    
+    <li><a href="#method-i-array_to_json_shelf_name">#array_to_json_shelf_name</a>
+    
+    <li><a href="#method-i-array_to_json_shelves">#array_to_json_shelves</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-get_shelves">#get_shelves</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-push_not_possess">#push_not_possess</a>
+    
+    <li><a href="#method-i-push_possess">#push_possess</a>
+    
+    <li><a href="#method-i-select_shelf_lend">#select_shelf_lend</a>
+    
+    <li><a href="#method-i-temporary_create">#temporary_create</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ActionLog.html">ActionLog</a>
+  
+    <li><a href="./AndroidLog.html">AndroidLog</a>
+  
+    <li><a href="./AndroidLogController.html">AndroidLogController</a>
+  
+    <li><a href="./AndroidLogHelper.html">AndroidLogHelper</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Book.html">Book</a>
+  
+    <li><a href="./BookCatalog.html">BookCatalog</a>
+  
+    <li><a href="./BookCatalogController.html">BookCatalogController</a>
+  
+    <li><a href="./BookCatalogHelper.html">BookCatalogHelper</a>
+  
+    <li><a href="./BookController.html">BookController</a>
+  
+    <li><a href="./BookHelper.html">BookHelper</a>
+  
+    <li><a href="./DeviceId.html">DeviceId</a>
+  
+    <li><a href="./ErrorController.html">ErrorController</a>
+  
+    <li><a href="./ErrorReport.html">ErrorReport</a>
+  
+    <li><a href="./GcmHelper.html">GcmHelper</a>
+  
+    <li><a href="./Group.html">Group</a>
+  
+    <li><a href="./GroupController.html">GroupController</a>
+  
+    <li><a href="./GroupHelper.html">GroupHelper</a>
+  
+    <li><a href="./InvitationLog.html">InvitationLog</a>
+  
+    <li><a href="./InvitationMailer.html">InvitationMailer</a>
+  
+    <li><a href="./LendLog.html">LendLog</a>
+  
+    <li><a href="./LendLogController.html">LendLogController</a>
+  
+    <li><a href="./LendLogHelper.html">LendLogHelper</a>
+  
+    <li><a href="./Manager.html">Manager</a>
+  
+    <li><a href="./ManagerController.html">ManagerController</a>
+  
+    <li><a href="./ManagerHelper.html">ManagerHelper</a>
+  
+    <li><a href="./Member.html">Member</a>
+  
+    <li><a href="./MemberController.html">MemberController</a>
+  
+    <li><a href="./MemberHelper.html">MemberHelper</a>
+  
+    <li><a href="./NotificationLog.html">NotificationLog</a>
+  
+    <li><a href="./SessionController.html">SessionController</a>
+  
+    <li><a href="./SessionHelper.html">SessionHelper</a>
+  
+    <li><a href="./Shelf.html">Shelf</a>
+  
+    <li><a href="./ShelfController.html">ShelfController</a>
+  
+    <li><a href="./ShelfHelper.html">ShelfHelper</a>
+  
+    <li><a href="./StringEscape.html">StringEscape</a>
+  
+    <li><a href="./TemporaryLendLog.html">TemporaryLendLog</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserController.html">UserController</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class LendLogController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-array_to_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">array_to_json</span><span
+            class="method-args">(status, book_code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>借用時のJSON作成 @param [Fixnum] status 結果の状態 @param [String] book_code 図書コード
+@return [String] 結果と図書コードを含むJSON形式の文字列</p>
+          
+
+          
+          <div class="method-source-code" id="array_to_json-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">book_code</span>)
+  <span class="ruby-identifier">json_array</span> = {}
+  <span class="ruby-identifier">result_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">0</span>] = {<span class="ruby-string">&quot;status&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{status}&quot;</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">1</span>] = {<span class="ruby-string">&quot;book_code&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{book_code}&quot;</span>}
+  <span class="ruby-identifier">json_array</span>[<span class="ruby-string">&quot;result&quot;</span>] = <span class="ruby-identifier">result_array</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">json_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- array_to_json-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- array_to_json-method -->
+
+    
+      <div id="method-i-array_to_json_shelf_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">array_to_json_shelf_name</span><span
+            class="method-args">(status, book_code, shelf_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>返却時のJSON作成 @param [Fixnum] status 結果の状態 @param [String] book_code 図書コード
+@param [String] shelf_name 本棚名 @return [String] 結果と図書コードと本棚名を含むJSON形式の文字列</p>
+          
+
+          
+          <div class="method-source-code" id="array_to_json_shelf_name-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 450</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_to_json_shelf_name</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">shelf_name</span>)
+  <span class="ruby-identifier">json_array</span> = {}
+  <span class="ruby-identifier">result_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">0</span>] = {<span class="ruby-string">&quot;status&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{status}&quot;</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">1</span>] = {<span class="ruby-string">&quot;book_code&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{book_code}&quot;</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">2</span>] = {<span class="ruby-string">&quot;shelf_name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{shelf_name}&quot;</span>}
+  <span class="ruby-identifier">json_array</span>[<span class="ruby-string">&quot;result&quot;</span>] = <span class="ruby-identifier">result_array</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">json_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- array_to_json_shelf_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- array_to_json_shelf_name-method -->
+
+    
+      <div id="method-i-array_to_json_shelves" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">array_to_json_shelves</span><span
+            class="method-args">(status, book_code, shelves, shelf_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>本棚選択のためのJSON作成 @param [Fixnum] status 結果の状態 @param [String] book_code 図書コード
+@param [Array] shelves 本棚IDの配列 @return [String] 結果と図書コードと本棚IDを含むJSON形式の文字列</p>
+          
+
+          
+          <div class="method-source-code" id="array_to_json_shelves-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 432</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_to_json_shelves</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelf_name</span>)
+  <span class="ruby-identifier">json_array</span> = {}
+  <span class="ruby-identifier">result_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">0</span>] = {<span class="ruby-string">&quot;status&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{status}&quot;</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">1</span>] = {<span class="ruby-string">&quot;book_code&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{book_code}&quot;</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">2</span>] = {<span class="ruby-string">&quot;shelves&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">shelves</span>.<span class="ruby-identifier">uniq</span>}
+  <span class="ruby-identifier">result_array</span>[<span class="ruby-value">3</span>] = {<span class="ruby-string">&quot;shelf_name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">shelf_name</span>.<span class="ruby-identifier">uniq</span>}
+  <span class="ruby-identifier">json_array</span>[<span class="ruby-string">&quot;result&quot;</span>] = <span class="ruby-identifier">result_array</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">json_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- array_to_json_shelves-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- array_to_json_shelves-method -->
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>借用ログを作る @param [Fixnum] :group_id 登録するグループID @param [Fixnum] :user_id
+登録するユーザID @param [String] :book_code 登録する図書コード @return [String]
+結果と図書のタイトルを含むJSON形式の文字列 結果一覧 0:返却 1:借用 -1:すべての図書が借用されていた場合
+-2:図書が登録されていなかった場合 -3:グループに所属していなかった場合 -4:該当する図書が複数の本棚にあった場合
+-5:該当する図書の本棚を登録する必要がある場合</p>
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:group_id</span>]
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">book_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:book_code</span>]
+
+  <span class="ruby-comment"># 該当する借用ログがあるかどうか</span>
+  <span class="ruby-identifier">is_lendlog</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># 該当する一時借用ログがあるかどうか</span>
+  <span class="ruby-identifier">is_temporary</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># 一時借用ログが返却済みかどうか</span>
+  <span class="ruby-identifier">is_return</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># 未借用の図書があるかどうか</span>
+  <span class="ruby-identifier">is_book</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># 図書が登録されているかどうか</span>
+  <span class="ruby-identifier">is_book_register</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># 借用したい図書のタイトル</span>
+  <span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-comment"># 該当する図書の一時借用ログの一覧</span>
+  <span class="ruby-identifier">temporary_logs</span> = []
+
+  <span class="ruby-comment"># 該当する借用ログ</span>
+  <span class="ruby-identifier">lend_log</span> = <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-comment"># 該当する一時借用ログ</span>
+  <span class="ruby-identifier">temp_first</span> = <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-comment"># 所属しているグループが無い場合</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">group_id</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">-3</span>, <span class="ruby-identifier">book_code</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># タイトルの取得</span>
+  <span class="ruby-identifier">catalog</span> =  <span class="ruby-constant">BookCatalog</span>.<span class="ruby-identifier">find_by_book_code</span>(<span class="ruby-identifier">book_code</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">catalog</span>
+    <span class="ruby-identifier">title</span> = <span class="ruby-identifier">catalog</span>.<span class="ruby-identifier">title</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">title</span> = <span class="ruby-identifier">book_code</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># グループ内のbook_codeを持つ図書一覧の取得</span>
+  <span class="ruby-identifier">books_group</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-comment"># 図書がある場合</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">books_group</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">is_book_register</span> = <span class="ruby-keyword">true</span>
+
+    <span class="ruby-identifier">books_group</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">book</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">is_book</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># 一時借用ログがあるかどうか</span>
+    <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">TemporaryLendLog</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id_and_user_id</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">user_id</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">log</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span>
+          <span class="ruby-identifier">is_temporary</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">temporary_logs</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">log</span>)
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">temporary_logs</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">temp_first</span> = <span class="ruby-identifier">temporary_logs</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-comment"># 一時借用ログが返却済みかどうか</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">is_return</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># 借用ログがあるかどうか</span>
+    <span class="ruby-identifier">lend_log</span> = <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">find_by_book_code_and_user_id_and_return_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">lend_log</span>
+      <span class="ruby-identifier">is_lendlog</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># 図書が登録されていなかった場合</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">-2</span>, <span class="ruby-identifier">book_code</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-string">&quot;temporary = &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-string">&quot;lend log = &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">to_s</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># 借用ログに一致した場合</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_lendlog</span>
+
+      <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span> = <span class="ruby-identifier">get_shelves</span>(<span class="ruby-identifier">group_id</span>)
+
+      <span class="ruby-comment"># 一時借用ログがあるかどうか</span>
+      <span class="ruby-identifier">tmp_log</span> = <span class="ruby-constant">TemporaryLendLog</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>)
+      <span class="ruby-identifier">tmp_log</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">log</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span>
+          <span class="ruby-identifier">temp_first</span> = <span class="ruby-identifier">log</span>
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># 返却処理</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp_first</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">return_date</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">save!</span>
+        <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>)
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-comment"># 本棚登録する必要がある場合</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">temporary</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelves</span>(<span class="ruby-value">-5</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span>)
+          <span class="ruby-keyword">return</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># 同じ図書コードで未登録本棚のもの</span>
+        <span class="ruby-ivar">@other_log</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">books</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">books</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">book</span><span class="ruby-operator">|</span>
+          <span class="ruby-ivar">@other_log</span> = <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">find_by_book_id_and_temporary</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-keyword">true</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@other_log</span>
+            <span class="ruby-keyword">break</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@other_log</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelves</span>(<span class="ruby-value">-5</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span>)
+          <span class="ruby-keyword">return</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">shelf_name</span> = <span class="ruby-constant">Shelf</span>.<span class="ruby-identifier">find_by_shelf_id</span>(<span class="ruby-constant">Book</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>).<span class="ruby-identifier">shelf_id</span>).<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelf_name</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelf_name</span>)
+        <span class="ruby-keyword">return</span>
+
+        <span class="ruby-comment"># 一時借用ログがある場合</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">return_date</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">save!</span>
+        <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>)
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-comment"># その人以外が全員図書を所持している場合(図書の登録)</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">lenders</span> <span class="ruby-operator">==</span> (<span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">possessors</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+          <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">-1</span>
+          <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">save!</span>
+
+          <span class="ruby-identifier">shelf_id</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:group_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-value">:shelf_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">shelf_id</span>, <span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,  <span class="ruby-value">:register_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))
+          <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">lend_date</span>, <span class="ruby-value">:return_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span>, <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:temporary</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">false</span>
+            <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+            <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelves</span>(<span class="ruby-value">-5</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span>)
+            <span class="ruby-keyword">return</span>
+          <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">shelf_name</span> = <span class="ruby-constant">Shelf</span>.<span class="ruby-identifier">find_by_shelf_id</span>(<span class="ruby-constant">Book</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>).<span class="ruby-identifier">shelf_id</span>).<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelf_name</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelf_name</span>)
+        <span class="ruby-keyword">return</span>
+
+        <span class="ruby-comment"># 図書を返却して借用ログを作成する場合</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">-1</span>
+        <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">return_date</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
+        <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">lend_date</span>, <span class="ruby-value">:return_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span>, <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+          <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_state_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">true</span>, <span class="ruby-keyword">nil</span>)
+          <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">false</span>
+          <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">shelf_name</span> = <span class="ruby-constant">Shelf</span>.<span class="ruby-identifier">find_by_shelf_id</span>(<span class="ruby-constant">Book</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">lend_log</span>.<span class="ruby-identifier">book_id</span>).<span class="ruby-identifier">shelf_id</span>).<span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelf_name</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelf_name</span>)
+        <span class="ruby-keyword">return</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># 一時借用ログに一致する場合</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">is_temporary</span>
+
+      <span class="ruby-comment"># 返却済みの場合</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_return</span>
+
+        <span class="ruby-comment"># 図書がある場合は通常借用</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_book</span>
+          <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_state_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">nil</span>)
+          <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+
+          <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>), <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>)
+          <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">title</span>)
+          <span class="ruby-keyword">return</span>
+
+          <span class="ruby-comment"># 図書がない場合は一時借用ログを作成する場合へ</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">title</span>)
+          <span class="ruby-keyword">return</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># 返却の場合</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)
+        <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_book</span>
+          <span class="ruby-identifier">shelf_id</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_state_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">nil</span>).<span class="ruby-identifier">shelf_id</span>
+          <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:group_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-value">:shelf_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">shelf_id</span>, <span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,  <span class="ruby-value">:register_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))
+          <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">lend_date</span>, <span class="ruby-value">:return_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temp_first</span>.<span class="ruby-identifier">return_date</span>, <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">title</span>)
+        <span class="ruby-keyword">return</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># 一時借用ログを作る場合</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_temporary</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">is_book_register</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_lendlog</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_book</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">-1</span>, <span class="ruby-identifier">title</span>)
+      <span class="ruby-keyword">return</span>
+
+      <span class="ruby-comment"># 借用処理</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@book</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">books</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id_and_state_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">nil</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">books</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">shelves</span> = []
+        <span class="ruby-identifier">shelves_name</span> = []
+        <span class="ruby-identifier">books</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">book</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">shelf_id</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">shelves</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">shelf_id</span>)
+              <span class="ruby-identifier">shelves</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">shelf_id</span>)
+              <span class="ruby-identifier">shelves_name</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Shelf</span>.<span class="ruby-identifier">find_by_shelf_id_and_group_id</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">shelf_id</span>, <span class="ruby-identifier">group_id</span>).<span class="ruby-identifier">name</span>)
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">shelves</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json_shelves</span>(<span class="ruby-value">-4</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span>)
+          <span class="ruby-keyword">return</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@book</span> = <span class="ruby-identifier">books</span>.<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@book</span> = <span class="ruby-identifier">books</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">save!</span>
+
+      <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>), <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>)
+      <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">title</span>)
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-get_shelves" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_shelves</span><span
+            class="method-args">(group_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>本棚IDと本棚名の取得</p>
+          
+
+          
+          <div class="method-source-code" id="get_shelves-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_shelves</span>(<span class="ruby-identifier">group_id</span>)
+  <span class="ruby-identifier">shelves</span> = []
+  <span class="ruby-identifier">shelves_name</span> = []
+
+  <span class="ruby-identifier">shelf</span> = <span class="ruby-constant">Shelf</span>.<span class="ruby-identifier">find_all_by_group_id</span>(<span class="ruby-identifier">group_id</span>)
+  <span class="ruby-identifier">shelf</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sh</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">shelves</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">sh</span>.<span class="ruby-identifier">shelf_id</span>)
+    <span class="ruby-identifier">shelves_name</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">sh</span>.<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">shelves</span>, <span class="ruby-identifier">shelves_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_shelves-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_shelves-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>借用ログ一覧</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@lend_logs</span> = []
+  <span class="ruby-identifier">books</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_all_by_group_id_and_delete_date</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:group_id</span>], <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">books</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">book</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@lend_logs</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">find_all_by_book_id</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-push_not_possess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_not_possess</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>図書を持っていない場合 @param [String] book_code @param [Fixnum] group_id</p>
+          
+
+          
+          <div class="method-source-code" id="push_not_possess-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_not_possess</span>
+  <span class="ruby-identifier">book_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:book_code</span>]
+  <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:group_id</span>]
+
+  <span class="ruby-comment"># 一時借用ログの取得</span>
+  <span class="ruby-identifier">temporary_log</span> = <span class="ruby-constant">TemporaryLendLog</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_status</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-value">0</span>)
+
+  <span class="ruby-comment"># 一時借用ログがあった場合, 未所持者がいたことの状態を記録</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">temporary_log</span>
+    <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">save!</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:nothing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_not_possess-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_not_possess-method -->
+
+    
+      <div id="method-i-push_possess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_possess</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>図書を持っている場合 @param [String] book_code @param [Fixnum] group_id</p>
+          
+
+          
+          <div class="method-source-code" id="push_possess-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_possess</span>
+  <span class="ruby-identifier">book_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:book_code</span>]
+  <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:group_id</span>]
+
+  <span class="ruby-comment"># 一時借用ログの取得</span>
+  <span class="ruby-identifier">temporary_log</span> = <span class="ruby-constant">TemporaryLendLog</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_status</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-value">0</span>)
+
+  <span class="ruby-comment"># 一時借用ログがあった場合</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">temporary_log</span>
+    <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">possessors</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-comment"># 借用者数と所持者数が一緒の場合, その状態を記録しそのまま登録</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">possessors</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">lenders</span>
+      <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">-1</span>
+      <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">save!</span>
+
+      <span class="ruby-identifier">shelf_id</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:group_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-value">:shelf_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">shelf_id</span>, <span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,  <span class="ruby-value">:register_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))
+      <span class="ruby-comment"># 一時借用ログが借用中の場合</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">return_date</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">lend_date</span>, <span class="ruby-value">:return_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">temporary_log</span>.<span class="ruby-identifier">return_date</span>, <span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:temporary</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:nothing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_possess-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_possess-method -->
+
+    
+      <div id="method-i-select_shelf_lend" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_shelf_lend</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>本棚を選択して借用する場合 @param [Fixnum] qr 本棚ID @param [String] book_code 図書コード
+@param [Fixnum] group_id グループID @param [Fixnum] user_id ユーザID</p>
+          
+
+          
+          <div class="method-source-code" id="select_shelf_lend-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_shelf_lend</span>
+  <span class="ruby-identifier">shelf_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:qr</span>]
+  <span class="ruby-identifier">book_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:book_code</span>]
+  <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:group_id</span>]
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">book</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_by_book_code_and_group_id_and_shelf_id_and_state_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">shelf_id</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">book</span>.<span class="ruby-identifier">state</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">book</span>.<span class="ruby-identifier">save!</span>
+    <span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:book_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))
+    <span class="ruby-identifier">title</span> = <span class="ruby-constant">BookCatalog</span>.<span class="ruby-identifier">find_by_book_code</span>(<span class="ruby-identifier">book_code</span>).<span class="ruby-identifier">title</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">title</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select_shelf_lend-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select_shelf_lend-method -->
+
+    
+      <div id="method-i-temporary_create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">temporary_create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>一時借用ログを作る @param [Fixnum] :group_id 登録するグループID @param [Fixnum] :user_id
+登録するユーザID @param [String] :book_code 登録する図書コード @return [String]
+結果と図書のタイトルを含むJSON形式の文字列</p>
+          
+
+          
+          <div class="method-source-code" id="temporary_create-source">
+            <pre><span class="ruby-comment"># File app/controllers/lend_log_controller.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">temporary_create</span>
+  <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:group_id</span>]
+  <span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:user_id</span>]
+  <span class="ruby-identifier">book_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:book_code</span>]
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-comment"># 借用者の数を取得</span>
+    <span class="ruby-identifier">lenders</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">logs</span> = []
+    <span class="ruby-identifier">books</span> = <span class="ruby-constant">Book</span>.<span class="ruby-identifier">find_all_by_book_code_and_group_id_and_delete_date</span>(<span class="ruby-identifier">book_code</span>, <span class="ruby-identifier">group_id</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">books</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">book</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">logs</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">LendLog</span>.<span class="ruby-identifier">find_all_by_book_id_and_return_date</span>(<span class="ruby-identifier">book</span>.<span class="ruby-identifier">id</span>, <span class="ruby-keyword">nil</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">lenders</span> = <span class="ruby-identifier">logs</span>.<span class="ruby-identifier">size</span>
+
+    <span class="ruby-comment"># 一時借用ログを作成</span>
+    <span class="ruby-comment"># status 一覧</span>
+    <span class="ruby-comment"># 0:一時借用ログ作成時</span>
+    <span class="ruby-comment"># 1:誰かがNoを押した場合</span>
+    <span class="ruby-comment"># 2:全員がYesを押した場合</span>
+    <span class="ruby-comment"># -1:借用ログを作成済み</span>
+    <span class="ruby-identifier">temporary_lend_log</span> = <span class="ruby-constant">TemporaryLendLog</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:book_code</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">book_code</span>, <span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>, <span class="ruby-value">:group_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-value">:lend_date</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>), <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:lenders</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lenders</span>, <span class="ruby-value">:possessors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_to_json</span>(<span class="ruby-value">1</span>, <span class="ruby-constant">BookCatalog</span>.<span class="ruby-identifier">find_by_book_code</span>(<span class="ruby-identifier">book_code</span>).<span class="ruby-identifier">title</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- temporary_create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- temporary_create-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

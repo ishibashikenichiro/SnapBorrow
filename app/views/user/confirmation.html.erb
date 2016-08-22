@@ -1,0 +1,47 @@
+<%= render 'shared/redirect_login' %>
+
+<% provide(:title, '確認') %>
+<h1>確認</h1>
+
+
+
+<%= form_tag "/signup_register_user", :class => "form-horizontal", :role =>"form" do %>
+  <div class="form-group">
+    <%= label_tag :login_id, "ログインID", :class => "col-sm-2 control-label"%>
+    <div class="col-sm-5">
+      <%= text_field_tag :login_id, params[:login_id], :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :nickname, "ニックネーム", :class => "col-sm-2 control-label"%>
+    <div class="col-sm-5">
+      <%= text_field_tag :nickname, params[:nickname], :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :mail, "メールアドレス", :class => "col-sm-2 control-label"%>
+    <div class="col-sm-5">
+      <%= email_field_tag :mail, params[:mail], :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
+  <%= hidden_field_tag :password, params[:password] %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10 hidden-xs">
+      <%= button_tag "OK", :class => 'btn btn-primary' %>
+      <%= link_to "取消", "/signup", :role => "button", :class => "btn btn-default" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="visible-xs-block col-xs-12">
+      <%= button_tag "OK", :class => 'btn btn-primary btn-block' %>
+      <%= link_to "取消", "/signup", :role => "button", :class => "btn btn-default btn-block" %>
+    </div>
+  </div>
+
+<% end %>

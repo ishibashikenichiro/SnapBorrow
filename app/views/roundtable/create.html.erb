@@ -1,0 +1,14 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<h1>輪講の新規登録</h1>
+
+<%= @output %><br />
+<%= @output2 %><br />
+<% if @createok %>
+<%= link_to '輪講情報を見る', {:action => "view", :controller => "roundtable",
+ :book_code=>params[:book_code], :title=>params[:title] } , {
+:method => :post} %>
+<br />
+<% end %>
+<%= link_to '図書一覧に戻る', "/book" %>
+ 

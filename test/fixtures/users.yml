@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+user1:
+  id: 1
+  login_id: user1
+  nickname: test1
+  mail: user1@test.com
+  password_digest: <%= BCrypt::Password.create("useruser1") %>
+
+user2:
+  id: 2
+  login_id: user2
+  nickname: test2
+  mail: user2@test.com
+  password_digest: <%= BCrypt::Password.create("useruser2") %>
+
+user3:
+  id: 3
+  login_id: user3
+  nickname: test3
+  mail: user3@test.com
+  password_digest: <%= BCrypt::Password.create("useruser3") %>
+
+user4:
+  id: 4
+  login_id: user4
+  nickname: test4
+  mail: user4@test.com
+  password_digest: <%= BCrypt::Password.create("useruser4") %>

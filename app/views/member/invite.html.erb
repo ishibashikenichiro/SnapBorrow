@@ -1,0 +1,31 @@
+<div class="alert alert-info h4" role="alert">
+  あなたはグループ <span class="important"><%= @group.name %></span> に招待されています。<br>
+  続行するにはログインまたは新規登録してください。
+</div>
+
+<ul class="nav nav-tabs">
+<li class="active col-sm-3" id="header_tab1"><a href="#tab1" data-toggle="tab">ログイン</a></li>
+<li class="col-sm-3" id="header_tab2"><a href="#tab2" data-toggle="tab">新規登録</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+<div class="tab-pane fade in active" id="tab1">
+    <%= render  :template => "session/login"  %>
+</div>
+<div class="tab-pane fade" id="tab2">
+    <%= render  :template => "user/new"  %>
+</div>
+</div>
+
+<% if flash[:error] %>
+  <script type="text/javascript" charset="UTF-8">
+    $(document).ready(function() {
+      $("#header_tab1").removeClass("active");
+      $("#header_tab2").addClass("active");
+      $("#tab1").removeClass("active");
+      $("#tab1").removeClass("in");
+      $("#tab2").addClass("active");
+      $("#tab2").addClass("in");
+    });
+  </script>
+<% end %>

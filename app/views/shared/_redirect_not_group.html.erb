@@ -1,0 +1,11 @@
+<% unless Member.find_by_user_id_and_group_id(session[:user_id], session[:group_id]) %>
+  <% member = Member.find_by_user_id(session[:user_id]) %>
+  <% if member %>
+    <% session[:group_id] = member.group_id %>
+  <% else %>
+    <% session[:group_id] = 0 %>
+  <% end %>
+  <script>
+    window.location.href = "/"
+  </script>
+<% end %>

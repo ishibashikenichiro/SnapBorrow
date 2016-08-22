@@ -1,0 +1,53 @@
+<%= render 'shared/redirect_login' %>
+
+<% provide(:title, 'ログイン') %>
+<h1>ログイン</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <%= form_tag session_index_path, :class => "form-horizontal", :role =>"form" do %>
+
+      <% if params[:error] != nil %>
+        <span class="help-block error_message">ログインIDまたはパスワードが間違っています。</span>
+      <% end %>
+
+      <div class="form-group">
+        <%= label_tag :login_id, "ログインID", :class => "col-sm-4 control-label"%>
+        <div class="col-sm-8">
+          <%= text_field_tag :login_id, params[:login_id], :class => "form-control", :required => 'required', :maxlength => 16, :pattern => '^[0-9A-Za-z][0-9A-Za-z_\'\-]*$',
+            :title => "ログインIDは長さが16文字以内、半角英数字で始まり、半角英数字、アンダーバー(_)、ハイフン(-)、アポストロフィー(')の組み合わせです" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :password, "パスワード", :class => "col-sm-4 control-label"%>
+        <div class="col-sm-8">
+          <%= password_field_tag :password, '', :required => 'required', :maxlength => 256, :pattern => '^[!-~]{8,}$', :class => "form-control", :title => "パスワードは長さが8-256文字、半角英数字と以下の記号の組み合わせです 使用できる記号(半角) ! \" # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8 hidden-xs">
+          <%= button_tag "ログイン", :class => 'btn btn-primary' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="visible-xs-block col-xs-12">
+          <%= button_tag "ログイン", :class => 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= link_to "パスワードを忘れた方はこちら", "/forget_password", :class => "col-sm-offset-4 col-sm-8" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class='col-sm-6'>
+    <H4 class='text-center'><%= link_to "Androidアプリのダウンロードはこちらから", "https://www.dropbox.com/s/db0y9stbk46n8i0/Bircle.apk?dl=1", :target => "_blank" %>
+      <div>(Android端末にてアクセスしてください)</div></H4>
+    <p class='text-center'><%= image_tag('bircle.gif') %></p>
+  </div>
+
+</div>

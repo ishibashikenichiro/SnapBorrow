@@ -1,0 +1,5996 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Float
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Float.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (F)</a> &raquo;
+    
+    
+    <span class="title">Float</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Float
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span></li>
+          
+            <li class="next">Float</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">numeric.c<span class="defines">,<br />
+  numeric.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>******************************************************************</p>
+
+<pre class="code ruby"><code class="ruby">&lt;code&gt;Float&lt;/code&gt; objects represent inexact real numbers using
+the native architecture's double-precision floating point
+representation.
+
+Floating point has a different arithmetic and is a inexact number.
+So you should know its esoteric system. see following:
+
+- http://docs.sun.com/source/806-3568/ncg_goldberg.html
+- http://wiki.github.com/rdp/ruby_tutorials_core/ruby-talk-faq#floats_imprecise
+- http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="ROUNDS-constant" class="">ROUNDS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>FLT_ROUNDS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RADIX-constant" class="">RADIX =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>FLT_RADIX</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MANT_DIG-constant" class="">MANT_DIG =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_MANT_DIG</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DIG-constant" class="">DIG =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_DIG</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MIN_EXP-constant" class="">MIN_EXP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_MIN_EXP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MAX_EXP-constant" class="">MAX_EXP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_MAX_EXP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MIN_10_EXP-constant" class="">MIN_10_EXP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_MIN_10_EXP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MAX_10_EXP-constant" class="">MAX_10_EXP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>DBL_MAX_10_EXP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MIN-constant" class="">MIN =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>DBL_MIN</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MAX-constant" class="">MAX =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>DBL_MAX</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="EPSILON-constant" class="">EPSILON =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>DBL_EPSILON</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="INFINITY-constant" class="">INFINITY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>INFINITY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NAN-constant" class="">NAN =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>DBL2NUM</span><span class='lparen'>(</span><span class='const'>NAN</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%25-instance_method" title="#% (instance method)">- (Object) <strong>%</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return the modulo after division of flt by other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2A-instance_method" title="#* (instance method)">- (Float) <strong>*</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new float which is the product of float and other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2A%2A-instance_method" title="#** (instance method)">- (Float) <strong>**</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Raises float the other power.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2B-instance_method" title="#+ (instance method)">- (Float) <strong>+</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new float which is the sum of float and other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#--instance_method" title="#- (instance method)">- (Float) <strong>-</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new float which is the difference of float and other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#-%40-instance_method" title="#- (instance method)">- (Float) <strong>-</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns float, negated.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%2F-instance_method" title="#/ (instance method)">- (Float) <strong>/</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new float which is the result of dividing float by other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C-instance_method" title="#&lt; (instance method)">- (Boolean) <strong>&lt;</strong>(real) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>true if flt is less than real.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D-instance_method" title="#&lt;= (instance method)">- (Boolean) <strong>&lt;=</strong>(real) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>true if flt is less than or equal to real.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D%3E-instance_method" title="#&lt;=&gt; (instance method)">- (-1, ...) <strong>&lt;=&gt;</strong>(real) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns -1, 0, +1 or nil depending on whether flt is less than, equal to,
+or greater than real.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true only if obj has the same value as flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true only if obj has the same value as flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E-instance_method" title="#&gt; (instance method)">- (Boolean) <strong>&gt;</strong>(real) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>true if flt is greater than real.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E%3D-instance_method" title="#&gt;= (instance method)">- (Boolean) <strong>&gt;=</strong>(real) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>true if flt is greater than or equal to real.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#abs-instance_method" title="#abs (instance method)">- (Object) <strong>abs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the absolute value of flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#angle-instance_method" title="#angle (instance method)">- (Object) <strong>angle</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arg-instance_method" title="#arg (instance method)">- (Object) <strong>arg</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ceil-instance_method" title="#ceil (instance method)">- (Integer) <strong>ceil</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the smallest Integer greater than or equal to flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#coerce-instance_method" title="#coerce (instance method)">- (Array) <strong>coerce</strong>(numeric) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array with both aNumeric and flt represented as Float objects.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#denominator-instance_method" title="#denominator (instance method)">- (Integer) <strong>denominator</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the denominator (always positive).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#divmod-instance_method" title="#divmod (instance method)">- (Array) <strong>divmod</strong>(numeric) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Numeric#divmod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">- (Boolean) <strong>eql?</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true only if obj is a Float with the same value as flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fdiv-instance_method" title="#quo (instance method)">- (Float) <strong>quo</strong>(numeric) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns float / numeric.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#finite%3F-instance_method" title="#finite? (instance method)">- (Boolean) <strong>finite?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if flt is a valid IEEE floating point number (it is not
+infinite, and nan? is false).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#floor-instance_method" title="#floor (instance method)">- (Integer) <strong>floor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the largest integer less than or equal to flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-instance_method" title="#hash (instance method)">- (Integer) <strong>hash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash code for this float.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#infinite%3F-instance_method" title="#infinite? (instance method)">- (nil, ...) <strong>infinite?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns nil, -1, or +1 depending on whether flt is finite, -infinity, or
++infinity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#magnitude-instance_method" title="#magnitude (instance method)">- (Object) <strong>magnitude</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the absolute value of flt.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#modulo-instance_method" title="#modulo (instance method)">- (Object) <strong>modulo</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return the modulo after division of flt by other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nan%3F-instance_method" title="#nan? (instance method)">- (Boolean) <strong>nan?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if flt is an invalid IEEE floating point number.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#numerator-instance_method" title="#numerator (instance method)">- (Integer) <strong>numerator</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the numerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#phase-instance_method" title="#phase (instance method)">- (Object) <strong>phase</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#quo-instance_method" title="#quo (instance method)">- (Float) <strong>quo</strong>(numeric) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns float / numeric.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rationalize-instance_method" title="#rationalize (instance method)">- (Object) <strong>rationalize</strong>([eps]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a simpler approximation of the value (flt-|eps|  (3/10)   
+1.333.rationalize        #=&gt; (1333/1000)    1.333.rationalize(0.01) 
+#=&gt; (4/3).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#round-instance_method" title="#round (instance method)">- (Integer, Float) <strong>round</strong>([ndigits]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rounds flt to a given precision in decimal digits (default 0 digits).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_f-instance_method" title="#to_f (instance method)">- (self) <strong>to_f</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>As flt is already a float, returns <code>self</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_i-instance_method" title="#to_i (instance method)">- (Object) <strong>to_i</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns flt truncated to an Integer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_int-instance_method" title="#to_int (instance method)">- (Object) <strong>to_int</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns flt truncated to an Integer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_r-instance_method" title="#to_r (instance method)">- (Object) <strong>to_r</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value as a rational.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a string containing a representation of self.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncate-instance_method" title="#truncate (instance method)">- (Object) <strong>truncate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns flt truncated to an Integer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#zero%3F-instance_method" title="#zero? (instance method)">- (Boolean) <strong>zero?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if flt is 0.0.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Numeric.html#%2B%40-instance_method" title="Numeric#+@ (method)">#+@</a></span>, <span class='object_link'><a href="Numeric.html#abs2-instance_method" title="Numeric#abs2 (method)">#abs2</a></span>, <span class='object_link'><a href="Numeric.html#conj-instance_method" title="Numeric#conj (method)">#conj</a></span>, <span class='object_link'><a href="Numeric.html#conjugate-instance_method" title="Numeric#conjugate (method)">#conjugate</a></span>, <span class='object_link'><a href="Numeric.html#div-instance_method" title="Numeric#div (method)">#div</a></span>, <span class='object_link'><a href="Numeric.html#i-instance_method" title="Numeric#i (method)">#i</a></span>, <span class='object_link'><a href="Numeric.html#imag-instance_method" title="Numeric#imag (method)">#imag</a></span>, <span class='object_link'><a href="Numeric.html#imaginary-instance_method" title="Numeric#imaginary (method)">#imaginary</a></span>, <span class='object_link'><a href="Numeric.html#initialize_copy-instance_method" title="Numeric#initialize_copy (method)">#initialize_copy</a></span>, <span class='object_link'><a href="Numeric.html#integer%3F-instance_method" title="Numeric#integer? (method)">#integer?</a></span>, <span class='object_link'><a href="Numeric.html#nonzero%3F-instance_method" title="Numeric#nonzero? (method)">#nonzero?</a></span>, <span class='object_link'><a href="Numeric.html#polar-instance_method" title="Numeric#polar (method)">#polar</a></span>, <span class='object_link'><a href="Numeric.html#real-instance_method" title="Numeric#real (method)">#real</a></span>, <span class='object_link'><a href="Numeric.html#real%3F-instance_method" title="Numeric#real? (method)">#real?</a></span>, <span class='object_link'><a href="Numeric.html#rect-instance_method" title="Numeric#rect (method)">#rect</a></span>, <span class='object_link'><a href="Numeric.html#rectangular-instance_method" title="Numeric#rectangular (method)">#rectangular</a></span>, <span class='object_link'><a href="Numeric.html#remainder-instance_method" title="Numeric#remainder (method)">#remainder</a></span>, <span class='object_link'><a href="Numeric.html#singleton_method_added-instance_method" title="Numeric#singleton_method_added (method)">#singleton_method_added</a></span>, <span class='object_link'><a href="Numeric.html#step-instance_method" title="Numeric#step (method)">#step</a></span>, <span class='object_link'><a href="Numeric.html#to_c-instance_method" title="Numeric#to_c (method)">#to_c</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Comparable.html" title="Comparable (module)">Comparable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Comparable.html#between%3F-instance_method" title="Comparable#between? (method)">#between?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="%-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>%</strong>(other) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>modulo</strong>(other) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return the modulo after division of <code>flt</code> by <code>other</code>.</p>
+
+<pre class="ruby"><span class="ruby-value">6543.21</span>.<span class="ruby-identifier">modulo</span>(<span class="ruby-value">137</span>)      <span class="ruby-comment">#=&gt; 104.21</span>
+<span class="ruby-value">6543.21</span>.<span class="ruby-identifier">modulo</span>(<span class="ruby-value">137.24</span>)   <span class="ruby-comment">#=&gt; 92.9299999999996</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>%</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>modulo</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 864</span>
+
+static VALUE
+flo_mod(VALUE x, VALUE y)
+{
+    double fy;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	fy = (double)FIX2LONG(y);
+	break;
+      case T_BIGNUM:
+	fy = rb_big2dbl(y);
+	break;
+      case T_FLOAT:
+	fy = RFLOAT_VALUE(y);
+	break;
+      default:
+	return rb_num_coerce_bin(x, y, '%');
+    }
+    return DBL2NUM(ruby_float_mod(RFLOAT_VALUE(x), fy));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="*-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>*</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new float which is the product of <code>float</code> and
+<code>other</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 755</span>
+
+static VALUE
+flo_mul(VALUE x, VALUE y)
+{
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) * (double)FIX2LONG(y));
+      case T_BIGNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) * rb_big2dbl(y));
+      case T_FLOAT:
+	return DBL2NUM(RFLOAT_VALUE(x) * RFLOAT_VALUE(y));
+      default:
+	return rb_num_coerce_bin(x, y, '*');
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="**-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>**</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Raises <code>float</code> the <code>other</code> power.</p>
+
+<pre class="ruby"><span class="ruby-value">2.0</span><span class="ruby-operator">**</span><span class="ruby-value">3</span>      <span class="ruby-comment">#=&gt; 8.0</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 937</span>
+
+static VALUE
+flo_pow(VALUE x, VALUE y)
+{
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	return DBL2NUM(pow(RFLOAT_VALUE(x), (double)FIX2LONG(y)));
+      case T_BIGNUM:
+	return DBL2NUM(pow(RFLOAT_VALUE(x), rb_big2dbl(y)));
+      case T_FLOAT:
+	{
+	    double dx = RFLOAT_VALUE(x);
+	    double dy = RFLOAT_VALUE(y);
+	    if (dx &lt; 0 &amp;&amp; dy != round(dy))
+		return rb_funcall(rb_complex_raw1(x), rb_intern(&quot;**&quot;), 1, y);
+	    return DBL2NUM(pow(dx, dy));
+	}
+      default:
+	return rb_num_coerce_bin(x, y, rb_intern(&quot;**&quot;));
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="+-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>+</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new float which is the sum of <code>float</code> and
+<code>other</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 709</span>
+
+static VALUE
+flo_plus(VALUE x, VALUE y)
+{
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) + (double)FIX2LONG(y));
+      case T_BIGNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) + rb_big2dbl(y));
+      case T_FLOAT:
+	return DBL2NUM(RFLOAT_VALUE(x) + RFLOAT_VALUE(y));
+      default:
+	return rb_num_coerce_bin(x, y, '+');
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="--instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>-</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new float which is the difference of <code>float</code> and
+<code>other</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 732</span>
+
+static VALUE
+flo_minus(VALUE x, VALUE y)
+{
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) - (double)FIX2LONG(y));
+      case T_BIGNUM:
+	return DBL2NUM(RFLOAT_VALUE(x) - rb_big2dbl(y));
+      case T_FLOAT:
+	return DBL2NUM(RFLOAT_VALUE(x) - RFLOAT_VALUE(y));
+      default:
+	return rb_num_coerce_bin(x, y, '-');
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="-@-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>-</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns float, negated.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+695
+696
+697
+698
+699</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 695</span>
+
+static VALUE
+flo_uminus(VALUE flt)
+{
+    return DBL2NUM(-RFLOAT_VALUE(flt));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="/-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>/</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new float which is the result of dividing <code>float</code> by
+<code>other</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 778</span>
+
+static VALUE
+flo_div(VALUE x, VALUE y)
+{
+    long f_y;
+    double d;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	f_y = FIX2LONG(y);
+	return DBL2NUM(RFLOAT_VALUE(x) / (double)f_y);
+      case T_BIGNUM:
+	d = rb_big2dbl(y);
+	return DBL2NUM(RFLOAT_VALUE(x) / d);
+      case T_FLOAT:
+	return DBL2NUM(RFLOAT_VALUE(x) / RFLOAT_VALUE(y));
+      default:
+	return rb_num_coerce_bin(x, y, '/');
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&lt;</strong>(real) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>true</code> if <code>flt</code> is less than <code>real</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1203
+1204
+1205
+1206
+1207
+1208
+1209
+1210
+1211
+1212
+1213
+1214
+1215
+1216
+1217
+1218
+1219
+1220
+1221
+1222
+1223
+1224
+1225
+1226
+1227
+1228
+1229
+1230
+1231
+1232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1203</span>
+
+static VALUE
+flo_lt(VALUE x, VALUE y)
+{
+    double a, b;
+
+    a = RFLOAT_VALUE(x);
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+
+      default:
+	return rb_num_coerce_relop(x, y, '&lt;');
+    }
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a &lt; b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&lt;=</strong>(real) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>true</code> if <code>flt</code> is less than or equal to
+<code>real</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1242
+1243
+1244
+1245
+1246
+1247
+1248
+1249
+1250
+1251
+1252
+1253
+1254
+1255
+1256
+1257
+1258
+1259
+1260
+1261
+1262
+1263
+1264
+1265
+1266
+1267
+1268
+1269
+1270
+1271</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1242</span>
+
+static VALUE
+flo_le(VALUE x, VALUE y)
+{
+    double a, b;
+
+    a = RFLOAT_VALUE(x);
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+
+      default:
+	return rb_num_coerce_relop(x, y, rb_intern(&quot;&lt;=&quot;));
+    }
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a &lt;= b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=>-instance_method">
+  
+    - (<tt>-1</tt>, ...) <strong>&lt;=&gt;</strong>(real) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns -1, 0, +1 or nil depending on whether <em>flt</em> is less than,
+equal to, or greater than <em>real</em>. This is the basis for the tests in
+<code>Comparable</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>-1</tt>, <tt>0</tt>, <tt>+1</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095
+1096
+1097
+1098
+1099
+1100
+1101
+1102
+1103
+1104
+1105
+1106
+1107
+1108
+1109
+1110
+1111
+1112
+1113
+1114
+1115
+1116
+1117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1079</span>
+
+static VALUE
+flo_cmp(VALUE x, VALUE y)
+{
+    double a, b;
+    VALUE i;
+
+    a = RFLOAT_VALUE(x);
+    if (isnan(a)) return Qnil;
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+
+      case T_BIGNUM:
+	if (isinf(a)) {
+	    if (a &gt; 0.0) return INT2FIX(1);
+	    else return INT2FIX(-1);
+	}
+	b = rb_big2dbl(y);
+	break;
+
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+	break;
+
+      default:
+	if (isinf(a) &amp;&amp; (i = rb_check_funcall(y, rb_intern(&quot;infinite?&quot;), 0, 0)) != Qundef) {
+	    if (RTEST(i)) {
+		int j = rb_cmpint(i, x, y);
+		j = (a &gt; 0.0) ? (j &gt; 0 ? 0 : +1) : (j &lt; 0 ? 0 : -1);
+		return INT2FIX(j);
+	    }
+	    if (a &gt; 0.0) return INT2FIX(1);
+	    return INT2FIX(-1);
+	}
+	return rb_num_coerce_cmp(x, y, rb_intern(&quot;&lt;=&gt;&quot;));
+    }
+    return rb_dbl_cmp(a, b);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="==-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> only if <em>obj</em> has the same value as
+<em>flt</em>. Contrast this with <code>Float#eql?</code>, which requires
+<em>obj</em> to be a <code>Float</code>.</p>
+
+<pre class="ruby"><span class="ruby-value">1.0</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>   <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1012</span>
+
+static VALUE
+flo_eq(VALUE x, VALUE y)
+{
+    volatile double a, b;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+      default:
+	return num_equal(x, y);
+    }
+    a = RFLOAT_VALUE(x);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a == b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="===-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> only if <em>obj</em> has the same value as
+<em>flt</em>. Contrast this with <code>Float#eql?</code>, which requires
+<em>obj</em> to be a <code>Float</code>.</p>
+
+<pre class="ruby"><span class="ruby-value">1.0</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>   <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1012</span>
+
+static VALUE
+flo_eq(VALUE x, VALUE y)
+{
+    volatile double a, b;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+      default:
+	return num_equal(x, y);
+    }
+    a = RFLOAT_VALUE(x);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a == b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&gt;</strong>(real) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>true</code> if <code>flt</code> is greater than <code>real</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1126
+1127
+1128
+1129
+1130
+1131
+1132
+1133
+1134
+1135
+1136
+1137
+1138
+1139
+1140
+1141
+1142
+1143
+1144
+1145
+1146
+1147
+1148
+1149
+1150
+1151
+1152
+1153
+1154
+1155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1126</span>
+
+static VALUE
+flo_gt(VALUE x, VALUE y)
+{
+    double a, b;
+
+    a = RFLOAT_VALUE(x);
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+
+      default:
+	return rb_num_coerce_relop(x, y, '&gt;');
+    }
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a &gt; b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">=-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>&gt;=</strong>(real) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>true</code> if <code>flt</code> is greater than or equal to
+<code>real</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1165
+1166
+1167
+1168
+1169
+1170
+1171
+1172
+1173
+1174
+1175
+1176
+1177
+1178
+1179
+1180
+1181
+1182
+1183
+1184
+1185
+1186
+1187
+1188
+1189
+1190
+1191
+1192
+1193
+1194</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1165</span>
+
+static VALUE
+flo_ge(VALUE x, VALUE y)
+{
+    double a, b;
+
+    a = RFLOAT_VALUE(x);
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	b = (double)FIX2LONG(y);
+	break;
+
+      case T_BIGNUM:
+	b = rb_big2dbl(y);
+	break;
+
+      case T_FLOAT:
+	b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(b)) return Qfalse;
+#endif
+	break;
+
+      default:
+	return rb_num_coerce_relop(x, y, rb_intern(&quot;&gt;=&quot;));
+    }
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+    if (isnan(a)) return Qfalse;
+#endif
+    return (a &gt;= b)?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="abs-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>abs</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>magnitude</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the absolute value of <em>flt</em>.</p>
+
+<pre class="ruby">(<span class="ruby-value">-34.56</span>).<span class="ruby-identifier">abs</span>   <span class="ruby-comment">#=&gt; 34.56</span>
+<span class="ruby-value">-34.56</span>.<span class="ruby-identifier">abs</span>     <span class="ruby-comment">#=&gt; 34.56</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>abs</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>magnitude</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1324
+1325
+1326
+1327
+1328
+1329</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1324</span>
+
+static VALUE
+flo_abs(VALUE flt)
+{
+    double val = fabs(RFLOAT_VALUE(flt));
+    return DBL2NUM(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="angle-instance_method">
+  
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794
+1795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'complex.c', line 1787</span>
+
+static VALUE
+float_arg(VALUE self)
+{
+    if (isnan(RFLOAT_VALUE(self)))
+	return self;
+    if (f_tpositive_p(self))
+	return INT2FIX(0);
+    return rb_const_get(rb_mMath, id_PI);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="arg-instance_method">
+  
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794
+1795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'complex.c', line 1787</span>
+
+static VALUE
+float_arg(VALUE self)
+{
+    if (isnan(RFLOAT_VALUE(self)))
+	return self;
+    if (f_tpositive_p(self))
+	return INT2FIX(0);
+    return rb_const_get(rb_mMath, id_PI);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ceil-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>ceil</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the smallest <code>Integer</code> greater than or equal to
+<em>flt</em>.</p>
+
+<pre class="ruby"><span class="ruby-value">1.2</span>.<span class="ruby-identifier">ceil</span>      <span class="ruby-comment">#=&gt; 2</span>
+<span class="ruby-value">2.0</span>.<span class="ruby-identifier">ceil</span>      <span class="ruby-comment">#=&gt; 2</span>
+(<span class="ruby-value">-1.2</span>).<span class="ruby-identifier">ceil</span>   <span class="ruby-comment">#=&gt; -1</span>
+(<span class="ruby-value">-2.0</span>).<span class="ruby-identifier">ceil</span>   <span class="ruby-comment">#=&gt; -2</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466
+1467
+1468</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1457</span>
+
+static VALUE
+flo_ceil(VALUE num)
+{
+    double f = ceil(RFLOAT_VALUE(num));
+    long val;
+
+    if (!FIXABLE(f)) {
+	return rb_dbl2big(f);
+    }
+    val = (long)f;
+    return LONG2FIX(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="coerce-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>coerce</strong>(numeric) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array with both <em>aNumeric</em> and <em>flt</em> represented
+as <code>Float</code> objects. This is achieved by converting
+<em>aNumeric</em> to a <code>Float</code>.</p>
+
+<pre class="ruby"><span class="ruby-value">1.2</span>.<span class="ruby-identifier">coerce</span>(<span class="ruby-value">3</span>)       <span class="ruby-comment">#=&gt; [3.0, 1.2]</span>
+<span class="ruby-value">2.5</span>.<span class="ruby-identifier">coerce</span>(<span class="ruby-value">1.1</span>)     <span class="ruby-comment">#=&gt; [1.1, 2.5]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+682
+683
+684
+685
+686</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 682</span>
+
+static VALUE
+flo_coerce(VALUE x, VALUE y)
+{
+    return rb_assoc_new(rb_Float(y), x);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="denominator-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>denominator</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the denominator (always positive).  The result is machine
+dependent.</p>
+
+<p>See numerator.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1803
+1804
+1805
+1806
+1807
+1808
+1809
+1810</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rational.c', line 1803</span>
+
+static VALUE
+float_denominator(VALUE self)
+{
+    double d = RFLOAT_VALUE(self);
+    if (isinf(d) || isnan(d))
+	return INT2FIX(1);
+    return rb_call_super(0, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="divmod-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>divmod</strong>(numeric) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See <code>Numeric#divmod</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 902</span>
+
+static VALUE
+flo_divmod(VALUE x, VALUE y)
+{
+    double fy, div, mod;
+    volatile VALUE a, b;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	fy = (double)FIX2LONG(y);
+	break;
+      case T_BIGNUM:
+	fy = rb_big2dbl(y);
+	break;
+      case T_FLOAT:
+	fy = RFLOAT_VALUE(y);
+	break;
+      default:
+	return rb_num_coerce_bin(x, y, rb_intern(&quot;divmod&quot;));
+    }
+    flodivmod(RFLOAT_VALUE(x), fy, &amp;div, &amp;mod);
+    a = dbl2ival(div);
+    b = DBL2NUM(mod);
+    return rb_assoc_new(a, b);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eql?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>eql?</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> only if <em>obj</em> is a <code>Float</code> with
+the same value as <em>flt</em>. Contrast this with <code>Float#==</code>,
+which performs type conversions.</p>
+
+<pre class="ruby"><span class="ruby-value">1.0</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-value">1</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1284
+1285
+1286
+1287
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1284</span>
+
+static VALUE
+flo_eql(VALUE x, VALUE y)
+{
+    if (TYPE(y) == T_FLOAT) {
+	double a = RFLOAT_VALUE(x);
+	double b = RFLOAT_VALUE(y);
+#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300
+	if (isnan(a) || isnan(b)) return Qfalse;
+#endif
+	if (a == b)
+	    return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fdiv-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>quo</strong>(numeric) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns float / numeric.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+805
+806
+807
+808
+809</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 805</span>
+
+static VALUE
+flo_quo(VALUE x, VALUE y)
+{
+    return rb_funcall(x, '/', 1, y);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="finite?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>finite?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>flt</em> is a valid IEEE floating point
+number (it is not infinite, and <code>nan?</code> is <code>false</code>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1403
+1404
+1405
+1406
+1407
+1408
+1409
+1410
+1411
+1412
+1413
+1414
+1415
+1416
+1417</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1403</span>
+
+static VALUE
+flo_is_finite_p(VALUE num)
+{
+    double value = RFLOAT_VALUE(num);
+
+#if HAVE_FINITE
+    if (!finite(value))
+	return Qfalse;
+#else
+    if (isinf(value) || isnan(value))
+	return Qfalse;
+#endif
+
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="floor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>floor</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the largest integer less than or equal to <em>flt</em>.</p>
+
+<pre class="ruby"><span class="ruby-value">1.2</span>.<span class="ruby-identifier">floor</span>      <span class="ruby-comment">#=&gt; 1</span>
+<span class="ruby-value">2.0</span>.<span class="ruby-identifier">floor</span>      <span class="ruby-comment">#=&gt; 2</span>
+(<span class="ruby-value">-1.2</span>).<span class="ruby-identifier">floor</span>   <span class="ruby-comment">#=&gt; -2</span>
+(<span class="ruby-value">-2.0</span>).<span class="ruby-identifier">floor</span>   <span class="ruby-comment">#=&gt; -2</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1431
+1432
+1433
+1434
+1435
+1436
+1437
+1438
+1439
+1440
+1441
+1442</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1431</span>
+
+static VALUE
+flo_floor(VALUE num)
+{
+    double f = floor(RFLOAT_VALUE(num));
+    long val;
+
+    if (!FIXABLE(f)) {
+	return rb_dbl2big(f);
+    }
+    val = (long)f;
+    return LONG2FIX(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>hash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash code for this float.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1047
+1048
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1047</span>
+
+static VALUE
+flo_hash(VALUE num)
+{
+    double d;
+    st_index_t hash;
+
+    d = RFLOAT_VALUE(num);
+    /* normalize -0.0 to 0.0 */
+    if (d == 0.0) d = 0.0;
+    hash = rb_memhash(&amp;d, sizeof(d));
+    return LONG2FIX(hash);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="infinite?-instance_method">
+  
+    - (<tt>nil</tt>, ...) <strong>infinite?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>nil</code>, -1, or +1 depending on whether <em>flt</em> is
+finite, -infinity, or +infinity.</p>
+
+<pre class="ruby">(<span class="ruby-value">0.0</span>).<span class="ruby-identifier">infinite?</span>        <span class="ruby-comment">#=&gt; nil</span>
+(<span class="ruby-value">-1.0</span><span class="ruby-operator">/</span><span class="ruby-value">0.0</span>).<span class="ruby-identifier">infinite?</span>   <span class="ruby-comment">#=&gt; -1</span>
+(<span class="ruby-value">+1.0</span><span class="ruby-operator">/</span><span class="ruby-value">0.0</span>).<span class="ruby-identifier">infinite?</span>   <span class="ruby-comment">#=&gt; 1</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>, <tt>-1</tt>, <tt>+1</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1381
+1382
+1383
+1384
+1385
+1386
+1387
+1388
+1389
+1390
+1391</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1381</span>
+
+static VALUE
+flo_is_infinite_p(VALUE num)
+{
+    double value = RFLOAT_VALUE(num);
+
+    if (isinf(value)) {
+	return INT2FIX( value &lt; 0 ? -1 : 1 );
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="magnitude-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>abs</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>magnitude</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the absolute value of <em>flt</em>.</p>
+
+<pre class="ruby">(<span class="ruby-value">-34.56</span>).<span class="ruby-identifier">abs</span>   <span class="ruby-comment">#=&gt; 34.56</span>
+<span class="ruby-value">-34.56</span>.<span class="ruby-identifier">abs</span>     <span class="ruby-comment">#=&gt; 34.56</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>abs</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>magnitude</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1324
+1325
+1326
+1327
+1328
+1329</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1324</span>
+
+static VALUE
+flo_abs(VALUE flt)
+{
+    double val = fabs(RFLOAT_VALUE(flt));
+    return DBL2NUM(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="modulo-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>%</strong>(other) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>modulo</strong>(other) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return the modulo after division of <code>flt</code> by <code>other</code>.</p>
+
+<pre class="ruby"><span class="ruby-value">6543.21</span>.<span class="ruby-identifier">modulo</span>(<span class="ruby-value">137</span>)      <span class="ruby-comment">#=&gt; 104.21</span>
+<span class="ruby-value">6543.21</span>.<span class="ruby-identifier">modulo</span>(<span class="ruby-value">137.24</span>)   <span class="ruby-comment">#=&gt; 92.9299999999996</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>%</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>modulo</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 864</span>
+
+static VALUE
+flo_mod(VALUE x, VALUE y)
+{
+    double fy;
+
+    switch (TYPE(y)) {
+      case T_FIXNUM:
+	fy = (double)FIX2LONG(y);
+	break;
+      case T_BIGNUM:
+	fy = rb_big2dbl(y);
+	break;
+      case T_FLOAT:
+	fy = RFLOAT_VALUE(y);
+	break;
+      default:
+	return rb_num_coerce_bin(x, y, '%');
+    }
+    return DBL2NUM(ruby_float_mod(RFLOAT_VALUE(x), fy));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nan?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>nan?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>flt</em> is an invalid IEEE floating point
+number.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-value">-1.0</span>      <span class="ruby-comment">#=&gt; -1.0</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nan?</span>        <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-identifier">a</span> = <span class="ruby-value">0.0</span><span class="ruby-operator">/</span><span class="ruby-value">0.0</span>   <span class="ruby-comment">#=&gt; NaN</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">nan?</span>        <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1361
+1362
+1363
+1364
+1365
+1366
+1367</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1361</span>
+
+static VALUE
+flo_is_nan_p(VALUE num)
+{
+    double value = RFLOAT_VALUE(num);
+
+    return isnan(value) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="numerator-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>numerator</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the numerator.  The result is machine dependent.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">n</span> = <span class="ruby-value">0.3</span>.<span class="ruby-identifier">numerator</span>    <span class="ruby-comment">#=&gt; 5404319552844595</span>
+<span class="ruby-identifier">d</span> = <span class="ruby-value">0.3</span>.<span class="ruby-identifier">denominator</span>  <span class="ruby-comment">#=&gt; 18014398509481984</span>
+<span class="ruby-identifier">n</span>.<span class="ruby-identifier">fdiv</span>(<span class="ruby-identifier">d</span>)            <span class="ruby-comment">#=&gt; 0.3</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rational.c', line 1785</span>
+
+static VALUE
+float_numerator(VALUE self)
+{
+    double d = RFLOAT_VALUE(self);
+    if (isinf(d) || isnan(d))
+	return self;
+    return rb_call_super(0, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="phase-instance_method">
+  
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+    
+      <span class="overload">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns 0 if the value is positive, pi otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>arg</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>angle</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>phase</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794
+1795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'complex.c', line 1787</span>
+
+static VALUE
+float_arg(VALUE self)
+{
+    if (isnan(RFLOAT_VALUE(self)))
+	return self;
+    if (f_tpositive_p(self))
+	return INT2FIX(0);
+    return rb_const_get(rb_mMath, id_PI);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="quo-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>quo</strong>(numeric) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns float / numeric.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+805
+806
+807
+808
+809</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 805</span>
+
+static VALUE
+flo_quo(VALUE x, VALUE y)
+{
+    return rb_funcall(x, '/', 1, y);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rationalize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>rationalize</strong>([eps]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a simpler approximation of the value (flt-|eps| &lt;= result &lt;=
+flt+|eps|).  if eps is not given, it will be chosen automatically.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-value">0.3</span>.<span class="ruby-identifier">rationalize</span>          <span class="ruby-comment">#=&gt; (3/10)</span>
+<span class="ruby-value">1.333</span>.<span class="ruby-identifier">rationalize</span>        <span class="ruby-comment">#=&gt; (1333/1000)</span>
+<span class="ruby-value">1.333</span>.<span class="ruby-identifier">rationalize</span>(<span class="ruby-value">0.01</span>)  <span class="ruby-comment">#=&gt; (4/3)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1948
+1949
+1950
+1951
+1952
+1953
+1954
+1955
+1956
+1957
+1958
+1959
+1960
+1961
+1962
+1963
+1964
+1965
+1966
+1967
+1968
+1969
+1970
+1971
+1972
+1973
+1974
+1975
+1976
+1977
+1978
+1979
+1980
+1981
+1982
+1983
+1984
+1985
+1986
+1987
+1988
+1989
+1990</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rational.c', line 1948</span>
+
+static VALUE
+float_rationalize(int argc, VALUE *argv, VALUE self)
+{
+    VALUE e, a, b, p, q;
+
+    if (f_negative_p(self))
+	return f_negate(float_rationalize(argc, argv, f_abs(self)));
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;e);
+
+    if (argc != 0) {
+	e = f_abs(e);
+	a = f_sub(self, e);
+	b = f_add(self, e);
+    }
+    else {
+	VALUE f, n;
+
+	float_decode_internal(self, &amp;f, &amp;n);
+	if (f_zero_p(f) || f_positive_p(n))
+	    return rb_rational_new1(f_lshift(f, n));
+
+#if FLT_RADIX == 2
+	a = rb_rational_new2(f_sub(f_mul(TWO, f), ONE),
+			     f_lshift(ONE, f_sub(ONE, n)));
+	b = rb_rational_new2(f_add(f_mul(TWO, f), ONE),
+			     f_lshift(ONE, f_sub(ONE, n)));
+#else
+	a = rb_rational_new2(f_sub(f_mul(INT2FIX(FLT_RADIX), f),
+				   INT2FIX(FLT_RADIX - 1)),
+			     f_expt(INT2FIX(FLT_RADIX), f_sub(ONE, n)));
+	b = rb_rational_new2(f_add(f_mul(INT2FIX(FLT_RADIX), f),
+				   INT2FIX(FLT_RADIX - 1)),
+			     f_expt(INT2FIX(FLT_RADIX), f_sub(ONE, n)));
+#endif
+    }
+
+    if (f_eqeq_p(a, b))
+	return f_to_r(self);
+
+    nurat_rationalize_internal(a, b, &amp;p, &amp;q);
+    return rb_rational_new2(p, q);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="round-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>) <strong>round</strong>([ndigits]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Rounds <em>flt</em> to a given precision in decimal digits (default 0
+digits). Precision may be negative.  Returns a floating point number when
+ndigits is more than zero.</p>
+
+<pre class="ruby"><span class="ruby-value">1.4</span>.<span class="ruby-identifier">round</span>      <span class="ruby-comment">#=&gt; 1</span>
+<span class="ruby-value">1.5</span>.<span class="ruby-identifier">round</span>      <span class="ruby-comment">#=&gt; 2</span>
+<span class="ruby-value">1.6</span>.<span class="ruby-identifier">round</span>      <span class="ruby-comment">#=&gt; 2</span>
+(<span class="ruby-value">-1.5</span>).<span class="ruby-identifier">round</span>   <span class="ruby-comment">#=&gt; -2</span>
+
+<span class="ruby-value">1.234567</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment">#=&gt; 1.23</span>
+<span class="ruby-value">1.234567</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">3</span>)  <span class="ruby-comment">#=&gt; 1.235</span>
+<span class="ruby-value">1.234567</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">4</span>)  <span class="ruby-comment">#=&gt; 1.2346</span>
+<span class="ruby-value">1.234567</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">5</span>)  <span class="ruby-comment">#=&gt; 1.23457</span>
+
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">-5</span>) <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">-4</span>) <span class="ruby-comment">#=&gt; 30000</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">-3</span>) <span class="ruby-comment">#=&gt; 35000</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">-2</span>) <span class="ruby-comment">#=&gt; 34600</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">-1</span>) <span class="ruby-comment">#=&gt; 34570</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment">#=&gt; 34568</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">1</span>)  <span class="ruby-comment">#=&gt; 34567.9</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment">#=&gt; 34567.89</span>
+<span class="ruby-value">34567.89</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">3</span>)  <span class="ruby-comment">#=&gt; 34567.89</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>, <tt><span class='object_link'><a href="" title="Float (class)">Float</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1542
+1543
+1544
+1545
+1546
+1547
+1548
+1549
+1550
+1551
+1552
+1553
+1554
+1555
+1556
+1557
+1558
+1559
+1560
+1561
+1562
+1563
+1564
+1565
+1566
+1567
+1568
+1569
+1570
+1571
+1572
+1573
+1574
+1575
+1576
+1577
+1578
+1579
+1580
+1581
+1582
+1583
+1584
+1585
+1586
+1587
+1588
+1589</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1542</span>
+
+static VALUE
+flo_round(int argc, VALUE *argv, VALUE num)
+{
+    VALUE nd;
+    double number, f;
+    int ndigits = 0;
+    int binexp;
+    enum {float_dig = DBL_DIG+2};
+
+    if (argc &gt; 0 &amp;&amp; rb_scan_args(argc, argv, &quot;01&quot;, &amp;nd) == 1) {
+	ndigits = NUM2INT(nd);
+    }
+    if (ndigits &lt; 0) {
+	return int_round_0(flo_truncate(num), ndigits);
+    }
+    number  = RFLOAT_VALUE(num);
+    if (ndigits == 0) {
+	return dbl2ival(number);
+    }
+    frexp(number, &amp;binexp);
+
+/* Let `exp` be such that `number` is written as:&quot;0.#{digits}e#{exp}&quot;,
+   i.e. such that  10 ** (exp - 1) &lt;= |number| &lt; 10 ** exp
+   Recall that up to float_dig digits can be needed to represent a double,
+   so if ndigits + exp &gt;= float_dig, the intermediate value (number * 10 ** ndigits)
+   will be an integer and thus the result is the original number.
+   If ndigits + exp &lt;= 0, the result is 0 or &quot;1e#{exp}&quot;, so
+   if ndigits + exp &lt; 0, the result is 0.
+   We have:
+	2 ** (binexp-1) &lt;= |number| &lt; 2 ** binexp
+	10 ** ((binexp-1)/log_2(10)) &lt;= |number| &lt; 10 ** (binexp/log_2(10))
+	If binexp &gt;= 0, and since log_2(10) = 3.322259:
+	   10 ** (binexp/4 - 1) &lt; |number| &lt; 10 ** (binexp/3)
+	   floor(binexp/4) &lt;= exp &lt;= ceil(binexp/3)
+	If binexp &lt;= 0, swap the /4 and the /3
+	So if ndigits + floor(binexp/(4 or 3)) &gt;= float_dig, the result is number
+	If ndigits + ceil(binexp/(3 or 4)) &lt; 0 the result is 0
+*/
+    if (isinf(number) || isnan(number) ||
+	(ndigits &gt;= float_dig - (binexp &gt; 0 ? binexp / 4 : binexp / 3 - 1))) {
+	return num;
+    }
+    if (ndigits &lt; - (binexp &gt; 0 ? binexp / 3 + 1 : binexp / 4)) {
+	return DBL2NUM(0);
+    }
+    f = pow(10, ndigits);
+    return DBL2NUM(round(number * f) / f);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_f-instance_method">
+  
+    - (<tt>self</tt>) <strong>to_f</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>As <code>flt</code> is already a float, returns <code>self</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1306
+1307
+1308
+1309
+1310</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1306</span>
+
+static VALUE
+flo_to_f(VALUE num)
+{
+    return num;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_i-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <em>flt</em> truncated to an <code>Integer</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1600
+1601
+1602
+1603
+1604
+1605
+1606
+1607
+1608
+1609
+1610
+1611
+1612
+1613
+1614</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1600</span>
+
+static VALUE
+flo_truncate(VALUE num)
+{
+    double f = RFLOAT_VALUE(num);
+    long val;
+
+    if (f &gt; 0.0) f = floor(f);
+    if (f &lt; 0.0) f = ceil(f);
+
+    if (!FIXABLE(f)) {
+	return rb_dbl2big(f);
+    }
+    val = (long)f;
+    return LONG2FIX(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_int-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <em>flt</em> truncated to an <code>Integer</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1600
+1601
+1602
+1603
+1604
+1605
+1606
+1607
+1608
+1609
+1610
+1611
+1612
+1613
+1614</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1600</span>
+
+static VALUE
+flo_truncate(VALUE num)
+{
+    double f = RFLOAT_VALUE(num);
+    long val;
+
+    if (f &gt; 0.0) f = floor(f);
+    if (f &lt; 0.0) f = ceil(f);
+
+    if (!FIXABLE(f)) {
+	return rb_dbl2big(f);
+    }
+    val = (long)f;
+    return LONG2FIX(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_r-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_r</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value as a rational.</p>
+
+<p>NOTE: 0.3.to_r isn’t the same as ‘0.3’.to_r.  The latter is equivalent to
+‘3/10’.to_r, but the former isn’t so.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-value">2.0</span>.<span class="ruby-identifier">to_r</span>    <span class="ruby-comment">#=&gt; (2/1)</span>
+<span class="ruby-value">2.5</span>.<span class="ruby-identifier">to_r</span>    <span class="ruby-comment">#=&gt; (5/2)</span>
+<span class="ruby-value">-0.75</span>.<span class="ruby-identifier">to_r</span>  <span class="ruby-comment">#=&gt; (-3/4)</span>
+<span class="ruby-value">0.0</span>.<span class="ruby-identifier">to_r</span>    <span class="ruby-comment">#=&gt; (0/1)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1912
+1913
+1914
+1915
+1916
+1917
+1918
+1919
+1920
+1921
+1922
+1923
+1924
+1925
+1926
+1927
+1928
+1929
+1930
+1931
+1932</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'rational.c', line 1912</span>
+
+static VALUE
+float_to_r(VALUE self)
+{
+    VALUE f, n;
+
+    float_decode_internal(self, &amp;f, &amp;n);
+#if FLT_RADIX == 2
+    {
+	long ln = FIX2LONG(n);
+
+	if (ln == 0)
+	    return f_to_r(f);
+	if (ln &gt; 0)
+	    return f_to_r(f_lshift(f, n));
+	ln = -ln;
+	return rb_rational_new2(f, f_lshift(ONE, INT2FIX(ln)));
+    }
+#else
+    return f_to_r(f_mul(f, f_expt(INT2FIX(FLT_RADIX), n)));
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a string containing a representation of self. As well as a fixed or
+exponential form of the number, the call may return “<code>NaN</code>”,
+“<code>Infinity</code>”, and “<code>-Infinity</code>”.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 601</span>
+
+static VALUE
+flo_to_s(VALUE flt)
+{
+    char *ruby_dtoa(double d_, int mode, int ndigits, int *decpt, int *sign, char **rve);
+    enum {decimal_mant = DBL_MANT_DIG-DBL_DIG};
+    enum {float_dig = DBL_DIG+1};
+    char buf[float_dig + (decimal_mant + CHAR_BIT - 1) / CHAR_BIT + 10];
+    double value = RFLOAT_VALUE(flt);
+    VALUE s;
+    char *p, *e;
+    int sign, decpt, digs;
+
+    if (isinf(value))
+	return rb_usascii_str_new2(value &lt; 0 ? &quot;-Infinity&quot; : &quot;Infinity&quot;);
+    else if (isnan(value))
+	return rb_usascii_str_new2(&quot;NaN&quot;);
+
+    p = ruby_dtoa(value, 0, 0, &amp;decpt, &amp;sign, &amp;e);
+    s = sign ? rb_usascii_str_new_cstr(&quot;-&quot;) : rb_usascii_str_new(0, 0);
+    if ((digs = (int)(e - p)) &gt;= (int)sizeof(buf)) digs = (int)sizeof(buf) - 1;
+    memcpy(buf, p, digs);
+    xfree(p);
+    if (decpt &gt; 0) {
+	if (decpt &lt; digs) {
+	    memmove(buf + decpt + 1, buf + decpt, digs - decpt);
+	    buf[decpt] = '.';
+	    rb_str_cat(s, buf, digs + 1);
+	}
+	else if (decpt - digs &lt; float_dig) {
+	    long len;
+	    char *ptr;
+	    rb_str_cat(s, buf, digs);
+	    rb_str_resize(s, (len = RSTRING_LEN(s)) + decpt - digs + 2);
+	    ptr = RSTRING_PTR(s) + len;
+	    if (decpt &gt; digs) {
+		memset(ptr, '0', decpt - digs);
+		ptr += decpt - digs;
+	    }
+	    memcpy(ptr, &quot;.0&quot;, 2);
+	}
+	else {
+	    goto exp;
+	}
+    }
+    else if (decpt &gt; -4) {
+	long len;
+	char *ptr;
+	rb_str_cat(s, &quot;0.&quot;, 2);
+	rb_str_resize(s, (len = RSTRING_LEN(s)) - decpt + digs);
+	ptr = RSTRING_PTR(s);
+	memset(ptr += len, '0', -decpt);
+	memcpy(ptr -= decpt, buf, digs);
+    }
+    else {
+      exp:
+	if (digs &gt; 1) {
+	    memmove(buf + 2, buf + 1, digs - 1);
+	}
+	else {
+	    buf[2] = '0';
+	    digs++;
+	}
+	buf[1] = '.';
+	rb_str_cat(s, buf, digs + 1);
+	rb_str_catf(s, &quot;e%+03d&quot;, decpt - 1);
+    }
+    return s;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncate-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <em>flt</em> truncated to an <code>Integer</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_i</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>to_int</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>truncate</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1600
+1601
+1602
+1603
+1604
+1605
+1606
+1607
+1608
+1609
+1610
+1611
+1612
+1613
+1614</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1600</span>
+
+static VALUE
+flo_truncate(VALUE num)
+{
+    double f = RFLOAT_VALUE(num);
+    long val;
+
+    if (f &gt; 0.0) f = floor(f);
+    if (f &lt; 0.0) f = ceil(f);
+
+    if (!FIXABLE(f)) {
+	return rb_dbl2big(f);
+    }
+    val = (long)f;
+    return LONG2FIX(val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="zero?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>zero?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>flt</em> is 0.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1339
+1340
+1341
+1342
+1343
+1344
+1345
+1346</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'numeric.c', line 1339</span>
+
+static VALUE
+flo_zero_p(VALUE num)
+{
+    if (RFLOAT_VALUE(num) == 0.0) {
+	return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:50 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

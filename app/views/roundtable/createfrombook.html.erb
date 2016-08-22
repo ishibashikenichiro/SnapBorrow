@@ -1,0 +1,12 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<% provide(:title, '輪講新規登録') %>
+<h1>輪講新規登録</h1>
+<%= @title %><br />
+この図書に関連する輪講がありません。新規登録しますか
+
+<%= button_to '登録',{ :action => "create", :controller => "roundtable", 
+	:book_code=> @book_code,  :title=> @title} ,  { :method => :post } %>
+<br />
+<%= link_to "前のページに戻る", "javascript:void(0)", :onclick => "history.go(-1)" %>

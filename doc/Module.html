@@ -1,0 +1,5904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Module
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Module.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (M)</a> &raquo;
+    
+    
+    <span class="title">Module</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Module
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Module</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">object.c<span class="defines">,<br />
+  object.c,<br /> class.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>*********************************************************************</p>
+
+<pre class="ruby"><span class="ruby-constant">A</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">code</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">Module</span><span class="ruby-operator">&lt;</span><span class="ruby-node">/code&gt; is a collection of methods and constants. The
+methods in a module may be instance methods or module methods.
+Instance methods appear as methods in a class when the module is
+included, module methods do not. Conversely, module methods may be
+called without creating an encapsulating object, while instance
+methods may not. (See &lt;code&gt;Module#module_function&lt;/</span><span class="ruby-identifier">code</span><span class="ruby-operator">&gt;</span>)
+
+<span class="ruby-constant">In</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">descriptions</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">follow</span>, <span class="ruby-identifier">the</span> <span class="ruby-identifier">parameter</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">sym</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/i&gt; refers
+to a symbol, which is either a quoted string or a
+&lt;code&gt;Symbol&lt;/</span><span class="ruby-identifier">code</span><span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">such</span> <span class="ruby-identifier">as</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">code</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">name</span><span class="ruby-operator">&lt;</span><span class="ruby-node">/code&gt;).
+
+   module Mod
+     include Math
+     CONST = 1
+     def meth
+       #  ...
+     end
+   end
+   Mod.class              #=&gt; Module
+   Mod.constants          #=&gt; [:CONST, :PI, :E]
+   Mod.instance_methods   #=&gt; [:meth]
+</span></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Class.html" title="Class (class)">Class</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#constants-class_method" title="constants (class method)">+ (Object) <strong>constants</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In the first form, returns an array of the names of all constants
+accessible from the point of call.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nesting-class_method" title="nesting (class method)">+ (Array) <strong>nesting</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the list of <code>Modules</code> nested at the point of call.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C-instance_method" title="#&lt; (instance method)">- (true, ...) <strong>&lt;</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if mod is a subclass of other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D-instance_method" title="#&lt;= (instance method)">- (true, ...) <strong>&lt;=</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if mod is a subclass of other or is the same as other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D%3E-instance_method" title="#&lt;=&gt; (instance method)">- (-1, ...) <strong>&lt;=&gt;</strong>(other_mod) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Comparison—Returns -1 if mod includes other_mod, 0 if mod is the same as
+other_mod, and +1 if mod is included by other_mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Object) <strong>==</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equality—At the Object level, == returns true only if obj and other are the
+same object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D%3D-instance_method" title="#=== (instance method)">- (Boolean) <strong>===</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Case Equality—Returns true if anObject is an instance of mod or one of
+mod’s descendants.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E-instance_method" title="#&gt; (instance method)">- (true, ...) <strong>&gt;</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if mod is an ancestor of other.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E%3D-instance_method" title="#&gt;= (instance method)">- (true, ...) <strong>&gt;=</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if mod is an ancestor of other, or the two modules are the
+same.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ancestors-instance_method" title="#ancestors (instance method)">- (Array) <strong>ancestors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a list of modules included in mod (including mod itself).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#autoload-instance_method" title="#autoload (instance method)">- (nil) <strong>autoload</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Registers <em>filename</em> to be loaded (using Kernel::require) the first
+time that <em>module</em> (which may be a String or a symbol) is accessed
+in the namespace of <em>mod</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#autoload%3F-instance_method" title="#autoload? (instance method)">- (String<sup>?</sup>) <strong>autoload?</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <em>filename</em> to be loaded if <em>name</em> is registered as
+<code>autoload</code> in the namespace of <em>mod</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_eval-instance_method" title="#class_eval (instance method)">- (Object) <strong>class_eval</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the string or block in the context of <em>mod</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_exec-instance_method" title="#class_exec (instance method)">- (Object) <strong>class_exec</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the given block in the context of the class/module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_variable_defined%3F-instance_method" title="#class_variable_defined? (instance method)">- (Boolean) <strong>class_variable_defined?</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the given class variable is defined in obj.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_variable_get-instance_method" title="#class_variable_get (instance method)">- (Object) <strong>class_variable_get</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of the given class variable (or throws a NameError
+exception).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_variable_set-instance_method" title="#class_variable_set (instance method)">- (Object) <strong>class_variable_set</strong>(symbol, obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the class variable names by symbol to object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_variables-instance_method" title="#class_variables (instance method)">- (Array) <strong>class_variables</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array of the names of class variables in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_defined%3F-instance_method" title="#const_defined? (instance method)">- (Boolean) <strong>const_defined?</strong>(sym, inherit = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks for a constant with the given name in mod If <code>inherit</code> is
+set, the lookup will also search the ancestors (and <code>Object</code> if
+mod is a <code>Module</code>.).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_get-instance_method" title="#const_get (instance method)">- (Object) <strong>const_get</strong>(sym, inherit = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks for a constant with the given name in mod If <code>inherit</code> is
+set, the lookup will also search the ancestors (and <code>Object</code> if
+mod is a <code>Module</code>.).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_missing-instance_method" title="#const_missing (instance method)">- (Object) <strong>const_missing</strong>(sym) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Invoked when a reference is made to an undefined constant in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#const_set-instance_method" title="#const_set (instance method)">- (Object) <strong>const_set</strong>(sym, obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the named constant to the given object, returning that object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#constants-instance_method" title="#constants (instance method)">- (Array) <strong>constants</strong>(inherit = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array of the names of the constants accessible in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#freeze-instance_method" title="#freeze (instance method)">- (Object) <strong>freeze</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Prevents further modifications to mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if module is included in mod or one of mod’s ancestors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included_modules-instance_method" title="#included_modules (instance method)">- (Array) <strong>included_modules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the list of modules included in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new anonymous module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_method-instance_method" title="#instance_method (instance method)">- (Object) <strong>instance_method</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an <code>UnboundMethod</code> representing the given instance
+method in <em>mod</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_methods-instance_method" title="#instance_methods (instance method)">- (Array) <strong>instance_methods</strong>(include_super = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array containing the names of the public and protected instance
+methods in the receiver.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_defined%3F-instance_method" title="#method_defined? (instance method)">- (Boolean) <strong>method_defined?</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the named method is defined by <em>mod</em>
+(or its included modules and, if <em>mod</em> is a class, its ancestors).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#module_eval-instance_method" title="#module_eval (instance method)">- (Object) <strong>module_eval</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the string or block in the context of <em>mod</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#module_exec-instance_method" title="#module_exec (instance method)">- (Object) <strong>module_exec</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the given block in the context of the class/module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">- (String) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the name of the module mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#private_class_method-instance_method" title="#private_class_method (instance method)">- (Object) <strong>private_class_method</strong>(symbol, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes existing class methods private.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#private_constant-instance_method" title="#private_constant (instance method)">- (Object) <strong>private_constant</strong>(symbol, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes a list of existing constants private.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#private_instance_methods-instance_method" title="#private_instance_methods (instance method)">- (Array) <strong>private_instance_methods</strong>(include_super = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a list of the private instance methods defined in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#private_method_defined%3F-instance_method" title="#private_method_defined? (instance method)">- (Boolean) <strong>private_method_defined?</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the named private method is defined by _ mod_
+(or its included modules and, if <em>mod</em> is a class, its ancestors).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#protected_instance_methods-instance_method" title="#protected_instance_methods (instance method)">- (Array) <strong>protected_instance_methods</strong>(include_super = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a list of the protected instance methods defined in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#protected_method_defined%3F-instance_method" title="#protected_method_defined? (instance method)">- (Boolean) <strong>protected_method_defined?</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the named protected method is defined by
+<em>mod</em> (or its included modules and, if <em>mod</em> is a class, its
+ancestors).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_class_method-instance_method" title="#public_class_method (instance method)">- (Object) <strong>public_class_method</strong>(symbol, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes a list of existing class methods public.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_constant-instance_method" title="#public_constant (instance method)">- (Object) <strong>public_constant</strong>(symbol, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes a list of existing constants public.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_instance_method-instance_method" title="#public_instance_method (instance method)">- (Object) <strong>public_instance_method</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Similar to <em>instance_method</em>, searches public method only.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_instance_methods-instance_method" title="#public_instance_methods (instance method)">- (Array) <strong>public_instance_methods</strong>(include_super = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a list of the public instance methods defined in mod.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_method_defined%3F-instance_method" title="#public_method_defined? (instance method)">- (Boolean) <strong>public_method_defined?</strong>(symbol) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the named public method is defined by
+<em>mod</em> (or its included modules and, if <em>mod</em> is a class, its
+ancestors).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_class_variable-instance_method" title="#remove_class_variable (instance method)">- (Object) <strong>remove_class_variable</strong>(sym) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes the definition of the sym, returning that constant’s value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a string representing this module or class.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> {|mod| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new anonymous module. If a block is given, it is passed the
+module object, and the block is evaluated in the context of this module
+using <code>module_eval</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">fred</span> = <span class="ruby-constant">Module</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">meth1</span>
+    <span class="ruby-string">&quot;hello&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">meth2</span>
+    <span class="ruby-string">&quot;bye&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">a</span> = <span class="ruby-string">&quot;my string&quot;</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-identifier">fred</span>)   <span class="ruby-comment">#=&gt; &quot;my string&quot;</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">meth1</span>          <span class="ruby-comment">#=&gt; &quot;hello&quot;</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">meth2</span>          <span class="ruby-comment">#=&gt; &quot;bye&quot;</span>
+</pre>
+
+<p>Assign the module to a constant (name starting uppercase) if you want to
+treat it like a regular module.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong> {|mod| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>mod</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1516
+1517
+1518
+1519
+1520
+1521
+1522
+1523</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1516</span>
+
+static VALUE
+rb_mod_initialize(VALUE module)
+{
+    if (rb_block_given_p()) {
+	rb_mod_module_exec(1, &amp;module, module);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="constants-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>constants</strong> </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>constants</strong>(inherited) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>In the first form, returns an array of the names of all constants
+accessible from the point of call. This list includes the names of all
+modules and classes defined in the global scope.</p>
+
+<pre class="ruby"><span class="ruby-constant">Module</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">4</span>)
+   <span class="ruby-comment"># =&gt; [:ARGF, :ARGV, :ArgumentError, :Array]</span>
+
+<span class="ruby-constant">Module</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">include?</span>(:<span class="ruby-constant">SEEK_SET</span>)   <span class="ruby-comment"># =&gt; false</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">IO</span>
+  <span class="ruby-constant">Module</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">include?</span>(:<span class="ruby-constant">SEEK_SET</span>) <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The second form calls the instance method <code>constants</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>constants</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>constants</strong>(inherited) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'eval.c', line 308</span>
+
+static VALUE
+rb_mod_s_constants(int argc, VALUE *argv, VALUE mod)
+{
+    const NODE *cref = rb_vm_cref();
+    VALUE klass;
+    VALUE cbase = 0;
+    void *data = 0;
+
+    if (argc &gt; 0) {
+	return rb_mod_constants(argc, argv, rb_cModule);
+    }
+
+    while (cref) {
+	klass = cref-&gt;nd_clss;
+	if (!(cref-&gt;flags &amp; NODE_FL_CREF_PUSHED_BY_EVAL) &amp;&amp;
+	    !NIL_P(klass)) {
+	    data = rb_mod_const_at(cref-&gt;nd_clss, data);
+	    if (!cbase) {
+		cbase = klass;
+	    }
+	}
+	cref = cref-&gt;nd_next;
+    }
+
+    if (cbase) {
+	data = rb_mod_const_of(cbase, data);
+    }
+    return rb_const_list(data);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nesting-class_method">
+  
+    + (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>nesting</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the list of <code>Modules</code> nested at the point of call.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">M1</span>
+  <span class="ruby-keyword">module</span> <span class="ruby-constant">M2</span>
+    <span class="ruby-identifier">$a</span> = <span class="ruby-constant">Module</span>.<span class="ruby-identifier">nesting</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">$a</span>           <span class="ruby-comment">#=&gt; [M1::M2, M1]</span>
+<span class="ruby-identifier">$a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">name</span>   <span class="ruby-comment">#=&gt; &quot;M1::M2&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'eval.c', line 269</span>
+
+static VALUE
+rb_mod_nesting(void)
+{
+    VALUE ary = rb_ary_new();
+    const NODE *cref = rb_vm_cref();
+
+    while (cref &amp;&amp; cref-&gt;nd_next) {
+	VALUE klass = cref-&gt;nd_clss;
+	if (!(cref-&gt;flags &amp; NODE_FL_CREF_PUSHED_BY_EVAL) &amp;&amp;
+	    !NIL_P(klass)) {
+	    rb_ary_push(ary, klass);
+	}
+	cref = cref-&gt;nd_next;
+    }
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="<-instance_method">
+  
+    - (<tt>true</tt>, ...) <strong>&lt;</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <em>mod</em> is a subclass of <em>other</em>. Returns
+<code>nil</code> if there’s no relationship between the two. (Think of the
+relationship in terms of the class definition: “class A&lt;B” implies
+“A&lt;B”).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1390
+1391
+1392
+1393
+1394
+1395</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1390</span>
+
+static VALUE
+rb_mod_lt(VALUE mod, VALUE arg)
+{
+    if (mod == arg) return Qfalse;
+    return rb_class_inherited_p(mod, arg);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=-instance_method">
+  
+    - (<tt>true</tt>, ...) <strong>&lt;=</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <em>mod</em> is a subclass of <em>other</em> or is the same
+as <em>other</em>. Returns <code>nil</code> if there’s no relationship
+between the two. (Think of the relationship in terms of the class
+definition: “class A&lt;B” implies “A&lt;B”).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1352
+1353
+1354
+1355
+1356
+1357
+1358
+1359
+1360
+1361
+1362
+1363
+1364
+1365
+1366
+1367
+1368
+1369
+1370
+1371
+1372
+1373
+1374
+1375
+1376
+1377</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1352</span>
+
+VALUE
+rb_class_inherited_p(VALUE mod, VALUE arg)
+{
+    VALUE start = mod;
+
+    if (mod == arg) return Qtrue;
+    switch (TYPE(arg)) {
+      case T_MODULE:
+      case T_CLASS:
+	break;
+      default:
+	rb_raise(rb_eTypeError, &quot;compared with non class/module&quot;);
+    }
+    while (mod) {
+	if (RCLASS_M_TBL(mod) == RCLASS_M_TBL(arg))
+	    return Qtrue;
+	mod = RCLASS_SUPER(mod);
+    }
+    /* not mod &lt; arg; check if mod &gt; arg */
+    while (arg) {
+	if (RCLASS_M_TBL(arg) == RCLASS_M_TBL(start))
+	    return Qfalse;
+	arg = RCLASS_SUPER(arg);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=>-instance_method">
+  
+    - (<tt>-1</tt>, ...) <strong>&lt;=&gt;</strong>(other_mod) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Comparison—Returns -1 if <em>mod</em> includes <em>other_mod</em>, 0 if
+<em>mod</em> is the same as <em>other_mod</em>, and +1 if <em>mod</em> is
+included by <em>other_mod</em>. Returns <code>nil</code> if <em>mod</em>
+has no relationship with <em>other_mod</em> or if <em>other_mod</em> is not
+a module.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>-1</tt>, <tt>0</tt>, <tt>+1</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466
+1467
+1468
+1469
+1470
+1471
+1472
+1473</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1453</span>
+
+static VALUE
+rb_mod_cmp(VALUE mod, VALUE arg)
+{
+    VALUE cmp;
+
+    if (mod == arg) return INT2FIX(0);
+    switch (TYPE(arg)) {
+      case T_MODULE:
+      case T_CLASS:
+	break;
+      default:
+	return Qnil;
+    }
+
+    cmp = rb_class_inherited_p(mod, arg);
+    if (NIL_P(cmp)) return Qnil;
+    if (cmp) {
+	return INT2FIX(-1);
+    }
+    return INT2FIX(1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="==-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>==</strong>(other) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>equal?</strong>(other) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eql?</strong>(other) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equality—At the <code>Object</code> level, <code>==</code> returns
+<code>true</code> only if <em>obj</em> and <em>other</em> are the same
+object. Typically, this method is overridden in descendant classes to
+provide class-specific meaning.</p>
+
+<p>Unlike <code>==</code>, the <code>equal?</code> method should never be
+overridden by subclasses: it is used to determine object identity (that is,
+<code>a.equal?(b)</code> iff <code>a</code> is the same object as
+<code>b</code>).</p>
+
+<p>The <code>eql?</code> method returns <code>true</code> if <em>obj</em> and
+<em>anObject</em> have the same value. Used by <code>Hash</code> to test
+members for equality.  For objects of class <code>Object</code>,
+<code>eql?</code> is synonymous with <code>==</code>. Subclasses normally
+continue this tradition, but there are exceptions. <code>Numeric</code>
+types, for example, perform type conversion across <code>==</code>, but not
+across <code>eql?</code>, so:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-value">1.0</span>     <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-value">1</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-value">1.0</span>   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>==</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>equal?</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eql?</strong>(other) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 94</span>
+
+VALUE
+rb_obj_equal(VALUE obj1, VALUE obj2)
+{
+    if (obj1 == obj2) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="===-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>===</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Case Equality—Returns <code>true</code> if <em>anObject</em> is an instance
+of <em>mod</em> or one of <em>mod</em>’s descendants. Of limited use for
+modules, but can be used in <code>case</code> statements to classify
+objects by class.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1334
+1335
+1336
+1337
+1338</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1334</span>
+
+static VALUE
+rb_mod_eqq(VALUE mod, VALUE arg)
+{
+    return rb_obj_is_kind_of(arg, mod);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">-instance_method">
+  
+    - (<tt>true</tt>, ...) <strong>&gt;</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <em>mod</em> is an ancestor of <em>other</em>. Returns
+<code>nil</code> if there’s no relationship between the two. (Think of the
+relationship in terms of the class definition: “class A&lt;B” implies
+“B&gt;A”).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1435
+1436
+1437
+1438
+1439
+1440</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1435</span>
+
+static VALUE
+rb_mod_gt(VALUE mod, VALUE arg)
+{
+    if (mod == arg) return Qfalse;
+    return rb_mod_ge(mod, arg);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">=-instance_method">
+  
+    - (<tt>true</tt>, ...) <strong>&gt;=</strong>(other) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <em>mod</em> is an ancestor of <em>other</em>, or the two
+modules are the same. Returns <code>nil</code> if there’s no relationship
+between the two. (Think of the relationship in terms of the class
+definition: “class A&lt;B” implies “B&gt;A”).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1410
+1411
+1412
+1413
+1414
+1415
+1416
+1417
+1418
+1419
+1420
+1421
+1422</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1410</span>
+
+static VALUE
+rb_mod_ge(VALUE mod, VALUE arg)
+{
+    switch (TYPE(arg)) {
+      case T_MODULE:
+      case T_CLASS:
+	break;
+      default:
+	rb_raise(rb_eTypeError, &quot;compared with non class/module&quot;);
+    }
+
+    return rb_class_inherited_p(arg, mod);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ancestors-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>ancestors</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a list of modules included in <em>mod</em> (including <em>mod</em>
+itself).</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">Mod</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Math</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Comparable</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Mod</span>.<span class="ruby-identifier">ancestors</span>    <span class="ruby-comment">#=&gt; [Mod, Comparable, Math]</span>
+<span class="ruby-constant">Math</span>.<span class="ruby-identifier">ancestors</span>   <span class="ruby-comment">#=&gt; [Math]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 790</span>
+
+VALUE
+rb_mod_ancestors(VALUE mod)
+{
+    VALUE p, ary = rb_ary_new();
+
+    for (p = mod; p; p = RCLASS_SUPER(p)) {
+	if (FL_TEST(p, FL_SINGLETON))
+	    continue;
+	if (BUILTIN_TYPE(p) == T_ICLASS) {
+	    rb_ary_push(ary, RBASIC(p)-&gt;klass);
+	}
+	else {
+	    rb_ary_push(ary, p);
+	}
+    }
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="autoload-instance_method">
+  
+    - (<tt>nil</tt>) <strong>autoload</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Registers <em>filename</em> to be loaded (using
+<code>Kernel::require</code>) the first time that <em>module</em> (which
+may be a <code>String</code> or a symbol) is accessed in the namespace of
+<em>mod</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">autoload</span>(:<span class="ruby-constant">B</span>, <span class="ruby-string">&quot;b&quot;</span>)
+<span class="ruby-constant">A</span><span class="ruby-operator">::</span><span class="ruby-constant">B</span>.<span class="ruby-identifier">doit</span>            <span class="ruby-comment"># autoloads &quot;b&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+692
+693
+694
+695
+696
+697
+698
+699
+700</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'load.c', line 692</span>
+
+static VALUE
+rb_mod_autoload(VALUE mod, VALUE sym, VALUE file)
+{
+    ID id = rb_to_id(sym);
+
+    FilePathValue(file);
+    rb_autoload(mod, id, RSTRING_PTR(file));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="autoload?-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>autoload?</strong>(name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <em>filename</em> to be loaded if <em>name</em> is registered as
+<code>autoload</code> in the namespace of <em>mod</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">autoload</span>(:<span class="ruby-constant">B</span>, <span class="ruby-string">&quot;b&quot;</span>)
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">autoload?</span>(:<span class="ruby-constant">B</span>)            <span class="ruby-comment">#=&gt; &quot;b&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+715
+716
+717
+718
+719</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'load.c', line 715</span>
+
+static VALUE
+rb_mod_autoload_p(VALUE mod, VALUE sym)
+{
+    return rb_autoload_p(mod, rb_to_id(sym));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_eval-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_eval</strong>(string[, filename [, lineno]]) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_eval</strong> { ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the string or block in the context of <em>mod</em>. This can be
+used to add methods to a class. <code>module_eval</code> returns the result
+of evaluating its argument. The optional <em>filename</em> and
+<em>lineno</em> parameters set the text for error messages.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">a</span> = <span class="ruby-string">%q{def hello() &quot;Hello there!&quot; end}</span>
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">module_eval</span>(<span class="ruby-identifier">a</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">hello</span>()
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">module_eval</span>(<span class="ruby-string">&quot;invalid code&quot;</span>, <span class="ruby-string">&quot;dummy&quot;</span>, <span class="ruby-value">123</span>)
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class="">Hello there!
+dummy:123:in `module_eval': undefined local variable
+    or method `code' for Thing:Class</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_eval</strong>(string[, filename [, lineno]]) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_eval</strong> { ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1409
+1410
+1411
+1412
+1413</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_eval.c', line 1409</span>
+
+VALUE
+rb_mod_module_eval(int argc, VALUE *argv, VALUE mod)
+{
+    return specific_eval(argc, argv, mod, mod);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_exec-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_exec</strong>(arg...) {|var...| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_exec</strong>(arg...) {|var...| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the given block in the context of the class/module. The method
+defined in the block will belong to the receiver.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">class_exec</span>{
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">hello</span>() <span class="ruby-string">&quot;Hello there!&quot;</span> <span class="ruby-keyword">end</span>
+}
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">hello</span>()
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='const'>Hello</span> <span class='id identifier rubyid_there!'>there!</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_exec</strong>(arg...) {|var...| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>var...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_exec</strong>(arg...) {|var...| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>var...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1435
+1436
+1437
+1438
+1439</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_eval.c', line 1435</span>
+
+VALUE
+rb_mod_module_exec(int argc, VALUE *argv, VALUE mod)
+{
+    return yield_under(mod, mod, rb_ary_new4(argc, argv));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_variable_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>class_variable_defined?</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the given class variable is defined in
+<em>obj</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Fred</span>
+  <span class="ruby-identifier">@@foo</span> = <span class="ruby-value">99</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Fred</span>.<span class="ruby-identifier">class_variable_defined?</span>(:<span class="ruby-identifier">@@foo</span>)    <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">Fred</span>.<span class="ruby-identifier">class_variable_defined?</span>(:<span class="ruby-identifier">@@bar</span>)    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2021
+2022
+2023
+2024
+2025
+2026
+2027
+2028
+2029
+2030</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 2021</span>
+
+static VALUE
+rb_mod_cvar_defined(VALUE obj, VALUE iv)
+{
+    ID id = rb_to_id(iv);
+
+    if (!rb_is_class_id(id)) {
+	rb_name_error(id, &quot;`%s' is not allowed as a class variable name&quot;, rb_id2name(id));
+    }
+    return rb_cvar_defined(obj, id);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_variable_get-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_variable_get</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of the given class variable (or throws a
+<code>NameError</code> exception). The <code>@@</code> part of the variable
+name should be included for regular class variables</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Fred</span>
+  <span class="ruby-identifier">@@foo</span> = <span class="ruby-value">99</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Fred</span>.<span class="ruby-identifier">class_variable_get</span>(:<span class="ruby-identifier">@@foo</span>)     <span class="ruby-comment">#=&gt; 99</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1967
+1968
+1969
+1970
+1971
+1972
+1973
+1974
+1975
+1976</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1967</span>
+
+static VALUE
+rb_mod_cvar_get(VALUE obj, VALUE iv)
+{
+    ID id = rb_to_id(iv);
+
+    if (!rb_is_class_id(id)) {
+	rb_name_error(id, &quot;`%s' is not allowed as a class variable name&quot;, rb_id2name(id));
+    }
+    return rb_cvar_get(obj, id);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_variable_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_variable_set</strong>(symbol, obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the class variable names by <em>symbol</em> to <em>object</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Fred</span>
+  <span class="ruby-identifier">@@foo</span> = <span class="ruby-value">99</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">foo</span>
+    <span class="ruby-identifier">@@foo</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Fred</span>.<span class="ruby-identifier">class_variable_set</span>(:<span class="ruby-identifier">@@foo</span>, <span class="ruby-value">101</span>)     <span class="ruby-comment">#=&gt; 101</span>
+<span class="ruby-constant">Fred</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">foo</span>                             <span class="ruby-comment">#=&gt; 101</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1995
+1996
+1997
+1998
+1999
+2000
+2001
+2002
+2003
+2004
+2005</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1995</span>
+
+static VALUE
+rb_mod_cvar_set(VALUE obj, VALUE iv, VALUE val)
+{
+    ID id = rb_to_id(iv);
+
+    if (!rb_is_class_id(id)) {
+	rb_name_error(id, &quot;`%s' is not allowed as a class variable name&quot;, rb_id2name(id));
+    }
+    rb_cvar_set(obj, id, val);
+    return val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="class_variables-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>class_variables</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array of the names of class variables in <em>mod</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">One</span>
+  <span class="ruby-identifier">@@var1</span> = <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Two</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">One</span>
+  <span class="ruby-identifier">@@var2</span> = <span class="ruby-value">2</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">One</span>.<span class="ruby-identifier">class_variables</span>   <span class="ruby-comment">#=&gt; [:@@var1]</span>
+<span class="ruby-constant">Two</span>.<span class="ruby-identifier">class_variables</span>   <span class="ruby-comment">#=&gt; [:@@var2]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2164
+2165
+2166
+2167
+2168
+2169
+2170
+2171
+2172
+2173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 2164</span>
+
+VALUE
+rb_mod_class_variables(VALUE obj)
+{
+    VALUE ary = rb_ary_new();
+
+    if (RCLASS_IV_TBL(obj)) {
+	st_foreach_safe(RCLASS_IV_TBL(obj), cv_i, ary);
+    }
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>const_defined?</strong>(sym, inherit = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks for a constant with the given name in <em>mod</em> If
+<code>inherit</code> is set, the lookup will also search the ancestors (and
+<code>Object</code> if <em>mod</em> is a <code>Module</code>.)</p>
+
+<p>Returns whether or not a definition is found:</p>
+
+<pre class="ruby"><span class="ruby-constant">Math</span>.<span class="ruby-identifier">const_defined?</span> <span class="ruby-string">&quot;PI&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">IO</span>.<span class="ruby-identifier">const_defined?</span> :<span class="ruby-constant">SYNC</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">IO</span>.<span class="ruby-identifier">const_defined?</span> :<span class="ruby-constant">SYNC</span>, <span class="ruby-keyword">false</span>   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1842
+1843
+1844
+1845
+1846
+1847
+1848
+1849
+1850
+1851
+1852
+1853
+1854
+1855
+1856
+1857
+1858
+1859
+1860</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1842</span>
+
+static VALUE
+rb_mod_const_defined(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE name, recur;
+    ID id;
+
+    if (argc == 1) {
+	name = argv[0];
+	recur = Qtrue;
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;recur);
+    }
+    id = rb_to_id(name);
+    if (!rb_is_const_id(id)) {
+	rb_name_error(id, &quot;wrong constant name %s&quot;, rb_id2name(id));
+    }
+    return RTEST(recur) ? rb_const_defined(mod, id) : rb_const_defined_at(mod, id);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_get-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>const_get</strong>(sym, inherit = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks for a constant with the given name in <em>mod</em> If
+<code>inherit</code> is set, the lookup will also search the ancestors (and
+<code>Object</code> if <em>mod</em> is a <code>Module</code>.)</p>
+
+<p>The value of the constant is returned if a definition is found, otherwise a
+<code>NameError</code> is raised.</p>
+
+<pre class="ruby"><span class="ruby-constant">Math</span>.<span class="ruby-identifier">const_get</span>(:<span class="ruby-constant">PI</span>)   <span class="ruby-comment">#=&gt; 3.14159265358979</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1783
+1784
+1785
+1786
+1787
+1788
+1789
+1790
+1791
+1792
+1793
+1794
+1795
+1796
+1797
+1798
+1799
+1800
+1801</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1783</span>
+
+static VALUE
+rb_mod_const_get(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE name, recur;
+    ID id;
+
+    if (argc == 1) {
+	name = argv[0];
+	recur = Qtrue;
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;recur);
+    }
+    id = rb_to_id(name);
+    if (!rb_is_const_id(id)) {
+	rb_name_error(id, &quot;wrong constant name %s&quot;, rb_id2name(id));
+    }
+    return RTEST(recur) ? rb_const_get(mod, id) : rb_const_get_at(mod, id);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_missing-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>const_missing</strong>(sym) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Invoked when a reference is made to an undefined constant in <em>mod</em>.
+It is passed a symbol for the undefined constant, and returns a value to be
+used for that constant. The following code is an example of the same:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-constant">Foo</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span> <span class="ruby-comment"># return the constant name as Symbol</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Foo</span><span class="ruby-operator">::</span><span class="ruby-constant">UNDEFINED_CONST</span>    <span class="ruby-comment">#=&gt; :UNDEFINED_CONST: symbol returned</span>
+</pre>
+
+<p>In the next example when a reference is made to an undefined constant, it
+attempts to load a file whose name is the lowercase version of the constant
+(thus class <code>Fred</code> is assumed to be in file
+<code>fred.rb</code>).  If found, it returns the loaded class. It therefore
+implements an autoload feature similar to Kernel#autoload and
+Module#autoload.</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@looked_for</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">str_name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Class not found: #{name}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@looked_for</span>[<span class="ruby-identifier">str_name</span>]
+  <span class="ruby-ivar">@looked_for</span>[<span class="ruby-identifier">str_name</span>] = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">str_name</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Class not found: #{name}&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1402
+1403
+1404
+1405
+1406
+1407
+1408</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 1402</span>
+
+VALUE
+rb_mod_const_missing(VALUE klass, VALUE name)
+{
+    rb_frame_pop(); /* pop frame for &quot;const_missing&quot; */
+    uninitialized_constant(klass, rb_to_id(name));
+    return Qnil;		/* not reached */
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="const_set-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>const_set</strong>(sym, obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the named constant to the given object, returning that object. Creates
+a new constant if no constant with the given name previously existed.</p>
+
+<pre class="ruby"><span class="ruby-constant">Math</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-string">&quot;HIGH_SCHOOL_PI&quot;</span>, <span class="ruby-value">22.0</span><span class="ruby-operator">/</span><span class="ruby-value">7.0</span>)   <span class="ruby-comment">#=&gt; 3.14285714285714</span>
+<span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">HIGH_SCHOOL_PI</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>              <span class="ruby-comment">#=&gt; 0.00126448926734968</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1815
+1816
+1817
+1818
+1819
+1820
+1821
+1822
+1823
+1824
+1825</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1815</span>
+
+static VALUE
+rb_mod_const_set(VALUE mod, VALUE name, VALUE value)
+{
+    ID id = rb_to_id(name);
+
+    if (!rb_is_const_id(id)) {
+	rb_name_error(id, &quot;wrong constant name %s&quot;, rb_id2name(id));
+    }
+    rb_const_set(mod, id, value);
+    return value;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="constants-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>constants</strong>(inherit = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array of the names of the constants accessible in <em>mod</em>.
+This includes the names of constants in any included modules (example at
+start of section), unless the <em>all</em> parameter is set to
+<code>false</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">IO</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">include?</span>(:<span class="ruby-constant">SYNC</span>)        <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">IO</span>.<span class="ruby-identifier">constants</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">include?</span>(:<span class="ruby-constant">SYNC</span>) <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+<p>Also see <code>Module::const_defined?</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1789
+1790
+1791
+1792
+1793
+1794
+1795
+1796
+1797
+1798
+1799
+1800
+1801
+1802
+1803
+1804
+1805
+1806
+1807
+1808</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 1789</span>
+
+VALUE
+rb_mod_constants(int argc, VALUE *argv, VALUE mod)
+{
+    VALUE inherit;
+    st_table *tbl;
+
+    if (argc == 0) {
+	inherit = Qtrue;
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;01&quot;, &amp;inherit);
+    }
+    if (RTEST(inherit)) {
+	tbl = rb_mod_const_of(mod, 0);
+    }
+    else {
+	tbl = rb_mod_const_at(mod, 0);
+    }
+    return rb_const_list(tbl);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="freeze-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>freeze</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Prevents further modifications to <em>mod</em>.</p>
+
+<p>This method returns self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1317
+1318
+1319
+1320
+1321
+1322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1317</span>
+
+static VALUE
+rb_mod_freeze(VALUE mod)
+{
+    rb_class_name(mod);
+    return rb_obj_freeze(mod);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>include?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>module</em> is included in <em>mod</em> or
+one of <em>mod</em>’s ancestors.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">A</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">B</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">A</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">A</span>)   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">A</span>)   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 760</span>
+
+VALUE
+rb_mod_include_p(VALUE mod, VALUE mod2)
+{
+    VALUE p;
+
+    Check_Type(mod2, T_MODULE);
+    for (p = RCLASS_SUPER(mod); p; p = RCLASS_SUPER(p)) {
+	if (BUILTIN_TYPE(p) == T_ICLASS) {
+	    if (RBASIC(p)-&gt;klass == mod2) return Qtrue;
+	}
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="included_modules-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>included_modules</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the list of modules included in <em>mod</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">Mixin</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">module</span> <span class="ruby-constant">Outer</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Mixin</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Mixin</span>.<span class="ruby-identifier">included_modules</span>   <span class="ruby-comment">#=&gt; []</span>
+<span class="ruby-constant">Outer</span>.<span class="ruby-identifier">included_modules</span>   <span class="ruby-comment">#=&gt; [Mixin]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 727</span>
+
+VALUE
+rb_mod_included_modules(VALUE mod)
+{
+    VALUE ary = rb_ary_new();
+    VALUE p;
+
+    for (p = RCLASS_SUPER(mod); p; p = RCLASS_SUPER(p)) {
+	if (BUILTIN_TYPE(p) == T_ICLASS) {
+	    rb_ary_push(ary, RBASIC(p)-&gt;klass);
+	}
+    }
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize_copy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 177</span>
+
+VALUE
+rb_mod_init_copy(VALUE clone, VALUE orig)
+{
+    if (RB_TYPE_P(clone, T_CLASS)) {
+	class_init_copy_check(clone, orig);
+    }
+    rb_obj_init_copy(clone, orig);
+    if (!FL_TEST(CLASS_OF(clone), FL_SINGLETON)) {
+	RBASIC(clone)-&gt;klass = rb_singleton_class_clone(orig);
+	rb_singleton_class_attached(RBASIC(clone)-&gt;klass, (VALUE)clone);
+    }
+    RCLASS_SUPER(clone) = RCLASS_SUPER(orig);
+    if (RCLASS_IV_TBL(orig)) {
+	st_data_t id;
+
+	if (RCLASS_IV_TBL(clone)) {
+	    st_free_table(RCLASS_IV_TBL(clone));
+	}
+	RCLASS_IV_TBL(clone) = st_copy(RCLASS_IV_TBL(orig));
+	CONST_ID(id, &quot;__classpath__&quot;);
+	st_delete(RCLASS_IV_TBL(clone), &amp;id, 0);
+	CONST_ID(id, &quot;__classid__&quot;);
+	st_delete(RCLASS_IV_TBL(clone), &amp;id, 0);
+    }
+    if (RCLASS_CONST_TBL(orig)) {
+	if (RCLASS_CONST_TBL(clone)) {
+	    rb_free_const_table(RCLASS_CONST_TBL(clone));
+	}
+	RCLASS_CONST_TBL(clone) = st_init_numtable();
+	st_foreach(RCLASS_CONST_TBL(orig), clone_const_i, (st_data_t)RCLASS_CONST_TBL(clone));
+    }
+    if (RCLASS_M_TBL(orig)) {
+	struct clone_method_data data;
+
+	if (RCLASS_M_TBL(clone)) {
+	    rb_free_m_table(RCLASS_M_TBL(clone));
+	}
+	data.tbl = RCLASS_M_TBL(clone) = st_init_numtable();
+	data.klass = clone;
+	st_foreach(RCLASS_M_TBL(orig), clone_method,
+		   (st_data_t)&amp;data);
+    }
+
+    return clone;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="instance_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>instance_method</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an <code>UnboundMethod</code> representing the given instance
+method in <em>mod</em>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Interpreter</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_a</span>() <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;there, &quot;</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_d</span>() <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Hello &quot;</span>;  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_e</span>() <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;!\n&quot;</span>;     <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_v</span>() <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Dave&quot;</span>;    <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Dispatcher</span> = {
+    <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">instance_method</span>(:<span class="ruby-identifier">do_a</span>),
+    <span class="ruby-string">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">instance_method</span>(:<span class="ruby-identifier">do_d</span>),
+    <span class="ruby-string">&quot;e&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">instance_method</span>(:<span class="ruby-identifier">do_e</span>),
+    <span class="ruby-string">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">instance_method</span>(:<span class="ruby-identifier">do_v</span>)
+  }
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">interpret</span>(<span class="ruby-identifier">string</span>)
+    <span class="ruby-identifier">string</span>.<span class="ruby-identifier">each_char</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-constant">Dispatcher</span>[<span class="ruby-identifier">b</span>].<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">call</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">interpreter</span> = <span class="ruby-constant">Interpreter</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">interpreter</span>.<span class="ruby-identifier">interpret</span>(<span class="ruby-string">'dave'</span>)
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='const'>Hello</span> <span class='id identifier rubyid_there'>there</span><span class='comma'>,</span> <span class='id identifier rubyid_Dave!'>Dave!</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1221
+1222
+1223
+1224
+1225</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'proc.c', line 1221</span>
+
+static VALUE
+rb_mod_instance_method(VALUE mod, VALUE vid)
+{
+    return mnew(mod, Qundef, rb_to_id(vid), rb_cUnboundMethod, FALSE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="instance_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>instance_methods</strong>(include_super = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array containing the names of the public and protected instance
+methods in the receiver. For a module, these are the public and protected
+methods; for a class, they are the instance (not singleton) methods. With
+no argument, or with an argument that is <code>false</code>, the instance
+methods in <em>mod</em> are returned, otherwise the methods in <em>mod</em>
+and <em>mod</em>’s superclasses are returned.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method3</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">instance_methods</span>                <span class="ruby-comment">#=&gt; [:method1]</span>
+<span class="ruby-constant">B</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">false</span>)         <span class="ruby-comment">#=&gt; [:method2]</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">false</span>)         <span class="ruby-comment">#=&gt; [:method3]</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">length</span>   <span class="ruby-comment">#=&gt; 43</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+936
+937
+938
+939
+940</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 936</span>
+
+VALUE
+rb_class_instance_methods(int argc, VALUE *argv, VALUE mod)
+{
+    return class_instance_method_list(argc, argv, mod, 0, ins_methods_i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>method_defined?</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the named method is defined by <em>mod</em>
+(or its included modules and, if <em>mod</em> is a class, its ancestors).
+Public and protected methods are matched.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method3</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">method_defined?</span> :<span class="ruby-identifier">method1</span>    <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method1&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method3&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method4&quot;</span>   <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+727
+728
+729
+730
+731
+732
+733
+734
+735</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 727</span>
+
+static VALUE
+rb_mod_method_defined(VALUE mod, VALUE mid)
+{
+    if (!rb_method_boundp(mod, rb_to_id(mid), 1)) {
+	return Qfalse;
+    }
+    return Qtrue;
+
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="module_eval-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_eval</strong>(string[, filename [, lineno]]) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_eval</strong> { ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the string or block in the context of <em>mod</em>. This can be
+used to add methods to a class. <code>module_eval</code> returns the result
+of evaluating its argument. The optional <em>filename</em> and
+<em>lineno</em> parameters set the text for error messages.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">a</span> = <span class="ruby-string">%q{def hello() &quot;Hello there!&quot; end}</span>
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">module_eval</span>(<span class="ruby-identifier">a</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">hello</span>()
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">module_eval</span>(<span class="ruby-string">&quot;invalid code&quot;</span>, <span class="ruby-string">&quot;dummy&quot;</span>, <span class="ruby-value">123</span>)
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class="">Hello there!
+dummy:123:in `module_eval': undefined local variable
+    or method `code' for Thing:Class</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_eval</strong>(string[, filename [, lineno]]) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_eval</strong> { ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1409
+1410
+1411
+1412
+1413</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_eval.c', line 1409</span>
+
+VALUE
+rb_mod_module_eval(int argc, VALUE *argv, VALUE mod)
+{
+    return specific_eval(argc, argv, mod, mod);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="module_exec-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_exec</strong>(arg...) {|var...| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_exec</strong>(arg...) {|var...| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the given block in the context of the class/module. The method
+defined in the block will belong to the receiver.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Thing</span>.<span class="ruby-identifier">class_exec</span>{
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">hello</span>() <span class="ruby-string">&quot;Hello there!&quot;</span> <span class="ruby-keyword">end</span>
+}
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">hello</span>()
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='const'>Hello</span> <span class='id identifier rubyid_there!'>there!</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>module_exec</strong>(arg...) {|var...| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>var...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>class_exec</strong>(arg...) {|var...| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>var...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1435
+1436
+1437
+1438
+1439</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_eval.c', line 1435</span>
+
+VALUE
+rb_mod_module_exec(int argc, VALUE *argv, VALUE mod)
+{
+    return yield_under(mod, mod, rb_ary_new4(argc, argv));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>name</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the name of the module <em>mod</em>.  Returns nil for anonymous
+modules.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179
+180
+181
+182
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 179</span>
+
+VALUE
+rb_mod_name(VALUE mod)
+{
+    VALUE path = classname(mod);
+
+    if (!NIL_P(path)) return rb_str_dup(path);
+    return path;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="private_class_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>private_class_method</strong>(symbol, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes existing class methods private. Often used to hide the default
+constructor <code>new</code>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">SimpleSingleton</span>  <span class="ruby-comment"># Not thread safe</span>
+  <span class="ruby-identifier">private_class_method</span> :<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-constant">SimpleSingleton</span>.<span class="ruby-identifier">create</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-ivar">@me</span> = <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span> <span class="ruby-ivar">@me</span>
+    <span class="ruby-ivar">@me</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1085
+1086
+1087
+1088
+1089
+1090</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 1085</span>
+
+static VALUE
+rb_mod_private_method(int argc, VALUE *argv, VALUE obj)
+{
+    set_method_visibility(CLASS_OF(obj), argc, argv, NOEX_PRIVATE);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="private_constant-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>private_constant</strong>(symbol, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes a list of existing constants private.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1981
+1982
+1983
+1984
+1985
+1986</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 1981</span>
+
+VALUE
+rb_mod_private_constant(int argc, VALUE *argv, VALUE obj)
+{
+    set_const_visibility(obj, argc, argv, CONST_PRIVATE);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="private_instance_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>private_instance_methods</strong>(include_super = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a list of the private instance methods defined in <em>mod</em>. If
+the optional parameter is not <code>false</code>, the methods of any
+ancestors are included.</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">Mod</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">private</span> :<span class="ruby-identifier">method1</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Mod</span>.<span class="ruby-identifier">instance_methods</span>           <span class="ruby-comment">#=&gt; [:method2]</span>
+<span class="ruby-constant">Mod</span>.<span class="ruby-identifier">private_instance_methods</span>   <span class="ruby-comment">#=&gt; [:method1]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+974
+975
+976
+977
+978</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 974</span>
+
+VALUE
+rb_class_private_instance_methods(int argc, VALUE *argv, VALUE mod)
+{
+    return class_instance_method_list(argc, argv, mod, 0, ins_methods_priv_i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="private_method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>private_method_defined?</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the named private method is defined by _ mod_
+(or its included modules and, if <em>mod</em> is a class, its ancestors).</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">private</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method3</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">method_defined?</span> :<span class="ruby-identifier">method1</span>            <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">private_method_defined?</span> <span class="ruby-string">&quot;method1&quot;</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">private_method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>           <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+809
+810
+811
+812
+813</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 809</span>
+
+static VALUE
+rb_mod_private_method_defined(VALUE mod, VALUE mid)
+{
+    return check_definition(mod, rb_to_id(mid), NOEX_PRIVATE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="protected_instance_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>protected_instance_methods</strong>(include_super = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a list of the protected instance methods defined in <em>mod</em>.
+If the optional parameter is not <code>false</code>, the methods of any
+ancestors are included.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+951
+952
+953
+954
+955</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 951</span>
+
+VALUE
+rb_class_protected_instance_methods(int argc, VALUE *argv, VALUE mod)
+{
+    return class_instance_method_list(argc, argv, mod, 0, ins_methods_prot_i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="protected_method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>protected_method_defined?</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the named protected method is defined by
+<em>mod</em> (or its included modules and, if <em>mod</em> is a class, its
+ancestors).</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">protected</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method3</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">method_defined?</span> :<span class="ruby-identifier">method1</span>              <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">protected_method_defined?</span> <span class="ruby-string">&quot;method1&quot;</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">protected_method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>             <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+841
+842
+843
+844
+845</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 841</span>
+
+static VALUE
+rb_mod_protected_method_defined(VALUE mod, VALUE mid)
+{
+    return check_definition(mod, rb_to_id(mid), NOEX_PROTECTED);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_class_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>public_class_method</strong>(symbol, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes a list of existing class methods public.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1062
+1063
+1064
+1065
+1066
+1067</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 1062</span>
+
+static VALUE
+rb_mod_public_method(int argc, VALUE *argv, VALUE obj)
+{
+    set_method_visibility(CLASS_OF(obj), argc, argv, NOEX_PUBLIC);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_constant-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>public_constant</strong>(symbol, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes a list of existing constants public.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1995
+1996
+1997
+1998
+1999
+2000</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 1995</span>
+
+VALUE
+rb_mod_public_constant(int argc, VALUE *argv, VALUE obj)
+{
+    set_const_visibility(obj, argc, argv, CONST_PUBLIC);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_instance_method-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>public_instance_method</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Similar to <em>instance_method</em>, searches public method only.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1234
+1235
+1236
+1237
+1238</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'proc.c', line 1234</span>
+
+static VALUE
+rb_mod_public_instance_method(VALUE mod, VALUE vid)
+{
+    return mnew(mod, Qundef, rb_to_id(vid), rb_cUnboundMethod, TRUE);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_instance_methods-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>public_instance_methods</strong>(include_super = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a list of the public instance methods defined in <em>mod</em>. If
+the optional parameter is not <code>false</code>, the methods of any
+ancestors are included.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+989
+990
+991
+992
+993</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'class.c', line 989</span>
+
+VALUE
+rb_class_public_instance_methods(int argc, VALUE *argv, VALUE mod)
+{
+    return class_instance_method_list(argc, argv, mod, 0, ins_methods_pub_i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_method_defined?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>public_method_defined?</strong>(symbol) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the named public method is defined by
+<em>mod</em> (or its included modules and, if <em>mod</em> is a class, its
+ancestors).</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method1</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">protected</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method2</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">C</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">B</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">A</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">method3</span>()  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">A</span>.<span class="ruby-identifier">method_defined?</span> :<span class="ruby-identifier">method1</span>           <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">public_method_defined?</span> <span class="ruby-string">&quot;method1&quot;</span>   <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">public_method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">C</span>.<span class="ruby-identifier">method_defined?</span> <span class="ruby-string">&quot;method2&quot;</span>          <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+777
+778
+779
+780
+781</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'vm_method.c', line 777</span>
+
+static VALUE
+rb_mod_public_method_defined(VALUE mod, VALUE mid)
+{
+    return check_definition(mod, rb_to_id(mid), NOEX_PUBLIC);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_class_variable-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>remove_class_variable</strong>(sym) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes the definition of the <em>sym</em>, returning that constant’s
+value.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Dummy</span>
+  <span class="ruby-identifier">@@var</span> = <span class="ruby-value">99</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">@@var</span>
+  <span class="ruby-identifier">remove_class_variable</span>(:<span class="ruby-identifier">@@var</span>)
+  <span class="ruby-identifier">p</span>(<span class="ruby-keyword">defined?</span> <span class="ruby-identifier">@@var</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='int'>99</span>
+<span class='kw'>nil</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2195
+2196
+2197
+2198
+2199
+2200
+2201
+2202
+2203
+2204
+2205
+2206
+2207
+2208
+2209
+2210
+2211
+2212
+2213
+2214
+2215
+2216
+2217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'variable.c', line 2195</span>
+
+VALUE
+rb_mod_remove_cvar(VALUE mod, VALUE name)
+{
+    const ID id = rb_to_id(name);
+    st_data_t val, n = id;
+
+    if (!rb_is_class_id(id)) {
+	rb_name_error(id, &quot;wrong class variable name %s&quot;, rb_id2name(id));
+    }
+    if (!OBJ_UNTRUSTED(mod) &amp;&amp; rb_safe_level() &gt;= 4)
+	rb_raise(rb_eSecurityError, &quot;Insecure: can't remove class variable&quot;);
+    rb_check_frozen(mod);
+    if (RCLASS_IV_TBL(mod) &amp;&amp; st_delete(RCLASS_IV_TBL(mod), &amp;n, &amp;val)) {
+	return (VALUE)val;
+    }
+    if (rb_cvar_defined(mod, id)) {
+	rb_name_error(id, &quot;cannot remove %s for %s&quot;,
+		 rb_id2name(id), rb_class2name(mod));
+    }
+    rb_name_error(id, &quot;class variable %s not defined for %s&quot;,
+		  rb_id2name(id), rb_class2name(mod));
+    return Qnil;		/* not reached */
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a string representing this module or class. For basic classes and
+modules, this is the name. For singletons, we show information on the thing
+we’re attached to as well.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1285
+1286
+1287
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'object.c', line 1285</span>
+
+static VALUE
+rb_mod_to_s(VALUE klass)
+{
+    if (FL_TEST(klass, FL_SINGLETON)) {
+	VALUE s = rb_usascii_str_new2(&quot;#&lt;&quot;);
+	VALUE v = rb_iv_get(klass, &quot;__attached__&quot;);
+
+	rb_str_cat2(s, &quot;Class:&quot;);
+	switch (TYPE(v)) {
+	  case T_CLASS: case T_MODULE:
+	    rb_str_append(s, rb_inspect(v));
+	    break;
+	  default:
+	    rb_str_append(s, rb_any_to_s(v));
+	    break;
+	}
+	rb_str_cat2(s, &quot;&gt;&quot;);
+
+	return s;
+    }
+    return rb_str_dup(rb_class_name(klass));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:23 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

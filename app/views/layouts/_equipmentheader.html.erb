@@ -1,0 +1,51 @@
+<style>
+  .navbar-toggle {
+  float: left;
+  }
+  span.nav-nickname, span.nav-group-name{
+    max-width:135px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    display:inline-block;
+    vertical-align: bottom;
+
+  }
+</style>
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bms-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/">SnapBorrow</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bms-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <% if !session[:user_id] %>
+          <li><%= link_to 'ログイン', '/login' %></li>
+          <li><%= link_to 'サインアップ', '/signup' %></li>
+        <% else %>
+          <% if session[:group_id] != 0 %>
+            <li><%= link_to "備品管理",    "/equipment/" %></li>
+            <li><%= link_to "備品一覧", "/equipment/show" %></li>
+            <li><%= link_to "借用記録",    "/equipment/logs" %></li>
+            <li><%= link_to "グループ切替", "/group/change_group" %></li>
+            <li><%= link_to "新規グループの作成", "/group/new" %></li>
+            <li><%= link_to "グループメンバ",    member_index_path %></li>
+            <li><%= link_to 'メンバーを招待する', "/group/invite" %></li>
+            <li><%= link_to "プロフィール", "/profile" %></li>
+            <li><%= link_to 'ログアウト', "/logout", :confirm => 'ログアウトしますか?', :method => :delete %></li>
+          <% else %>
+            <li><%= link_to "新規グループの作成", "/group/new" %> </li>
+          <% end %>
+        <% end %>
+        <li><%= link_to 'マニュアル', '/SnapBorrowWebManual.htm', :target => "_blank", :style => "color:skyblue" %></li>
+      </ul>
+    </div>
+  </div>

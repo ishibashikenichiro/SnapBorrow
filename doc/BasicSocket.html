@@ -1,0 +1,2791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: BasicSocket
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!BasicSocket.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (B)</a> &raquo;
+    
+    
+    <span class="title">BasicSocket</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: BasicSocket
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></li>
+          
+            <li class="next">BasicSocket</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/socket/basicsocket.c<span class="defines">,<br />
+  ext/socket/basicsocket.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>BasicSocket is the super class for all the Socket classes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="IPSocket.html" title="IPSocket (class)">IPSocket</a></span>, <span class='object_link'><a href="Socket.html" title="Socket (class)">Socket</a></span>, <span class='object_link'><a href="UNIXSocket.html" title="UNIXSocket (class)">UNIXSocket</a></span></p>
+</div>
+
+  <h2>Constant Summary</h2>
+  
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#SEEK_CUR-constant" title="IO::SEEK_CUR (constant)">IO::SEEK_CUR</a></span>, <span class='object_link'><a href="IO.html#SEEK_END-constant" title="IO::SEEK_END (constant)">IO::SEEK_END</a></span>, <span class='object_link'><a href="IO.html#SEEK_SET-constant" title="IO::SEEK_SET (constant)">IO::SEEK_SET</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_not_reverse_lookup-class_method" title="do_not_reverse_lookup (class method)">+ (Boolean) <strong>do_not_reverse_lookup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the global do_not_reverse_lookup flag.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_not_reverse_lookup%3D-class_method" title="do_not_reverse_lookup= (class method)">+ (Object) <strong>do_not_reverse_lookup=</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the global do_not_reverse_lookup flag.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#for_fd-class_method" title="for_fd (class method)">+ (Object) <strong>for_fd</strong>(fd) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a socket object which contains the file descriptor, <em>fd</em>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close_read-instance_method" title="#close_read (instance method)">- (nil) <strong>close_read</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disallows further read using shutdown system call.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close_write-instance_method" title="#close_write (instance method)">- (nil) <strong>close_write</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disallows further write using shutdown system call.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_not_reverse_lookup-instance_method" title="#do_not_reverse_lookup (instance method)">- (Boolean) <strong>do_not_reverse_lookup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the do_not_reverse_lookup flag of <em>basicsocket</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_not_reverse_lookup%3D-instance_method" title="#do_not_reverse_lookup= (instance method)">- (Object) <strong>do_not_reverse_lookup=</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the do_not_reverse_lookup flag of <em>basicsocket</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getpeereid-instance_method" title="#getpeereid (instance method)">- (Array) <strong>getpeereid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the user and group on the peer of the UNIX socket.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getpeername-instance_method" title="#getpeername (instance method)">- (Object) <strong>getpeername</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the remote address of the socket as a sockaddr string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getsockname-instance_method" title="#getsockname (instance method)">- (Object) <strong>getsockname</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the local address of the socket as a sockaddr string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getsockopt-instance_method" title="#getsockopt (instance method)">- (Object) <strong>getsockopt</strong>(level, optname) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets a socket option.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#local_address-instance_method" title="#local_address (instance method)">- (Object) <strong>local_address</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an Addrinfo object for local address obtained by getsockname.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recv-instance_method" title="#recv (instance method)">- (Object) <strong>recv</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Receives a message.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recv_nonblock-instance_method" title="#recv_nonblock (instance method)">- (Object) <strong>recv_nonblock</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Receives up to <em>maxlen</em> bytes from <code>socket</code> using
+recvfrom(2) after O_NONBLOCK is set for the underlying file descriptor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recvmsg-instance_method" title="#recvmsg (instance method)">- (Array) <strong>recvmsg</strong>(maxmesglen = nil, flags = 0, maxcontrollen = nil, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>recvmsg receives a message using recvmsg(2) system call in blocking manner.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recvmsg_nonblock-instance_method" title="#recvmsg_nonblock (instance method)">- (Array) <strong>recvmsg_nonblock</strong>(maxdatalen = nil, flags = 0, maxcontrollen = nil, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>recvmsg receives a message using recvmsg(2) system call in non-blocking
+manner.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remote_address-instance_method" title="#remote_address (instance method)">- (Object) <strong>remote_address</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an Addrinfo object for remote address obtained by getpeername.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#send-instance_method" title="#send (instance method)">- (Object) <strong>send</strong>(mesg, flags[, dest_sockaddr]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>send <em>mesg</em> via <em>basicsocket</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sendmsg-instance_method" title="#sendmsg (instance method)">- (Object) <strong>sendmsg</strong>(mesg, flags = 0, dest_sockaddr = nil, *controls) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>sendmsg sends a message using sendmsg(2) system call in blocking manner.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sendmsg_nonblock-instance_method" title="#sendmsg_nonblock (instance method)">- (Object) <strong>sendmsg_nonblock</strong>(mesg, flags = 0, dest_sockaddr = nil, *controls) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>sendmsg_nonblock sends a message using sendmsg(2) system call in
+non-blocking manner.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setsockopt-instance_method" title="#setsockopt (instance method)">- (Object) <strong>setsockopt</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets a socket option.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shutdown-instance_method" title="#shutdown (instance method)">- (0) <strong>shutdown</strong>([how]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls shutdown(2) system call.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#%3C%3C-instance_method" title="IO#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="IO.html#advise-instance_method" title="IO#advise (method)">#advise</a></span>, <span class='object_link'><a href="IO.html#autoclose%3D-instance_method" title="IO#autoclose= (method)">#autoclose=</a></span>, <span class='object_link'><a href="IO.html#autoclose%3F-instance_method" title="IO#autoclose? (method)">#autoclose?</a></span>, <span class='object_link'><a href="IO.html#binmode-instance_method" title="IO#binmode (method)">#binmode</a></span>, <span class='object_link'><a href="IO.html#binmode%3F-instance_method" title="IO#binmode? (method)">#binmode?</a></span>, <span class='object_link'><a href="IO.html#binread-class_method" title="IO.binread (method)">binread</a></span>, <span class='object_link'><a href="IO.html#binwrite-class_method" title="IO.binwrite (method)">binwrite</a></span>, <span class='object_link'><a href="IO.html#bytes-instance_method" title="IO#bytes (method)">#bytes</a></span>, <span class='object_link'><a href="IO.html#chars-instance_method" title="IO#chars (method)">#chars</a></span>, <span class='object_link'><a href="IO.html#close-instance_method" title="IO#close (method)">#close</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3D-instance_method" title="IO#close_on_exec= (method)">#close_on_exec=</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3F-instance_method" title="IO#close_on_exec? (method)">#close_on_exec?</a></span>, <span class='object_link'><a href="IO.html#closed%3F-instance_method" title="IO#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="IO.html#codepoints-instance_method" title="IO#codepoints (method)">#codepoints</a></span>, <span class='object_link'><a href="IO.html#console-class_method" title="IO.console (method)">console</a></span>, <span class='object_link'><a href="IO.html#cooked-instance_method" title="IO#cooked (method)">#cooked</a></span>, <span class='object_link'><a href="IO.html#cooked%21-instance_method" title="IO#cooked! (method)">#cooked!</a></span>, <span class='object_link'><a href="IO.html#copy_stream-class_method" title="IO.copy_stream (method)">copy_stream</a></span>, <span class='object_link'><a href="IO.html#each-instance_method" title="IO#each (method)">#each</a></span>, <span class='object_link'><a href="IO.html#each_byte-instance_method" title="IO#each_byte (method)">#each_byte</a></span>, <span class='object_link'><a href="IO.html#each_char-instance_method" title="IO#each_char (method)">#each_char</a></span>, <span class='object_link'><a href="IO.html#each_codepoint-instance_method" title="IO#each_codepoint (method)">#each_codepoint</a></span>, <span class='object_link'><a href="IO.html#each_line-instance_method" title="IO#each_line (method)">#each_line</a></span>, <span class='object_link'><a href="IO.html#echo%3D-instance_method" title="IO#echo= (method)">#echo=</a></span>, <span class='object_link'><a href="IO.html#echo%3F-instance_method" title="IO#echo? (method)">#echo?</a></span>, <span class='object_link'><a href="IO.html#eof-instance_method" title="IO#eof (method)">#eof</a></span>, <span class='object_link'><a href="IO.html#eof%3F-instance_method" title="IO#eof? (method)">#eof?</a></span>, <span class='object_link'><a href="IO.html#external_encoding-instance_method" title="IO#external_encoding (method)">#external_encoding</a></span>, <span class='object_link'><a href="IO.html#fcntl-instance_method" title="IO#fcntl (method)">#fcntl</a></span>, <span class='object_link'><a href="IO.html#fdatasync-instance_method" title="IO#fdatasync (method)">#fdatasync</a></span>, <span class='object_link'><a href="IO.html#fileno-instance_method" title="IO#fileno (method)">#fileno</a></span>, <span class='object_link'><a href="IO.html#flush-instance_method" title="IO#flush (method)">#flush</a></span>, <span class='object_link'><a href="IO.html#foreach-class_method" title="IO.foreach (method)">foreach</a></span>, <span class='object_link'><a href="IO.html#fsync-instance_method" title="IO#fsync (method)">#fsync</a></span>, <span class='object_link'><a href="IO.html#getbyte-instance_method" title="IO#getbyte (method)">#getbyte</a></span>, <span class='object_link'><a href="IO.html#getc-instance_method" title="IO#getc (method)">#getc</a></span>, <span class='object_link'><a href="IO.html#getch-instance_method" title="IO#getch (method)">#getch</a></span>, <span class='object_link'><a href="IO.html#gets-instance_method" title="IO#gets (method)">#gets</a></span>, <span class='object_link'><a href="IO.html#iflush-instance_method" title="IO#iflush (method)">#iflush</a></span>, <span class='object_link'><a href="IO.html#initialize-instance_method" title="IO#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="IO.html#initialize_copy-instance_method" title="IO#initialize_copy (method)">#initialize_copy</a></span>, <span class='object_link'><a href="IO.html#inspect-instance_method" title="IO#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="IO.html#internal_encoding-instance_method" title="IO#internal_encoding (method)">#internal_encoding</a></span>, <span class='object_link'><a href="IO.html#ioctl-instance_method" title="IO#ioctl (method)">#ioctl</a></span>, <span class='object_link'><a href="IO.html#ioflush-instance_method" title="IO#ioflush (method)">#ioflush</a></span>, <span class='object_link'><a href="IO.html#isatty-instance_method" title="IO#isatty (method)">#isatty</a></span>, <span class='object_link'><a href="IO.html#lineno-instance_method" title="IO#lineno (method)">#lineno</a></span>, <span class='object_link'><a href="IO.html#lineno%3D-instance_method" title="IO#lineno= (method)">#lineno=</a></span>, <span class='object_link'><a href="IO.html#lines-instance_method" title="IO#lines (method)">#lines</a></span>, <span class='object_link'><a href="IO.html#new-class_method" title="IO.new (method)">new</a></span>, <span class='object_link'><a href="IO.html#noecho-instance_method" title="IO#noecho (method)">#noecho</a></span>, <span class='object_link'><a href="IO.html#nread-instance_method" title="IO#nread (method)">#nread</a></span>, <span class='object_link'><a href="IO.html#oflush-instance_method" title="IO#oflush (method)">#oflush</a></span>, <span class='object_link'><a href="IO.html#old_thread_select-class_method" title="IO.old_thread_select (method)">old_thread_select</a></span>, <span class='object_link'><a href="IO.html#open-class_method" title="IO.open (method)">open</a></span>, <span class='object_link'><a href="IO.html#pid-instance_method" title="IO#pid (method)">#pid</a></span>, <span class='object_link'><a href="IO.html#pipe-class_method" title="IO.pipe (method)">pipe</a></span>, <span class='object_link'><a href="IO.html#popen-class_method" title="IO.popen (method)">popen</a></span>, <span class='object_link'><a href="IO.html#pos-instance_method" title="IO#pos (method)">#pos</a></span>, <span class='object_link'><a href="IO.html#pos%3D-instance_method" title="IO#pos= (method)">#pos=</a></span>, <span class='object_link'><a href="IO.html#print-instance_method" title="IO#print (method)">#print</a></span>, <span class='object_link'><a href="IO.html#printf-instance_method" title="IO#printf (method)">#printf</a></span>, <span class='object_link'><a href="IO.html#putc-instance_method" title="IO#putc (method)">#putc</a></span>, <span class='object_link'><a href="IO.html#puts-instance_method" title="IO#puts (method)">#puts</a></span>, <span class='object_link'><a href="IO.html#raw-instance_method" title="IO#raw (method)">#raw</a></span>, <span class='object_link'><a href="IO.html#raw%21-instance_method" title="IO#raw! (method)">#raw!</a></span>, <span class='object_link'><a href="IO.html#read-instance_method" title="IO#read (method)">#read</a></span>, <span class='object_link'><a href="IO.html#read-class_method" title="IO.read (method)">read</a></span>, <span class='object_link'><a href="IO.html#read_nonblock-instance_method" title="IO#read_nonblock (method)">#read_nonblock</a></span>, <span class='object_link'><a href="IO.html#readbyte-instance_method" title="IO#readbyte (method)">#readbyte</a></span>, <span class='object_link'><a href="IO.html#readchar-instance_method" title="IO#readchar (method)">#readchar</a></span>, <span class='object_link'><a href="IO.html#readline-instance_method" title="IO#readline (method)">#readline</a></span>, <span class='object_link'><a href="IO.html#readlines-class_method" title="IO.readlines (method)">readlines</a></span>, <span class='object_link'><a href="IO.html#readlines-instance_method" title="IO#readlines (method)">#readlines</a></span>, <span class='object_link'><a href="IO.html#readpartial-instance_method" title="IO#readpartial (method)">#readpartial</a></span>, <span class='object_link'><a href="IO.html#ready%3F-instance_method" title="IO#ready? (method)">#ready?</a></span>, <span class='object_link'><a href="IO.html#reopen-instance_method" title="IO#reopen (method)">#reopen</a></span>, <span class='object_link'><a href="IO.html#rewind-instance_method" title="IO#rewind (method)">#rewind</a></span>, <span class='object_link'><a href="IO.html#seek-instance_method" title="IO#seek (method)">#seek</a></span>, <span class='object_link'><a href="IO.html#select-class_method" title="IO.select (method)">select</a></span>, <span class='object_link'><a href="IO.html#set_encoding-instance_method" title="IO#set_encoding (method)">#set_encoding</a></span>, <span class='object_link'><a href="IO.html#stat-instance_method" title="IO#stat (method)">#stat</a></span>, <span class='object_link'><a href="IO.html#sync-instance_method" title="IO#sync (method)">#sync</a></span>, <span class='object_link'><a href="IO.html#sync%3D-instance_method" title="IO#sync= (method)">#sync=</a></span>, <span class='object_link'><a href="IO.html#sysopen-class_method" title="IO.sysopen (method)">sysopen</a></span>, <span class='object_link'><a href="IO.html#sysread-instance_method" title="IO#sysread (method)">#sysread</a></span>, <span class='object_link'><a href="IO.html#sysseek-instance_method" title="IO#sysseek (method)">#sysseek</a></span>, <span class='object_link'><a href="IO.html#syswrite-instance_method" title="IO#syswrite (method)">#syswrite</a></span>, <span class='object_link'><a href="IO.html#tell-instance_method" title="IO#tell (method)">#tell</a></span>, <span class='object_link'><a href="IO.html#to_io-instance_method" title="IO#to_io (method)">#to_io</a></span>, <span class='object_link'><a href="IO.html#try_convert-class_method" title="IO.try_convert (method)">try_convert</a></span>, <span class='object_link'><a href="IO.html#tty%3F-instance_method" title="IO#tty? (method)">#tty?</a></span>, <span class='object_link'><a href="IO.html#ungetbyte-instance_method" title="IO#ungetbyte (method)">#ungetbyte</a></span>, <span class='object_link'><a href="IO.html#ungetc-instance_method" title="IO#ungetc (method)">#ungetc</a></span>, <span class='object_link'><a href="IO.html#wait-instance_method" title="IO#wait (method)">#wait</a></span>, <span class='object_link'><a href="IO.html#wait_for_single_fd-class_method" title="IO.wait_for_single_fd (method)">wait_for_single_fd</a></span>, <span class='object_link'><a href="IO.html#winsize-instance_method" title="IO#winsize (method)">#winsize</a></span>, <span class='object_link'><a href="IO.html#winsize%3D-instance_method" title="IO#winsize= (method)">#winsize=</a></span>, <span class='object_link'><a href="IO.html#write-instance_method" title="IO#write (method)">#write</a></span>, <span class='object_link'><a href="IO.html#write-class_method" title="IO.write (method)">write</a></span>, <span class='object_link'><a href="IO.html#write_nonblock-instance_method" title="IO#write_nonblock (method)">#write_nonblock</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="IO.html#initialize-instance_method" title="IO#initialize (method)">IO</a></span></p>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="do_not_reverse_lookup-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>do_not_reverse_lookup</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the global do_not_reverse_lookup flag.</p>
+
+<pre class="ruby"><span class="ruby-constant">BasicSocket</span>.<span class="ruby-identifier">do_not_reverse_lookup</span>  <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+713
+714
+715
+716
+717</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 713</span>
+
+static VALUE
+bsock_do_not_rev_lookup(void)
+{
+    return rsock_do_not_reverse_lookup?Qtrue:Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="do_not_reverse_lookup=-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>do_not_reverse_lookup=</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the global do_not_reverse_lookup flag.</p>
+
+<p>The flag is used for initial value of do_not_reverse_lookup for each
+socket.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">do_not_reverse_lookup</span>                 <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">BasicSocket</span>.<span class="ruby-identifier">do_not_reverse_lookup</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-identifier">s2</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">do_not_reverse_lookup</span>                 <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">do_not_reverse_lookup</span>                 <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+735
+736
+737
+738
+739
+740
+741</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 735</span>
+
+static VALUE
+bsock_do_not_rev_lookup_set(VALUE self, VALUE val)
+{
+    rb_secure(4);
+    rsock_do_not_reverse_lookup = RTEST(val);
+    return val;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="for_fd-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>for_fd</strong>(fd) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a socket object which contains the file descriptor, <em>fd</em>.</p>
+
+<pre class="code"><code class=""><span class='comment'># If invoked by inetd, STDIN/STDOUT/STDERR is a socket.
+</span><span class='const'>STDIN_SOCK</span> <span class='op'>=</span> <span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_for_fd'>for_fd</span><span class='lparen'>(</span><span class='const'>STDIN</span><span class='period'>.</span><span class='id identifier rubyid_fileno'>fileno</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_p'>p</span> <span class='const'>STDIN_SOCK</span><span class='period'>.</span><span class='id identifier rubyid_remote_address'>remote_address</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 24</span>
+
+static VALUE
+bsock_s_for_fd(VALUE klass, VALUE fd)
+{
+    rb_io_t *fptr;
+    VALUE sock = rsock_init_sock(rb_obj_alloc(klass), NUM2INT(fd));
+
+    GetOpenFile(sock, fptr);
+
+    return sock;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="close_read-instance_method">
+  
+    - (<tt>nil</tt>) <strong>close_read</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disallows further read using shutdown system call.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">close_read</span>
+<span class="ruby-identifier">s2</span>.<span class="ruby-identifier">puts</span> <span class="ruby-comment">#=&gt; Broken pipe (Errno::EPIPE)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 98</span>
+
+static VALUE
+bsock_close_read(VALUE sock)
+{
+    rb_io_t *fptr;
+
+    if (rb_safe_level() &gt;= 4 &amp;&amp; !OBJ_TAINTED(sock)) {
+	rb_raise(rb_eSecurityError, &quot;Insecure: can't close socket&quot;);
+    }
+    GetOpenFile(sock, fptr);
+    shutdown(fptr-&gt;fd, 0);
+    if (!(fptr-&gt;mode &amp; FMODE_WRITABLE)) {
+	return rb_io_close(sock);
+    }
+    fptr-&gt;mode &amp;= ~FMODE_READABLE;
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close_write-instance_method">
+  
+    - (<tt>nil</tt>) <strong>close_write</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disallows further write using shutdown system call.</p>
+
+<pre class="ruby"><span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;ping&quot;</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">close_write</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">read</span>        <span class="ruby-comment">#=&gt; &quot;ping&quot;</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;pong&quot;</span>
+  <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">read</span>        <span class="ruby-comment">#=&gt; &quot;pong&quot;</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 131</span>
+
+static VALUE
+bsock_close_write(VALUE sock)
+{
+    rb_io_t *fptr;
+
+    if (rb_safe_level() &gt;= 4 &amp;&amp; !OBJ_TAINTED(sock)) {
+	rb_raise(rb_eSecurityError, &quot;Insecure: can't close socket&quot;);
+    }
+    GetOpenFile(sock, fptr);
+    if (!(fptr-&gt;mode &amp; FMODE_READABLE)) {
+	return rb_io_close(sock);
+    }
+    shutdown(fptr-&gt;fd, 1);
+    fptr-&gt;mode &amp;= ~FMODE_WRITABLE;
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="do_not_reverse_lookup-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>do_not_reverse_lookup</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the do_not_reverse_lookup flag of <em>basicsocket</em>.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">sock</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">do_not_reverse_lookup</span>      <span class="ruby-comment">#=&gt; false</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">peeraddr</span>                   <span class="ruby-comment">#=&gt; [&quot;AF_INET&quot;, 80, &quot;carbon.ruby-lang.org&quot;, &quot;221.186.184.68&quot;]</span>
+  <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">do_not_reverse_lookup</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">peeraddr</span>                   <span class="ruby-comment">#=&gt; [&quot;AF_INET&quot;, 80, &quot;221.186.184.68&quot;, &quot;221.186.184.68&quot;]</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+592
+593
+594
+595
+596
+597
+598
+599</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 592</span>
+
+static VALUE
+bsock_do_not_reverse_lookup(VALUE sock)
+{
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    return (fptr-&gt;mode &amp; FMODE_NOREVLOOKUP) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="do_not_reverse_lookup=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>do_not_reverse_lookup=</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the do_not_reverse_lookup flag of <em>basicsocket</em>.</p>
+
+<pre class="ruby"><span class="ruby-constant">BasicSocket</span>.<span class="ruby-identifier">do_not_reverse_lookup</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-identifier">p</span> <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">do_not_reverse_lookup</span> <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">BasicSocket</span>.<span class="ruby-identifier">do_not_reverse_lookup</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-identifier">p</span> <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">do_not_reverse_lookup</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 613</span>
+
+static VALUE
+bsock_do_not_reverse_lookup_set(VALUE sock, VALUE state)
+{
+    rb_io_t *fptr;
+
+    rb_secure(4);
+    GetOpenFile(sock, fptr);
+    if (RTEST(state)) {
+	fptr-&gt;mode |= FMODE_NOREVLOOKUP;
+    }
+    else {
+	fptr-&gt;mode &amp;= ~FMODE_NOREVLOOKUP;
+    }
+    return sock;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getpeereid-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>getpeereid</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the user and group on the peer of the UNIX socket. The result is a
+two element array which contains the effective uid and the effective gid.</p>
+
+<pre class="ruby"><span class="ruby-constant">Socket</span>.<span class="ruby-identifier">unix_server_loop</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">euid</span>, <span class="ruby-identifier">egid</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">getpeereid</span>
+
+    <span class="ruby-comment"># Check the connected client is myself or not.</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">euid</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">uid</span>
+
+    <span class="ruby-comment"># do something about my resource.</span>
+
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 425</span>
+
+static VALUE
+bsock_getpeereid(VALUE self)
+{
+#if defined(HAVE_GETPEEREID)
+    rb_io_t *fptr;
+    uid_t euid;
+    gid_t egid;
+    GetOpenFile(self, fptr);
+    if (getpeereid(fptr-&gt;fd, &amp;euid, &amp;egid) == -1)
+	rb_sys_fail(&quot;getpeereid&quot;);
+    return rb_assoc_new(UIDT2NUM(euid), GIDT2NUM(egid));
+#elif defined(SO_PEERCRED) /* GNU/Linux */
+    rb_io_t *fptr;
+    struct ucred cred;
+    socklen_t len = sizeof(cred);
+    GetOpenFile(self, fptr);
+    if (getsockopt(fptr-&gt;fd, SOL_SOCKET, SO_PEERCRED, &amp;cred, &amp;len) == -1)
+	rb_sys_fail(&quot;getsockopt(SO_PEERCRED)&quot;);
+    return rb_assoc_new(UIDT2NUM(cred.uid), GIDT2NUM(cred.gid));
+#elif defined(HAVE_GETPEERUCRED) /* Solaris */
+    rb_io_t *fptr;
+    ucred_t *uc = NULL;
+    VALUE ret;
+    GetOpenFile(self, fptr);
+    if (getpeerucred(fptr-&gt;fd, &amp;uc) == -1)
+	rb_sys_fail(&quot;getpeerucred&quot;);
+    ret = rb_assoc_new(UIDT2NUM(ucred_geteuid(uc)), GIDT2NUM(ucred_getegid(uc)));
+    ucred_free(uc);
+    return ret;
+#endif
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getpeername-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getpeername</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the remote address of the socket as a sockaddr string.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">1440</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">1440</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">getpeername</span> <span class="ruby-comment">#=&gt; &quot;\x02\x00\x82u\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00&quot;</span>
+}
+</pre>
+
+<p>If Addrinfo object is preferred over the binary string, use
+BasicSocket#remote_address.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 387</span>
+
+static VALUE
+bsock_getpeername(VALUE sock)
+{
+    struct sockaddr_storage buf;
+    socklen_t len = (socklen_t)sizeof buf;
+    socklen_t len0 = len;
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    if (getpeername(fptr-&gt;fd, (struct sockaddr*)&amp;buf, &amp;len) &lt; 0)
+	rb_sys_fail(&quot;getpeername(2)&quot;);
+    if (len0 &lt; len) len = len0;
+    return rb_str_new((char*)&amp;buf, len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getsockname-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getsockname</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the local address of the socket as a sockaddr string.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">15120</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">getsockname</span> <span class="ruby-comment">#=&gt; &quot;\x02\x00;\x10\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00&quot;</span>
+}
+</pre>
+
+<p>If Addrinfo object is preferred over the binary string, use
+BasicSocket#local_address.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 356</span>
+
+static VALUE
+bsock_getsockname(VALUE sock)
+{
+    struct sockaddr_storage buf;
+    socklen_t len = (socklen_t)sizeof buf;
+    socklen_t len0 = len;
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    if (getsockname(fptr-&gt;fd, (struct sockaddr*)&amp;buf, &amp;len) &lt; 0)
+	rb_sys_fail(&quot;getsockname(2)&quot;);
+    if (len0 &lt; len) len = len0;
+    return rb_str_new((char*)&amp;buf, len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getsockopt-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>getsockopt</strong>(level, optname) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets a socket option. These are protocol and system specific, see your
+local system documentation for details. The option is returned as a
+Socket::Option object.</p>
+
+<h3 id="label-Parameters">Parameters</h3>
+<ul><li>
+<p><code>level</code> is an integer, usually one of the SOL_ constants such as
+Socket::SOL_SOCKET, or a protocol level. A string or symbol of the name,
+possibly without prefix, is also accepted.</p>
+</li><li>
+<p><code>optname</code> is an integer, usually one of the SO_ constants, such
+as Socket::SO_REUSEADDR. A string or symbol of the name, possibly without
+prefix, is also accepted.</p>
+</li></ul>
+
+<h3 id="label-Examples">Examples</h3>
+
+<p>Some socket options are integers with boolean values, in this case
+#getsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_reuseaddr'>reuseaddr</span> <span class='op'>=</span> <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:REUSEADDR</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bool'>bool</span>
+
+<span class='id identifier rubyid_optval'>optval</span> <span class='op'>=</span> <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>SOL_SOCKET</span><span class='comma'>,</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>SO_REUSEADDR</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_optval'>optval</span> <span class='op'>=</span> <span class='id identifier rubyid_optval'>optval</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_reuseaddr'>reuseaddr</span> <span class='op'>=</span> <span class='id identifier rubyid_optval'>optval</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='int'>0</span> <span class='op'>?</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='kw'>true</span></code></pre>
+
+<p>Some socket options are integers with numeric values, in this case
+#getsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_ipttl'>ipttl</span> <span class='op'>=</span> <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='symbol'>:IP</span><span class='comma'>,</span> <span class='symbol'>:TTL</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_int'>int</span>
+
+<span class='id identifier rubyid_optval'>optval</span> <span class='op'>=</span> <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>IPPROTO_IP</span><span class='comma'>,</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>IP_TTL</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_ipttl'>ipttl</span> <span class='op'>=</span> <span class='id identifier rubyid_optval'>optval</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span></code></pre>
+
+<p>Option values may be structs. Decoding them can be complex as it involves
+examining your system headers to determine the correct definition. An
+example is a <tt>struct linger</tt>, which may be defined in your system headers
+as:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_struct'>struct</span> <span class='id identifier rubyid_linger'>linger</span> <span class='lbrace'>{</span>
+  <span class='id identifier rubyid_int'>int</span> <span class='id identifier rubyid_l_onoff'>l_onoff</span><span class='semicolon'>;</span>
+  <span class='id identifier rubyid_int'>int</span> <span class='id identifier rubyid_l_linger'>l_linger</span><span class='semicolon'>;</span>
+<span class='rbrace'>}</span><span class='semicolon'>;</span></code></pre>
+
+<p>In this case #getsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='comment'># Socket::Option knows linger structure.
+</span><span class='id identifier rubyid_onoff'>onoff</span><span class='comma'>,</span> <span class='id identifier rubyid_linger'>linger</span> <span class='op'>=</span> <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:LINGER</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_linger'>linger</span>
+
+<span class='id identifier rubyid_optval'>optval</span> <span class='op'>=</span>  <span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_getsockopt'>getsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>SOL_SOCKET</span><span class='comma'>,</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>SO_LINGER</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_onoff'>onoff</span><span class='comma'>,</span> <span class='id identifier rubyid_linger'>linger</span> <span class='op'>=</span> <span class='id identifier rubyid_optval'>optval</span><span class='period'>.</span><span class='id identifier rubyid_unpack'>unpack</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ii</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_onoff'>onoff</span> <span class='op'>=</span> <span class='id identifier rubyid_onoff'>onoff</span> <span class='op'>==</span> <span class='int'>0</span> <span class='op'>?</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='kw'>true</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 316</span>
+
+static VALUE
+bsock_getsockopt(VALUE sock, VALUE lev, VALUE optname)
+{
+    int level, option;
+    socklen_t len;
+    char *buf;
+    rb_io_t *fptr;
+    int family;
+
+    GetOpenFile(sock, fptr);
+    family = rsock_getfamily(fptr-&gt;fd);
+    level = rsock_level_arg(family, lev);
+    option = rsock_optname_arg(family, level, optname);
+    len = 256;
+    buf = ALLOCA_N(char,len);
+
+    rb_io_check_closed(fptr);
+
+    if (getsockopt(fptr-&gt;fd, level, option, buf, &amp;len) &lt; 0)
+	rb_sys_fail_path(fptr-&gt;pathv);
+
+    return rsock_sockopt_new(family, level, option, rb_str_new(buf, len));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="local_address-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>local_address</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an Addrinfo object for local address obtained by getsockname.</p>
+
+<p>Note that addrinfo.protocol is filled by 0.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">local_address</span> <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 192.168.0.129:36873 TCP&gt;</span>
+}
+
+<span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">1512</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">local_address</span> <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1:1512 TCP&gt;</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 477</span>
+
+static VALUE
+bsock_local_address(VALUE sock)
+{
+    struct sockaddr_storage buf;
+    socklen_t len = (socklen_t)sizeof buf;
+    socklen_t len0 = len;
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    if (getsockname(fptr-&gt;fd, (struct sockaddr*)&amp;buf, &amp;len) &lt; 0)
+	rb_sys_fail(&quot;getsockname(2)&quot;);
+    if (len0 &lt; len) len = len0;
+    return rsock_fd_socket_addrinfo(fptr-&gt;fd, (struct sockaddr *)&amp;buf, len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="recv-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>recv</strong>(maxlen) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>recv</strong>(maxlen, flags) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Receives a message.</p>
+
+<p><em>maxlen</em> is the maximum number of bytes to receive.</p>
+
+<p><em>flags</em> should be a bitwise OR of Socket::MSG_* constants.</p>
+
+<pre class="ruby"><span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Hello World&quot;</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">4</span>)                     <span class="ruby-comment">#=&gt; &quot;Hell&quot;</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">4</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">MSG_PEEK</span>)   <span class="ruby-comment">#=&gt; &quot;o Wo&quot;</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">4</span>)                     <span class="ruby-comment">#=&gt; &quot;o Wo&quot;</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">10</span>)                    <span class="ruby-comment">#=&gt; &quot;rld\n&quot;</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+648
+649
+650
+651
+652</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 648</span>
+
+static VALUE
+bsock_recv(int argc, VALUE *argv, VALUE sock)
+{
+    return rsock_s_recvfrom(sock, argc, argv, RECV_RECV);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="recv_nonblock-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>recv_nonblock</strong>(maxlen) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>recv_nonblock</strong>(maxlen, flags) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Receives up to <em>maxlen</em> bytes from <code>socket</code> using
+recvfrom(2) after O_NONBLOCK is set for the underlying file descriptor.
+<em>flags</em> is zero or more of the <code>MSG_</code> options. The
+result, <em>mesg</em>, is the data received.</p>
+
+<p>When recvfrom(2) returns 0, Socket#recv_nonblock returns an empty string as
+data. The meaning depends on the socket: EOF on TCP, empty packet on UDP,
+etc.</p>
+
+<h3 id="label-Parameters">Parameters</h3>
+<ul><li>
+<p><code>maxlen</code> - the number of bytes to receive from the socket</p>
+</li><li>
+<p><code>flags</code> - zero or more of the <code>MSG_</code> options</p>
+</li></ul>
+
+<h3 id="label-Example">Example</h3>
+
+<p>serv = TCPServer.new(“127.0.0.1”, 0) 	af, port, host, addr = serv.addr 	c
+= TCPSocket.new(addr, port) 	s = serv.accept 	c.send “aaa”, 0 	begin #
+emulate blocking recv. 	  p s.recv_nonblock(10) #=&gt; “aaa” 	rescue
+IO::WaitReadable 	  <a href="http://s">IO.select(</a>) 	  retry 	end</p>
+
+<p>Refer to Socket#recvfrom for the exceptions that may be thrown if the call
+to <em>recv_nonblock</em> fails.</p>
+
+<p>BasicSocket#recv_nonblock may raise any error corresponding to recvfrom(2)
+failure, including Errno::EWOULDBLOCK.</p>
+
+<p>If the exception is Errno::EWOULDBLOCK or Errno::AGAIN, it is extended by
+IO::WaitReadable. So IO::WaitReadable can be used to rescue the exceptions
+for retrying recv_nonblock.</p>
+
+<h3 id="label-See">See</h3>
+<ul><li>
+<p>Socket#recvfrom</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+699
+700
+701
+702
+703</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 699</span>
+
+static VALUE
+bsock_recv_nonblock(int argc, VALUE *argv, VALUE sock)
+{
+    return rsock_s_recvfrom_nonblock(sock, argc, argv, RECV_RECV);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="recvmsg-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>recvmsg</strong>(maxmesglen = nil, flags = 0, maxcontrollen = nil, opts = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>recvmsg receives a message using recvmsg(2) system call in blocking manner.</p>
+
+<p><em>maxmesglen</em> is the maximum length of mesg to receive.</p>
+
+<p><em>flags</em> is bitwise OR of MSG_* constants such as Socket::MSG_PEEK.</p>
+
+<p><em>maxcontrollen</em> is the maximum length of controls (ancillary data)
+to receive.</p>
+
+<p><em>opts</em> is option hash. Currently :scm_rights=&gt;bool is the only
+option.</p>
+
+<p>:scm_rights option specifies that application expects SCM_RIGHTS control
+message. If the value is nil or false, application don’t expects SCM_RIGHTS
+control message. In this case, recvmsg closes the passed file descriptors
+immediately. This is the default behavior.</p>
+
+<p>If :scm_rights value is neither nil nor false, application expects
+SCM_RIGHTS control message. In this case, recvmsg creates IO objects for
+each file descriptors for Socket::AncillaryData#unix_rights method.</p>
+
+<p>The return value is 4-elements array.</p>
+
+<p><em>mesg</em> is a string of the received message.</p>
+
+<p><em>sender_addrinfo</em> is a sender socket address for connection-less
+socket. It is an Addrinfo object. For connection-oriented socket such as
+TCP, sender_addrinfo is platform dependent.</p>
+
+<p><em>rflags</em> is a flags on the received message which is bitwise OR of
+MSG_* constants such as Socket::MSG_TRUNC. It will be nil if the system
+uses 4.3BSD style old recvmsg system call.</p>
+
+<p><em>controls</em> is ancillary data which is an array of
+Socket::AncillaryData objects such as:</p>
+
+<pre class="code"><code class=""><span class='comment'>#&lt;Socket::AncillaryData: AF_UNIX SOCKET RIGHTS 7&gt;</span></code></pre>
+
+<p><em>maxmesglen</em> and <em>maxcontrollen</em> can be nil. In that case,
+the buffer will be grown until the message is not truncated. Internally,
+MSG_PEEK is used and MSG_TRUNC/MSG_CTRUNC are checked.</p>
+
+<p>recvmsg can be used to implement recv_io as follows:</p>
+
+<pre class="ruby"><span class="ruby-identifier">mesg</span>, <span class="ruby-identifier">sender_sockaddr</span>, <span class="ruby-identifier">rflags</span>, *<span class="ruby-identifier">controls</span> = <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">recvmsg</span>(:<span class="ruby-identifier">scm_rights=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>)
+<span class="ruby-identifier">controls</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ancdata</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ancdata</span>.<span class="ruby-identifier">cmsg_is?</span>(:<span class="ruby-constant">SOCKET</span>, :<span class="ruby-constant">RIGHTS</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">ancdata</span>.<span class="ruby-identifier">unix_rights</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">end</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1751
+1752
+1753
+1754
+1755</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/ancdata.c', line 1751</span>
+
+VALUE
+rsock_bsock_recvmsg(int argc, VALUE *argv, VALUE sock)
+{
+    return bsock_recvmsg_internal(argc, argv, sock, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="recvmsg_nonblock-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>recvmsg_nonblock</strong>(maxdatalen = nil, flags = 0, maxcontrollen = nil, opts = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>recvmsg receives a message using recvmsg(2) system call in non-blocking
+manner.</p>
+
+<p>It is similar to BasicSocket#recvmsg but non-blocking flag is set before
+the system call and it doesn’t retry the system call.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1770
+1771
+1772
+1773
+1774</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/ancdata.c', line 1770</span>
+
+VALUE
+rsock_bsock_recvmsg_nonblock(int argc, VALUE *argv, VALUE sock)
+{
+    return bsock_recvmsg_internal(argc, argv, sock, 1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remote_address-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>remote_address</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an Addrinfo object for remote address obtained by getpeername.</p>
+
+<p>Note that addrinfo.protocol is filled by 0.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">remote_address</span> <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 221.186.184.68:80 TCP&gt;</span>
+}
+
+<span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">1728</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">1728</span>)
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">remote_address</span> <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1:36504 TCP&gt;</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 511</span>
+
+static VALUE
+bsock_remote_address(VALUE sock)
+{
+    struct sockaddr_storage buf;
+    socklen_t len = (socklen_t)sizeof buf;
+    socklen_t len0 = len;
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    if (getpeername(fptr-&gt;fd, (struct sockaddr*)&amp;buf, &amp;len) &lt; 0)
+	rb_sys_fail(&quot;getpeername(2)&quot;);
+    if (len0 &lt; len) len = len0;
+    return rsock_fd_socket_addrinfo(fptr-&gt;fd, (struct sockaddr *)&amp;buf, len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="send-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>send</strong>(mesg, flags[, dest_sockaddr]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>send <em>mesg</em> via <em>basicsocket</em>.</p>
+
+<p><em>mesg</em> should be a string.</p>
+
+<p><em>flags</em> should be a bitwise OR of Socket::MSG_* constants.</p>
+
+<p><em>dest_sockaddr</em> should be a packed sockaddr string or an addrinfo.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;GET / HTTP/1.0\r\n\r\n&quot;</span>, <span class="ruby-value">0</span>
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 543</span>
+
+VALUE
+rsock_bsock_send(int argc, VALUE *argv, VALUE sock)
+{
+    struct rsock_send_arg arg;
+    VALUE flags, to;
+    rb_io_t *fptr;
+    int n;
+    rb_blocking_function_t *func;
+
+    rb_secure(4);
+    rb_scan_args(argc, argv, &quot;21&quot;, &amp;arg.mesg, &amp;flags, &amp;to);
+
+    StringValue(arg.mesg);
+    if (!NIL_P(to)) {
+	SockAddrStringValue(to);
+	to = rb_str_new4(to);
+	arg.to = (struct sockaddr *)RSTRING_PTR(to);
+	arg.tolen = (socklen_t)RSTRING_LENINT(to);
+	func = rsock_sendto_blocking;
+    }
+    else {
+	func = rsock_send_blocking;
+    }
+    GetOpenFile(sock, fptr);
+    arg.fd = fptr-&gt;fd;
+    arg.flags = NUM2INT(flags);
+    while (rb_thread_fd_writable(arg.fd),
+	   (n = (int)BLOCKING_REGION_FD(func, &amp;arg)) &lt; 0) {
+	if (rb_io_wait_writable(arg.fd)) {
+	    continue;
+	}
+	rb_sys_fail(&quot;send(2)&quot;);
+    }
+    return INT2FIX(n);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sendmsg-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sendmsg</strong>(mesg, flags = 0, dest_sockaddr = nil, *controls) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>sendmsg sends a message using sendmsg(2) system call in blocking manner.</p>
+
+<p><em>mesg</em> is a string to send.</p>
+
+<p><em>flags</em> is bitwise OR of MSG_* constants such as Socket::MSG_OOB.</p>
+
+<p><em>dest_sockaddr</em> is a destination socket address for connection-less
+socket. It should be a sockaddr such as a result of Socket.sockaddr_in. An
+Addrinfo object can be used too.</p>
+
+<p><em>controls</em> is a list of ancillary data. The element of
+<em>controls</em> should be Socket::AncillaryData or 3-elements array. The
+3-element array should contains cmsg_level, cmsg_type and data.</p>
+
+<p>The return value, <em>numbytes_sent</em> is an integer which is the number
+of bytes sent.</p>
+
+<p>sendmsg can be used to implement send_io as follows:</p>
+
+<pre class="code"><code class=""><span class='comment'># use Socket::AncillaryData.
+</span><span class='id identifier rubyid_ancdata'>ancdata</span> <span class='op'>=</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>AncillaryData</span><span class='period'>.</span><span class='id identifier rubyid_int'>int</span><span class='lparen'>(</span><span class='symbol'>:UNIX</span><span class='comma'>,</span> <span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:RIGHTS</span><span class='comma'>,</span> <span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='id identifier rubyid_fileno'>fileno</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_sendmsg'>sendmsg</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ancdata'>ancdata</span><span class='rparen'>)</span>
+
+<span class='comment'># use 3-element array.
+</span><span class='id identifier rubyid_ancdata'>ancdata</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:RIGHTS</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='id identifier rubyid_fileno'>fileno</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_sendmsg'>sendmsg</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\0</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ancdata'>ancdata</span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1328
+1329
+1330
+1331
+1332</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/ancdata.c', line 1328</span>
+
+VALUE
+rsock_bsock_sendmsg(int argc, VALUE *argv, VALUE sock)
+{
+    return bsock_sendmsg_internal(argc, argv, sock, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sendmsg_nonblock-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sendmsg_nonblock</strong>(mesg, flags = 0, dest_sockaddr = nil, *controls) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>sendmsg_nonblock sends a message using sendmsg(2) system call in
+non-blocking manner.</p>
+
+<p>It is similar to BasicSocket#sendmsg but the non-blocking flag is set
+before the system call and it doesn’t retry the system call.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1347
+1348
+1349
+1350
+1351</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/ancdata.c', line 1347</span>
+
+VALUE
+rsock_bsock_sendmsg_nonblock(int argc, VALUE *argv, VALUE sock)
+{
+    return bsock_sendmsg_internal(argc, argv, sock, 1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setsockopt-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>setsockopt</strong>(level, optname, optval) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>setsockopt</strong>(socketoption) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets a socket option. These are protocol and system specific, see your
+local system documentation for details.</p>
+
+<h3 id="label-Parameters">Parameters</h3>
+<ul><li>
+<p><code>level</code> is an integer, usually one of the SOL_ constants such as
+Socket::SOL_SOCKET, or a protocol level. A string or symbol of the name,
+possibly without prefix, is also accepted.</p>
+</li><li>
+<p><code>optname</code> is an integer, usually one of the SO_ constants, such
+as Socket::SO_REUSEADDR. A string or symbol of the name, possibly without
+prefix, is also accepted.</p>
+</li><li>
+<p><code>optval</code> is the value of the option, it is passed to the
+underlying setsockopt() as a pointer to a certain number of bytes. How this
+is done depends on the type:</p>
+<ul><li>
+<p>Fixnum: value is assigned to an int, and a pointer to the int is passed,
+with length of sizeof(int).</p>
+</li><li>
+<p>true or false: 1 or 0 (respectively) is assigned to an int, and the int is
+passed as for a Fixnum. Note that <code>false</code> must be passed, not
+<code>nil</code>.</p>
+</li><li>
+<p>String: the string’s data and length is passed to the socket.</p>
+</li></ul>
+</li><li>
+<p><code>socketoption</code> is an instance of Socket::Option</p>
+</li></ul>
+
+<h3 id="label-Examples">Examples</h3>
+
+<p>Some socket options are integers with boolean values, in this case
+#setsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:REUSEADDR</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>SOL_SOCKET</span><span class='comma'>,</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>SO_REUSEADDR</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>Option</span><span class='period'>.</span><span class='id identifier rubyid_bool'>bool</span><span class='lparen'>(</span><span class='symbol'>:INET</span><span class='comma'>,</span> <span class='symbol'>:SOCKET</span><span class='comma'>,</span> <span class='symbol'>:REUSEADDR</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
+
+<p>Some socket options are integers with numeric values, in this case
+#setsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='symbol'>:IP</span><span class='comma'>,</span> <span class='symbol'>:TTL</span><span class='comma'>,</span> <span class='int'>255</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>IPPROTO_IP</span><span class='comma'>,</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>IP_TTL</span><span class='comma'>,</span> <span class='int'>255</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>Option</span><span class='period'>.</span><span class='id identifier rubyid_int'>int</span><span class='lparen'>(</span><span class='symbol'>:INET</span><span class='comma'>,</span> <span class='symbol'>:IP</span><span class='comma'>,</span> <span class='symbol'>:TTL</span><span class='comma'>,</span> <span class='int'>255</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
+
+<p>Option values may be structs. Passing them can be complex as it involves
+examining your system headers to determine the correct definition. An
+example is an <code>ip_mreq</code>, which may be defined in your system
+headers as:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_struct'>struct</span> <span class='id identifier rubyid_ip_mreq'>ip_mreq</span> <span class='lbrace'>{</span>
+  <span class='id identifier rubyid_struct'>struct</span>  <span class='id identifier rubyid_in_addr'>in_addr</span> <span class='id identifier rubyid_imr_multiaddr'>imr_multiaddr</span><span class='semicolon'>;</span>
+  <span class='id identifier rubyid_struct'>struct</span>  <span class='id identifier rubyid_in_addr'>in_addr</span> <span class='id identifier rubyid_imr_interface'>imr_interface</span><span class='semicolon'>;</span>
+<span class='rbrace'>}</span><span class='semicolon'>;</span></code></pre>
+
+<p>In this case #setsockopt could be called like this:</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_optval'>optval</span> <span class='op'>=</span> <span class='const'>IPAddr</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>224.0.0.251</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_hton'>hton</span> <span class='op'>+</span>
+         <span class='const'>IPAddr</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>INADDR_ANY</span><span class='comma'>,</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>AF_INET</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_hton'>hton</span>
+<span class='id identifier rubyid_sock'>sock</span><span class='period'>.</span><span class='id identifier rubyid_setsockopt'>setsockopt</span><span class='lparen'>(</span><span class='const'>Socket</span><span class='op'>::</span><span class='const'>IPPROTO_IP</span><span class='comma'>,</span> <span class='const'>Socket</span><span class='op'>::</span><span class='const'>IP_ADD_MEMBERSHIP</span><span class='comma'>,</span> <span class='id identifier rubyid_optval'>optval</span><span class='rparen'>)</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 206</span>
+
+static VALUE
+bsock_setsockopt(int argc, VALUE *argv, VALUE sock)
+{
+    VALUE lev, optname, val;
+    int family, level, option;
+    rb_io_t *fptr;
+    int i;
+    char *v;
+    int vlen;
+
+    if (argc == 1) {
+        lev = rb_funcall(argv[0], rb_intern(&quot;level&quot;), 0);
+        optname = rb_funcall(argv[0], rb_intern(&quot;optname&quot;), 0);
+        val = rb_funcall(argv[0], rb_intern(&quot;data&quot;), 0);
+    }
+    else {
+        rb_scan_args(argc, argv, &quot;30&quot;, &amp;lev, &amp;optname, &amp;val);
+    }
+
+    rb_secure(2);
+    GetOpenFile(sock, fptr);
+    family = rsock_getfamily(fptr-&gt;fd);
+    level = rsock_level_arg(family, lev);
+    option = rsock_optname_arg(family, level, optname);
+
+    switch (TYPE(val)) {
+      case T_FIXNUM:
+	i = FIX2INT(val);
+	goto numval;
+      case T_FALSE:
+	i = 0;
+	goto numval;
+      case T_TRUE:
+	i = 1;
+      numval:
+	v = (char*)&amp;i; vlen = (int)sizeof(i);
+	break;
+      default:
+	StringValue(val);
+	v = RSTRING_PTR(val);
+	vlen = RSTRING_LENINT(val);
+	break;
+    }
+
+#define rb_sys_fail_path(path) rb_sys_fail(NIL_P(path) ? 0 : RSTRING_PTR(path))
+
+    rb_io_check_closed(fptr);
+    if (setsockopt(fptr-&gt;fd, level, option, v, vlen) &lt; 0)
+	rb_sys_fail_path(fptr-&gt;pathv);
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shutdown-instance_method">
+  
+    - (<tt>0</tt>) <strong>shutdown</strong>([how]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls shutdown(2) system call.</p>
+
+<p>s.shutdown(Socket::SHUT_RD) disallows further read.</p>
+
+<p>s.shutdown(Socket::SHUT_WR) disallows further write.</p>
+
+<p>s.shutdown(Socket::SHUT_RDWR) disallows further read and write.</p>
+
+<p><em>how</em> can be symbol or string:</p>
+<ul><li>
+<p>:RD, :SHUT_RD, “RD” and “SHUT_RD” are accepted as Socket::SHUT_RD.</p>
+</li><li>
+<p>:WR, :SHUT_WR, “WR” and “SHUT_WR” are accepted as Socket::SHUT_WR.</p>
+</li><li>
+<p>:RDWR, :SHUT_RDWR, “RDWR” and “SHUT_RDWR” are accepted as
+Socket::SHUT_RDWR.</p>
+
+<p>UNIXSocket.pair {|s1, s2|</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;ping&quot;</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">shutdown</span>(:<span class="ruby-constant">WR</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">read</span>          <span class="ruby-comment">#=&gt; &quot;ping\n&quot;</span>
+<span class="ruby-identifier">s2</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;pong&quot;</span>
+<span class="ruby-identifier">s2</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s1</span>.<span class="ruby-identifier">read</span>          <span class="ruby-comment">#=&gt; &quot;pong\n&quot;</span>
+</pre>
+
+<p>}</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/basicsocket.c', line 62</span>
+
+static VALUE
+bsock_shutdown(int argc, VALUE *argv, VALUE sock)
+{
+    VALUE howto;
+    int how;
+    rb_io_t *fptr;
+
+    if (rb_safe_level() &gt;= 4 &amp;&amp; !OBJ_TAINTED(sock)) {
+	rb_raise(rb_eSecurityError, &quot;Insecure: can't shutdown socket&quot;);
+    }
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;howto);
+    if (howto == Qnil)
+	how = SHUT_RDWR;
+    else {
+	how = rsock_shutdown_how_arg(howto);
+        if (how != SHUT_WR &amp;&amp; how != SHUT_RD &amp;&amp; how != SHUT_RDWR) {
+	    rb_raise(rb_eArgError, &quot;`how' should be either :SHUT_RD, :SHUT_WR, :SHUT_RDWR&quot;);
+	}
+    }
+    GetOpenFile(sock, fptr);
+    if (shutdown(fptr-&gt;fd, how) == -1)
+	rb_sys_fail(0);
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:20 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

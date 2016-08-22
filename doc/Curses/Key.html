@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Curses::Key
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Curses/Key.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (K)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Curses.html" title="Curses (module)">Curses</a></span></span>
+     &raquo; 
+    <span class="title">Key</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Curses::Key
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/curses/curses.c<span class="defines">,<br />
+  ext/curses/curses.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>a container for the KEY_* values.</p>
+
+<p>See also system manual for getch(3)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="MOUSE-constant" class="">MOUSE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MOUSE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MIN-constant" class="">MIN =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MIN</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="BREAK-constant" class="">BREAK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_BREAK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DOWN-constant" class="">DOWN =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_DOWN</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="UP-constant" class="">UP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_UP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LEFT-constant" class="">LEFT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_LEFT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RIGHT-constant" class="">RIGHT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_RIGHT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="HOME-constant" class="">HOME =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_HOME</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="BACKSPACE-constant" class="">BACKSPACE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_BACKSPACE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DL-constant" class="">DL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_DL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="IL-constant" class="">IL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_IL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="DC-constant" class="">DC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_DC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="IC-constant" class="">IC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_IC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="EIC-constant" class="">EIC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_EIC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CLEAR-constant" class="">CLEAR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CLEAR</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="EOS-constant" class="">EOS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_EOS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="EOL-constant" class="">EOL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_EOL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SF-constant" class="">SF =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SF</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SR-constant" class="">SR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SR</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NPAGE-constant" class="">NPAGE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_NPAGE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="PPAGE-constant" class="">PPAGE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_PPAGE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="STAB-constant" class="">STAB =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_STAB</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CTAB-constant" class="">CTAB =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CTAB</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CATAB-constant" class="">CATAB =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CATAB</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ENTER-constant" class="">ENTER =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_ENTER</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SRESET-constant" class="">SRESET =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SRESET</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RESET-constant" class="">RESET =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_RESET</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="PRINT-constant" class="">PRINT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_PRINT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="LL-constant" class="">LL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_LL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="A1-constant" class="">A1 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_A1</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="A3-constant" class="">A3 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_A3</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="B2-constant" class="">B2 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_B2</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="C1-constant" class="">C1 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_C1</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="C3-constant" class="">C3 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_C3</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="BTAB-constant" class="">BTAB =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_BTAB</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="BEG-constant" class="">BEG =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_BEG</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CANCEL-constant" class="">CANCEL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CANCEL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CLOSE-constant" class="">CLOSE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CLOSE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="COMMAND-constant" class="">COMMAND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_COMMAND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="COPY-constant" class="">COPY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_COPY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="CREATE-constant" class="">CREATE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_CREATE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="END-constant" class="">END =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_END</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="EXIT-constant" class="">EXIT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_EXIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="FIND-constant" class="">FIND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_FIND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="HELP-constant" class="">HELP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_HELP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MARK-constant" class="">MARK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MARK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MESSAGE-constant" class="">MESSAGE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MESSAGE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MOVE-constant" class="">MOVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MOVE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NEXT-constant" class="">NEXT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_NEXT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="OPEN-constant" class="">OPEN =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_OPEN</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="OPTIONS-constant" class="">OPTIONS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_OPTIONS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="PREVIOUS-constant" class="">PREVIOUS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_PREVIOUS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="REDO-constant" class="">REDO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_REDO</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="REFERENCE-constant" class="">REFERENCE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_REFERENCE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="REFRESH-constant" class="">REFRESH =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_REFRESH</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="REPLACE-constant" class="">REPLACE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_REPLACE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RESTART-constant" class="">RESTART =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_RESTART</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RESUME-constant" class="">RESUME =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_RESUME</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SAVE-constant" class="">SAVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SAVE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SBEG-constant" class="">SBEG =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SBEG</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SCANCEL-constant" class="">SCANCEL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SCANCEL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SCOMMAND-constant" class="">SCOMMAND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SCOMMAND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SCOPY-constant" class="">SCOPY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SCOPY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SCREATE-constant" class="">SCREATE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SCREATE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SDC-constant" class="">SDC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SDC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SDL-constant" class="">SDL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SDL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SELECT-constant" class="">SELECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SELECT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SEND-constant" class="">SEND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SEND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SEOL-constant" class="">SEOL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SEOL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SEXIT-constant" class="">SEXIT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SEXIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SFIND-constant" class="">SFIND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SFIND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SHELP-constant" class="">SHELP =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SHELP</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SHOME-constant" class="">SHOME =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SHOME</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SIC-constant" class="">SIC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SIC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SLEFT-constant" class="">SLEFT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SLEFT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SMESSAGE-constant" class="">SMESSAGE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SMESSAGE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SMOVE-constant" class="">SMOVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SMOVE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SNEXT-constant" class="">SNEXT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SNEXT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SOPTIONS-constant" class="">SOPTIONS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SOPTIONS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SPREVIOUS-constant" class="">SPREVIOUS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SPREVIOUS</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SPRINT-constant" class="">SPRINT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SPRINT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SREDO-constant" class="">SREDO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SREDO</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SREPLACE-constant" class="">SREPLACE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SREPLACE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SRIGHT-constant" class="">SRIGHT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SRIGHT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SRSUME-constant" class="">SRSUME =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SRSUME</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SSAVE-constant" class="">SSAVE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SSAVE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SSUSPEND-constant" class="">SSUSPEND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SSUSPEND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SUNDO-constant" class="">SUNDO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SUNDO</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="SUSPEND-constant" class="">SUSPEND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_SUSPEND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="UNDO-constant" class="">UNDO =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_UNDO</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RESIZE-constant" class="">RESIZE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_RESIZE</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="MAX-constant" class="">MAX =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>KEY_MAX</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:18 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

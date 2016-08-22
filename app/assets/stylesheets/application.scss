@@ -1,0 +1,117 @@
+@import 'bootstrap';
+//@import 'user';
+//@import 'session';
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ */
+
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.error_message{
+  color: #ff0044;
+  font-size:small;
+  font-weight:bold;
+  }
+
+span.mark_of_required{
+    color: red;
+  }
+
+span.important{
+  color: red;
+}
+
+@font-face{
+  font-family:'Glyphicons Halflings';
+  src:url("../assets/bootstrap/glyphicons-halflings-regular.eot");
+  src:url("../assets/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),url("../assets/bootstrap/glyphicons-halflings-regular.woff") format("woff"),url("../assets/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"),url("../assets/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
+}
+
+.book-list{
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.one-book{
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  margin-right: -11px;
+  margin-bottom: 4px;
+  margin-left: -11px;
+  height: 148px;  
+}
+
+.book-image-in-list{
+  float:left;
+  height:100%;
+}
+
+.book-title-in-list{
+  font-size: 16px;
+  max-height:67px;
+  overflow:hidden;
+  line-height: 1.42857;
+}
+
+.book-authors-in-list{
+  font-size: 14px;
+  line-height: 1.42857;
+  overflow:hidden;
+  max-height:40px;
+}
+
+.authors-search-result{
+  max-height:40px !important;
+}
+
+.book-status-in-list{
+  font-size: 14px;
+  line-height: 1.42857;
+  overflow:hidden;
+  max-height:40px;
+}
+
+.status-search-result{
+  max-height:40px !important;
+}
+
+.book-group-in-list{
+  font-size: 14px;
+  line-height: 1.42857;
+  overflow:hidden;
+  max-height:20px;
+}
+
+.book-publisher-in-list{
+  font-size: 14px;
+  line-height: 1.42857;
+  overflow:hidden;
+  max-height:20px;
+}
+
+.orange{
+  color: #e47911;
+}
+
+.gray{
+  color:#888;
+}
+
+hr{
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:20px;
+  margin-right:20px;
+  border-top:1px solid #ccc;
+}

@@ -1,0 +1,2460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Zlib::GzipReader
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Zlib/GzipReader.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (G)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Zlib.html" title="Zlib (module)">Zlib</a></span></span>
+     &raquo; 
+    <span class="title">GzipReader</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Zlib::GzipReader
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="GzipFile.html" title="Zlib::GzipFile (class)">GzipFile</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="GzipFile.html" title="Zlib::GzipFile (class)">GzipFile</a></span></li>
+          
+            <li class="next">Zlib::GzipReader</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="../Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/zlib/zlib.c<span class="defines">,<br />
+  ext/zlib/zlib.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Zlib::GzipReader is the class for reading a gzipped file.  GzipReader
+should be used an IO, or -IO-lie, object.</p>
+
+<pre class="ruby"><span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'hoge.gz'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">gz</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">read</span>
+}
+
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'hoge.gz'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">gz</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">read</span>
+  <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Method+Catalogue">Method Catalogue</h2>
+
+<p>The following methods in Zlib::GzipReader are just like their counterparts
+in IO, but they raise Zlib::Error or Zlib::GzipFile::Error exception if an
+error was found in the gzip file.</p>
+<ul><li>
+<p>#each</p>
+</li><li>
+<p>#each_line</p>
+</li><li>
+<p>#each_byte</p>
+</li><li>
+<p>#gets</p>
+</li><li>
+<p>#getc</p>
+</li><li>
+<p>#lineno</p>
+</li><li>
+<p>#lineno=</p>
+</li><li>
+<p>#read</p>
+</li><li>
+<p>#readchar</p>
+</li><li>
+<p>#readline</p>
+</li><li>
+<p>#readlines</p>
+</li><li>
+<p>#ungetc</p>
+</li></ul>
+
+<p>Be careful of the footer of the gzip file. A gzip file has the checksum of
+pre-compressed data in its footer. GzipReader checks all uncompressed data
+against that checksum at the following cases, and if it fails, raises
+<code>Zlib::GzipFile::NoFooter</code>,
+<code>Zlib::GzipFile::CRCError</code>, or
+<code>Zlib::GzipFile::LengthError</code> exception.</p>
+<ul><li>
+<p>When an reading request is received beyond the end of file (the end of
+compressed data). That is, when Zlib::GzipReader#read,
+Zlib::GzipReader#gets, or some other methods for reading returns nil.</p>
+</li><li>
+<p>When Zlib::GzipFile#close method is called after the object reaches the end
+of file.</p>
+</li><li>
+<p>When Zlib::GzipReader#unused method is called after the object reaches the
+end of file.</p>
+</li></ul>
+
+<p>The rest of the methods are adequately described in their own
+documentation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open-class_method" title="open (class method)">+ (Object) <strong>open</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>call-seq: Zlib::GzipReader.open(filename) {|gz| … }.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bytes-instance_method" title="#bytes (instance method)">- (Object) <strong>bytes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_byte-instance_method" title="#each_byte (instance method)">- (Object) <strong>each_byte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_char-instance_method" title="#each_char (instance method)">- (Object) <strong>each_char</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_line-instance_method" title="#each_line (instance method)">- (Object) <strong>each_line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof-instance_method" title="#eof (instance method)">- (Object) <strong>eof</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> or <code>false</code> whether the stream has
+reached the end.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof%3F-instance_method" title="#eof? (instance method)">- (Boolean) <strong>eof?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> or <code>false</code> whether the stream has
+reached the end.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getbyte-instance_method" title="#getbyte (instance method)">- (Object) <strong>getbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getc-instance_method" title="#getc (instance method)">- (Object) <strong>getc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gets-instance_method" title="#gets (instance method)">- (Object) <strong>gets</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>call-seq: Zlib::GzipReader.new(io).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno-instance_method" title="#lineno (instance method)">- (Object) <strong>lineno</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The line number of the last row read from this file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno%3D-instance_method" title="#lineno= (instance method)">- (Object) <strong>lineno=</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify line number of the last row read from this file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lines-instance_method" title="#lines (instance method)">- (Object) <strong>lines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pos-instance_method" title="#pos (instance method)">- (Object) <strong>pos</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Total number of output bytes output so far.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read-instance_method" title="#read (instance method)">- (Object) <strong>read</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readbyte-instance_method" title="#readbyte (instance method)">- (Object) <strong>readbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readchar-instance_method" title="#readchar (instance method)">- (Object) <strong>readchar</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readline-instance_method" title="#readline (instance method)">- (Object) <strong>readline</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readlines-instance_method" title="#readlines (instance method)">- (Object) <strong>readlines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readpartial-instance_method" title="#readpartial (instance method)">- (Object) <strong>readpartial</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>call-seq:     gzipreader.readpartial(maxlen [, outbuf]) =&gt; string,
+outbuf.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rewind-instance_method" title="#rewind (instance method)">- (Object) <strong>rewind</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resets the position of the file pointer to the point created the GzipReader
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tell-instance_method" title="#tell (instance method)">- (Object) <strong>tell</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Total number of output bytes output so far.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetbyte-instance_method" title="#ungetbyte (instance method)">- (Object) <strong>ungetbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetc-instance_method" title="#ungetc (instance method)">- (Object) <strong>ungetc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See Zlib::GzipReader documentation for a description.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unused-instance_method" title="#unused (instance method)">- (Object) <strong>unused</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the rest of the data which had read for parsing gzip format, or
+<code>nil</code> if the whole gzip file is not parsed yet.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="../Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="../Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="../Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="../Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="../Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="../Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="../Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="../Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="../Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="../Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="../Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="../Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="../Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="../Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="../Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="../Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="../Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="../Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="../Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="../Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="../Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="../Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="../Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="../Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="../Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="../Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="../Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="../Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="../Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="../Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="../Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="../Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="../Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="../Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="../Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="../Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="../Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="../Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="../Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="../Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="../Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="../Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="../Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="../Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="../Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="../Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="GzipFile.html" title="Zlib::GzipFile (class)">GzipFile</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GzipFile.html#close-instance_method" title="Zlib::GzipFile#close (method)">#close</a></span>, <span class='object_link'><a href="GzipFile.html#closed%3F-instance_method" title="Zlib::GzipFile#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="GzipFile.html#comment-instance_method" title="Zlib::GzipFile#comment (method)">#comment</a></span>, <span class='object_link'><a href="GzipFile.html#crc-instance_method" title="Zlib::GzipFile#crc (method)">#crc</a></span>, <span class='object_link'><a href="GzipFile.html#finish-instance_method" title="Zlib::GzipFile#finish (method)">#finish</a></span>, <span class='object_link'><a href="GzipFile.html#level-instance_method" title="Zlib::GzipFile#level (method)">#level</a></span>, <span class='object_link'><a href="GzipFile.html#mtime-instance_method" title="Zlib::GzipFile#mtime (method)">#mtime</a></span>, <span class='object_link'><a href="GzipFile.html#orig_name-instance_method" title="Zlib::GzipFile#orig_name (method)">#orig_name</a></span>, <span class='object_link'><a href="GzipFile.html#os_code-instance_method" title="Zlib::GzipFile#os_code (method)">#os_code</a></span>, <span class='object_link'><a href="GzipFile.html#sync-instance_method" title="Zlib::GzipFile#sync (method)">#sync</a></span>, <span class='object_link'><a href="GzipFile.html#sync%3D-instance_method" title="Zlib::GzipFile#sync= (method)">#sync=</a></span>, <span class='object_link'><a href="GzipFile.html#to_io-instance_method" title="Zlib::GzipFile#to_io (method)">#to_io</a></span>, <span class='object_link'><a href="GzipFile.html#wrap-class_method" title="Zlib::GzipFile.wrap (method)">wrap</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq: Zlib::GzipReader.new(io)</p>
+
+<p>Creates a GzipReader object associated with <code>io</code>. The GzipReader
+object reads gzipped data from <code>io</code>, and parses/decompresses
+them.  At least, <code>io</code> must have a <code>read</code> method that
+behaves same as the <code>read</code> method in IO class.</p>
+
+<p>If the gzip file header is incorrect, raises an Zlib::GzipFile::Error
+exception.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3426
+3427
+3428
+3429
+3430
+3431
+3432
+3433
+3434
+3435
+3436
+3437
+3438
+3439
+3440
+3441
+3442
+3443
+3444
+3445
+3446
+3447
+3448
+3449
+3450
+3451
+3452</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3426</span>
+
+static VALUE
+rb_gzreader_initialize(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE io, opt = Qnil;
+    struct gzfile *gz;
+    int err;
+
+    Data_Get_Struct(obj, struct gzfile, gz);
+    rb_scan_args(argc, argv, &quot;1:&quot;, &amp;io, &amp;opt);
+
+    /* this is undocumented feature of zlib */
+    err = inflateInit2(&amp;gz-&gt;z.stream, -MAX_WBITS);
+    if (err != Z_OK) {
+	raise_zlib_error(err, gz-&gt;z.stream.msg);
+    }
+    gz-&gt;io = io;
+    ZSTREAM_READY(&amp;gz-&gt;z);
+    gzfile_read_header(gz);
+    rb_gzfile_ecopts(gz, opt);
+
+    if (rb_respond_to(io, id_path)) {
+	gz-&gt;path = rb_funcall(gz-&gt;io, id_path, 0);
+	rb_define_singleton_method(obj, &quot;path&quot;, rb_gzfile_path, 0);
+    }
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="open-class_method">
+  
+    + (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>open</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq: Zlib::GzipReader.open(filename) {|gz| … }</p>
+
+<p>Opens a file specified by <code>filename</code> as a gzipped file, and
+returns a GzipReader object associated with that file.  Further details of
+this method are in Zlib::GzipReader.new and ZLib::GzipFile.wrap.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3408
+3409
+3410
+3411
+3412</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3408</span>
+
+static VALUE
+rb_gzreader_s_open(int argc, VALUE *argv, VALUE klass)
+{
+    return gzfile_s_open(argc, argv, klass, &quot;rb&quot;);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="bytes-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3622
+3623
+3624
+3625
+3626
+3627
+3628
+3629
+3630
+3631
+3632
+3633</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3622</span>
+
+static VALUE
+rb_gzreader_each_byte(VALUE obj)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(c = rb_gzreader_getbyte(obj))) {
+	rb_yield(c);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3888
+3889
+3890
+3891
+3892
+3893
+3894
+3895
+3896
+3897
+3898
+3899</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3888</span>
+
+static VALUE
+rb_gzreader_each(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+	rb_yield(str);
+    }
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_byte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_byte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3622
+3623
+3624
+3625
+3626
+3627
+3628
+3629
+3630
+3631
+3632
+3633</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3622</span>
+
+static VALUE
+rb_gzreader_each_byte(VALUE obj)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(c = rb_gzreader_getbyte(obj))) {
+	rb_yield(c);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_char-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_char</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3604
+3605
+3606
+3607
+3608
+3609
+3610
+3611
+3612
+3613
+3614
+3615</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3604</span>
+
+static VALUE
+rb_gzreader_each_char(VALUE obj)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(c = rb_gzreader_getc(obj))) {
+	rb_yield(c);
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_line-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>each_line</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3888
+3889
+3890
+3891
+3892
+3893
+3894
+3895
+3896
+3897
+3898
+3899</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3888</span>
+
+static VALUE
+rb_gzreader_each(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+	rb_yield(str);
+    }
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>eof</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> or <code>false</code> whether the stream has
+reached the end.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3066
+3067
+3068
+3069
+3070
+3071</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3066</span>
+
+static VALUE
+rb_gzfile_eof_p(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return GZFILE_IS_FINISHED(gz) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>eof?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> or <code>false</code> whether the stream has
+reached the end.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3066
+3067
+3068
+3069
+3070
+3071</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3066</span>
+
+static VALUE
+rb_gzfile_eof_p(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return GZFILE_IS_FINISHED(gz) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>getbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3570
+3571
+3572
+3573
+3574
+3575
+3576
+3577
+3578
+3579
+3580
+3581</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3570</span>
+
+static VALUE
+rb_gzreader_getbyte(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE dst;
+
+    dst = gzfile_read(gz, 1);
+    if (!NIL_P(dst)) {
+	dst = INT2FIX((unsigned int)(RSTRING_PTR(dst)[0]) &amp; 0xff);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>getc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3541
+3542
+3543
+3544
+3545
+3546
+3547</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3541</span>
+
+static VALUE
+rb_gzreader_getc(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+
+    return gzfile_getc(gz);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gets-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>gets</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3856
+3857
+3858
+3859
+3860
+3861
+3862
+3863
+3864
+3865</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3856</span>
+
+static VALUE
+rb_gzreader_gets(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE dst;
+    dst = gzreader_gets(argc, argv, obj);
+    if (!NIL_P(dst)) {
+	rb_lastline_set(dst);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>lineno</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The line number of the last row read from this file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2919
+2920
+2921
+2922
+2923</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 2919</span>
+
+static VALUE
+rb_gzfile_lineno(VALUE obj)
+{
+    return INT2NUM(get_gzfile(obj)-&gt;lineno);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>lineno=</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Specify line number of the last row read from this file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2930
+2931
+2932
+2933
+2934
+2935
+2936</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 2930</span>
+
+static VALUE
+rb_gzfile_set_lineno(VALUE obj, VALUE lineno)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gz-&gt;lineno = NUM2INT(lineno);
+    return lineno;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lines-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>lines</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3888
+3889
+3890
+3891
+3892
+3893
+3894
+3895
+3896
+3897
+3898
+3899</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3888</span>
+
+static VALUE
+rb_gzreader_each(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+	rb_yield(str);
+    }
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pos-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>pos</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Total number of output bytes output so far.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3124
+3125
+3126
+3127
+3128
+3129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3124</span>
+
+static VALUE
+rb_gzfile_total_out(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return rb_uint2inum(gz-&gt;z.stream.total_out - gz-&gt;z.buf_filled);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>read</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3487
+3488
+3489
+3490
+3491
+3492
+3493
+3494
+3495
+3496
+3497
+3498
+3499
+3500
+3501
+3502
+3503
+3504</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3487</span>
+
+static VALUE
+rb_gzreader_read(int argc, VALUE *argv, VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE vlen;
+    long len;
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;vlen);
+    if (NIL_P(vlen)) {
+	return gzfile_read_all(gz);
+    }
+
+    len = NUM2INT(vlen);
+    if (len &lt; 0) {
+	rb_raise(rb_eArgError, &quot;negative length %ld given&quot;, len);
+    }
+    return gzfile_read(gz, len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>readbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3588
+3589
+3590
+3591
+3592
+3593
+3594
+3595
+3596
+3597</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3588</span>
+
+static VALUE
+rb_gzreader_readbyte(VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_getbyte(obj);
+    if (NIL_P(dst)) {
+	rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readchar-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>readchar</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3554
+3555
+3556
+3557
+3558
+3559
+3560
+3561
+3562
+3563</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3554</span>
+
+static VALUE
+rb_gzreader_readchar(VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_getc(obj);
+    if (NIL_P(dst)) {
+	rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readline-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>readline</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3872
+3873
+3874
+3875
+3876
+3877
+3878
+3879
+3880
+3881</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3872</span>
+
+static VALUE
+rb_gzreader_readline(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_gets(argc, argv, obj);
+    if (NIL_P(dst)) {
+	rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readlines-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>readlines</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3906
+3907
+3908
+3909
+3910
+3911
+3912
+3913
+3914
+3915</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3906</span>
+
+static VALUE
+rb_gzreader_readlines(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str, dst;
+    dst = rb_ary_new();
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+	rb_ary_push(dst, str);
+    }
+    return dst;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readpartial-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>readpartial</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>call-seq:</p>
+
+<pre class="ruby">   <span class="ruby-identifier">gzipreader</span>.<span class="ruby-identifier">readpartial</span>(<span class="ruby-identifier">maxlen</span> [, <span class="ruby-identifier">outbuf</span>]) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">string</span>, <span class="ruby-identifier">outbuf</span>
+
+<span class="ruby-constant">Reads</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">most</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">maxlen</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/i&gt; bytes from the gziped stream but
+it blocks only if &lt;em&gt;gzipreader&lt;/</span><span class="ruby-identifier">m</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">has</span> <span class="ruby-identifier">no</span> <span class="ruby-identifier">data</span> <span class="ruby-identifier">immediately</span> <span class="ruby-identifier">available</span>.
+<span class="ruby-constant">If</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">optional</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">outbuf</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/i&gt; argument is present,
+it must reference a String, which will receive the data.
+It raises &lt;code&gt;EOFError&lt;/</span><span class="ruby-identifier">code</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">on</span> <span class="ruby-keyword">end</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">file</span>.
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3518
+3519
+3520
+3521
+3522
+3523
+3524
+3525
+3526
+3527
+3528
+3529
+3530
+3531
+3532
+3533
+3534</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3518</span>
+
+static VALUE
+rb_gzreader_readpartial(int argc, VALUE *argv, VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE vlen, outbuf;
+    long len;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;vlen, &amp;outbuf);
+
+    len = NUM2INT(vlen);
+    if (len &lt; 0) {
+	rb_raise(rb_eArgError, &quot;negative length %ld given&quot;, len);
+    }
+    if (!NIL_P(outbuf))
+        Check_Type(outbuf, T_STRING);
+    return gzfile_readpartial(gz, len, outbuf);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rewind-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>rewind</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resets the position of the file pointer to the point created the GzipReader
+object.  The associated IO object needs to respond to the <code>seek</code>
+method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3460
+3461
+3462
+3463
+3464
+3465
+3466</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3460</span>
+
+static VALUE
+rb_gzreader_rewind(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gzfile_reader_rewind(gz);
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tell-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>tell</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Total number of output bytes output so far.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3124
+3125
+3126
+3127
+3128
+3129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3124</span>
+
+static VALUE
+rb_gzfile_total_out(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return rb_uint2inum(gz-&gt;z.stream.total_out - gz-&gt;z.buf_filled);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>ungetbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3661
+3662
+3663
+3664
+3665
+3666
+3667</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3661</span>
+
+static VALUE
+rb_gzreader_ungetbyte(VALUE obj, VALUE ch)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gzfile_ungetbyte(gz, NUM2CHR(ch));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>ungetc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See Zlib::GzipReader documentation for a description.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3640
+3641
+3642
+3643
+3644
+3645
+3646
+3647
+3648
+3649
+3650
+3651
+3652
+3653
+3654</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3640</span>
+
+static VALUE
+rb_gzreader_ungetc(VALUE obj, VALUE s)
+{
+    struct gzfile *gz;
+
+    if (FIXNUM_P(s))
+	return rb_gzreader_ungetbyte(obj, s);
+    gz = get_gzfile(obj);
+    StringValue(s);
+    if (gz-&gt;enc2 &amp;&amp; gz-&gt;enc2 != rb_ascii8bit_encoding()) {
+	s = rb_str_conv_enc(s, rb_enc_get(s), gz-&gt;enc2);
+    }
+    gzfile_ungets(gz, (const Bytef*)RSTRING_PTR(s), RSTRING_LEN(s));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unused-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>unused</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the rest of the data which had read for parsing gzip format, or
+<code>nil</code> if the whole gzip file is not parsed yet.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3474
+3475
+3476
+3477
+3478
+3479
+3480</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/zlib/zlib.c', line 3474</span>
+
+static VALUE
+rb_gzreader_unused(VALUE obj)
+{
+    struct gzfile *gz;
+    Data_Get_Struct(obj, struct gzfile, gz);
+    return gzfile_reader_get_unused(gz);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:28 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

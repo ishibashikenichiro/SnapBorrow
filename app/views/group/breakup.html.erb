@@ -1,0 +1,16 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<% unless flash[:breakup_group_id] %>
+  <script>
+    window.location.href = "/"
+  </script>
+<% end %>
+
+
+<% provide(:title, 'グループ解散') %>
+<h1>グループ解散</h1>
+<h4><%= "グループメンバがいなくなるため、グループ「#{@group.name}」が解散されます。" %></h4>
+<h4 style="color:red">解散したグループは利用できなくなります。<br>解散したグループは元に戻せません。</h4>
+
+<%= button_to "はい", {:controller => "member", :action => "breakup", :group_id => @group.id}, :confirm => "「#{@group.name}」を解散しますがよろしいですか？", :method => "delete", :class => 'btn btn-default'%>
+<%= button_to "いいえ", "/", :class => 'btn btn-default' %>

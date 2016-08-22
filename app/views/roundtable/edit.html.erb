@@ -1,0 +1,81 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+
+<% provide(:title, '輪講情報の編集') %>
+<h1>輪講情報の編集</h1>
+<br>
+<%= form_tag('/roundtable/edit_save') do %>
+<center>
+	<table border="0">
+		<tr>
+			<td>輪講名</td>
+			<td><%= text_field_tag :title, flash[:title] %></td>
+		</tr>
+		<tr>
+			<td>開始時間</td>
+			<td><%= text_field_tag :starttime, flash[:starttime] %></td>
+		</tr>
+		<tr>
+			<td>終了時間</td>
+			<td><%= text_field_tag :endtime, flash[:endtime] %></td>
+		</tr>
+		<% if @time_undetermined %>
+		<tr>
+			<td><%= check_box_tag :notime, value = "notime", checked = true  %>輪講時間が未定</td>
+		</tr>
+		<% end  %>
+		<tr>
+			<td>場所</td>
+			<td><%= text_field_tag :place, flash[:place] %></td>
+		</tr>
+	</table>
+	<%= button_tag '確認', :class => 'btn btn-primary' %>
+	<%= hidden_field_tag :id, flash[:roundtableid] %>
+</center>
+<% end %>
+
+<h2>輪講発表者の編集</h2>
+<center>
+
+<table>
+	<th>発表者：</th>
+	<% @presenters.each do |presenter| %>
+		<tr>
+			<td><%= presenter.user.nickname %></td>
+			<td>
+			<%= form_tag('/roundtable/delete_presenter') do %>
+				<%= hidden_field_tag :roundtable_id, presenter.roundtable_id %>
+				<%= hidden_field_tag :presenter,presenter.user_id %>
+				<%= button_tag '削除', :class => 'btn btn-link' %>
+			<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<br />
+<% if flash[:add_presenter_error] == 1 %>
+<span class="help-block error_message">メンバーが既に輪講発表者に登録されました。</span>
+<% end %>
+<% if @allmembers.empty? == false then %>
+<%= form_tag('/roundtable/add_presenter') do %>
+	<table>
+	<tr>
+	<td>発表者の追加</td>
+	<td>
+	<select name="newpresenter">
+		<%@allmembers.each do |member| %>
+			<option value="<%= member.user_id %>">
+			<%= member.user.nickname %>
+			</option>
+		<% end %>
+	</select>
+	<%= button_tag '追加', :class => 'btn btn-primary' %>
+	</td>
+	</tr>
+	</table>
+	<%= hidden_field_tag :roundtable_id, flash[:roundtableid] %>
+<% end %>
+</center>
+<% end %>

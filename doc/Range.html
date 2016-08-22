@@ -1,0 +1,3057 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Range
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Range.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">Range</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Range
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Range</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">range.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A <code>Range</code> represents an interval—a set of values with a start
+and an end. Ranges may be constructed using the
+<em>s</em><code>..</code><em>e</em> and
+<em>s</em><code>...</code><em>e</em> literals, or with
+<code>Range::new</code>. Ranges constructed using <code>..</code> run from
+the start to the end inclusively. Those created using <code>...</code>
+exclude the end value. When used as an iterator, ranges return each value
+in the sequence.</p>
+
+<pre class="ruby">(<span class="ruby-value">-1</span><span class="ruby-operator">..</span><span class="ruby-value">-5</span>).<span class="ruby-identifier">to_a</span>      <span class="ruby-comment">#=&gt; []</span>
+(<span class="ruby-value">-5</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>).<span class="ruby-identifier">to_a</span>      <span class="ruby-comment">#=&gt; [-5, -4, -3, -2, -1]</span>
+(<span class="ruby-string">'a'</span><span class="ruby-operator">..</span><span class="ruby-string">'e'</span>).<span class="ruby-identifier">to_a</span>    <span class="ruby-comment">#=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</span>
+(<span class="ruby-string">'a'</span><span class="ruby-operator">...</span><span class="ruby-string">'e'</span>).<span class="ruby-identifier">to_a</span>   <span class="ruby-comment">#=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span>
+</pre>
+
+<p>Ranges can be constructed using objects of any type, as long as the objects
+can be compared using their <code>&lt;=&gt;</code> operator and they
+support the <code>succ</code> method to return the next object in sequence.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Xs</span>                <span class="ruby-comment"># represent a string of 'x's</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Comparable</span>
+  <span class="ruby-identifier">attr</span> :<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">n</span>)
+    <span class="ruby-ivar">@length</span> = <span class="ruby-identifier">n</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">succ</span>
+    <span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-ivar">@length</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">sprintf</span> <span class="ruby-node">&quot;%2d #{inspect}&quot;</span>, <span class="ruby-ivar">@length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-string">'x'</span> * <span class="ruby-ivar">@length</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">r</span> = <span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>)<span class="ruby-operator">..</span><span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">6</span>)   <span class="ruby-comment">#=&gt; xxx..xxxxxx</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_a</span>                     <span class="ruby-comment">#=&gt; [xxx, xxxx, xxxxx, xxxxxx]</span>
+<span class="ruby-identifier">r</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">5</span>))       <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+<p>In the previous code example, class <code>Xs</code> includes the
+<code>Comparable</code> module. This is because
+<code>Enumerable#member?</code> checks for equality using <code>==</code>.
+Including <code>Comparable</code> ensures that the <code>==</code> method
+is defined in terms of the <code>&lt;=&gt;</code> method implemented in
+<code>Xs</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true only if obj is a Range, has equivalent beginning and end items
+(by comparing them with ==), and has the same exclude_end? setting as rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D%3D-instance_method" title="#=== (instance method)">- (Boolean) <strong>===</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if obj is an element of rng, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#begin-instance_method" title="#begin (instance method)">- (Object) <strong>begin</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the first object in rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cover%3F-instance_method" title="#cover? (instance method)">- (Boolean) <strong>cover?</strong>(val) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if obj is between beg and end, i.e beg  (or end exclusive when
+exclude_end? is true).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Iterates over the elements rng, passing each in turn to the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end-instance_method" title="#end (instance method)">- (Object) <strong>end</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the object that defines the end of rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">- (Boolean) <strong>eql?</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true only if obj is a Range, has equivalent beginning and end items
+(by comparing them with #eql?), and has the same #exclude_end? setting as
+rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exclude_end%3F-instance_method" title="#exclude_end? (instance method)">- (Boolean) <strong>exclude_end?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if rng excludes its end value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#first-instance_method" title="#first (instance method)">- (Object) <strong>first</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the first object in rng, or the first <code>n</code> elements.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash-instance_method" title="#hash (instance method)">- (Fixnum) <strong>hash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate a hash value such that two ranges with the same start and end
+points, and the same value for the “exclude end” flag, generate the same
+hash value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#include? (instance method)">- (Boolean) <strong>include?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if obj is an element of rng, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>(start, end) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Constructs a range using the given start and end.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">- (String) <strong>inspect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Convert this range object to a printable form (using inspect to convert the
+start and end objects).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#last-instance_method" title="#last (instance method)">- (Object) <strong>last</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the last object in rng, or the last <code>n</code> elements.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max-instance_method" title="#max (instance method)">- (Object) <strong>max</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the maximum value in rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#member%3F-instance_method" title="#member? (instance method)">- (Boolean) <strong>member?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if obj is an element of rng, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min-instance_method" title="#min (instance method)">- (Object) <strong>min</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the minimum value in rng.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#step-instance_method" title="#step (instance method)">- (Object) <strong>step</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Iterates over rng, passing each nth element to the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Convert this range object to a printable form.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(start, end) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Constructs a range using the given <em>start</em> and <em>end</em>. If the
+third parameter is omitted or is <code>false</code>, the <em>range</em>
+will include the end object; otherwise, it will be excluded.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 78</span>
+
+static VALUE
+range_initialize(int argc, VALUE *argv, VALUE range)
+{
+    VALUE beg, end, flags;
+
+    rb_scan_args(argc, argv, &quot;21&quot;, &amp;beg, &amp;end, &amp;flags);
+    /* Ranges are immutable, so that they should be initialized only once. */
+    if (RANGE_EXCL(range) != Qnil) {
+	rb_name_error(rb_intern(&quot;initialize&quot;), &quot;`initialize' called twice&quot;);
+    }
+    range_init(range, beg, end, RTEST(flags));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="==-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> only if <em>obj</em> is a Range, has equivalent
+beginning and end items (by comparing them with <code>==</code>), and has
+the same <code>exclude_end?</code> setting as <em>rng</em>.</p>
+
+<pre class="ruby">(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>) <span class="ruby-operator">==</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>)            <span class="ruby-comment">#=&gt; true</span>
+(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>) <span class="ruby-operator">==</span> <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">2</span>)    <span class="ruby-comment">#=&gt; true</span>
+(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>) <span class="ruby-operator">==</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">2</span>)           <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 136</span>
+
+static VALUE
+range_eq(VALUE range, VALUE obj)
+{
+    if (range == obj)
+	return Qtrue;
+    if (!rb_obj_is_kind_of(obj, rb_cRange))
+	return Qfalse;
+
+    return rb_exec_recursive_paired(recursive_equal, range, obj, obj);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="===-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>===</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>obj</em> is an element of <em>rng</em>,
+<code>false</code> otherwise. Conveniently, <code>===</code> is the
+comparison operator used by <code>case</code> statements.</p>
+
+<pre class="code"><code class=""><span class='kw'>case</span> <span class='int'>79</span>
+<span class='kw'>when</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>50</span>   <span class='kw'>then</span>   <span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>low\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>when</span> <span class='int'>51</span><span class='op'>..</span><span class='int'>75</span>  <span class='kw'>then</span>   <span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>medium\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>when</span> <span class='int'>76</span><span class='op'>..</span><span class='int'>100</span> <span class='kw'>then</span>   <span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>high\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_high'>high</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+824
+825
+826
+827
+828</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 824</span>
+
+static VALUE
+range_eqq(VALUE range, VALUE val)
+{
+    return rb_funcall(range, rb_intern(&quot;include?&quot;), 1, val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="begin-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>begin</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the first object in <em>rng</em>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+529
+530
+531
+532
+533</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 529</span>
+
+static VALUE
+range_begin(VALUE range)
+{
+    return RANGE_BEG(range);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cover?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>cover?</strong>(val) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>obj</em> is between beg and end, i.e
+<code>beg &lt;= obj &lt;= end</code> (or <em>end</em> exclusive when
+<code>exclude_end?</code> is true).</p>
+
+<pre class="ruby">(<span class="ruby-string">&quot;a&quot;</span><span class="ruby-operator">..</span><span class="ruby-string">&quot;z&quot;</span>).<span class="ruby-identifier">cover?</span>(<span class="ruby-string">&quot;c&quot;</span>)    <span class="ruby-comment">#=&gt; true</span>
+(<span class="ruby-string">&quot;a&quot;</span><span class="ruby-operator">..</span><span class="ruby-string">&quot;z&quot;</span>).<span class="ruby-identifier">cover?</span>(<span class="ruby-string">&quot;5&quot;</span>)    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 904</span>
+
+static VALUE
+range_cover(VALUE range, VALUE val)
+{
+    VALUE beg, end;
+
+    beg = RANGE_BEG(range);
+    end = RANGE_END(range);
+    if (r_le(beg, val)) {
+	if (EXCL(range)) {
+	    if (r_lt(val, end))
+		return Qtrue;
+	}
+	else {
+	    if (r_le(val, end))
+		return Qtrue;
+	}
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> {|i| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Iterates over the elements <em>rng</em>, passing each in turn to the block.
+You can only iterate if the start object of the range supports the
+<code>succ</code> method (which means that you can’t iterate over ranges of
+<code>Float</code> objects).</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby">(<span class="ruby-value">10</span><span class="ruby-operator">..</span><span class="ruby-value">15</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+   <span class="ruby-identifier">print</span> <span class="ruby-identifier">n</span>, <span class="ruby-string">' '</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class="">10 11 12 13 14 15</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong> {|i| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>i</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 474</span>
+
+static VALUE
+range_each(VALUE range)
+{
+    VALUE beg, end;
+
+    RETURN_ENUMERATOR(range, 0, 0);
+
+    beg = RANGE_BEG(range);
+    end = RANGE_END(range);
+
+    if (FIXNUM_P(beg) &amp;&amp; FIXNUM_P(end)) { /* fixnums are special */
+	long lim = FIX2LONG(end);
+	long i;
+
+	if (!EXCL(range))
+	    lim += 1;
+	for (i = FIX2LONG(beg); i &lt; lim; i++) {
+	    rb_yield(LONG2FIX(i));
+	}
+    }
+    else if (SYMBOL_P(beg) &amp;&amp; SYMBOL_P(end)) { /* symbols are special */
+	VALUE args[2];
+
+	args[0] = rb_sym_to_s(end);
+	args[1] = EXCL(range) ? Qtrue : Qfalse;
+	rb_block_call(rb_sym_to_s(beg), rb_intern(&quot;upto&quot;), 2, args, sym_each_i, 0);
+    }
+    else {
+	VALUE tmp = rb_check_string_type(beg);
+
+	if (!NIL_P(tmp)) {
+	    VALUE args[2];
+
+	    args[0] = end;
+	    args[1] = EXCL(range) ? Qtrue : Qfalse;
+	    rb_block_call(tmp, rb_intern(&quot;upto&quot;), 2, args, rb_yield, 0);
+	}
+	else {
+	    if (!discrete_object_p(beg)) {
+		rb_raise(rb_eTypeError, &quot;can't iterate from %s&quot;,
+			 rb_obj_classname(beg));
+	    }
+	    range_each_func(range, each_i, NULL);
+	}
+    }
+    return range;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>end</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the object that defines the end of <em>rng</em>.</p>
+
+<pre class="ruby">(<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">10</span>).<span class="ruby-identifier">end</span>    <span class="ruby-comment">#=&gt; 10</span>
+(<span class="ruby-value">1</span><span class="ruby-operator">...</span><span class="ruby-value">10</span>).<span class="ruby-identifier">end</span>   <span class="ruby-comment">#=&gt; 10</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+547
+548
+549
+550
+551</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 547</span>
+
+static VALUE
+range_end(VALUE range)
+{
+    return RANGE_END(range);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eql?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>eql?</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> only if <em>obj</em> is a Range, has equivalent
+beginning and end items (by comparing them with #eql?), and has the same
+#exclude_end? setting as <em>rng</em>.</p>
+
+<pre class="ruby">(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>).<span class="ruby-identifier">eql?</span>(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>)            <span class="ruby-comment">#=&gt; true</span>
+(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>).<span class="ruby-identifier">eql?</span>(<span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">2</span>))  <span class="ruby-comment">#=&gt; true</span>
+(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>).<span class="ruby-identifier">eql?</span>(<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">2</span>)           <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207
+208
+209
+210
+211
+212</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 204</span>
+
+static VALUE
+range_eql(VALUE range, VALUE obj)
+{
+    if (range == obj)
+	return Qtrue;
+    if (!rb_obj_is_kind_of(obj, rb_cRange))
+	return Qfalse;
+    return rb_exec_recursive_paired(recursive_eql, range, obj, obj);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exclude_end?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>exclude_end?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>rng</em> excludes its end value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 101</span>
+
+static VALUE
+range_exclude_end_p(VALUE range)
+{
+    return EXCL(range) ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="first-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>first</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>first</strong>(n) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the first object in <em>rng</em>, or the first <code>n</code>
+elements.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>first</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>first</strong>(n) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 576</span>
+
+static VALUE
+range_first(int argc, VALUE *argv, VALUE range)
+{
+    VALUE n, ary[2];
+
+    if (argc == 0) return RANGE_BEG(range);
+
+    rb_scan_args(argc, argv, &quot;1&quot;, &amp;n);
+    ary[0] = n;
+    ary[1] = rb_ary_new2(NUM2LONG(n));
+    rb_block_call(range, rb_intern(&quot;each&quot;), 0, 0, first_i, (VALUE)ary);
+
+    return ary[1];
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>hash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate a hash value such that two ranges with the same start and end
+points, and the same value for the “exclude end” flag, generate the same
+hash value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+242
+243
+244
+245
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 242</span>
+
+static VALUE
+range_hash(VALUE range)
+{
+    return rb_exec_recursive_outer(recursive_hash, range, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(val) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(val) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>obj</em> is an element of <em>rng</em>,
+<code>false</code> otherwise.  If beg and end are numeric, comparison is
+done according magnitude of values.</p>
+
+<pre class="code"><code class=""><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># -&gt; true
+</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># -&gt; false</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(val) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(val) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 844</span>
+
+static VALUE
+range_include(VALUE range, VALUE val)
+{
+    VALUE beg = RANGE_BEG(range);
+    VALUE end = RANGE_END(range);
+    int nv = FIXNUM_P(beg) || FIXNUM_P(end) ||
+	     rb_obj_is_kind_of(beg, rb_cNumeric) ||
+	     rb_obj_is_kind_of(end, rb_cNumeric);
+
+    if (nv ||
+	!NIL_P(rb_check_to_integer(beg, &quot;to_int&quot;)) ||
+	!NIL_P(rb_check_to_integer(end, &quot;to_int&quot;))) {
+	if (r_le(beg, val)) {
+	    if (EXCL(range)) {
+		if (r_lt(val, end))
+		    return Qtrue;
+	    }
+	    else {
+		if (r_le(val, end))
+		    return Qtrue;
+	    }
+	}
+	return Qfalse;
+    }
+    else if (TYPE(beg) == T_STRING &amp;&amp; TYPE(end) == T_STRING &amp;&amp;
+	     RSTRING_LEN(beg) == 1 &amp;&amp; RSTRING_LEN(end) == 1) {
+	if (NIL_P(val)) return Qfalse;
+	if (TYPE(val) == T_STRING) {
+	    if (RSTRING_LEN(val) == 0 || RSTRING_LEN(val) &gt; 1)
+		return Qfalse;
+	    else {
+		char b = RSTRING_PTR(beg)[0];
+		char e = RSTRING_PTR(end)[0];
+		char v = RSTRING_PTR(val)[0];
+
+		if (ISASCII(b) &amp;&amp; ISASCII(e) &amp;&amp; ISASCII(v)) {
+		    if (b &lt;= v &amp;&amp; v &lt; e) return Qtrue;
+		    if (!EXCL(range) &amp;&amp; v == e) return Qtrue;
+		    return Qfalse;
+		}
+	    }
+	}
+    }
+    /* TODO: ruby_frame-&gt;this_func = rb_intern(&quot;include?&quot;); */
+    return rb_call_super(1, &amp;val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize_copy</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>inspect</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Convert this range object to a printable form (using <code>inspect</code>
+to convert the start and end objects).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+798
+799
+800
+801
+802</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 798</span>
+
+static VALUE
+range_inspect(VALUE range)
+{
+    return rb_exec_recursive(inspect_range, range, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="last-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>last</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>last</strong>(n) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the last object in <em>rng</em>, or the last <code>n</code>
+elements.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>last</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>last</strong>(n) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+600
+601
+602
+603
+604
+605</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 600</span>
+
+static VALUE
+range_last(int argc, VALUE *argv, VALUE range)
+{
+    if (argc == 0) return RANGE_END(range);
+    return rb_ary_last(argc, argv, rb_Array(range));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>max</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>max</strong> {|a, b| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the maximum value in <em>rng</em>. The second uses the block to
+compare values.  Returns nil if the first value in range is larger than the
+last value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>max</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>max</strong> {|a, b| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>a</tt>, <tt>b</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 648</span>
+
+static VALUE
+range_max(VALUE range)
+{
+    VALUE e = RANGE_END(range);
+    int nm = FIXNUM_P(e) || rb_obj_is_kind_of(e, rb_cNumeric);
+
+    if (rb_block_given_p() || (EXCL(range) &amp;&amp; !nm)) {
+	return rb_call_super(0, 0);
+    }
+    else {
+	VALUE b = RANGE_BEG(range);
+	int c = rb_cmpint(rb_funcall(b, id_cmp, 1, e), b, e);
+
+	if (c &gt; 0)
+	    return Qnil;
+	if (EXCL(range)) {
+	    if (!FIXNUM_P(e) &amp;&amp; !rb_obj_is_kind_of(e, rb_cInteger)) {
+		rb_raise(rb_eTypeError, &quot;cannot exclude non Integer end value&quot;);
+	    }
+	    if (c == 0) return Qnil;
+	    if (!FIXNUM_P(b) &amp;&amp; !rb_obj_is_kind_of(b,rb_cInteger)) {
+		rb_raise(rb_eTypeError, &quot;cannot exclude end value with non Integer begin value&quot;);
+	    }
+	    if (FIXNUM_P(e)) {
+		return LONG2NUM(FIX2LONG(e) - 1);
+	    }
+	    return rb_funcall(e, '-', 1, INT2FIX(1));
+	}
+	return e;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="member?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>member?</strong>(val) </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>include?</strong>(val) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <em>obj</em> is an element of <em>rng</em>,
+<code>false</code> otherwise.  If beg and end are numeric, comparison is
+done according magnitude of values.</p>
+
+<pre class="code"><code class=""><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># -&gt; true
+</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='op'>..</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># -&gt; false</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>member?</strong>(val) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>include?</strong>(val) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 844</span>
+
+static VALUE
+range_include(VALUE range, VALUE val)
+{
+    VALUE beg = RANGE_BEG(range);
+    VALUE end = RANGE_END(range);
+    int nv = FIXNUM_P(beg) || FIXNUM_P(end) ||
+	     rb_obj_is_kind_of(beg, rb_cNumeric) ||
+	     rb_obj_is_kind_of(end, rb_cNumeric);
+
+    if (nv ||
+	!NIL_P(rb_check_to_integer(beg, &quot;to_int&quot;)) ||
+	!NIL_P(rb_check_to_integer(end, &quot;to_int&quot;))) {
+	if (r_le(beg, val)) {
+	    if (EXCL(range)) {
+		if (r_lt(val, end))
+		    return Qtrue;
+	    }
+	    else {
+		if (r_le(val, end))
+		    return Qtrue;
+	    }
+	}
+	return Qfalse;
+    }
+    else if (TYPE(beg) == T_STRING &amp;&amp; TYPE(end) == T_STRING &amp;&amp;
+	     RSTRING_LEN(beg) == 1 &amp;&amp; RSTRING_LEN(end) == 1) {
+	if (NIL_P(val)) return Qfalse;
+	if (TYPE(val) == T_STRING) {
+	    if (RSTRING_LEN(val) == 0 || RSTRING_LEN(val) &gt; 1)
+		return Qfalse;
+	    else {
+		char b = RSTRING_PTR(beg)[0];
+		char e = RSTRING_PTR(end)[0];
+		char v = RSTRING_PTR(val)[0];
+
+		if (ISASCII(b) &amp;&amp; ISASCII(e) &amp;&amp; ISASCII(v)) {
+		    if (b &lt;= v &amp;&amp; v &lt; e) return Qtrue;
+		    if (!EXCL(range) &amp;&amp; v == e) return Qtrue;
+		    return Qfalse;
+		}
+	    }
+	}
+    }
+    /* TODO: ruby_frame-&gt;this_func = rb_intern(&quot;include?&quot;); */
+    return rb_call_super(1, &amp;val);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>min</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>min</strong> {|a, b| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the minimum value in <em>rng</em>. The second uses the block to
+compare values.  Returns nil if the first value in range is larger than the
+last value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>min</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>min</strong> {|a, b| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>a</tt>, <tt>b</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 620</span>
+
+static VALUE
+range_min(VALUE range)
+{
+    if (rb_block_given_p()) {
+	return rb_call_super(0, 0);
+    }
+    else {
+	VALUE b = RANGE_BEG(range);
+	VALUE e = RANGE_END(range);
+	int c = rb_cmpint(rb_funcall(b, id_cmp, 1, e), b, e);
+
+	if (c &gt; 0 || (c == 0 &amp;&amp; EXCL(range)))
+	    return Qnil;
+	return b;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="step-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>step</strong>(n = 1) {|obj| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>step</strong>(n = 1) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Iterates over <em>rng</em>, passing each <em>n</em>th element to the block.
+If the range contains numbers, <em>n</em> is added for each iteration. 
+Otherwise <code>step</code> invokes <code>succ</code> to iterate through
+range elements. The following code uses class <code>Xs</code>, which is
+defined in the class-level documentation.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<pre class="ruby"><span class="ruby-identifier">range</span> = <span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>)<span class="ruby-operator">..</span><span class="ruby-constant">Xs</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>)
+<span class="ruby-identifier">range</span>.<span class="ruby-identifier">step</span>(<span class="ruby-value">2</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">x</span>}
+<span class="ruby-identifier">range</span>.<span class="ruby-identifier">step</span>(<span class="ruby-value">3</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">x</span>}
+</pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""> 1 x
+ 3 xxx
+ 5 xxxxx
+ 7 xxxxxxx
+ 9 xxxxxxxxx
+ 1 x
+ 4 xxxx
+ 7 xxxxxxx
+10 xxxxxxxxxx</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>step</strong>(n = 1) {|obj| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>obj</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 347</span>
+
+static VALUE
+range_step(int argc, VALUE *argv, VALUE range)
+{
+    VALUE b, e, step, tmp;
+
+    RETURN_ENUMERATOR(range, argc, argv);
+
+    b = RANGE_BEG(range);
+    e = RANGE_END(range);
+    if (argc == 0) {
+	step = INT2FIX(1);
+    }
+    else {
+	rb_scan_args(argc, argv, &quot;01&quot;, &amp;step);
+	if (!rb_obj_is_kind_of(step, rb_cNumeric)) {
+	    step = rb_to_int(step);
+	}
+	if (rb_funcall(step, '&lt;', 1, INT2FIX(0))) {
+	    rb_raise(rb_eArgError, &quot;step can't be negative&quot;);
+	}
+	else if (!rb_funcall(step, '&gt;', 1, INT2FIX(0))) {
+	    rb_raise(rb_eArgError, &quot;step can't be 0&quot;);
+	}
+    }
+
+    if (FIXNUM_P(b) &amp;&amp; FIXNUM_P(e) &amp;&amp; FIXNUM_P(step)) { /* fixnums are special */
+	long end = FIX2LONG(e);
+	long i, unit = FIX2LONG(step);
+
+	if (!EXCL(range))
+	    end += 1;
+	i = FIX2LONG(b);
+	while (i &lt; end) {
+	    rb_yield(LONG2NUM(i));
+	    if (i + unit &lt; i) break;
+	    i += unit;
+	}
+
+    }
+    else if (SYMBOL_P(b) &amp;&amp; SYMBOL_P(e)) { /* symbols are special */
+	VALUE args[2], iter[2];
+
+	args[0] = rb_sym_to_s(e);
+	args[1] = EXCL(range) ? Qtrue : Qfalse;
+	iter[0] = INT2FIX(1);
+	iter[1] = step;
+	rb_block_call(rb_sym_to_s(b), rb_intern(&quot;upto&quot;), 2, args, sym_step_i, (VALUE)iter);
+    }
+    else if (ruby_float_step(b, e, step, EXCL(range))) {
+	/* done */
+    }
+    else if (rb_obj_is_kind_of(b, rb_cNumeric) ||
+	     !NIL_P(rb_check_to_integer(b, &quot;to_int&quot;)) ||
+	     !NIL_P(rb_check_to_integer(e, &quot;to_int&quot;))) {
+	ID op = EXCL(range) ? '&lt;' : rb_intern(&quot;&lt;=&quot;);
+	VALUE v = b;
+	int i = 0;
+
+	while (RTEST(rb_funcall(v, op, 1, e))) {
+	    rb_yield(v);
+	    i++;
+	    v = rb_funcall(b, '+', 1, rb_funcall(INT2NUM(i), '*', 1, step));
+	}
+    }
+    else {
+	tmp = rb_check_string_type(b);
+
+	if (!NIL_P(tmp)) {
+	    VALUE args[2], iter[2];
+
+	    b = tmp;
+	    args[0] = e;
+	    args[1] = EXCL(range) ? Qtrue : Qfalse;
+	    iter[0] = INT2FIX(1);
+	    iter[1] = step;
+	    rb_block_call(b, rb_intern(&quot;upto&quot;), 2, args, step_i, (VALUE)iter);
+	}
+	else {
+	    VALUE args[2];
+
+	    if (!discrete_object_p(b)) {
+		rb_raise(rb_eTypeError, &quot;can't iterate from %s&quot;,
+			 rb_obj_classname(b));
+	    }
+	    args[0] = INT2FIX(1);
+	    args[1] = step;
+	    range_each_func(range, step_i, args);
+	}
+    }
+    return range;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Convert this range object to a printable form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'range.c', line 755</span>
+
+static VALUE
+range_to_s(VALUE range)
+{
+    VALUE str, str2;
+
+    str = rb_obj_as_string(RANGE_BEG(range));
+    str2 = rb_obj_as_string(RANGE_END(range));
+    str = rb_str_dup(str);
+    rb_str_cat(str, &quot;...&quot;, EXCL(range) ? 3 : 2);
+    rb_str_append(str, str2);
+    OBJ_INFECT(str, str2);
+
+    return str;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:56 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

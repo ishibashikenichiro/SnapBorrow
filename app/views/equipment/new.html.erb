@@ -1,0 +1,54 @@
+<div align="center">
+<h1>備品管理画面</h1>
+<img alt="test" src="/assets/<%= @br_equipment_class.equipment_classes_name %>0.jpg" />
+<h1><%= @br_equipment_class.equipment_classes_name %>　一覧</h1>
+
+	<table>
+	<%= stylesheet_link_tag "equipment" %>
+	  <tr>
+	    <th>No</th>
+	    <th>固有ID</th>
+	    <th>利用状況</th>
+	    <th>確認ボタン</th>
+	  </tr>
+	  <% @br_equipment.each.with_index(1) do |set, i| %>
+	  	<%=form_tag({ :controller => 'equipment', :action => 'borrow' },{ :method => :post, :id => 'equipment'}) do %>
+	  		<%= hidden_field_tag 'eqid', set.id %>
+			  <tr>
+			    <td><h2><%= "#{i}" %></h2></td>
+			    <td><h2><%= set.unique_id %></h2></td>
+			    <td>
+			    <h2>
+			    <%= if set.state == 0 
+			    		@a = " 貸し出し可能 "
+			    	#elsif set.state == 1 && @lendingeq.user_id == session[:user_id] 
+			    		#@a = " 返却可能 "
+			    	else
+			    		borrowing = Equipment.find_by_id(set.id)
+			    		if borrowing != nil
+			    			borrowinguser = EquipmentLog.where(:equipment_id => borrowing.id).where(:equipment_return_date => nil).first
+			    			user_name = User.find_by_id(borrowinguser.user_id)
+			    			@a = user_name.login_id+"が利用中"
+			    		else
+			    			@a = "貸し出し中 "
+			    	    end
+			    	end
+			    		%>
+			    </h2>
+			    </td>
+			    <td>
+			    <br>
+			    	<%= if set.state == 0 
+			    		image_submit_tag("borrow.png", width: 200, height: 100)
+			    	else
+			    		image_submit_tag("return.png", width: 200, height: 100)
+			    	end
+			    		%>
+			    </td>
+			  </tr>
+		<% end %>
+	<% end %>
+</table>
+
+<h2><%= link_to 'Back', equipment_index_path %></h2>
+</div>

@@ -1,0 +1,52 @@
+box: wercker/rvm
+# Build definition
+# See the Rails section on the wercker devcenter:
+# http://devcenter.wercker.com/articles/languages/ruby/settingup-rails4.html
+# You will want to define your database as follows:
+services:
+   - wercker/mysql
+# See more about services on our devcenter:
+# http://devcenter.wercker.com/articles/services/
+build:
+    steps:
+        # Uncomment this to force RVM to use a specific Ruby version
+         - rvm-use:
+               version: ruby-1.9.3-p550
+
+        # A step that executes `bundle install` command
+         - bundle-install
+
+        # A step that prepares the database.yml using the database in services
+         - rails-database-yml:
+               services: mysql
+
+        # A custom script step, name value is used in the UI
+        # and the code value contains the command that get executed
+         - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+         - script:
+            name: setup DB
+            code: bundle exec rake db:migrate
+
+         - script:
+            name: unit test
+            code: bundle exec rake test:units
+
+         - script:
+            name: functional test
+            code: bundle exec rake test:functionals
+
+    after-steps:
+        - wantedly/pretty-slack-notify:
+            team: BooK-KOS
+            webhook_url: https://hooks.slack.com/services/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
+            channel: werker
+
+        # Add more steps here:
+        # - script:
+        #        name: rspec
+        #        code: bundle exec rspec

@@ -1,0 +1,27 @@
+<% provide(:title, 'バグ報告のご協力をお願いします。') %>
+<h1>バグ報告</h1>
+
+<h4>バグ報告のご協力をお願いします。<br>
+  見つけたバグについて詳しく教えてください。</h4>
+
+<%= form_tag "/error_report", :class => "form-horizontal", :role => "form" do %>
+  <div class="form-group">
+    <div class="col-sm-5">
+      <%= text_area_tag :detail, "",:class => "form-control", :rows => "5", :required => "required", :style => "resize:none;" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="hidden-xs col-sm-12">
+      <%= button_tag "送信", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="visible-xs-block col-xs-12">
+      <%= button_tag "送信", :class => 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Fcntl
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Fcntl.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (F)</a> &raquo;
+    
+    
+    <span class="title">Fcntl</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Fcntl
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/fcntl/fcntl.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="F_DUPFD-constant" class="">F_DUPFD =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_DUPFD</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_GETFD-constant" class="">F_GETFD =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_GETFD</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_GETLK-constant" class="">F_GETLK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_GETLK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_SETFD-constant" class="">F_SETFD =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_SETFD</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_GETFL-constant" class="">F_GETFL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_GETFL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_SETFL-constant" class="">F_SETFL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_SETFL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_SETLK-constant" class="">F_SETLK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_SETLK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_SETLKW-constant" class="">F_SETLKW =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_SETLKW</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="FD_CLOEXEC-constant" class="">FD_CLOEXEC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>FD_CLOEXEC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_RDLCK-constant" class="">F_RDLCK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_RDLCK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_UNLCK-constant" class="">F_UNLCK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_UNLCK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="F_WRLCK-constant" class="">F_WRLCK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>F_WRLCK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_CREAT-constant" class="">O_CREAT =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_CREAT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_EXCL-constant" class="">O_EXCL =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_EXCL</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_NOCTTY-constant" class="">O_NOCTTY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_NOCTTY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_TRUNC-constant" class="">O_TRUNC =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_TRUNC</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_APPEND-constant" class="">O_APPEND =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_APPEND</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_NONBLOCK-constant" class="">O_NONBLOCK =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_NONBLOCK</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_NDELAY-constant" class="">O_NDELAY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_NDELAY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_RDONLY-constant" class="">O_RDONLY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_RDONLY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_RDWR-constant" class="">O_RDWR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_RDWR</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_WRONLY-constant" class="">O_WRONLY =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2NUM</span><span class='lparen'>(</span><span class='const'>O_WRONLY</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="O_ACCMODE-constant" class="">O_ACCMODE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>O_RDONLY</span> <span class='op'>|</span> <span class='const'>O_WRONLY</span> <span class='op'>|</span> <span class='const'>O_RDWR</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:13 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

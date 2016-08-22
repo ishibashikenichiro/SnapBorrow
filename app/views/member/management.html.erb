@@ -1,0 +1,49 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_manager' %>
+<%= render 'shared/redirect_not_group' %>
+<h1>グループメンバ</h1>
+
+<h4>所属するグループのメンバの削除またはグループマネージャへの任命ができます</h4>
+<p style="color:red">*一度削除したメンバをこのグループに所属させるためにはもう一度招待してください</p>
+<div class="table-responsice">
+  <table class="table table-bordered table-striped table-condensed" style="width:70%">
+    <tr>
+      <th>メンバ名</th>
+      <th>登録日</th>
+      <th>役割</th>
+      <th>操作</th>
+    </tr>
+    <% @members.each do |member| %>
+      <% if member.user_id == session[:user_id] %>
+        <% next %>
+      <% end %>
+      <tr>
+        <td><%= member.user.nickname %></td>
+        <td><%= member.user.created_at.to_s(:date_jp) %></td>
+        <td>
+          <% if @managers.include?(member.user_id) %>
+            <%= "マネージャ" %>
+          <% else %>
+            <%="メンバ"%>
+          <% end %>
+        </td>
+
+        <td>
+          <div class="input-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">操作を選んでください<span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+
+              <% unless @managers.include?(member.user_id) %>
+                <li>
+                  <%= link_to "グループマネージャに任命", {:controller => "manager", :action => "create", :user_id => member.user_id}, :confirm => "「#{member.user.nickname}」をグループマネージャに任命します。\nよろしいですか？", :method => :post %>
+                </li>
+              <% end %>
+              <li>
+                <%= link_to "脱退させる", {:controller => "member", :action => "delete", :user_id => member.user_id}, :confirm => "本当に削除しますか？", :method => :delete %>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>

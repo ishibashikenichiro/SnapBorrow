@@ -1,0 +1,11 @@
+invitation1:
+        group_id: 1
+        mail: user3@test.com
+        url_hash: invitation1
+        expire_at: <%= 1.day.since %>
+
+invitation2:
+        group_id: 1
+        mail: user4@test.com
+        url_hash: invitation2
+        expire_at: <%= 1.day.since %>

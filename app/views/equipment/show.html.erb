@@ -1,0 +1,19 @@
+﻿<div align="center">
+<h1>備品一覧</h1>
+<%= stylesheet_link_tag "equipment" %>
+<table>
+  <tr>
+    <th><h3>No</h3></th>
+    <th><h3>備品名</h3></th>
+    <th><h3>写真</h3></th>
+  </tr>
+  <% @equipment_list.each.with_index(1) do |set, i| %>
+  <tr>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s %>"><h2><%= "#{i}" %></h2></a></td>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s%>"><h2><%= set.equipment_classes_name %></h2></a></td>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s %>"><img alt="equipment" src= "/assets/<%= set.equipment_classes_name %>0.jpg" width="320" height="240" /></a></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+

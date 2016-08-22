@@ -1,0 +1,5000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: DBM
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!DBM.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">DBM</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: DBM
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">DBM</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/dbm/dbm.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="READER-constant" class="">READER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates that dbm_open() should open the database in read-only mode</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>O_RDONLY</span><span class='op'>|</span><span class='const'>RUBY_DBM_RW_BIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="WRITER-constant" class="">WRITER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates that dbm_open() should open the database in read/write mode</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>O_RDWR</span><span class='op'>|</span><span class='const'>RUBY_DBM_RW_BIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="WRCREAT-constant" class="">WRCREAT =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates that dbm_open() should open the database in read/write mode, and
+create it if it does not already exist</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>O_RDWR</span><span class='op'>|</span><span class='const'>O_CREAT</span><span class='op'>|</span><span class='const'>RUBY_DBM_RW_BIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="NEWDB-constant" class="">NEWDB =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates that dbm_open() should open the database in read/write mode,
+create it if it does not already exist, and delete all contents if it does
+already exist.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>INT2FIX</span><span class='lparen'>(</span><span class='const'>O_RDWR</span><span class='op'>|</span><span class='const'>O_CREAT</span><span class='op'>|</span><span class='const'>O_TRUNC</span><span class='op'>|</span><span class='const'>RUBY_DBM_RW_BIT</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>since gdbm 1.9</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_rb_str_new2'>rb_str_new2</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unknown</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open-class_method" title="open (class method)">+ (Object) <strong>open</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Open a dbm database and yields it if a block is given.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D-instance_method" title="#[] (instance method)">- (nil) <strong>[]</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a value from the database by locating the key string provided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%5B%5D%3D-instance_method" title="#[]= (instance method)">- (Object) <strong>[]=</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Stores the specified string value in the database, indexed via the string
+key provided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear-instance_method" title="#clear (instance method)">- (Object) <strong>clear</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes all data from the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">- (Object) <strong>close</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed%3F-instance_method" title="#closed? (instance method)">- (Boolean) <strong>closed?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database is closed, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes an entry from the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_if-instance_method" title="#delete_if (instance method)">- (Object) <strong>delete_if</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes all entries for which the code block returns true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each_pair (instance method)">- (self) <strong>each_pair</strong> {|key, value| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls the block once for each [key, value] pair in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_key-instance_method" title="#each_key (instance method)">- (self) <strong>each_key</strong> {|key| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls the block once for each key string in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_pair-instance_method" title="#each_pair (instance method)">- (self) <strong>each_pair</strong> {|key, value| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls the block once for each [key, value] pair in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_value-instance_method" title="#each_value (instance method)">- (self) <strong>each_value</strong> {|value| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calls the block once for each value string in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#empty%3F-instance_method" title="#empty? (instance method)">- (Boolean) <strong>empty?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database is empty, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch-instance_method" title="#fetch (instance method)">- (Object) <strong>fetch</strong>(key[, ifnone]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a value from the database by locating the key string provided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_key%3F-instance_method" title="#has_key? (instance method)">- (Boolean) <strong>has_key?</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_value%3F-instance_method" title="#has_value? (instance method)">- (Boolean) <strong>has_value?</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified string value, false
+otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#include%3F-instance_method" title="#has_key? (instance method)">- (Boolean) <strong>has_key?</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>(filename[, mode[, flags]]) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Open a dbm database with the specified name, which can include a directory
+path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invert-instance_method" title="#invert (instance method)">- (Hash) <strong>invert</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a Hash (not a DBM database) created by using each value in the
+database as a key, with the corresponding key as its value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#key-instance_method" title="#key (instance method)">- (String) <strong>key</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the key for the specified value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#key%3F-instance_method" title="#has_key? (instance method)">- (Boolean) <strong>has_key?</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#keys-instance_method" title="#keys (instance method)">- (Array) <strong>keys</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array of all the string keys in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#length-instance_method" title="#length (instance method)">- (Integer) <strong>length</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of entries in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#member%3F-instance_method" title="#has_key? (instance method)">- (Boolean) <strong>has_key?</strong>(key) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject-instance_method" title="#reject (instance method)">- (Hash) <strong>reject</strong> {|key, value| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts the contents of the database to an in-memory Hash, then calls
+Hash#reject with the specified code block, returning a new Hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject%21-instance_method" title="#reject! (instance method)">- (Object) <strong>reject!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes all entries for which the code block returns true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#replace-instance_method" title="#replace (instance method)">- (Object) <strong>replace</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replaces the contents of the database with the contents of the specified
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select-instance_method" title="#select (instance method)">- (Array) <strong>select</strong> {|key, value| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new array consisting of the [key, value] pairs for which the code
+block returns true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shift-instance_method" title="#shift (instance method)">- (Array) <strong>shift</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes a [key, value] pair from the database, and returns it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#length (instance method)">- (Integer) <strong>length</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of entries in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#store-instance_method" title="#store (instance method)">- (Object) <strong>store</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Stores the specified string value in the database, indexed via the string
+key provided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_a-instance_method" title="#to_a (instance method)">- (Array) <strong>to_a</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts the contents of the database to an array of [key, value] arrays,
+and returns it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_hash-instance_method" title="#to_hash (instance method)">- (Hash) <strong>to_hash</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts the contents of the database to an in-memory Hash object, and
+returns it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Updates the database with multiple values from the specified object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#value%3F-instance_method" title="#has_value? (instance method)">- (Boolean) <strong>has_value?</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the database contains the specified string value, false
+otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#values-instance_method" title="#values (instance method)">- (Array) <strong>values</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array of all the string values in the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#values_at-instance_method" title="#values_at (instance method)">- (Array) <strong>values_at</strong>(key, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array containing the values associated with the given keys.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(filename[, mode[, flags]]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Open a dbm database with the specified name, which can include a directory
+path. Any file extensions needed will be supplied automatically by the dbm
+library. For example, Berkeley DB appends ‘.db’, and GNU gdbm uses two
+physical files with extensions ‘.dir’ and ‘.pag’.</p>
+
+<p>The mode should be an integer, as for Unix chmod.</p>
+
+<p>Flags should be one of READER, WRITER, WRCREAT or NEWDB.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 116</span>
+
+static VALUE
+fdbm_initialize(int argc, VALUE *argv, VALUE obj)
+{
+    volatile VALUE file;
+    VALUE vmode, vflags;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    int mode, flags = 0;
+
+    if (rb_scan_args(argc, argv, &quot;12&quot;, &amp;file, &amp;vmode, &amp;vflags) == 1) {
+	mode = 0666;		/* default value */
+    }
+    else if (NIL_P(vmode)) {
+	mode = -1;		/* return nil if DB not exist */
+    }
+    else {
+	mode = NUM2INT(vmode);
+    }
+
+    if (!NIL_P(vflags))
+        flags = NUM2INT(vflags);
+
+    FilePathValue(file);
+
+    if (flags &amp; RUBY_DBM_RW_BIT) {
+        flags &amp;= ~RUBY_DBM_RW_BIT;
+        dbm = dbm_open(RSTRING_PTR(file), flags, mode);
+    }
+    else {
+        dbm = 0;
+        if (mode &gt;= 0) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDWR|O_CREAT, mode);
+        }
+        if (!dbm) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDWR, 0);
+        }
+        if (!dbm) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDONLY, 0);
+        }
+    }
+
+    if (!dbm) {
+	if (mode == -1) return Qnil;
+	rb_sys_fail(RSTRING_PTR(file));
+    }
+
+    dbmp = ALLOC(struct dbmdata);
+    DATA_PTR(obj) = dbmp;
+    dbmp-&gt;di_dbm = dbm;
+    dbmp-&gt;di_size = -1;
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="open-class_method">
+  
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>open</strong>(filename[, mode[, flags]]) </span>
+    
+      <span class="overload">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>open</strong>(filename[, mode[, flags]]) {|dbm| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Open a dbm database and yields it if a block is given. See also
+<code>DBM.new</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>open</strong>(filename[, mode[, flags]]) {|dbm| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>dbm</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 178</span>
+
+static VALUE
+fdbm_s_open(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE obj = Data_Wrap_Struct(klass, 0, free_dbm, 0);
+
+    if (NIL_P(fdbm_initialize(argc, argv, obj))) {
+	return Qnil;
+    }
+
+    if (rb_block_given_p()) {
+        return rb_ensure(rb_yield, obj, fdbm_close, obj);
+    }
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-instance_method">
+  
+    - (<tt>nil</tt>) <strong>[]</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a value from the database by locating the key string provided.  If
+the key is not found, returns nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+222
+223
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 222</span>
+
+static VALUE
+fdbm_aref(VALUE obj, VALUE keystr)
+{
+    return fdbm_fetch(obj, keystr, Qnil);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="[]=-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>store</strong>(key, value) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]=</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Stores the specified string value in the database, indexed via the string
+key provided.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 565</span>
+
+static VALUE
+fdbm_store(VALUE obj, VALUE keystr, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    keystr = rb_obj_as_string(keystr);
+    valstr = rb_obj_as_string(valstr);
+
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (int)RSTRING_LEN(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    if (dbm_store(dbm, key, val, DBM_REPLACE)) {
+#ifdef HAVE_DBM_CLEARERR
+	dbm_clearerr(dbm);
+#endif
+	if (errno == EPERM) rb_sys_fail(0);
+	rb_raise(rb_eDBMError, &quot;dbm_store failed&quot;);
+    }
+
+    return valstr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clear-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>clear</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes all data from the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 467</span>
+
+static VALUE
+fdbm_clear(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    while (key = dbm_firstkey(dbm), key.dptr) {
+	if (dbm_delete(dbm, key)) {
+	    rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+	}
+    }
+    dbmp-&gt;di_size = 0;
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>close</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 65</span>
+
+static VALUE
+fdbm_close(VALUE obj)
+{
+    struct dbmdata *dbmp;
+
+    GetDBM(obj, dbmp);
+    dbm_close(dbmp-&gt;di_dbm);
+    dbmp-&gt;di_dbm = 0;
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>closed?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database is closed, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 83</span>
+
+static VALUE
+fdbm_closed(VALUE obj)
+{
+    struct dbmdata *dbmp;
+
+    Data_Get_Struct(obj, struct dbmdata, dbmp);
+    if (dbmp == 0)
+	return Qtrue;
+    if (dbmp-&gt;di_dbm == 0)
+	return Qtrue;
+
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>delete</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes an entry from the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 348</span>
+
+static VALUE
+fdbm_delete(VALUE obj, VALUE keystr)
+{
+    datum key, value;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE valstr;
+
+    fdbm_modify(obj);
+    ExportStringValue(keystr);
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    GetDBM2(obj, dbmp, dbm);
+
+    value = dbm_fetch(dbm, key);
+    if (value.dptr == 0) {
+	if (rb_block_given_p()) return rb_yield(keystr);
+	return Qnil;
+    }
+
+    /* need to save value before dbm_delete() */
+    valstr = rb_tainted_str_new(value.dptr, value.dsize);
+
+    if (dbm_delete(dbm, key)) {
+	dbmp-&gt;di_size = -1;
+	rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+    }
+    else if (dbmp-&gt;di_size &gt;= 0) {
+	dbmp-&gt;di_size--;
+    }
+    return valstr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_if-instance_method">
+  
+    
+      <span class="overload">- (<tt>self</tt>) <strong>reject!</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt>self</tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes all entries for which the code block returns true. Returns self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>self</tt>) <strong>reject!</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>self</tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 420</span>
+
+static VALUE
+fdbm_delete_if(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE ret, ary = rb_ary_new();
+    int i, status = 0;
+    long n;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    n = dbmp-&gt;di_size;
+    dbmp-&gt;di_size = -1;
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	keystr = rb_tainted_str_new(key.dptr, key.dsize);
+	valstr = rb_tainted_str_new(val.dptr, val.dsize);
+        ret = rb_protect(rb_yield, rb_assoc_new(rb_str_dup(keystr), valstr), &amp;status);
+        if (status != 0) break;
+	if (RTEST(ret)) rb_ary_push(ary, keystr);
+	GetDBM2(obj, dbmp, dbm);
+    }
+
+    for (i = 0; i &lt; RARRAY_LEN(ary); i++) {
+	keystr = RARRAY_PTR(ary)[i];
+	ExportStringValue(keystr);
+	key.dptr = RSTRING_PTR(keystr);
+	key.dsize = (int)RSTRING_LEN(keystr);
+	if (dbm_delete(dbm, key)) {
+	    rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+	}
+    }
+    if (status) rb_jump_tag(status);
+    if (n &gt; 0) dbmp-&gt;di_size = n - RARRAY_LEN(ary);
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    - (<tt>self</tt>) <strong>each_pair</strong> {|key, value| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls the block once for each [key, value] pair in the database. Returns
+self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 703</span>
+
+static VALUE
+fdbm_each_pair(VALUE obj)
+{
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    VALUE keystr, valstr;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	keystr = rb_tainted_str_new(key.dptr, key.dsize);
+	valstr = rb_tainted_str_new(val.dptr, val.dsize);
+	rb_yield(rb_assoc_new(keystr, valstr));
+	GetDBM2(obj, dbmp, dbm);
+    }
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_key-instance_method">
+  
+    - (<tt>self</tt>) <strong>each_key</strong> {|key| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls the block once for each key string in the database. Returns self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 679</span>
+
+static VALUE
+fdbm_each_key(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	rb_yield(rb_tainted_str_new(key.dptr, key.dsize));
+	GetDBM2(obj, dbmp, dbm);
+    }
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_pair-instance_method">
+  
+    - (<tt>self</tt>) <strong>each_pair</strong> {|key, value| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls the block once for each [key, value] pair in the database. Returns
+self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 703</span>
+
+static VALUE
+fdbm_each_pair(VALUE obj)
+{
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    VALUE keystr, valstr;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	keystr = rb_tainted_str_new(key.dptr, key.dsize);
+	valstr = rb_tainted_str_new(val.dptr, val.dsize);
+	rb_yield(rb_assoc_new(keystr, valstr));
+	GetDBM2(obj, dbmp, dbm);
+    }
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_value-instance_method">
+  
+    - (<tt>self</tt>) <strong>each_value</strong> {|value| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calls the block once for each value string in the database. Returns self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 655</span>
+
+static VALUE
+fdbm_each_value(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	rb_yield(rb_tainted_str_new(val.dptr, val.dsize));
+	GetDBM2(obj, dbmp, dbm);
+    }
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="empty?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>empty?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database is empty, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 626</span>
+
+static VALUE
+fdbm_empty_p(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    int i = 0;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &lt; 0) {
+	dbm = dbmp-&gt;di_dbm;
+
+	for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	    i++;
+	}
+    }
+    else {
+	i = (int)dbmp-&gt;di_size;
+    }
+    if (i == 0) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fetch</strong>(key[, ifnone]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a value from the database by locating the key string provided.  If
+the key is not found, returns <code>ifnone</code>. If <code>ifnone</code>
+is not given, raises IndexError.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 236</span>
+
+static VALUE
+fdbm_fetch_m(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE keystr, valstr, ifnone;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;keystr, &amp;ifnone);
+    valstr = fdbm_fetch(obj, keystr, ifnone);
+    if (argc == 1 &amp;&amp; !rb_block_given_p() &amp;&amp; NIL_P(valstr))
+	rb_raise(rb_eIndexError, &quot;key not found&quot;);
+
+    return valstr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_key?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_key?</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 780</span>
+
+static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(keystr);
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_value?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_value?</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified string value, false
+otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 804</span>
+
+static VALUE
+fdbm_has_value(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(valstr);
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (int)RSTRING_LEN(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	if (val.dsize == (int)RSTRING_LEN(valstr) &amp;&amp;
+	    memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0)
+	    return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="include?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_key?</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 780</span>
+
+static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(keystr);
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+278
+279
+280
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 278</span>
+
+static VALUE
+fdbm_index(VALUE hash, VALUE value)
+{
+    rb_warn(&quot;DBM#index is deprecated; use DBM#key&quot;);
+    return fdbm_key(hash, value);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>) <strong>invert</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a Hash (not a DBM database) created by using each value in the
+database as a key, with the corresponding key as its value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 494</span>
+
+static VALUE
+fdbm_invert(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE hash = rb_hash_new();
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	keystr = rb_tainted_str_new(key.dptr, key.dsize);
+	valstr = rb_tainted_str_new(val.dptr, val.dsize);
+	rb_hash_aset(hash, valstr, keystr);
+    }
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="key-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>key</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the key for the specified value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 255</span>
+
+static VALUE
+fdbm_key(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(valstr);
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (int)RSTRING_LEN(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	if ((long)val.dsize == (int)RSTRING_LEN(valstr) &amp;&amp;
+	    memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0) {
+	    return rb_tainted_str_new(key.dptr, key.dsize);
+	}
+    }
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="key?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_key?</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 780</span>
+
+static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(keystr);
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="keys-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>keys</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array of all the string keys in the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 732</span>
+
+static VALUE
+fdbm_keys(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	rb_ary_push(ary, rb_tainted_str_new(key.dptr, key.dsize));
+    }
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="length-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>length</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of entries in the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 601</span>
+
+static VALUE
+fdbm_length(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    int i = 0;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &gt; 0) return INT2FIX(dbmp-&gt;di_size);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	i++;
+    }
+    dbmp-&gt;di_size = i;
+
+    return INT2FIX(i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="member?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_key?</strong>(key) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified key, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 780</span>
+
+static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(keystr);
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reject-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>) <strong>reject</strong> {|key, value| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts the contents of the database to an in-memory Hash, then calls
+Hash#reject with the specified code block, returning a new Hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+884
+885
+886
+887
+888</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 884</span>
+
+static VALUE
+fdbm_reject(VALUE obj)
+{
+    return rb_hash_delete_if(fdbm_to_hash(obj));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reject!-instance_method">
+  
+    
+      <span class="overload">- (<tt>self</tt>) <strong>reject!</strong> {|key, value| ... }</span>
+    
+      <span class="overload">- (<tt>self</tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes all entries for which the code block returns true. Returns self.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>self</tt>) <strong>reject!</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>self</tt>) <strong>delete_if</strong> {|key, value| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 420</span>
+
+static VALUE
+fdbm_delete_if(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE ret, ary = rb_ary_new();
+    int i, status = 0;
+    long n;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    n = dbmp-&gt;di_size;
+    dbmp-&gt;di_size = -1;
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	keystr = rb_tainted_str_new(key.dptr, key.dsize);
+	valstr = rb_tainted_str_new(val.dptr, val.dsize);
+        ret = rb_protect(rb_yield, rb_assoc_new(rb_str_dup(keystr), valstr), &amp;status);
+        if (status != 0) break;
+	if (RTEST(ret)) rb_ary_push(ary, keystr);
+	GetDBM2(obj, dbmp, dbm);
+    }
+
+    for (i = 0; i &lt; RARRAY_LEN(ary); i++) {
+	keystr = RARRAY_PTR(ary)[i];
+	ExportStringValue(keystr);
+	key.dptr = RSTRING_PTR(keystr);
+	key.dsize = (int)RSTRING_LEN(keystr);
+	if (dbm_delete(dbm, key)) {
+	    rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+	}
+    }
+    if (status) rb_jump_tag(status);
+    if (n &gt; 0) dbmp-&gt;di_size = n - RARRAY_LEN(ary);
+
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="replace-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>replace</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replaces the contents of the database with the contents of the specified
+object. Takes any object which implements the each_pair method, including
+Hash and DBM objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+549
+550
+551
+552
+553
+554
+555</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 549</span>
+
+static VALUE
+fdbm_replace(VALUE obj, VALUE other)
+{
+    fdbm_clear(obj);
+    rb_block_call(other, rb_intern(&quot;each_pair&quot;), 0, 0, update_i, obj);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>select</strong> {|key, value| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new array consisting of the [key, value] pairs for which the code
+block returns true.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 292</span>
+
+static VALUE
+fdbm_select(VALUE obj)
+{
+    VALUE new = rb_ary_new();
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	VALUE assoc, v;
+	val = dbm_fetch(dbm, key);
+	assoc = rb_assoc_new(rb_tainted_str_new(key.dptr, key.dsize),
+			     rb_tainted_str_new(val.dptr, val.dsize));
+	v = rb_yield(assoc);
+	if (RTEST(v)) {
+	    rb_ary_push(new, assoc);
+	}
+	GetDBM2(obj, dbmp, dbm);
+    }
+
+    return new;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shift-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>shift</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes a [key, value] pair from the database, and returns it. If the
+database is empty, returns nil. The order in which values are
+removed/returned is not guaranteed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 390</span>
+
+static VALUE
+fdbm_shift(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+
+    key = dbm_firstkey(dbm);
+    if (!key.dptr) return Qnil;
+    val = dbm_fetch(dbm, key);
+    keystr = rb_tainted_str_new(key.dptr, key.dsize);
+    valstr = rb_tainted_str_new(val.dptr, val.dsize);
+    dbm_delete(dbm, key);
+
+    return rb_assoc_new(keystr, valstr);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>length</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of entries in the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 601</span>
+
+static VALUE
+fdbm_length(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    int i = 0;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &gt; 0) return INT2FIX(dbmp-&gt;di_size);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	i++;
+    }
+    dbmp-&gt;di_size = i;
+
+    return INT2FIX(i);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="store-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>store</strong>(key, value) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>[]=</strong>(key) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Stores the specified string value in the database, indexed via the string
+key provided.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 565</span>
+
+static VALUE
+fdbm_store(VALUE obj, VALUE keystr, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    keystr = rb_obj_as_string(keystr);
+    valstr = rb_obj_as_string(valstr);
+
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (int)RSTRING_LEN(keystr);
+
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (int)RSTRING_LEN(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    if (dbm_store(dbm, key, val, DBM_REPLACE)) {
+#ifdef HAVE_DBM_CLEARERR
+	dbm_clearerr(dbm);
+#endif
+	if (errno == EPERM) rb_sys_fail(0);
+	rb_raise(rb_eDBMError, &quot;dbm_store failed&quot;);
+    }
+
+    return valstr;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_a-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>to_a</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts the contents of the database to an array of [key, value] arrays,
+and returns it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 832</span>
+
+static VALUE
+fdbm_to_a(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	rb_ary_push(ary, rb_assoc_new(rb_tainted_str_new(key.dptr, key.dsize),
+				      rb_tainted_str_new(val.dptr, val.dsize)));
+    }
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_hash-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>) <strong>to_hash</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts the contents of the database to an in-memory Hash object, and
+returns it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 858</span>
+
+static VALUE
+fdbm_to_hash(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE hash;
+
+    GetDBM2(obj, dbmp, dbm);
+    hash = rb_hash_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	rb_hash_aset(hash, rb_tainted_str_new(key.dptr, key.dsize),
+		           rb_tainted_str_new(val.dptr, val.dsize));
+    }
+
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>update</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates the database with multiple values from the specified object. Takes
+any object which implements the each_pair method, including Hash and DBM
+objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+534
+535
+536
+537
+538
+539</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 534</span>
+
+static VALUE
+fdbm_update(VALUE obj, VALUE other)
+{
+    rb_block_call(other, rb_intern(&quot;each_pair&quot;), 0, 0, update_i, obj);
+    return obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="value?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>has_value?</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the database contains the specified string value, false
+otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 804</span>
+
+static VALUE
+fdbm_has_value(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    ExportStringValue(valstr);
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (int)RSTRING_LEN(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	if (val.dsize == (int)RSTRING_LEN(valstr) &amp;&amp;
+	    memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0)
+	    return Qtrue;
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="values-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>values</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array of all the string values in the database.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 756</span>
+
+static VALUE
+fdbm_values(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+	val = dbm_fetch(dbm, key);
+	rb_ary_push(ary, rb_tainted_str_new(val.dptr, val.dsize));
+    }
+
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="values_at-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>values_at</strong>(key, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array containing the values associated with the given keys.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/dbm/dbm.c', line 322</span>
+
+static VALUE
+fdbm_values_at(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE new = rb_ary_new2(argc);
+    int i;
+
+    for (i=0; i&lt;argc; i++) {
+        rb_ary_push(new, fdbm_fetch(obj, argv[i], Qnil));
+    }
+
+    return new;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:08 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

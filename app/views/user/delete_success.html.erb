@@ -1,0 +1,16 @@
+<%= render 'shared/redirect_login' %>
+<% provide(:title, '削除完了') %>
+<h1>ユーザ削除完了</h1>
+
+<h4>ユーザの削除が完了しました。</h4>
+<p>3秒後にログインページに移動します。</p>
+
+<script>
+  <% if session[:web_view] %>
+    Android.closeWebView();
+  <% else %>
+    setTimeout(function(){
+    window.location = '/login';
+    }, 3000);
+  <% end %>
+</script>

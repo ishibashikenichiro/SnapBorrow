@@ -1,0 +1,126 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<style>
+  #images {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align:center;
+  top:0px;
+  }
+
+  #qr_raw {
+  width: 50%;
+  float:left;
+  text-align:center;
+  }
+
+  #qr {
+  width: 50%;
+  float:right;
+  text-align:center;
+  }
+
+</style>
+
+<h1><%= @shelf.name %></h1>
+
+<% if flash[:message] %>
+<div class="alert alert-success h4" role="alert">
+  <%= flash[:message] %>
+</div>
+<% end %>
+
+
+
+<div id='images'>
+  <p>本棚を識別するためのQRコードです。<br>
+    印刷してご利用ください。</p>
+  <div id='qr_raw'>
+    <%= link_to image_tag(url_for(:controller => :shelf, :action => :get_qr, :format => :png, :id => params[:id]) ),
+url_for(:controller => :shelf, :action => :get_qr, :format => :png, :id => params[:id]), :target => "_blank", :class => "image-responsive" %>
+    <p>QRコードのみ</p>
+  </div>
+  <div id='qr'>
+    <%= link_to image_tag(url_for(:controller => :shelf, :action => :get_qr_with_name, :format => :png, :id => params[:id]) ),
+url_for(:controller => :shelf, :action => :get_qr_with_name, :format => :png, :id => params[:id]), :target => "_blank", :class => "image-responsive" %>
+    <p>グループ名と本棚名付き</p>
+  </div>
+
+  <div>
+    <%= link_to '本棚一覧に戻る', shelf_index_path,  :method => :get%>
+  </div>
+</div>
+<div style="color:red">
+  <h4><%= flash[:shelf_message] %> </h4>
+</div>
+
+<%= form_tag "/shelf/change_shelf/#{params[:id]}" do %>
+<div class="table-respnsive">
+  <h4>登録図書</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <tr>
+      <th style="text-align:center">
+        <button type="button" id="check_all" class="btn btn-default" value="false">
+          <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+        </button>
+      </th>
+      <th>図書タイトル</th>
+      <th>著者</th>
+      <th>本棚</th>
+      <th>登録日</th>
+      <th>借用状態</th>
+    </tr>
+
+    <% @books.each do |book| %>
+      <% if book.delete_date then next end %>
+        <%  bc = @catalogs.find_by_book_code_and_group_id(book.book_code, [0, session[:group_id]]) %>
+        <tr>
+          <td>
+            <%= check_box_tag "books[]", book.id, false, :style => "width:100%", :class => "shelf_check"%>
+          </td>
+          <td> <%= bc.title %></td>
+          <td> <%= bc.authors %></td>
+          <td>
+            <% if Shelf.find_by_shelf_id_and_group_id(book.shelf_id, session[:group_id]) %>
+              <%= Shelf.find_by_shelf_id_and_group_id(book.shelf_id, session[:group_id]).name %>
+            <% else %>
+              本棚が未登録です
+            <% end %>
+          </td>
+          <td>
+            <%= book.created_at.to_s(:date_jp) %>
+          </td>
+          <td> <% if book.state %>
+              <% logs = LendLog.find_all_by_book_id_and_return_date(book.id, nil) %>
+              <% if !logs.empty? %>
+                借用中( <%= User.find(logs.last.user_id).nickname %> )
+              <% end %>
+            <% elsif Shelf.find_by_shelf_id_and_group_id(book.shelf_id, session[:group_id]) %>
+              「<%= content_tag(:span, :style => "color:#4928BF") do  %>
+                <%= Shelf.find_by_shelf_id_and_group_id(book.shelf_id, session[:group_id]).name %>
+            <% end %>」にあります
+          <% else %>
+            本棚が未登録です
+      <% end %>
+          </td>
+</tr>
+
+<% end %>
+</table>
+<%= select_tag "shelf_id", options_for_select(@shelves.map{|t| [t.name, t.shelf_id]}), :class => "form-control", :style => "width:50%" %>
+<%= submit_tag "選択した図書を移動する", :class => 'btn btn-default', :disabled => @shelves.empty? %>
+
+</div>
+<% end %>
+
+<script>
+  $('#check_all').click(function(){ $('.shelf_check').prop("checked",
+  function(index, prop){
+  var button = $('#check_all')[0]
+  if (button.value != false) {
+  return true;
+  } else {
+  return false;
+  }})});
+</script>

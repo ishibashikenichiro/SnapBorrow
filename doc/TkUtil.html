@@ -1,0 +1,1617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: TkUtil
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TkUtil.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TkUtil</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: TkUtil
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/tk/tkutil/tkutil.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="TkUtil/CallbackSubst.html" title="TkUtil::CallbackSubst (class)">CallbackSubst</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="RELEASE_DATE-constant" class="">RELEASE_DATE =
+          <div class="docstring">
+  <div class="discussion">
+    <hr style="height: 10px">
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='id identifier rubyid_rb_obj_freeze'>rb_obj_freeze</span><span class='lparen'>(</span><span class='id identifier rubyid_rb_str_new2'>rb_str_new2</span><span class='lparen'>(</span><span class='id identifier rubyid_tkutil_release_date'>tkutil_release_date</span><span class='rparen'>)</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="None-constant" class="">None =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>TK_None</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_conv_args-class_method" title="_conv_args (class method)">+ (Object) <strong>_conv_args</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_get_eval_enc_str-class_method" title="_get_eval_enc_str (class method)">+ (Object) <strong>_get_eval_enc_str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_get_eval_string-class_method" title="_get_eval_string (class method)">+ (Object) <strong>_get_eval_string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_symbolkey2str-class_method" title="_symbolkey2str (class method)">+ (Object) <strong>_symbolkey2str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bool-class_method" title="bool (class method)">+ (Object) <strong>bool</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>**********************************.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#callback-class_method" title="callback (class method)">+ (Object) <strong>callback</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval_cmd-class_method" title="eval_cmd (class method)">+ (Object) <strong>eval_cmd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash_kv-class_method" title="hash_kv (class method)">+ (Object) <strong>hash_kv</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#install_cmd-class_method" title="install_cmd (class method)">+ (Object) <strong>install_cmd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_or_nil-class_method" title="num_or_nil (class method)">+ (Object) <strong>num_or_nil</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_or_str-class_method" title="num_or_str (class method)">+ (Object) <strong>num_or_str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#number-class_method" title="number (class method)">+ (Object) <strong>number</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#string-class_method" title="string (class method)">+ (Object) <strong>string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uninstall_cmd-class_method" title="uninstall_cmd (class method)">+ (Object) <strong>uninstall_cmd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#untrust-class_method" title="untrust (class method)">+ (Object) <strong>untrust</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>**********************************.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_conv_args-instance_method" title="#_conv_args (instance method)">- (Object) <strong>_conv_args</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_fromUTF8-instance_method" title="#_fromUTF8 (instance method)">- (Object) <strong>_fromUTF8</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_get_eval_enc_str-instance_method" title="#_get_eval_enc_str (instance method)">- (Object) <strong>_get_eval_enc_str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_get_eval_string-instance_method" title="#_get_eval_string (instance method)">- (Object) <strong>_get_eval_string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_symbolkey2str-instance_method" title="#_symbolkey2str (instance method)">- (Object) <strong>_symbolkey2str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#_toUTF8-instance_method" title="#_toUTF8 (instance method)">- (Object) <strong>_toUTF8</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bool-instance_method" title="#bool (instance method)">- (Object) <strong>bool</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>**********************************.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash_kv-instance_method" title="#hash_kv (instance method)">- (Object) <strong>hash_kv</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_or_nil-instance_method" title="#num_or_nil (instance method)">- (Object) <strong>num_or_nil</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#num_or_str-instance_method" title="#num_or_str (instance method)">- (Object) <strong>num_or_str</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#number-instance_method" title="#number (instance method)">- (Object) <strong>number</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#string-instance_method" title="#string (instance method)">- (Object) <strong>string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="_conv_args-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_conv_args</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+932
+933
+934</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 932</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_conv_args'>tk_conv_args</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_get_eval_enc_str-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_get_eval_enc_str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+920
+921
+922</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 920</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_get_eval_enc_str'>tk_get_eval_enc_str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_get_eval_string-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_get_eval_string</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+905
+906
+907</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 905</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_get_eval_string'>tk_get_eval_string</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_symbolkey2str-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_symbolkey2str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+274
+275
+276</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 274</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_symbolkey2str'>tk_symbolkey2str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bool-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bool</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>**********************************</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+981
+982
+983</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 981</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_bool'>tcl2rb_bool</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="callback-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>callback</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 145</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_do_callback'>tk_do_callback</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eval_cmd-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>eval_cmd</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 133</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_eval_cmd'>tk_eval_cmd</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span> <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash_kv-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>hash_kv</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+748
+749
+750</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 748</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_hash_kv'>tk_hash_kv</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="install_cmd-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>install_cmd</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+178
+179
+180</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 178</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_install_cmd'>tk_install_cmd</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="num_or_nil-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>num_or_nil</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1119
+1120
+1121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1119</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_num_or_nil'>tcl2rb_num_or_nil</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="num_or_str-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>num_or_str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1105
+1106
+1107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1105</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_num_or_str'>tcl2rb_num_or_str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="number-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>number</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1069
+1070
+1071</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1069</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_number'>tcl2rb_number</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="string-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>string</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1093
+1094
+1095</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1093</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_string'>tcl2rb_string</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uninstall_cmd-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>uninstall_cmd</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+200
+201
+202</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 200</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_uninstall_cmd'>tk_uninstall_cmd</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_cmd_id'>cmd_id</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="untrust-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>untrust</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>**********************************</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 118</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_obj_untrust'>tk_obj_untrust</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="_conv_args-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_conv_args</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+932
+933
+934</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 932</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_conv_args'>tk_conv_args</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_fromUTF8-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_fromUTF8</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 230</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_fromUTF8'>tk_fromUTF8</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_get_eval_enc_str-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_get_eval_enc_str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+920
+921
+922</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 920</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_get_eval_enc_str'>tk_get_eval_enc_str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_get_eval_string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_get_eval_string</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+905
+906
+907</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 905</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_get_eval_string'>tk_get_eval_string</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_symbolkey2str-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_symbolkey2str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+274
+275
+276</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 274</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_symbolkey2str'>tk_symbolkey2str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="_toUTF8-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>_toUTF8</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 221</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_toUTF8'>tk_toUTF8</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bool-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bool</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>**********************************</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+981
+982
+983</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 981</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_bool'>tcl2rb_bool</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hash_kv-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>hash_kv</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+748
+749
+750</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 748</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tk_hash_kv'>tk_hash_kv</span><span class='lparen'>(</span><span class='id identifier rubyid_argc'>argc</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_int'>int</span>   <span class='id identifier rubyid_argc'>argc</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="num_or_nil-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>num_or_nil</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1119
+1120
+1121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1119</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_num_or_nil'>tcl2rb_num_or_nil</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="num_or_str-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>num_or_str</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1105
+1106
+1107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1105</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_num_or_str'>tcl2rb_num_or_str</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="number-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>number</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1069
+1070
+1071</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1069</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_number'>tcl2rb_number</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>string</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1093
+1094
+1095</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/tk/tkutil/tkutil.c', line 1093</span>
+
+<span class='id identifier rubyid_static'>static</span> <span class='const'>VALUE</span>
+<span class='id identifier rubyid_tcl2rb_string'>tcl2rb_string</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='const'>VALUE</span> <span class='kw'>self</span><span class='semicolon'>;</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:16 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

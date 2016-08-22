@@ -1,0 +1,1351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: GC
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!GC.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (G)</a> &raquo;
+    
+    
+    <span class="title">GC</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: GC
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">gc.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>GC</code> module provides an interface to Ruby’s mark and sweep
+garbage collection mechanism. Some of the underlying methods are also
+available via the ObjectSpace module.</p>
+
+<p>You may obtain information about the operation of the GC through
+GC::Profiler.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="GC/Profiler.html" title="GC::Profiler (module)">Profiler</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count-class_method" title="count (class method)">+ (Integer) <strong>count</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The number of times GC occurred.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#disable-class_method" title="disable (class method)">+ (Boolean) <strong>disable</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disables garbage collection, returning true if garbage collection was
+already disabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enable-class_method" title="enable (class method)">+ (Boolean) <strong>enable</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enables garbage collection, returning true if garbage collection was
+previously disabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#malloc_allocated_size-class_method" title="malloc_allocated_size (class method)">+ (Integer) <strong>malloc_allocated_size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The allocated size by malloc().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#malloc_allocations-class_method" title="malloc_allocations (class method)">+ (Integer) <strong>malloc_allocations</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The number of allocated memory object by malloc().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start-class_method" title="start (class method)">+ (Object) <strong>start</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates garbage collection, unless manually disabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stat-class_method" title="stat (class method)">+ (Hash) <strong>stat</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a Hash containing information about the GC.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stress-class_method" title="stress (class method)">+ (Boolean) <strong>stress</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns current status of GC stress mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stress%3D-class_method" title="stress= (class method)">+ (Boolean) <strong>stress=</strong>(bool) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Updates the GC stress mode.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#garbage_collect-instance_method" title="#garbage_collect (instance method)">- (Object) <strong>garbage_collect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates garbage collection, unless manually disabled.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="count-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>count</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The number of times GC occurred.</p>
+
+<p>It returns the number of times GC occurred since the process started.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3401
+3402
+3403
+3404
+3405</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3401</span>
+
+static VALUE
+gc_count(VALUE self)
+{
+    return UINT2NUM((&amp;rb_objspace)-&gt;count);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="disable-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>disable</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Disables garbage collection, returning <code>true</code> if garbage
+collection was already disabled.</p>
+
+<pre class="ruby"><span class="ruby-constant">GC</span>.<span class="ruby-identifier">disable</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">GC</span>.<span class="ruby-identifier">disable</span>   <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+956
+957
+958
+959
+960
+961
+962
+963
+964</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 956</span>
+
+VALUE
+rb_gc_disable(void)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    int old = dont_gc;
+
+    dont_gc = TRUE;
+    return old ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enable-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>enable</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enables garbage collection, returning <code>true</code> if garbage
+collection was previously disabled.</p>
+
+<pre class="ruby"><span class="ruby-constant">GC</span>.<span class="ruby-identifier">disable</span>   <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">GC</span>.<span class="ruby-identifier">enable</span>    <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">GC</span>.<span class="ruby-identifier">enable</span>    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+934
+935
+936
+937
+938
+939
+940
+941
+942</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 934</span>
+
+VALUE
+rb_gc_enable(void)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    int old = dont_gc;
+
+    dont_gc = FALSE;
+    return old ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="malloc_allocated_size-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>malloc_allocated_size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The allocated size by malloc().</p>
+
+<p>It returns the allocated size by malloc().</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3472
+3473
+3474
+3475
+3476</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3472</span>
+
+static VALUE
+gc_malloc_allocated_size(VALUE self)
+{
+    return UINT2NUM((&amp;rb_objspace)-&gt;malloc_params.allocated_size);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="malloc_allocations-class_method">
+  
+    + (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>malloc_allocations</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The number of allocated memory object by malloc().</p>
+
+<p>It returns the number of allocated memory object by malloc().</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3487
+3488
+3489
+3490
+3491</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3487</span>
+
+static VALUE
+gc_malloc_allocations(VALUE self)
+{
+    return UINT2NUM((&amp;rb_objspace)-&gt;malloc_params.allocations);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start-class_method">
+  
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>start</strong> </span>
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+      <span class="overload">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates garbage collection, unless manually disabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>start</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">+ (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2643
+2644
+2645
+2646
+2647
+2648</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2643</span>
+
+VALUE
+rb_gc_start(void)
+{
+    rb_gc();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stat-class_method">
+  
+    + (<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>) <strong>stat</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a Hash containing information about the GC.</p>
+
+<p>The hash includes information about internal statistics about GC such as:</p>
+
+<pre class="ruby">{
+  :<span class="ruby-identifier">count</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-value">18</span>,
+  :<span class="ruby-identifier">heap_used</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value">77</span>,
+  :<span class="ruby-identifier">heap_length</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">77</span>,
+  :<span class="ruby-identifier">heap_increment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+  :<span class="ruby-identifier">heap_live_num</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23287</span>,
+  :<span class="ruby-identifier">heap_free_num</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8115</span>,
+  :<span class="ruby-identifier">heap_final_num</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+}
+</pre>
+
+<p>The contents of the hash are implementation defined and may be changed in
+the future.</p>
+
+<p>This method is only expected to work on C Ruby.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hash.html" title="Hash (class)">Hash</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3432
+3433
+3434
+3435
+3436
+3437
+3438
+3439
+3440
+3441
+3442
+3443
+3444
+3445
+3446
+3447
+3448
+3449
+3450
+3451
+3452
+3453
+3454
+3455
+3456
+3457
+3458
+3459</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 3432</span>
+
+static VALUE
+gc_stat(int argc, VALUE *argv, VALUE self)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    VALUE hash;
+
+    if (rb_scan_args(argc, argv, &quot;01&quot;, &amp;hash) == 1) {
+        if (TYPE(hash) != T_HASH)
+            rb_raise(rb_eTypeError, &quot;non-hash given&quot;);
+    }
+
+    if (hash == Qnil) {
+        hash = rb_hash_new();
+    }
+
+    rest_sweep(objspace);
+
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;count&quot;)), SIZET2NUM(objspace-&gt;count));
+
+    /* implementation dependent counters */
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_used&quot;)), SIZET2NUM(objspace-&gt;heap.used));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_length&quot;)), SIZET2NUM(objspace-&gt;heap.length));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_increment&quot;)), SIZET2NUM(objspace-&gt;heap.increment));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_live_num&quot;)), SIZET2NUM(objspace-&gt;heap.live_num));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_free_num&quot;)), SIZET2NUM(objspace-&gt;heap.free_num));
+    rb_hash_aset(hash, ID2SYM(rb_intern(&quot;heap_final_num&quot;)), SIZET2NUM(objspace-&gt;heap.final_num));
+    return hash;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stress-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>stress</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>returns current status of GC stress mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+603
+604
+605
+606
+607
+608</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 603</span>
+
+static VALUE
+gc_stress_get(VALUE self)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    return ruby_gc_stress ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stress=-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>stress=</strong>(bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates the GC stress mode.</p>
+
+<p>When stress mode is enabled the GC is invoked at every GC opportunity: all
+memory and object allocations.</p>
+
+<p>Enabling stress mode makes Ruby very slow, it is only for debugging.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+622
+623
+624
+625
+626
+627
+628
+629</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 622</span>
+
+static VALUE
+gc_stress_set(VALUE self, VALUE flag)
+{
+    rb_objspace_t *objspace = &amp;rb_objspace;
+    rb_secure(2);
+    ruby_gc_stress = RTEST(flag);
+    return flag;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="garbage_collect-instance_method">
+  
+    
+      <span class="overload">- (<tt>nil</tt>) <strong>start</strong> </span>
+    
+      <span class="overload">- (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+      <span class="overload">- (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates garbage collection, unless manually disabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>nil</tt>) <strong>start</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>nil</tt>) <strong>garbage_collect</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2643
+2644
+2645
+2646
+2647
+2648</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'gc.c', line 2643</span>
+
+VALUE
+rb_gc_start(void)
+{
+    rb_gc();
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:21 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

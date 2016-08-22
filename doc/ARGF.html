@@ -1,0 +1,7430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: ARGF
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ARGF.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (A)</a> &raquo;
+    
+    
+    <span class="title">ARGF</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: ARGF
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">ARGF</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">io.c<span class="defines">,<br />
+  io.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p><code>ARGF</code> is a stream designed for use in scripts that process
+files given as command-line arguments or passed in via STDIN.</p>
+
+<p>The arguments passed to your script are stored in the <code>ARGV</code>
+Array, one argument per element. <code>ARGF</code> assumes that any
+arguments that aren’t filenames have been removed from <code>ARGV</code>.
+For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">verbose</span> <span class="ruby-identifier">file1</span> <span class="ruby-identifier">file2</span>
+
+<span class="ruby-constant">ARGV</span>  <span class="ruby-comment">#=&gt; [&quot;--verbose&quot;, &quot;file1&quot;, &quot;file2&quot;]</span>
+<span class="ruby-identifier">option</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">shift</span> <span class="ruby-comment">#=&gt; &quot;--verbose&quot;</span>
+<span class="ruby-constant">ARGV</span>  <span class="ruby-comment">#=&gt; [&quot;file1&quot;, &quot;file2&quot;]</span>
+</pre>
+
+<p>You can now use <code>ARGF</code> to work with a concatenation of each of
+these named files. For instance, <code>ARGF.read</code> will return the
+contents of <em>file1</em> followed by the contents of <em>file2</em>.</p>
+
+<p>After a file in <code>ARGV</code> has been read <code>ARGF</code> removes
+it from the Array. Thus, after all files have been read <code>ARGV</code>
+will be empty.</p>
+
+<p>You can manipulate <code>ARGV</code> yourself to control what
+<code>ARGF</code> operates on. If you remove a file from <code>ARGV</code>,
+it is ignored by <code>ARGF</code>; if you add files to <code>ARGV</code>,
+they are treated as if they were named on the command line. For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">replace</span> [<span class="ruby-string">&quot;file1&quot;</span>]
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readlines</span> <span class="ruby-comment"># Returns the contents of file1 as an Array</span>
+<span class="ruby-constant">ARGV</span>           <span class="ruby-comment">#=&gt; []</span>
+<span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">replace</span> [<span class="ruby-string">&quot;file2&quot;</span>, <span class="ruby-string">&quot;file3&quot;</span>]
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>      <span class="ruby-comment"># Returns the contents of file2 and file3</span>
+</pre>
+
+<p>If <code>ARGV</code> is empty, <code>ARGF</code> acts as if it contained
+STDIN, i.e. the data piped to your script. For example:</p>
+
+<pre class="code ruby"><code class="ruby">$ echo &quot;glark&quot; | ruby -e 'p ARGF.read'
+&quot;glark\n&quot;</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#argv-instance_method" title="#argv (instance method)">- (Object) <strong>argv</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the <code>ARGV</code> array, which contains the arguments passed to
+your script, one per element.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#binmode-instance_method" title="#binmode (instance method)">- (Object) <strong>binmode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Puts <code>ARGF</code> into binary mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#binmode%3F-instance_method" title="#binmode? (instance method)">- (Boolean) <strong>binmode?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if <code>ARGF</code> is being read in binary mode; false
+otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bytes-instance_method" title="#bytes (instance method)">- (Object) <strong>bytes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_byte {|byte| block }  -&gt; ARGF    ARGF.each_byte               
+-&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chars-instance_method" title="#chars (instance method)">- (Object) <strong>chars</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_char  {|char| block }  -&gt; ARGF    ARGF.each_char              
+-&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">- (Object) <strong>close</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes the current file and skips to the next in the stream.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed%3F-instance_method" title="#closed? (instance method)">- (Boolean) <strong>closed?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <em>true</em> if the current file has been closed; <em>false</em>
+otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#codepoints-instance_method" title="#codepoints (instance method)">- (Object) <strong>codepoints</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_codepoint  {|codepoint| block }  -&gt; ARGF   
+ARGF.each_codepoint                   -&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF   
+ARGF.each_line(sep=$/,limit) {|line| block }  -&gt; ARGF   
+ARGF.each_line(…)                           -&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_byte-instance_method" title="#each_byte (instance method)">- (Object) <strong>each_byte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_byte {|byte| block }  -&gt; ARGF    ARGF.each_byte               
+-&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_char-instance_method" title="#each_char (instance method)">- (Object) <strong>each_char</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_char  {|char| block }  -&gt; ARGF    ARGF.each_char              
+-&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_codepoint-instance_method" title="#each_codepoint (instance method)">- (Object) <strong>each_codepoint</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_codepoint  {|codepoint| block }  -&gt; ARGF   
+ARGF.each_codepoint                   -&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_line-instance_method" title="#each_line (instance method)">- (Object) <strong>each_line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF   
+ARGF.each_line(sep=$/,limit) {|line| block }  -&gt; ARGF   
+ARGF.each_line(…)                           -&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof-instance_method" title="#eof (instance method)">- (Object) <strong>eof</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the current file in <code>ARGF</code> is at end of file,
+i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof%3F-instance_method" title="#eof? (instance method)">- (Boolean) <strong>eof?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if the current file in <code>ARGF</code> is at end of file,
+i.e.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#external_encoding-instance_method" title="#external_encoding (instance method)">- (Encoding) <strong>external_encoding</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the external encoding for files read from <code>ARGF</code> as an
+<code>Encoding</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#file-instance_method" title="#file (instance method)">- (File object) <strong>file</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current file as an <code>IO</code> or <code>File</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filename-instance_method" title="#filename (instance method)">- (Object) <strong>filename</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current filename.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fileno-instance_method" title="#fileno (instance method)">- (Object) <strong>fileno</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an integer representing the numeric file descriptor for the current
+file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getbyte-instance_method" title="#getbyte (instance method)">- (Fixnum<sup>?</sup>) <strong>getbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the next 8-bit byte (0..255) from <code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getc-instance_method" title="#getc (instance method)">- (String<sup>?</sup>) <strong>getc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads the next character from <code>ARGF</code> and returns it as a
+<code>String</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gets-instance_method" title="#gets (instance method)">- (Object) <strong>gets</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the next line from the current file in <code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inplace_mode-instance_method" title="#inplace_mode (instance method)">- (String) <strong>inplace_mode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the file extension appended to the names of modified files under
+inplace-edit mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inplace_mode%3D-instance_method" title="#inplace_mode= (instance method)">- (Object) <strong>inplace_mode=</strong>(ext) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the filename extension for inplace editing mode to the given String.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#internal_encoding-instance_method" title="#internal_encoding (instance method)">- (Encoding) <strong>internal_encoding</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the internal encoding for strings read from <code>ARGF</code> as an
+<code>Encoding</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno-instance_method" title="#lineno (instance method)">- (Integer) <strong>lineno</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current line number of ARGF as a whole.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno%3D-instance_method" title="#lineno= (instance method)">- (nil) <strong>lineno=</strong>(number) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the line number of <code>ARGF</code> as a whole to the given
+<code>Integer</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lines-instance_method" title="#lines (instance method)">- (Object) <strong>lines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF   
+ARGF.each_line(sep=$/,limit) {|line| block }  -&gt; ARGF   
+ARGF.each_line(…)                           -&gt; an_enumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current filename.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pos-instance_method" title="#pos (instance method)">- (Object) <strong>pos</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current offset (in bytes) of the current file in
+<code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pos%3D-instance_method" title="#pos= (instance method)">- (Integer) <strong>pos=</strong>(position) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Seeks to the position given by <em>position</em> (in bytes) in
+<code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print-instance_method" title="#print (instance method)">- (Object) <strong>print</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes the given object(s) to ios.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#printf-instance_method" title="#printf (instance method)">- (nil) <strong>printf</strong>(format_string[, obj, ...]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Formats and writes to ios, converting parameters under control of the
+format string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#putc-instance_method" title="#putc (instance method)">- (Object) <strong>putc</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If obj is Numeric, write the character whose code is the least-significant
+byte of obj, otherwise write the first byte of the string representation of
+obj to ios.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#puts-instance_method" title="#puts (instance method)">- (nil) <strong>puts</strong>(obj, ...) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes the given objects to ios as with IO#print.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read-instance_method" title="#read (instance method)">- (String<sup>?</sup>) <strong>read</strong>([length [, buffer]]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads <em>length</em> bytes from ARGF.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_nonblock-instance_method" title="#read_nonblock (instance method)">- (Object) <strong>read_nonblock</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads at most <em>maxlen</em> bytes from the ARGF stream in non-blocking
+mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readbyte-instance_method" title="#readbyte (instance method)">- (Fixnum) <strong>readbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads the next 8-bit byte from ARGF and returns it as a
+<code>Fixnum</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readchar-instance_method" title="#readchar (instance method)">- (String<sup>?</sup>) <strong>readchar</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads the next character from <code>ARGF</code> and returns it as a
+<code>String</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readline-instance_method" title="#readline (instance method)">- (Object) <strong>readline</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the next line from the current file in <code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readlines-instance_method" title="#readlines (instance method)">- (Object) <strong>readlines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.to_a(sep=$/)     -&gt; array    ARGF.to_a(limit)      -&gt; array   
+ARGF.to_a(sep, limit) -&gt; array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readpartial-instance_method" title="#readpartial (instance method)">- (Object) <strong>readpartial</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads at most <em>maxlen</em> bytes from the ARGF stream.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rewind-instance_method" title="#rewind (instance method)">- (0) <strong>rewind</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Positions the current file to the beginning of input, resetting
+<code>ARGF.lineno</code> to zero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seek-instance_method" title="#seek (instance method)">- (0) <strong>seek</strong>(amount, whence = IO::SEEK_SET) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Seeks to offset <em>amount</em> (an <code>Integer</code>) in the
+<code>ARGF</code> stream according to the value of <em>whence</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_encoding-instance_method" title="#set_encoding (instance method)">- (Object) <strong>set_encoding</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If single argument is specified, strings read from ARGF are tagged with the
+encoding specified.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#skip-instance_method" title="#skip (instance method)">- (Object) <strong>skip</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the current file to the next file in ARGV.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tell-instance_method" title="#tell (instance method)">- (Object) <strong>tell</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current offset (in bytes) of the current file in
+<code>ARGF</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_a-instance_method" title="#to_a (instance method)">- (Object) <strong>to_a</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARGF.to_a(sep=$/)     -&gt; array    ARGF.to_a(limit)      -&gt; array   
+ARGF.to_a(sep, limit) -&gt; array.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_i-instance_method" title="#to_i (instance method)">- (Object) <strong>to_i</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an integer representing the numeric file descriptor for the current
+file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_io-instance_method" title="#to_io (instance method)">- (Object) <strong>to_io</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an <code>IO</code> object representing the current file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns “ARGF”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_write_io-instance_method" title="#to_write_io (instance method)">- (IO) <strong>to_write_io</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns IO instance tied to <em>ARGF</em> for writing if inplace mode is
+enabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write-instance_method" title="#write (instance method)">- (Integer) <strong>write</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes <em>string</em> if inplace mode.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7090
+7091
+7092
+7093
+7094
+7095
+7096
+7097</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7090</span>
+
+static VALUE
+argf_initialize(VALUE argf, VALUE argv)
+{
+    memset(&amp;ARGF, 0, sizeof(ARGF));
+    argf_init(&amp;ARGF, argv);
+
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="argv-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>argv</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the <code>ARGV</code> array, which contains the arguments passed to
+your script, one per element.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-operator">-</span><span class="ruby-identifier">v</span> <span class="ruby-identifier">glark</span>.<span class="ruby-identifier">txt</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">argv</span>   <span class="ruby-comment">#=&gt; [&quot;-v&quot;, &quot;glark.txt&quot;]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10922
+10923
+10924
+10925
+10926</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10922</span>
+
+static VALUE
+argf_argv(VALUE argf)
+{
+    return ARGF.argv;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="binmode-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>binmode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Puts <code>ARGF</code> into binary mode. Once a stream is in binary mode,
+it cannot be reset to non-binary mode. This option has the following
+effects:</p>
+<ul><li>
+<p>Newline conversion is disabled.</p>
+</li><li>
+<p>Encoding conversion is disabled.</p>
+</li><li>
+<p>Content is treated as ASCII-8BIT.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10718
+10719
+10720
+10721
+10722
+10723
+10724
+10725
+10726</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10718</span>
+
+static VALUE
+argf_binmode_m(VALUE argf)
+{
+    ARGF.binmode = 1;
+    next_argv();
+    ARGF_FORWARD(0, 0);
+    rb_io_ascii8bit_binmode(ARGF.current_file);
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="binmode?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>binmode?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <code>ARGF</code> is being read in binary mode; false
+otherwise. (To enable binary mode use <code>ARGF.binmode</code>.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">binmode?</span>  <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">binmode</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">binmode?</span>  <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10741
+10742
+10743
+10744
+10745</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10741</span>
+
+static VALUE
+argf_binmode_p(VALUE argf)
+{
+    return ARGF.binmode ? Qtrue : Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bytes-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_byte {|byte| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_byte                  -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each byte of each file in <code>ARGV</code>. A byte is
+returned as a <code>Fixnum</code> in the range 0..255.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last byte of the first file has been returned, the first byte of the second
+file is returned. The <code>ARGF.filename</code> method can be used to
+determine the filename of the current byte.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">to_a</span>  <span class="ruby-comment">#=&gt; [35, 32, ... 95, 10]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>byte</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10576
+10577
+10578
+10579
+10580
+10581
+10582
+10583
+10584
+10585</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10576</span>
+
+static VALUE
+argf_each_byte(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_byte&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chars-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_char  {|char| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_char                   -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each character of each file in <code>ARGF</code>.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last character of the first file has been returned, the first character of
+the second file is returned. The <code>ARGF.filename</code> method can be
+used to determine the name of the file in which the current character
+appears.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>char</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10606
+10607
+10608
+10609
+10610
+10611
+10612
+10613
+10614
+10615</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10606</span>
+
+static VALUE
+argf_each_char(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_char&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>close</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes the current file and skips to the next in the stream. Trying to
+close a file that has already been closed causes an <code>IOError</code> to
+be raised.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">foo</span> <span class="ruby-identifier">bar</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;foo&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;bar&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">close</span>     <span class="ruby-comment">#=&gt; closed stream (IOError)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10789
+10790
+10791
+10792
+10793
+10794
+10795
+10796
+10797
+10798
+10799</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10789</span>
+
+static VALUE
+argf_close_m(VALUE argf)
+{
+    next_argv();
+    argf_close(ARGF.current_file);
+    if (ARGF.next_p != -1) {
+	ARGF.next_p = 1;
+    }
+    ARGF.lineno = 0;
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>closed?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <em>true</em> if the current file has been closed; <em>false</em>
+otherwise. Use <code>ARGF.close</code> to actually close the current file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10808
+10809
+10810
+10811
+10812
+10813
+10814</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10808</span>
+
+static VALUE
+argf_closed(VALUE argf)
+{
+    next_argv();
+    ARGF_FORWARD(0, 0);
+    return rb_io_closed(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="codepoints-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|codepoint| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_codepoint  {|codepoint| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_codepoint                   -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each codepoint of each file in <code>ARGF</code>.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last codepoint of the first file has been returned, the first codepoint of
+the second file is returned. The <code>ARGF.filename</code> method can be
+used to determine the name of the file in which the current codepoint
+appears.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|codepoint| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>codepoint</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10636
+10637
+10638
+10639
+10640
+10641
+10642
+10643
+10644
+10645</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10636</span>
+
+static VALUE
+argf_each_codepoint(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_codepoint&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }  <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>)           {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>)     {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                                <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+</pre>
+
+<p>Returns an enumerator which iterates over each line (separated by
+<em>sep</em>, which defaults to your platform’s newline character) of each
+file in <code>ARGV</code>. If a block is supplied, each line in turn will
+be yielded to the block, otherwise an enumerator is returned. The optional
+<em>limit</em> argument is a <code>Fixnum</code> specifying the maximum
+length of each line; longer lines will be split according to this limit.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last line of the first file has been returned, the first line of the second
+file is returned. The <code>ARGF.filename</code> and
+<code>ARGF.lineno</code> methods can be used to determine the filename and
+line number, respectively, of the current line.</p>
+
+<p>For example, the following code prints out each line of each named file
+prefixed with its line number, displaying the filename once per file:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{ARGF.lineno}: #{line}&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10541
+10542
+10543
+10544
+10545
+10546
+10547
+10548
+10549
+10550</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10541</span>
+
+static VALUE
+argf_each_line(int argc, VALUE *argv, VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, argc, argv);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_line&quot;), argc, argv, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_byte-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_byte {|byte| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_byte                  -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each byte of each file in <code>ARGV</code>. A byte is
+returned as a <code>Fixnum</code> in the range 0..255.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last byte of the first file has been returned, the first byte of the second
+file is returned. The <code>ARGF.filename</code> method can be used to
+determine the filename of the current byte.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">to_a</span>  <span class="ruby-comment">#=&gt; [35, 32, ... 95, 10]</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>byte</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10576
+10577
+10578
+10579
+10580
+10581
+10582
+10583
+10584
+10585</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10576</span>
+
+static VALUE
+argf_each_byte(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_byte&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_char-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_char  {|char| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_char                   -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each character of each file in <code>ARGF</code>.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last character of the first file has been returned, the first character of
+the second file is returned. The <code>ARGF.filename</code> method can be
+used to determine the name of the file in which the current character
+appears.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>char</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10606
+10607
+10608
+10609
+10610
+10611
+10612
+10613
+10614
+10615</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10606</span>
+
+static VALUE
+argf_each_char(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_char&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_codepoint-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|codepoint| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_codepoint  {|codepoint| block }  -&gt; ARGF</p>
+
+<pre class="code"><code class="">ARGF.each_codepoint                   -&gt; an_enumerator</code></pre>
+
+<p>Iterates over each codepoint of each file in <code>ARGF</code>.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last codepoint of the first file has been returned, the first codepoint of
+the second file is returned. The <code>ARGF.filename</code> method can be
+used to determine the name of the file in which the current codepoint
+appears.</p>
+
+<p>If no block is given, an enumerator is returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|codepoint| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>codepoint</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10636
+10637
+10638
+10639
+10640
+10641
+10642
+10643
+10644
+10645</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10636</span>
+
+static VALUE
+argf_each_codepoint(VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, 0, 0);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_codepoint&quot;), 0, 0, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_line-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }  <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>)           {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>)     {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                                <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+</pre>
+
+<p>Returns an enumerator which iterates over each line (separated by
+<em>sep</em>, which defaults to your platform’s newline character) of each
+file in <code>ARGV</code>. If a block is supplied, each line in turn will
+be yielded to the block, otherwise an enumerator is returned. The optional
+<em>limit</em> argument is a <code>Fixnum</code> specifying the maximum
+length of each line; longer lines will be split according to this limit.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last line of the first file has been returned, the first line of the second
+file is returned. The <code>ARGF.filename</code> and
+<code>ARGF.lineno</code> methods can be used to determine the filename and
+line number, respectively, of the current line.</p>
+
+<p>For example, the following code prints out each line of each named file
+prefixed with its line number, displaying the filename once per file:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{ARGF.lineno}: #{line}&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10541
+10542
+10543
+10544
+10545
+10546
+10547
+10548
+10549
+10550</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10541</span>
+
+static VALUE
+argf_each_line(int argc, VALUE *argv, VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, argc, argv);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_line&quot;), argc, argv, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the current file in <code>ARGF</code> is at end of file,
+i.e. it has no data to read. The stream must be opened for reading or an
+<code>IOError</code> will be raised.</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;eof&quot;</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-value">3</span>.<span class="ruby-identifier">times</span> { <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span> }
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>             <span class="ruby-comment">#=&gt; &quot;\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10147
+10148
+10149
+10150
+10151
+10152
+10153
+10154
+10155
+10156
+10157
+10158
+10159
+10160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10147</span>
+
+static VALUE
+argf_eof(VALUE argf)
+{
+    next_argv();
+    if (RTEST(ARGF.current_file)) {
+	if (ARGF.init_p == 0) return Qtrue;
+	next_argv();
+	ARGF_FORWARD(0, 0);
+	if (rb_io_eof(ARGF.current_file)) {
+	    return Qtrue;
+	}
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if the current file in <code>ARGF</code> is at end of file,
+i.e. it has no data to read. The stream must be opened for reading or an
+<code>IOError</code> will be raised.</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;eof&quot;</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-value">3</span>.<span class="ruby-identifier">times</span> { <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span> }
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>             <span class="ruby-comment">#=&gt; &quot;\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">eof?</span>                 <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10147
+10148
+10149
+10150
+10151
+10152
+10153
+10154
+10155
+10156
+10157
+10158
+10159
+10160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10147</span>
+
+static VALUE
+argf_eof(VALUE argf)
+{
+    next_argv();
+    if (RTEST(ARGF.current_file)) {
+	if (ARGF.init_p == 0) return Qtrue;
+	next_argv();
+	ARGF_FORWARD(0, 0);
+	if (rb_io_eof(ARGF.current_file)) {
+	    return Qtrue;
+	}
+    }
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="external_encoding-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>) <strong>external_encoding</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the external encoding for files read from <code>ARGF</code> as an
+<code>Encoding</code> object. The external encoding is the encoding of the
+text as stored in a file. Contrast with
+<code>ARGF.internal_encoding</code>, which is the encoding used to
+represent this text within Ruby.</p>
+
+<p>To set the external encoding use <code>ARGF.set_encoding</code>.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">external_encoding</span>  <span class="ruby-comment">#=&gt;  #&lt;Encoding:UTF-8&gt;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9931
+9932
+9933
+9934
+9935
+9936
+9937
+9938</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 9931</span>
+
+static VALUE
+argf_external_encoding(VALUE argf)
+{
+    if (!RTEST(ARGF.current_file)) {
+	return rb_enc_from_encoding(rb_default_external_encoding());
+    }
+    return rb_io_external_encoding(rb_io_check_io(ARGF.current_file));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="file-instance_method">
+  
+    - (<tt><span class='object_link'><a href="File.html" title="File (class)">File</a></span> object</tt>) <strong>file</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current file as an <code>IO</code> or <code>File</code> object.
+#&lt;IO:&lt;STDIN&gt;&gt; is returned when the current file is STDIN.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">foo</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;bar&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bar</span>
+
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">foo</span> <span class="ruby-identifier">bar</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">file</span>      <span class="ruby-comment">#=&gt; #&lt;File:foo&gt;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">5</span>)   <span class="ruby-comment">#=&gt; &quot;foo\nb&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">file</span>      <span class="ruby-comment">#=&gt; #&lt;File:bar&gt;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="File.html" title="File (class)">File</a></span> object</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10700
+10701
+10702
+10703
+10704
+10705</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10700</span>
+
+static VALUE
+argf_file(VALUE argf)
+{
+    next_argv();
+    return ARGF.current_file;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="filename-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>filename</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>path</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current filename. “-” is returned when the current file is
+STDIN.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">foo</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;bar&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bar</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;glark&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">glark</span>
+
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">foo</span> <span class="ruby-identifier">bar</span> <span class="ruby-identifier">glark</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;foo&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">5</span>)   <span class="ruby-comment">#=&gt; &quot;foo\nb&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;bar&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">skip</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;glark&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>filename</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>path</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10669
+10670
+10671
+10672
+10673
+10674</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10669</span>
+
+static VALUE
+argf_filename(VALUE argf)
+{
+    next_argv();
+    return ARGF.filename;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fileno-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>fileno</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>to_i</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an integer representing the numeric file descriptor for the current
+file. Raises an <code>ArgumentError</code> if there isn’t a current file.</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">fileno</span>    <span class="ruby-comment">#=&gt; 3</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>fileno</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>to_i</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10099
+10100
+10101
+10102
+10103
+10104
+10105
+10106
+10107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10099</span>
+
+static VALUE
+argf_fileno(VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream&quot;);
+    }
+    ARGF_FORWARD(0, 0);
+    return rb_io_fileno(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt><sup>?</sup>) <strong>getbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the next 8-bit byte (0..255) from <code>ARGF</code>. Returns
+<code>nil</code> if called at the end of the stream.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">file</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getbyte</span> <span class="ruby-comment">#=&gt; 102</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getbyte</span> <span class="ruby-comment">#=&gt; 111</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getbyte</span> <span class="ruby-comment">#=&gt; 111</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getbyte</span> <span class="ruby-comment">#=&gt; 10</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getbyte</span> <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10412
+10413
+10414
+10415
+10416
+10417
+10418
+10419
+10420
+10421
+10422
+10423
+10424
+10425
+10426
+10427
+10428
+10429
+10430
+10431
+10432</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10412</span>
+
+static VALUE
+argf_getbyte(VALUE argf)
+{
+    VALUE ch;
+
+  retry:
+    if (!next_argv()) return Qnil;
+    if (TYPE(ARGF.current_file) != T_FILE) {
+	ch = rb_funcall3(ARGF.current_file, rb_intern(&quot;getbyte&quot;), 0, 0);
+    }
+    else {
+	ch = rb_io_getbyte(ARGF.current_file);
+    }
+    if (NIL_P(ch) &amp;&amp; ARGF.next_p != -1) {
+	argf_close(ARGF.current_file);
+	ARGF.next_p = 1;
+	goto retry;
+    }
+
+    return ch;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>getc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads the next character from <code>ARGF</code> and returns it as a
+<code>String</code>. Returns <code>nil</code> at the end of the stream.</p>
+
+<p><code>ARGF</code> treats the files named on the command line as a single
+file created by concatenating their contents. After returning the last
+character of the first file, it returns the first character of the second
+file, and so on.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">file</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; &quot;f&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; &quot;o&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; &quot;o&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; &quot;\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">getc</span>  <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10372
+10373
+10374
+10375
+10376
+10377
+10378
+10379
+10380
+10381
+10382
+10383
+10384
+10385
+10386
+10387
+10388
+10389
+10390
+10391
+10392</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10372</span>
+
+static VALUE
+argf_getc(VALUE argf)
+{
+    VALUE ch;
+
+  retry:
+    if (!next_argv()) return Qnil;
+    if (ARGF_GENERIC_INPUT_P()) {
+	ch = rb_funcall3(ARGF.current_file, rb_intern(&quot;getc&quot;), 0, 0);
+    }
+    else {
+	ch = rb_io_getc(ARGF.current_file);
+    }
+    if (NIL_P(ch) &amp;&amp; ARGF.next_p != -1) {
+	argf_close(ARGF.current_file);
+	ARGF.next_p = 1;
+	goto retry;
+    }
+
+    return ch;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gets-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the next line from the current file in <code>ARGF</code>.</p>
+
+<p>By default lines are assumed to be separated by <tt>$/</tt>; to use a different
+character as a separator, supply it as a <code>String</code> for the
+<em>sep</em> argument.</p>
+
+<p>The optional  <em>limit</em> argument specifies how many characters of each
+line to return. By default all characters are returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>gets</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7456
+7457
+7458
+7459
+7460
+7461
+7462
+7463
+7464
+7465</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7456</span>
+
+static VALUE
+argf_gets(int argc, VALUE *argv, VALUE argf)
+{
+    VALUE line;
+
+    line = argf_getline(argc, argv, argf);
+    rb_lastline_set(line);
+
+    return line;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize_copy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7100
+7101
+7102
+7103
+7104
+7105
+7106
+7107
+7108
+7109
+7110
+7111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7100</span>
+
+static VALUE
+argf_initialize_copy(VALUE argf, VALUE orig)
+{
+    ARGF = argf_of(orig);
+    ARGF.argv = rb_obj_dup(ARGF.argv);
+    if (ARGF.inplace) {
+	const char *inplace = ARGF.inplace;
+	ARGF.inplace = 0;
+	ARGF.inplace = ruby_strdup(inplace);
+    }
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inplace_mode-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>inplace_mode</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the file extension appended to the names of modified files under
+inplace-edit mode. This value can be set using
+<code>ARGF.inplace_mode=</code> or passing the <code>-i</code> switch to
+the Ruby binary.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10836
+10837
+10838
+10839
+10840
+10841</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10836</span>
+
+static VALUE
+argf_inplace_mode_get(VALUE argf)
+{
+    if (!ARGF.inplace) return Qnil;
+    return rb_str_new2(ARGF.inplace);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inplace_mode=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>inplace_mode=</strong>(ext) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the filename extension for inplace editing mode to the given String.
+Each file being edited has this value appended to its filename. The
+modified file is saved under this new name.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">txt</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">inplace_mode</span> = <span class="ruby-string">'.bak'</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;foo&quot;</span>,<span class="ruby-string">&quot;bar&quot;</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Each line of <em>file.txt</em> has the first occurrence of “foo” replaced
+with “bar”, then the new line is written out to <em>file.txt.bak</em>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10869
+10870
+10871
+10872
+10873
+10874
+10875
+10876
+10877
+10878
+10879
+10880
+10881
+10882
+10883
+10884
+10885
+10886</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10869</span>
+
+static VALUE
+argf_inplace_mode_set(VALUE argf, VALUE val)
+{
+    if (rb_safe_level() &gt;= 1 &amp;&amp; OBJ_TAINTED(val))
+	rb_insecure_operation();
+
+    if (!RTEST(val)) {
+	if (ARGF.inplace) free(ARGF.inplace);
+	ARGF.inplace = 0;
+    }
+    else {
+	StringValue(val);
+	if (ARGF.inplace) free(ARGF.inplace);
+	ARGF.inplace = 0;
+	ARGF.inplace = strdup(RSTRING_PTR(val));
+    }
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="internal_encoding-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>) <strong>internal_encoding</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the internal encoding for strings read from <code>ARGF</code> as an
+<code>Encoding</code> object.</p>
+
+<p>If <code>ARGF.set_encoding</code> has been called with two encoding names,
+the second is returned. Otherwise, if
+<code>Encoding.default_external</code> has been set, that value is
+returned. Failing that, if a default external encoding was specified on the
+command-line, that value is used. If the encoding is unknown, nil is
+returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9953
+9954
+9955
+9956
+9957
+9958
+9959
+9960</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 9953</span>
+
+static VALUE
+argf_internal_encoding(VALUE argf)
+{
+    if (!RTEST(ARGF.current_file)) {
+	return rb_enc_from_encoding(rb_default_external_encoding());
+    }
+    return rb_io_internal_encoding(rb_io_check_io(ARGF.current_file));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>lineno</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current line number of ARGF as a whole. This value can be set
+manually with <code>ARGF.lineno=</code>.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>   <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readline</span> <span class="ruby-comment">#=&gt; &quot;This is line 1\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>   <span class="ruby-comment">#=&gt; 1</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7152
+7153
+7154
+7155
+7156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7152</span>
+
+static VALUE
+argf_lineno(VALUE argf)
+{
+    return INT2FIX(ARGF.lineno);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno=-instance_method">
+  
+    - (<tt>nil</tt>) <strong>lineno=</strong>(number) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the line number of <code>ARGF</code> as a whole to the given
+<code>Integer</code>.</p>
+
+<p><code>ARGF</code> sets the line number automatically as you read data, so
+normally you will not need to set it explicitly. To access the current line
+number use <code>ARGF.lineno</code>.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>      <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readline</span>    <span class="ruby-comment">#=&gt; &quot;This is line 1\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>      <span class="ruby-comment">#=&gt; 1</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span> = <span class="ruby-value">0</span>  <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>      <span class="ruby-comment">#=&gt; 0</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7131
+7132
+7133
+7134
+7135
+7136
+7137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7131</span>
+
+static VALUE
+argf_set_lineno(VALUE argf, VALUE val)
+{
+    ARGF.lineno = NUM2INT(val);
+    ARGF.last_lineno = ARGF.lineno;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lines-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.each_line(sep=$/)       {|line| block }  -&gt; ARGF</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }  <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>)           {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>,<span class="ruby-identifier">limit</span>)     {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }   <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-constant">ARGF</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                                <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">an_enumerator</span>
+</pre>
+
+<p>Returns an enumerator which iterates over each line (separated by
+<em>sep</em>, which defaults to your platform’s newline character) of each
+file in <code>ARGV</code>. If a block is supplied, each line in turn will
+be yielded to the block, otherwise an enumerator is returned. The optional
+<em>limit</em> argument is a <code>Fixnum</code> specifying the maximum
+length of each line; longer lines will be split according to this limit.</p>
+
+<p>This method allows you to treat the files supplied on the command line as a
+single file consisting of the concatenation of each named file. After the
+last line of the first file has been returned, the first line of the second
+file is returned. The <code>ARGF.filename</code> and
+<code>ARGF.lineno</code> methods can be used to determine the filename and
+line number, respectively, of the current line.</p>
+
+<p>For example, the following code prints out each line of each named file
+prefixed with its line number, displaying the filename once per file:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lines</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{ARGF.lineno}: #{line}&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10541
+10542
+10543
+10544
+10545
+10546
+10547
+10548
+10549
+10550</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10541</span>
+
+static VALUE
+argf_each_line(int argc, VALUE *argv, VALUE argf)
+{
+    RETURN_ENUMERATOR(argf, argc, argv);
+    for (;;) {
+	if (!next_argv()) return argf;
+	rb_block_call(ARGF.current_file, rb_intern(&quot;each_line&quot;), argc, argv, 0, 0);
+	ARGF.next_p = 1;
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="path-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>filename</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>path</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current filename. “-” is returned when the current file is
+STDIN.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">foo</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;bar&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bar</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;glark&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">glark</span>
+
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">foo</span> <span class="ruby-identifier">bar</span> <span class="ruby-identifier">glark</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;foo&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">5</span>)   <span class="ruby-comment">#=&gt; &quot;foo\nb&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;bar&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">skip</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;glark&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>filename</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>path</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10669
+10670
+10671
+10672
+10673
+10674</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10669</span>
+
+static VALUE
+argf_filename(VALUE argf)
+{
+    next_argv();
+    return ARGF.filename;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pos-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current offset (in bytes) of the current file in
+<code>ARGF</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">pos</span>    <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">gets</span>   <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">pos</span>    <span class="ruby-comment">#=&gt; 17</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10019
+10020
+10021
+10022
+10023
+10024
+10025
+10026
+10027</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10019</span>
+
+static VALUE
+argf_tell(VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to tell&quot;);
+    }
+    ARGF_FORWARD(0, 0);
+    return rb_io_tell(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pos=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos=</strong>(position) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Seeks to the position given by <em>position</em> (in bytes) in
+<code>ARGF</code>.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">pos</span> = <span class="ruby-value">17</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">gets</span>   <span class="ruby-comment">#=&gt; &quot;This is line two\n&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10057
+10058
+10059
+10060
+10061
+10062
+10063
+10064
+10065</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10057</span>
+
+static VALUE
+argf_set_pos(VALUE argf, VALUE offset)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to set position&quot;);
+    }
+    ARGF_FORWARD(1, &amp;offset);
+    return rb_io_set_pos(ARGF.current_file, offset);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="print-instance_method">
+  
+    
+      <span class="overload">- (<tt>nil</tt>) <strong>print</strong> </span>
+    
+      <span class="overload">- (<tt>nil</tt>) <strong>print</strong>(obj, ...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Writes the given object(s) to <em>ios</em>. The stream must be opened for
+writing. If the output field separator (<code>$,</code>) is not
+<code>nil</code>, it will be inserted between each object. If the output
+record separator (<code>$\&lt;/code&gt;) is not &lt;code&gt;nil</code>, it
+will be appended to the output. If no arguments are given, prints
+<code>$_</code>. Objects that aren’t strings will be converted by calling
+their <code>to_s</code> method. With no argument, prints the contents of
+the variable <code>$_</code>. Returns <code>nil</code>.</p>
+
+<pre class="code"><code class=""><span class='gvar'>$stdout</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> percent.\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class="">This is 100 percent.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>nil</tt>) <strong>print</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>nil</tt>) <strong>print</strong>(obj, ...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6378
+6379
+6380
+6381
+6382
+6383
+6384
+6385
+6386
+6387
+6388
+6389
+6390
+6391
+6392
+6393
+6394
+6395
+6396
+6397
+6398
+6399
+6400
+6401</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 6378</span>
+
+VALUE
+rb_io_print(int argc, VALUE *argv, VALUE out)
+{
+    int i;
+    VALUE line;
+
+    /* if no argument given, print `$_' */
+    if (argc == 0) {
+	argc = 1;
+	line = rb_lastline_get();
+	argv = &amp;line;
+    }
+    for (i=0; i&lt;argc; i++) {
+	if (!NIL_P(rb_output_fs) &amp;&amp; i&gt;0) {
+	    rb_io_write(out, rb_output_fs);
+	}
+	rb_io_write(out, argv[i]);
+    }
+    if (argc &gt; 0 &amp;&amp; !NIL_P(rb_output_rs)) {
+	rb_io_write(out, rb_output_rs);
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="printf-instance_method">
+  
+    - (<tt>nil</tt>) <strong>printf</strong>(format_string[, obj, ...]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Formats and writes to <em>ios</em>, converting parameters under control of
+the format string. See <code>Kernel#sprintf</code> for details.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6319
+6320
+6321
+6322
+6323
+6324</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 6319</span>
+
+VALUE
+rb_io_printf(int argc, VALUE *argv, VALUE out)
+{
+    rb_io_write(out, rb_f_sprintf(argc, argv));
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="putc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>putc</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If <em>obj</em> is <code>Numeric</code>, write the character whose code is
+the least-significant byte of <em>obj</em>, otherwise write the first byte
+of the string representation of <em>obj</em> to <em>ios</em>. Note: This
+method is not safe for use with multi-byte characters as it will truncate
+them.</p>
+
+<pre class="code"><code class=""><span class='gvar'>$stdout</span><span class='period'>.</span><span class='id identifier rubyid_putc'>putc</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A</span><span class='tstring_end'>&quot;</span></span>
+<span class='gvar'>$stdout</span><span class='period'>.</span><span class='id identifier rubyid_putc'>putc</span> <span class='int'>65</span></code></pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='const'>AA</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6451
+6452
+6453
+6454
+6455
+6456
+6457
+6458
+6459
+6460
+6461
+6462
+6463
+6464</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 6451</span>
+
+static VALUE
+rb_io_putc(VALUE io, VALUE ch)
+{
+    VALUE str;
+    if (TYPE(ch) == T_STRING) {
+	str = rb_str_substr(ch, 0, 1);
+    }
+    else {
+	char c = NUM2CHR(ch);
+	str = rb_str_new(&amp;c, 1);
+    }
+    rb_io_write(io, str);
+    return ch;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="puts-instance_method">
+  
+    - (<tt>nil</tt>) <strong>puts</strong>(obj, ...) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Writes the given objects to <em>ios</em> as with <code>IO#print</code>.
+Writes a record separator (typically a newline) after any that do not
+already end with a newline sequence. If called with an array argument,
+writes each element on a new line. If called without arguments, outputs a
+single record separator.</p>
+
+<pre class="code"><code class=""><span class='gvar'>$stdout</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>this</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+
+<p><em>produces:</em></p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_this'>this</span>
+<span class='id identifier rubyid_is'>is</span>
+<span class='id identifier rubyid_a'>a</span>
+<span class='id identifier rubyid_test'>test</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6541
+6542
+6543
+6544
+6545
+6546
+6547
+6548
+6549
+6550
+6551
+6552
+6553
+6554
+6555
+6556
+6557
+6558
+6559
+6560
+6561
+6562
+6563
+6564
+6565
+6566
+6567
+6568
+6569
+6570
+6571
+6572</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 6541</span>
+
+VALUE
+rb_io_puts(int argc, VALUE *argv, VALUE out)
+{
+    int i;
+    VALUE line;
+
+    /* if no argument given, print newline. */
+    if (argc == 0) {
+	rb_io_write(out, rb_default_rs);
+	return Qnil;
+    }
+    for (i=0; i&lt;argc; i++) {
+	if (TYPE(argv[i]) == T_STRING) {
+	    line = argv[i];
+	    goto string;
+	}
+	line = rb_check_array_type(argv[i]);
+	if (!NIL_P(line)) {
+	    rb_exec_recursive(io_puts_ary, line, out);
+	    continue;
+	}
+	line = rb_obj_as_string(argv[i]);
+      string:
+	rb_io_write(out, line);
+	if (RSTRING_LEN(line) == 0 ||
+            !str_end_with_asciichar(line, '\n')) {
+	    rb_io_write(out, rb_default_rs);
+	}
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>read</strong>([length [, buffer]]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads <em>length</em> bytes from ARGF. The files named on the command line
+are concatenated and treated as a single file by this method, so when
+called without arguments the contents of this pseudo file are returned in
+their entirety.</p>
+
+<p><em>length</em> must be a non-negative integer or nil. If it is a positive
+integer, <code>read</code> tries to read at most <em>length</em> bytes. It
+returns nil if an EOF was encountered before anything could be read. Fewer
+than <em>length</em> bytes may be returned if an EOF is encountered during
+the read.</p>
+
+<p>If <em>length</em> is omitted or is <em>nil</em>, it reads until EOF. A
+String is returned even if EOF is encountered before any data is read.</p>
+
+<p>If <em>length</em> is zero, it returns _“”_.</p>
+
+<p>If the optional <em>buffer</em> argument is present, it must reference a
+String, which will receive the data.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;small&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">small</span>.<span class="ruby-identifier">txt</span>
+$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;large&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">large</span>.<span class="ruby-identifier">txt</span>
+$ .<span class="ruby-operator">/</span><span class="ruby-identifier">glark</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">small</span>.<span class="ruby-identifier">txt</span> <span class="ruby-identifier">large</span>.<span class="ruby-identifier">txt</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>      <span class="ruby-comment">#=&gt; &quot;small\nlarge&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">200</span>) <span class="ruby-comment">#=&gt; &quot;small\nlarge&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">2</span>)   <span class="ruby-comment">#=&gt; &quot;sm&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">0</span>)   <span class="ruby-comment">#=&gt; &quot;&quot;</span>
+</pre>
+
+<p>Note that this method behaves like fread() function in C.  If you need the
+behavior like read(2) system call, consider <code>ARGF.readpartial</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10199
+10200
+10201
+10202
+10203
+10204
+10205
+10206
+10207
+10208
+10209
+10210
+10211
+10212
+10213
+10214
+10215
+10216
+10217
+10218
+10219
+10220
+10221
+10222
+10223
+10224
+10225
+10226
+10227
+10228
+10229
+10230
+10231
+10232
+10233
+10234
+10235
+10236
+10237
+10238
+10239
+10240
+10241
+10242</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10199</span>
+
+static VALUE
+argf_read(int argc, VALUE *argv, VALUE argf)
+{
+    VALUE tmp, str, length;
+    long len = 0;
+
+    rb_scan_args(argc, argv, &quot;02&quot;, &amp;length, &amp;str);
+    if (!NIL_P(length)) {
+	len = NUM2LONG(argv[0]);
+    }
+    if (!NIL_P(str)) {
+	StringValue(str);
+	rb_str_resize(str,0);
+	argv[1] = Qnil;
+    }
+
+  retry:
+    if (!next_argv()) {
+	return str;
+    }
+    if (ARGF_GENERIC_INPUT_P()) {
+	tmp = argf_forward(argc, argv, argf);
+    }
+    else {
+	tmp = io_read(argc, argv, ARGF.current_file);
+    }
+    if (NIL_P(str)) str = tmp;
+    else if (!NIL_P(tmp)) rb_str_append(str, tmp);
+    if (NIL_P(tmp) || NIL_P(length)) {
+	if (ARGF.next_p != -1) {
+	    argf_close(ARGF.current_file);
+	    ARGF.next_p = 1;
+	    goto retry;
+	}
+    }
+    else if (argc &gt;= 1) {
+	if (RSTRING_LEN(str) &lt; len) {
+	    len -= RSTRING_LEN(str);
+	    argv[0] = INT2NUM(len);
+	    goto retry;
+	}
+    }
+    return str;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_nonblock-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>read_nonblock</strong>(maxlen) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>read_nonblock</strong>(maxlen, outbuf) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads at most <em>maxlen</em> bytes from the ARGF stream in non-blocking
+mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>read_nonblock</strong>(maxlen) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10302
+10303
+10304
+10305
+10306</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10302</span>
+
+static VALUE
+argf_read_nonblock(int argc, VALUE *argv, VALUE argf)
+{
+    return argf_getpartial(argc, argv, argf, 1);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>readbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads the next 8-bit byte from ARGF and returns it as a
+<code>Fixnum</code>. Raises an <code>EOFError</code> after the last byte of
+the last file has been read.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">file</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readbyte</span>  <span class="ruby-comment">#=&gt; 102</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readbyte</span>  <span class="ruby-comment">#=&gt; 111</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readbyte</span>  <span class="ruby-comment">#=&gt; 111</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readbyte</span>  <span class="ruby-comment">#=&gt; 10</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readbyte</span>  <span class="ruby-comment">#=&gt; end of file reached (EOFError)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10492
+10493
+10494
+10495
+10496
+10497
+10498
+10499
+10500
+10501
+10502
+10503</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10492</span>
+
+static VALUE
+argf_readbyte(VALUE argf)
+{
+    VALUE c;
+
+    NEXT_ARGF_FORWARD(0, 0);
+    c = argf_getbyte(argf);
+    if (NIL_P(c)) {
+	rb_eof_error();
+    }
+    return c;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readchar-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>readchar</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads the next character from <code>ARGF</code> and returns it as a
+<code>String</code>. Raises an <code>EOFError</code> after the last
+character of the last file has been read.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">echo</span> <span class="ruby-string">&quot;foo&quot;</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>
+$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">file</span>
+
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>  <span class="ruby-comment">#=&gt; &quot;f&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>  <span class="ruby-comment">#=&gt; &quot;o&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>  <span class="ruby-comment">#=&gt; &quot;o&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>  <span class="ruby-comment">#=&gt; &quot;\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readchar</span>  <span class="ruby-comment">#=&gt; end of file reached (EOFError)</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10452
+10453
+10454
+10455
+10456
+10457
+10458
+10459
+10460
+10461
+10462
+10463
+10464
+10465
+10466
+10467
+10468
+10469
+10470
+10471
+10472</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10452</span>
+
+static VALUE
+argf_readchar(VALUE argf)
+{
+    VALUE ch;
+
+  retry:
+    if (!next_argv()) rb_eof_error();
+    if (TYPE(ARGF.current_file) != T_FILE) {
+	ch = rb_funcall3(ARGF.current_file, rb_intern(&quot;getc&quot;), 0, 0);
+    }
+    else {
+	ch = rb_io_getc(ARGF.current_file);
+    }
+    if (NIL_P(ch) &amp;&amp; ARGF.next_p != -1) {
+	argf_close(ARGF.current_file);
+	ARGF.next_p = 1;
+	goto retry;
+    }
+
+    return ch;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readline-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the next line from the current file in <code>ARGF</code>.</p>
+
+<p>By default lines are assumed to be separated by <tt>$/</tt>; to use a different
+character as a separator, supply it as a <code>String</code> for the
+<em>sep</em> argument.</p>
+
+<p>The optional  <em>limit</em> argument specifies how many characters of each
+line to return. By default all characters are returned.</p>
+
+<p>An <code>EOFError</code> is raised at the end of the file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readline</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7531
+7532
+7533
+7534
+7535
+7536
+7537
+7538
+7539
+7540
+7541
+7542
+7543
+7544</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7531</span>
+
+static VALUE
+argf_readline(int argc, VALUE *argv, VALUE argf)
+{
+    VALUE line;
+
+    if (!next_argv()) rb_eof_error();
+    ARGF_FORWARD(argc, argv);
+    line = argf_gets(argc, argv, argf);
+    if (NIL_P(line)) {
+	rb_eof_error();
+    }
+
+    return line;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readlines-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.to_a(sep=$/)     -&gt; array</p>
+
+<pre class="code"><code class="">ARGF.to_a(limit)      -&gt; array
+ARGF.to_a(sep, limit) -&gt; array</code></pre>
+
+<p>Reads <code>ARGF</code>‘s current file in its entirety, returning an
+<code>Array</code> of its lines, one line per element. Lines are assumed to
+be separated by <em>sep</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">lines</span> = <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readlines</span>
+<span class="ruby-identifier">lines</span>[<span class="ruby-value">0</span>]                <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7583
+7584
+7585
+7586
+7587
+7588
+7589
+7590
+7591
+7592
+7593
+7594
+7595
+7596
+7597
+7598
+7599
+7600
+7601
+7602
+7603
+7604
+7605</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7583</span>
+
+static VALUE
+argf_readlines(int argc, VALUE *argv, VALUE argf)
+{
+    long lineno = ARGF.lineno;
+    VALUE lines, ary;
+
+    ary = rb_ary_new();
+    while (next_argv()) {
+	if (ARGF_GENERIC_INPUT_P()) {
+	    lines = rb_funcall3(ARGF.current_file, rb_intern(&quot;readlines&quot;), argc, argv);
+	}
+	else {
+	    lines = rb_io_readlines(argc, argv, ARGF.current_file);
+	    argf_close(ARGF.current_file);
+	}
+	ARGF.next_p = 1;
+	rb_ary_concat(ary, lines);
+	ARGF.lineno = lineno + RARRAY_LEN(ary);
+	ARGF.last_lineno = ARGF.lineno;
+    }
+    ARGF.init_p = 0;
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readpartial-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readpartial</strong>(maxlen) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>readpartial</strong>(maxlen, outbuf) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads at most <em>maxlen</em> bytes from the ARGF stream. It blocks only if
+<code>ARGF</code> has no data immediately available. If the optional
+<em>outbuf</em> argument is present, it must reference a String, which will
+receive the data. It raises <code>EOFError</code> on end of file.</p>
+
+<p><code>readpartial</code> is designed for streams such as pipes, sockets,
+and ttys. It blocks only when no data is immediately available. This means
+that it blocks only when following all conditions hold:</p>
+<ul><li>
+<p>The byte buffer in the <code>IO</code> object is empty.</p>
+</li><li>
+<p>The content of the stream is empty.</p>
+</li><li>
+<p>The stream has not reached EOF.</p>
+</li></ul>
+
+<p>When <code>readpartial</code> blocks, it waits for data or EOF. If some
+data is read, <code>readpartial</code> returns with the data. If EOF is
+reached, readpartial raises an <code>EOFError</code>.</p>
+
+<p>When <code>readpartial</code> doesn’t block, it returns or raises
+immediately.  If the byte buffer is not empty, it returns the data in the
+buffer. Otherwise, if the stream has some content, it returns the data in
+the stream. If the stream reaches EOF an <code>EOFError</code> is raised.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>readpartial</strong>(maxlen) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10288
+10289
+10290
+10291
+10292</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10288</span>
+
+static VALUE
+argf_readpartial(int argc, VALUE *argv, VALUE argf)
+{
+    return argf_getpartial(argc, argv, argf, 0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rewind-instance_method">
+  
+    - (<tt>0</tt>) <strong>rewind</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Positions the current file to the beginning of input, resetting
+<code>ARGF.lineno</code> to zero.</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readline</span>   <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">rewind</span>     <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">lineno</span>     <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readline</span>   <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10079
+10080
+10081
+10082
+10083
+10084
+10085
+10086
+10087</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10079</span>
+
+static VALUE
+argf_rewind(VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to rewind&quot;);
+    }
+    ARGF_FORWARD(0, 0);
+    return rb_io_rewind(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seek-instance_method">
+  
+    - (<tt>0</tt>) <strong>seek</strong>(amount, whence = IO::SEEK_SET) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Seeks to offset <em>amount</em> (an <code>Integer</code>) in the
+<code>ARGF</code> stream according to the value of <em>whence</em>. See
+<tt>IO#seek</tt> for further details.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10036
+10037
+10038
+10039
+10040
+10041
+10042
+10043
+10044</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10036</span>
+
+static VALUE
+argf_seek_m(int argc, VALUE *argv, VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to seek&quot;);
+    }
+    ARGF_FORWARD(argc, argv);
+    return rb_io_seek_m(argc, argv, ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_encoding-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(ext_enc) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(&quot;ext_enc:int_enc&quot;) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(ext_enc, int_enc) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(&quot;ext_enc:int_enc&quot;, opt) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(ext_enc, int_enc, opt) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If single argument is specified, strings read from ARGF are tagged with the
+encoding specified.</p>
+
+<p>If two encoding names separated by a colon are given, e.g. “ascii:utf-8”,
+the read string is converted from the first encoding (external encoding) to
+the second encoding (internal encoding), then tagged with the second
+encoding.</p>
+
+<p>If two arguments are specified, they must be encoding objects or encoding
+names. Again, the first specifies the external encoding; the second
+specifies the internal encoding.</p>
+
+<p>If the external encoding and the internal encoding are specified, the
+optional <code>Hash</code> argument can be used to adjust the conversion
+process. The structure of this hash is explained in the <tt>String#encode</tt>
+documentation.</p>
+
+<p>For example:</p>
+
+<pre class="code"><code class=""><span class='const'>ARGF</span><span class='period'>.</span><span class='id identifier rubyid_set_encoding'>set_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ascii</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>         <span class='comment'># Tag the input as US-ASCII text
+</span><span class='const'>ARGF</span><span class='period'>.</span><span class='id identifier rubyid_set_encoding'>set_encoding</span><span class='lparen'>(</span><span class='const'>Encoding</span><span class='op'>::</span><span class='const'>UTF_8</span><span class='rparen'>)</span> <span class='comment'># Tag the input as UTF-8 text
+</span><span class='const'>ARGF</span><span class='period'>.</span><span class='id identifier rubyid_set_encoding'>set_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ascii</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='comment'># Transcode the input from US-ASCII
+</span>                                   <span class='comment'># to UTF-8.</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9993
+9994
+9995
+9996
+9997
+9998
+9999
+10000
+10001
+10002
+10003
+10004
+10005</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 9993</span>
+
+static VALUE
+argf_set_encoding(int argc, VALUE *argv, VALUE argf)
+{
+    rb_io_t *fptr;
+
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to set encoding&quot;);
+    }
+    rb_io_set_encoding(argc, argv, ARGF.current_file);
+    GetOpenFile(ARGF.current_file, fptr);
+    ARGF.encs = fptr-&gt;encs;
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="skip-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>skip</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the current file to the next file in ARGV. If there aren’t any more
+files it has no effect.</p>
+
+<p>For example:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">ruby</span> <span class="ruby-identifier">argf</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">foo</span> <span class="ruby-identifier">bar</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;foo&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">skip</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">filename</span>  <span class="ruby-comment">#=&gt; &quot;bar&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10761
+10762
+10763
+10764
+10765
+10766
+10767
+10768
+10769</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10761</span>
+
+static VALUE
+argf_skip(VALUE argf)
+{
+    if (ARGF.init_p &amp;&amp; ARGF.next_p == 0) {
+	argf_close(ARGF.current_file);
+	ARGF.next_p = 1;
+    }
+    return argf;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tell-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current offset (in bytes) of the current file in
+<code>ARGF</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">pos</span>    <span class="ruby-comment">#=&gt; 0</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">gets</span>   <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">pos</span>    <span class="ruby-comment">#=&gt; 17</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10019
+10020
+10021
+10022
+10023
+10024
+10025
+10026
+10027</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10019</span>
+
+static VALUE
+argf_tell(VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream to tell&quot;);
+    }
+    ARGF_FORWARD(0, 0);
+    return rb_io_tell(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_a-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ARGF.to_a(sep=$/)     -&gt; array</p>
+
+<pre class="code"><code class="">ARGF.to_a(limit)      -&gt; array
+ARGF.to_a(sep, limit) -&gt; array</code></pre>
+
+<p>Reads <code>ARGF</code>‘s current file in its entirety, returning an
+<code>Array</code> of its lines, one line per element. Lines are assumed to
+be separated by <em>sep</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">lines</span> = <span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">readlines</span>
+<span class="ruby-identifier">lines</span>[<span class="ruby-value">0</span>]                <span class="ruby-comment">#=&gt; &quot;This is line one\n&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7583
+7584
+7585
+7586
+7587
+7588
+7589
+7590
+7591
+7592
+7593
+7594
+7595
+7596
+7597
+7598
+7599
+7600
+7601
+7602
+7603
+7604
+7605</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 7583</span>
+
+static VALUE
+argf_readlines(int argc, VALUE *argv, VALUE argf)
+{
+    long lineno = ARGF.lineno;
+    VALUE lines, ary;
+
+    ary = rb_ary_new();
+    while (next_argv()) {
+	if (ARGF_GENERIC_INPUT_P()) {
+	    lines = rb_funcall3(ARGF.current_file, rb_intern(&quot;readlines&quot;), argc, argv);
+	}
+	else {
+	    lines = rb_io_readlines(argc, argv, ARGF.current_file);
+	    argf_close(ARGF.current_file);
+	}
+	ARGF.next_p = 1;
+	rb_ary_concat(ary, lines);
+	ARGF.lineno = lineno + RARRAY_LEN(ary);
+	ARGF.last_lineno = ARGF.lineno;
+    }
+    ARGF.init_p = 0;
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_i-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>fileno</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>to_i</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an integer representing the numeric file descriptor for the current
+file. Raises an <code>ArgumentError</code> if there isn’t a current file.</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">fileno</span>    <span class="ruby-comment">#=&gt; 3</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>fileno</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>to_i</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10099
+10100
+10101
+10102
+10103
+10104
+10105
+10106
+10107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10099</span>
+
+static VALUE
+argf_fileno(VALUE argf)
+{
+    if (!next_argv()) {
+	rb_raise(rb_eArgError, &quot;no stream&quot;);
+    }
+    ARGF_FORWARD(0, 0);
+    return rb_io_fileno(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_io-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>to_io</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an <code>IO</code> object representing the current file. This will
+be a <code>File</code> object unless the current file is a stream such as
+STDIN.</p>
+
+<p>For example:</p>
+
+<pre class="ruby"><span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">to_io</span>    <span class="ruby-comment">#=&gt; #&lt;File:glark.txt&gt;</span>
+<span class="ruby-constant">ARGF</span>.<span class="ruby-identifier">to_io</span>    <span class="ruby-comment">#=&gt; #&lt;IO:&lt;STDIN&gt;&gt;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10121
+10122
+10123
+10124
+10125
+10126
+10127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10121</span>
+
+static VALUE
+argf_to_io(VALUE argf)
+{
+    next_argv();
+    ARGF_FORWARD(0, 0);
+    return ARGF.current_file;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns “ARGF”.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10822
+10823
+10824
+10825
+10826</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10822</span>
+
+static VALUE
+argf_to_s(VALUE argf)
+{
+    return rb_str_new2(&quot;ARGF&quot;);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_write_io-instance_method">
+  
+    - (<tt><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></tt>) <strong>to_write_io</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns IO instance tied to <em>ARGF</em> for writing if inplace mode is
+enabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10947
+10948
+10949
+10950
+10951
+10952
+10953
+10954</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10947</span>
+
+static VALUE
+argf_write_io(VALUE argf)
+{
+    if (!RTEST(ARGF.current_file)) {
+	rb_raise(rb_eIOError, &quot;not opened for writing&quot;);
+    }
+    return GetWriteIO(ARGF.current_file);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>write</strong>(string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Writes <em>string</em> if inplace mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10962
+10963
+10964
+10965
+10966</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'io.c', line 10962</span>
+
+static VALUE
+argf_write(VALUE argf, VALUE str)
+{
+    return rb_io_write(argf_write_io(argf), str);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:41 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

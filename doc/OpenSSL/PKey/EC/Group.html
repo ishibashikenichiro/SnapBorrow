@@ -1,0 +1,2049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: OpenSSL::PKey::EC::Group
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!OpenSSL/PKey/EC/Group.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (G)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../OpenSSL.html" title="OpenSSL (module)">OpenSSL</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../PKey.html" title="OpenSSL::PKey (module)">PKey</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../EC.html" title="OpenSSL::PKey::EC (class)">EC</a></span></span>
+     &raquo; 
+    <span class="title">Group</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: OpenSSL::PKey::EC::Group
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">OpenSSL::PKey::EC::Group</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/openssl/ossl_pkey_ec.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Group/Error.html" title="OpenSSL::PKey::EC::Group::Error (class)">Error</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asn1_flag-instance_method" title="#asn1_flag (instance method)">- (Fixnum) <strong>asn1_flag</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_asn1_flag().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asn1_flag%3D-instance_method" title="#asn1_flag= (instance method)">- (Fixnum) <strong>asn1_flag=</strong>(Fixnum) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_set_asn1_flag().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cofactor-instance_method" title="#get_cofactor (instance method)">- (Object) <strong>get_cofactor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_cofactor().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#curve_name-instance_method" title="#curve_name (instance method)">- (String) <strong>curve_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_curve_name().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#degree-instance_method" title="#degree (instance method)">- (Fixnum) <strong>degree</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_degree().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(group2) </a>
+    
+
+    
+      (also: #==)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generator-instance_method" title="#generator (instance method)">- (Object) <strong>generator</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get0_generator().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_*.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#order-instance_method" title="#get_order (instance method)">- (Object) <strong>get_order</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_order().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_conversion_form-instance_method" title="#point_conversion_form (instance method)">- (Object) <strong>point_conversion_form</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get_point_conversion_form().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_conversion_form%3D-instance_method" title="#point_conversion_form= (instance method)">- (Object) <strong>point_conversion_form=</strong>(form) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_set_point_conversion_form().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seed-instance_method" title="#seed (instance method)">- (String<sup>?</sup>) <strong>seed</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_get0_seed().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seed%3D-instance_method" title="#seed= (instance method)">- (Object) <strong>seed=</strong>(seed) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_set_seed().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_generator-instance_method" title="#set_generator (instance method)">- (self) <strong>set_generator</strong>(generator, order, cofactor) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_GROUP_set_generator().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_der-instance_method" title="#to_der (instance method)">- (String) <strong>to_der</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for i2d_ECPKParameters_bio().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_pem-instance_method" title="#to_pem (instance method)">- (String) <strong>to_pem</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for PEM_write_bio_ECPKParameters().</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_text-instance_method" title="#to_text (instance method)">- (String) <strong>to_text</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for ECPKParameters_print().</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(&quot;secp112r1&quot;) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(ec_group) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(pem_string) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(der_string) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(pem_file) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(der_file) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GFp_simple) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GFp_mult) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GFp_nist) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GF2m_simple) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GFp, bignum_p, bignum_a, bignum_b) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Group.new</strong>(:GF2m, bignum_p, bignum_a, bignum_b) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_*</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 738</span>
+
+static VALUE ossl_ec_group_initialize(int argc, VALUE *argv, VALUE self)
+{
+    VALUE arg1, arg2, arg3, arg4;
+    ossl_ec_group *ec_group;
+    EC_GROUP *group = NULL;
+
+    Data_Get_Struct(self, ossl_ec_group, ec_group);
+    if (ec_group-&gt;group != NULL)
+        ossl_raise(rb_eRuntimeError, &quot;EC_GROUP is already initialized&quot;);
+
+    switch (rb_scan_args(argc, argv, &quot;13&quot;, &amp;arg1, &amp;arg2, &amp;arg3, &amp;arg4)) {
+    case 1:
+        if (SYMBOL_P(arg1)) {
+            const EC_METHOD *method = NULL;
+            ID id = SYM2ID(arg1);
+
+            if (id == s_GFp_simple) {
+                method = EC_GFp_simple_method();
+            } else if (id == s_GFp_mont) {
+                method = EC_GFp_mont_method();
+            } else if (id == s_GFp_nist) {
+                method = EC_GFp_nist_method();
+#if !defined(OPENSSL_NO_EC2M)
+            } else if (id == s_GF2m_simple) {
+                method = EC_GF2m_simple_method();
+#endif
+            }
+
+            if (method) {
+                if ((group = EC_GROUP_new(method)) == NULL)
+                    ossl_raise(eEC_GROUP, &quot;EC_GROUP_new&quot;);
+            } else {
+                ossl_raise(rb_eArgError, &quot;unknown symbol, must be :GFp_simple, :GFp_mont, :GFp_nist or :GF2m_simple&quot;);
+            }
+        } else if (rb_obj_is_kind_of(arg1, cEC_GROUP)) {
+            const EC_GROUP *arg1_group;
+
+            SafeRequire_EC_GROUP(arg1, arg1_group);
+            if ((group = EC_GROUP_dup(arg1_group)) == NULL)
+                ossl_raise(eEC_GROUP, &quot;EC_GROUP_dup&quot;);
+        } else {
+            BIO *in = ossl_obj2bio(arg1);
+
+            group = PEM_read_bio_ECPKParameters(in, NULL, NULL, NULL);
+            if (!group) {
+		OSSL_BIO_reset(in);
+                group = d2i_ECPKParameters_bio(in, NULL);
+            }
+
+            BIO_free(in);
+
+            if (!group) {
+                const char *name = StringValueCStr(arg1);
+                int nid = OBJ_sn2nid(name);
+
+		(void)ERR_get_error();
+                if (nid == NID_undef)
+                    ossl_raise(eEC_GROUP, &quot;unknown curve name (%s)&quot;, name);
+
+                group = EC_GROUP_new_by_curve_name(nid);
+                if (group == NULL)
+                    ossl_raise(eEC_GROUP, &quot;unable to create curve (%s)&quot;, name);
+
+                EC_GROUP_set_asn1_flag(group, OPENSSL_EC_NAMED_CURVE);
+                EC_GROUP_set_point_conversion_form(group, POINT_CONVERSION_UNCOMPRESSED);
+            }
+        }
+
+        break;
+    case 4:
+        if (SYMBOL_P(arg1)) {
+            ID id = SYM2ID(arg1);
+            EC_GROUP *(*new_curve)(const BIGNUM *, const BIGNUM *, const BIGNUM *, BN_CTX *) = NULL;
+            const BIGNUM *p = GetBNPtr(arg2);
+            const BIGNUM *a = GetBNPtr(arg3);
+            const BIGNUM *b = GetBNPtr(arg4);
+
+            if (id == s_GFp) {
+                new_curve = EC_GROUP_new_curve_GFp;
+#if !defined(OPENSSL_NO_EC2M)
+            } else if (id == s_GF2m) {
+                new_curve = EC_GROUP_new_curve_GF2m;
+#endif
+            } else {
+                ossl_raise(rb_eArgError, &quot;unknown symbol, must be :GFp or :GF2m&quot;);
+            }
+
+            if ((group = new_curve(p, a, b, ossl_bn_ctx)) == NULL)
+                ossl_raise(eEC_GROUP, &quot;EC_GROUP_new_by_GF*&quot;);
+        } else {
+             ossl_raise(rb_eArgError, &quot;unknown argument, must be :GFp or :GF2m&quot;);
+        }
+
+        break;
+    default:
+        ossl_raise(rb_eArgError, &quot;wrong number of arguments&quot;);
+    }
+
+    if (group == NULL)
+        ossl_raise(eEC_GROUP, &quot;&quot;);
+
+    ec_group-&gt;group = group;
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="asn1_flag-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>asn1_flag</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_asn1_flag()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1002</span>
+
+static VALUE ossl_ec_group_get_asn1_flag(VALUE self)
+{
+    EC_GROUP *group = NULL;
+    int flag;
+
+    Require_EC_GROUP(self, group);
+
+    flag = EC_GROUP_get_asn1_flag(group);
+
+    return INT2FIX(flag);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="asn1_flag=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>asn1_flag=</strong>(Fixnum) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_set_asn1_flag()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1019</span>
+
+static VALUE ossl_ec_group_set_asn1_flag(VALUE self, VALUE flag_v)
+{
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+
+    EC_GROUP_set_asn1_flag(group, NUM2INT(flag_v));
+
+    return flag_v;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cofactor-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>get_cofactor</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_cofactor()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 927</span>
+
+static VALUE ossl_ec_group_get_cofactor(VALUE self)
+{
+    VALUE bn_obj;
+    BIGNUM *bn;
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+
+    bn_obj = ossl_bn_new(NULL);
+    bn = GetBNPtr(bn_obj);
+
+    if (EC_GROUP_get_cofactor(group, bn, ossl_bn_ctx) != 1)
+        ossl_raise(eEC_GROUP, &quot;EC_GROUP_get_cofactor&quot;);
+
+    return bn_obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="curve_name-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>curve_name</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_curve_name()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958
+959
+960
+961
+962</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 949</span>
+
+static VALUE ossl_ec_group_get_curve_name(VALUE self)
+{
+    EC_GROUP *group = NULL;
+    int nid;
+
+    Get_EC_GROUP(self, group);
+    if (group == NULL)
+        return Qnil;
+
+    nid = EC_GROUP_get_curve_name(group);
+
+/* BUG: an nid or asn1 object should be returned, maybe. */
+    return rb_str_new2(OBJ_nid2sn(nid));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="degree-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>) <strong>degree</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_degree()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1128
+1129
+1130
+1131
+1132
+1133
+1134
+1135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1128</span>
+
+static VALUE ossl_ec_group_get_degree(VALUE self)
+{
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+
+    return INT2NUM(EC_GROUP_get_degree(group));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eql?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(group2) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='==-instance_method'>==</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 848</span>
+
+static VALUE ossl_ec_group_eql(VALUE a, VALUE b)
+{
+    EC_GROUP *group1 = NULL, *group2 = NULL;
+
+    Require_EC_GROUP(a, group1);
+    SafeRequire_EC_GROUP(b, group2);
+
+    if (EC_GROUP_cmp(group1, group2, ossl_bn_ctx) == 1)
+       return Qfalse;
+
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generator-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>generator</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get0_generator()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 866</span>
+
+static VALUE ossl_ec_group_get_generator(VALUE self)
+{
+    VALUE point_obj;
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+
+    point_obj = ossl_ec_point_dup(EC_GROUP_get0_generator(group), self);
+
+    return point_obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="order-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>get_order</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_order()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 905</span>
+
+static VALUE ossl_ec_group_get_order(VALUE self)
+{
+    VALUE bn_obj;
+    BIGNUM *bn;
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+
+    bn_obj = ossl_bn_new(NULL);
+    bn = GetBNPtr(bn_obj);
+
+    if (EC_GROUP_get_order(group, bn, ossl_bn_ctx) != 1)
+        ossl_raise(eEC_GROUP, &quot;EC_GROUP_get_order&quot;);
+
+    return bn_obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_conversion_form-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>point_conversion_form</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get_point_conversion_form()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045
+1046
+1047
+1048
+1049
+1050
+1051
+1052
+1053</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1035</span>
+
+static VALUE ossl_ec_group_get_point_conversion_form(VALUE self)
+{
+    EC_GROUP *group = NULL;
+    point_conversion_form_t form;
+    VALUE ret;
+
+    Require_EC_GROUP(self, group);
+
+    form = EC_GROUP_get_point_conversion_form(group);
+
+    switch (form) {
+    case POINT_CONVERSION_UNCOMPRESSED:	ret = ID_uncompressed; break;
+    case POINT_CONVERSION_COMPRESSED:	ret = ID_compressed; break;
+    case POINT_CONVERSION_HYBRID:	ret = ID_hybrid; break;
+    default:	ossl_raise(eEC_GROUP, &quot;unsupported point conversion form: %d, this module should be updated&quot;, form);
+    }
+
+   return ID2SYM(ret);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_conversion_form=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>point_conversion_form=</strong>(form) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_set_point_conversion_form()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1060
+1061
+1062
+1063
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1060</span>
+
+static VALUE ossl_ec_group_set_point_conversion_form(VALUE self, VALUE form_v)
+{
+    EC_GROUP *group = NULL;
+    point_conversion_form_t form;
+    ID form_id = SYM2ID(form_v);
+
+    Require_EC_GROUP(self, group);
+
+    if (form_id == ID_uncompressed) {
+        form = POINT_CONVERSION_UNCOMPRESSED;
+    } else if (form_id == ID_compressed) {
+        form = POINT_CONVERSION_COMPRESSED;
+    } else if (form_id == ID_hybrid) {
+        form = POINT_CONVERSION_HYBRID;
+    } else {
+        ossl_raise(rb_eArgError, &quot;form must be :compressed, :uncompressed, or :hybrid&quot;);
+    }
+
+    EC_GROUP_set_point_conversion_form(group, form);
+
+    return form_v;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seed-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>seed</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_get0_seed()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095
+1096
+1097
+1098
+1099
+1100
+1101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1088</span>
+
+static VALUE ossl_ec_group_get_seed(VALUE self)
+{
+    EC_GROUP *group = NULL;
+    size_t seed_len;
+
+    Require_EC_GROUP(self, group);
+
+    seed_len = EC_GROUP_get_seed_len(group);
+
+    if (seed_len == 0)
+        return Qnil;
+
+    return rb_str_new((const char *)EC_GROUP_get0_seed(group), seed_len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seed=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>seed=</strong>(seed) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_set_seed()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1108
+1109
+1110
+1111
+1112
+1113
+1114
+1115
+1116
+1117
+1118
+1119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1108</span>
+
+static VALUE ossl_ec_group_set_seed(VALUE self, VALUE seed)
+{
+    EC_GROUP *group = NULL;
+
+    Require_EC_GROUP(self, group);
+    StringValue(seed);
+
+    if (EC_GROUP_set_seed(group, (unsigned char *)RSTRING_PTR(seed), RSTRING_LEN(seed)) != (size_t)RSTRING_LEN(seed))
+        ossl_raise(eEC_GROUP, &quot;EC_GROUP_set_seed&quot;);
+
+    return seed;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_generator-instance_method">
+  
+    - (<tt>self</tt>) <strong>set_generator</strong>(generator, order, cofactor) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_GROUP_set_generator()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 883</span>
+
+static VALUE ossl_ec_group_set_generator(VALUE self, VALUE generator, VALUE order, VALUE cofactor)
+{
+    EC_GROUP *group = NULL;
+    const EC_POINT *point;
+    const BIGNUM *o, *co;
+
+    Require_EC_GROUP(self, group);
+    SafeRequire_EC_POINT(generator, point);
+    o = GetBNPtr(order);
+    co = GetBNPtr(cofactor);
+
+    if (EC_GROUP_set_generator(group, point, o, co) != 1)
+        ossl_raise(eEC_GROUP, &quot;EC_GROUP_set_generator&quot;);
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_der-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>to_der</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for i2d_ECPKParameters_bio()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1186
+1187
+1188
+1189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1186</span>
+
+static VALUE ossl_ec_group_to_der(VALUE self)
+{
+    return ossl_ec_group_to_string(self, EXPORT_DER);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_pem-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>to_pem</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for PEM_write_bio_ECPKParameters()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1176
+1177
+1178
+1179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1176</span>
+
+static VALUE ossl_ec_group_to_pem(VALUE self)
+{
+    return ossl_ec_group_to_string(self, EXPORT_PEM);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_text-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>to_text</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for ECPKParameters_print()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1196
+1197
+1198
+1199
+1200
+1201
+1202
+1203
+1204
+1205
+1206
+1207
+1208
+1209
+1210
+1211
+1212
+1213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1196</span>
+
+static VALUE ossl_ec_group_to_text(VALUE self)
+{
+    EC_GROUP *group;
+    BIO *out;
+    VALUE str;
+
+    Require_EC_GROUP(self, group);
+    if (!(out = BIO_new(BIO_s_mem()))) {
+	ossl_raise(eEC_GROUP, &quot;BIO_new(BIO_s_mem())&quot;);
+    }
+    if (!ECPKParameters_print(out, group, 0)) {
+	BIO_free(out);
+	ossl_raise(eEC_GROUP, NULL);
+    }
+    str = ossl_membio2str(out);
+
+    return str;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:10 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

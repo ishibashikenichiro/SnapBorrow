@@ -1,0 +1,23 @@
+<div align="center">
+<h1>貸し出し記録</h1>
+<h1>準備中</h1>
+<%= stylesheet_link_tag "equipment" %>
+<table>
+  <tr>
+    <th><h3>No</h3></th>
+    <th><h3>備品名</h3></th>
+    <th><h3>借用者</h3></th>
+    <th><h3>貸し出し日</h3></th>
+    <th><h3>返却日</h3></th>
+  </tr>
+  <% @lend_log.each.with_index(1) do |set, i| %>
+  <tr>
+    <td><h2><%= "#{i}" %></h2></td>
+    <td><h2><%= set.equipment_id %></h2></td>
+    <td><h2><%= set.user_id %></h2></td>
+　　　<td><h2><%= set.equipment_lend_date%></h2></td>
+	<td><h2><%= set.equipment_return_date %></h2></td>
+  </tr>
+  <% end %>
+</table>
+</div>

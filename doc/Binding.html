@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Binding
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Binding.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (B)</a> &raquo;
+    
+    
+    <span class="title">Binding</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Binding
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Binding</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">proc.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Objects of class <code>Binding</code> encapsulate the execution context at
+some particular place in the code and retain this context for future use.
+The variables, methods, value of <code>self</code>, and possibly an
+iterator block that can be accessed in this context are all retained.
+Binding objects can be created using <code>Kernel#binding</code>, and are
+made available to the callback of <code>Kernel#set_trace_func</code>.</p>
+
+<p>These binding objects can be passed as the second argument of the
+<code>Kernel#eval</code> method, establishing an environment for the
+evaluation.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Demo</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">n</span>)
+    <span class="ruby-ivar">@secret</span> = <span class="ruby-identifier">n</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_binding</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">binding</span>()
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">k1</span> = <span class="ruby-constant">Demo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">99</span>)
+<span class="ruby-identifier">b1</span> = <span class="ruby-identifier">k1</span>.<span class="ruby-identifier">get_binding</span>
+<span class="ruby-identifier">k2</span> = <span class="ruby-constant">Demo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">-3</span>)
+<span class="ruby-identifier">b2</span> = <span class="ruby-identifier">k2</span>.<span class="ruby-identifier">get_binding</span>
+
+<span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;@secret&quot;</span>, <span class="ruby-identifier">b1</span>)   <span class="ruby-comment">#=&gt; 99</span>
+<span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;@secret&quot;</span>, <span class="ruby-identifier">b2</span>)   <span class="ruby-comment">#=&gt; -3</span>
+<span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;@secret&quot;</span>)       <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+
+<p>Binding objects have no class-specific methods.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clone-instance_method" title="#clone (instance method)">- (Object) <strong>clone</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dup-instance_method" title="#dup (instance method)">- (Object) <strong>dup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval-instance_method" title="#eval (instance method)">- (Object) <strong>eval</strong>(string[, filename [,lineno]]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the Ruby expression(s) in string, in the binding’s context.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="clone-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>clone</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+302
+303
+304
+305
+306
+307
+308</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'proc.c', line 302</span>
+
+static VALUE
+binding_clone(VALUE self)
+{
+    VALUE bindval = binding_dup(self);
+    CLONESETUP(bindval, self);
+    return bindval;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dup-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>dup</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'proc.c', line 288</span>
+
+static VALUE
+binding_dup(VALUE self)
+{
+    VALUE bindval = binding_alloc(rb_cBinding);
+    rb_binding_t *src, *dst;
+    GetBindingPtr(self, src);
+    GetBindingPtr(bindval, dst);
+    dst-&gt;env = src-&gt;env;
+    dst-&gt;filename = src-&gt;filename;
+    dst-&gt;line_no = src-&gt;line_no;
+    return bindval;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eval-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>eval</strong>(string[, filename [,lineno]]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the Ruby expression(s) in <em>string</em>, in the
+<em>binding</em>’s context.  If the optional <em>filename</em> and
+<em>lineno</em> parameters are present, they will be used when reporting
+syntax errors.</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">get_binding</span>(<span class="ruby-identifier">param</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">binding</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">b</span> = <span class="ruby-identifier">get_binding</span>(<span class="ruby-string">&quot;hello&quot;</span>)
+<span class="ruby-identifier">b</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;param&quot;</span>)   <span class="ruby-comment">#=&gt; &quot;hello&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+367
+368
+369
+370
+371
+372
+373
+374
+375</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'proc.c', line 367</span>
+
+static VALUE
+bind_eval(int argc, VALUE *argv, VALUE bindval)
+{
+    VALUE args[4];
+
+    rb_scan_args(argc, argv, &quot;12&quot;, &amp;args[0], &amp;args[2], &amp;args[3]);
+    args[1] = bindval;
+    return rb_f_eval(argc+1, args, Qnil /* self will be searched in eval */);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:48 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

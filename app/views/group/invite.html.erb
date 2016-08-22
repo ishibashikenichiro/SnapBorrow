@@ -1,0 +1,106 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<h1>メンバー招待フォーム</h1>
+
+<% if flash[:message] %>
+  <div class="alert alert-success h4" role="alert">
+    <%= flash[:message] %>
+  </div>
+<% end %>
+
+<h4>招待したいユーザのメールアドレスを入力してください。
+  <br>一回で最大10人まで招待できます。
+</h4>
+
+<%= form_tag "/group/invite_mail", :class => "form-horizontal", :role => "form" do %>
+  <div class="form-group" id="invite-email-div-1">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail1, params[:mail1], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button1', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-2" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail2, params[:mail2], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button2', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-3" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail3, params[:mail3], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button3', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-4" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail4, params[:mail4], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button4', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-5" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail5, params[:mail5], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button5', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-6" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail6, params[:mail6], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button6', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-7" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail7, params[:mail7], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button7', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-8" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail8, params[:mail8], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button8', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-9" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail9, params[:mail9], :class => "form-control"%>
+    </div>
+    <%= button_tag :type => 'button', :class => 'btn btn-default', :id => 'add-input-button9', :onclick => 'addInput();' do%>
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="form-group" id="invite-email-div-10" style="display:none">
+    <div class="col-xs-10 col-sm-5">
+      <%= email_field_tag :mail10, params[:mail10], :class => "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="hidden-xs col-sm-12">
+      <%= button_tag "招待メールの送信", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="visible-xs-block col-xs-12">
+      <%= button_tag "招待メールの送信", :class => 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+
+<% end %>

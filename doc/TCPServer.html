@@ -1,0 +1,841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TCPServer
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TCPServer.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TCPServer</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: TCPServer
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="TCPSocket.html" title="TCPSocket (class)">TCPSocket</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="BasicSocket.html" title="BasicSocket (class)">BasicSocket</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="IPSocket.html" title="IPSocket (class)">IPSocket</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="TCPSocket.html" title="TCPSocket (class)">TCPSocket</a></span></li>
+          
+            <li class="next">TCPServer</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/socket/tcpserver.c<span class="defines">,<br />
+  ext/socket/tcpserver.c</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>TCPServer represents a TCP/IP server socket.</p>
+
+<p>A simple TCP server may look like:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'socket'</span>
+
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">2000</span> <span class="ruby-comment"># Server bind to port 2000</span>
+<span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">client</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">accept</span>    <span class="ruby-comment"># Wait for a client to connect</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Hello !&quot;</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Time is #{Time.now}&quot;</span>
+  <span class="ruby-identifier">client</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>A more usable server (serving multiple clients):</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'socket'</span>
+
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">2000</span>
+<span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">server</span>.<span class="ruby-identifier">accept</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">client</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Hello !&quot;</span>
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Time is #{Time.now}&quot;</span>
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#SEEK_CUR-constant" title="IO::SEEK_CUR (constant)">IO::SEEK_CUR</a></span>, <span class='object_link'><a href="IO.html#SEEK_END-constant" title="IO::SEEK_END (constant)">IO::SEEK_END</a></span>, <span class='object_link'><a href="IO.html#SEEK_SET-constant" title="IO::SEEK_SET (constant)">IO::SEEK_SET</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#accept-instance_method" title="#accept (instance method)">- (Object) <strong>accept</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TCPServer.open(“127.0.0.1”, 14641) {|serv|     s = serv.accept     s.puts
+Time.now     s.close   }.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#accept_nonblock-instance_method" title="#accept_nonblock (instance method)">- (Object) <strong>accept_nonblock</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Accepts an incoming connection using accept(2) after O_NONBLOCK is set for
+the underlying file descriptor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>([hostname,]) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new server socket bound to <em>port</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#listen-instance_method" title="#listen (instance method)">- (0) <strong>listen</strong>(int) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Listens for connections, using the specified <code>int</code> as the
+backlog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sysaccept-instance_method" title="#sysaccept (instance method)">- (Object) <strong>sysaccept</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a file descriptor of a accepted connection.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="TCPSocket.html" title="TCPSocket (class)">TCPSocket</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="TCPSocket.html#gethostbyname-class_method" title="TCPSocket.gethostbyname (method)">gethostbyname</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="IPSocket.html" title="IPSocket (class)">IPSocket</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IPSocket.html#addr-instance_method" title="IPSocket#addr (method)">#addr</a></span>, <span class='object_link'><a href="IPSocket.html#getaddress-class_method" title="IPSocket.getaddress (method)">getaddress</a></span>, <span class='object_link'><a href="IPSocket.html#peeraddr-instance_method" title="IPSocket#peeraddr (method)">#peeraddr</a></span>, <span class='object_link'><a href="IPSocket.html#recvfrom-instance_method" title="IPSocket#recvfrom (method)">#recvfrom</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="BasicSocket.html" title="BasicSocket (class)">BasicSocket</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="BasicSocket.html#close_read-instance_method" title="BasicSocket#close_read (method)">#close_read</a></span>, <span class='object_link'><a href="BasicSocket.html#close_write-instance_method" title="BasicSocket#close_write (method)">#close_write</a></span>, <span class='object_link'><a href="BasicSocket.html#do_not_reverse_lookup-instance_method" title="BasicSocket#do_not_reverse_lookup (method)">#do_not_reverse_lookup</a></span>, <span class='object_link'><a href="BasicSocket.html#do_not_reverse_lookup-class_method" title="BasicSocket.do_not_reverse_lookup (method)">do_not_reverse_lookup</a></span>, <span class='object_link'><a href="BasicSocket.html#do_not_reverse_lookup%3D-class_method" title="BasicSocket.do_not_reverse_lookup= (method)">do_not_reverse_lookup=</a></span>, <span class='object_link'><a href="BasicSocket.html#do_not_reverse_lookup%3D-instance_method" title="BasicSocket#do_not_reverse_lookup= (method)">#do_not_reverse_lookup=</a></span>, <span class='object_link'><a href="BasicSocket.html#for_fd-class_method" title="BasicSocket.for_fd (method)">for_fd</a></span>, <span class='object_link'><a href="BasicSocket.html#getpeereid-instance_method" title="BasicSocket#getpeereid (method)">#getpeereid</a></span>, <span class='object_link'><a href="BasicSocket.html#getpeername-instance_method" title="BasicSocket#getpeername (method)">#getpeername</a></span>, <span class='object_link'><a href="BasicSocket.html#getsockname-instance_method" title="BasicSocket#getsockname (method)">#getsockname</a></span>, <span class='object_link'><a href="BasicSocket.html#getsockopt-instance_method" title="BasicSocket#getsockopt (method)">#getsockopt</a></span>, <span class='object_link'><a href="BasicSocket.html#local_address-instance_method" title="BasicSocket#local_address (method)">#local_address</a></span>, <span class='object_link'><a href="BasicSocket.html#recv-instance_method" title="BasicSocket#recv (method)">#recv</a></span>, <span class='object_link'><a href="BasicSocket.html#recv_nonblock-instance_method" title="BasicSocket#recv_nonblock (method)">#recv_nonblock</a></span>, <span class='object_link'><a href="BasicSocket.html#recvmsg-instance_method" title="BasicSocket#recvmsg (method)">#recvmsg</a></span>, <span class='object_link'><a href="BasicSocket.html#recvmsg_nonblock-instance_method" title="BasicSocket#recvmsg_nonblock (method)">#recvmsg_nonblock</a></span>, <span class='object_link'><a href="BasicSocket.html#remote_address-instance_method" title="BasicSocket#remote_address (method)">#remote_address</a></span>, <span class='object_link'><a href="BasicSocket.html#send-instance_method" title="BasicSocket#send (method)">#send</a></span>, <span class='object_link'><a href="BasicSocket.html#sendmsg-instance_method" title="BasicSocket#sendmsg (method)">#sendmsg</a></span>, <span class='object_link'><a href="BasicSocket.html#sendmsg_nonblock-instance_method" title="BasicSocket#sendmsg_nonblock (method)">#sendmsg_nonblock</a></span>, <span class='object_link'><a href="BasicSocket.html#setsockopt-instance_method" title="BasicSocket#setsockopt (method)">#setsockopt</a></span>, <span class='object_link'><a href="BasicSocket.html#shutdown-instance_method" title="BasicSocket#shutdown (method)">#shutdown</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="IO.html" title="IO (class)">IO</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO.html#%3C%3C-instance_method" title="IO#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="IO.html#advise-instance_method" title="IO#advise (method)">#advise</a></span>, <span class='object_link'><a href="IO.html#autoclose%3D-instance_method" title="IO#autoclose= (method)">#autoclose=</a></span>, <span class='object_link'><a href="IO.html#autoclose%3F-instance_method" title="IO#autoclose? (method)">#autoclose?</a></span>, <span class='object_link'><a href="IO.html#binmode-instance_method" title="IO#binmode (method)">#binmode</a></span>, <span class='object_link'><a href="IO.html#binmode%3F-instance_method" title="IO#binmode? (method)">#binmode?</a></span>, <span class='object_link'><a href="IO.html#binread-class_method" title="IO.binread (method)">binread</a></span>, <span class='object_link'><a href="IO.html#binwrite-class_method" title="IO.binwrite (method)">binwrite</a></span>, <span class='object_link'><a href="IO.html#bytes-instance_method" title="IO#bytes (method)">#bytes</a></span>, <span class='object_link'><a href="IO.html#chars-instance_method" title="IO#chars (method)">#chars</a></span>, <span class='object_link'><a href="IO.html#close-instance_method" title="IO#close (method)">#close</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3D-instance_method" title="IO#close_on_exec= (method)">#close_on_exec=</a></span>, <span class='object_link'><a href="IO.html#close_on_exec%3F-instance_method" title="IO#close_on_exec? (method)">#close_on_exec?</a></span>, <span class='object_link'><a href="IO.html#close_read-instance_method" title="IO#close_read (method)">#close_read</a></span>, <span class='object_link'><a href="IO.html#close_write-instance_method" title="IO#close_write (method)">#close_write</a></span>, <span class='object_link'><a href="IO.html#closed%3F-instance_method" title="IO#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="IO.html#codepoints-instance_method" title="IO#codepoints (method)">#codepoints</a></span>, <span class='object_link'><a href="IO.html#console-class_method" title="IO.console (method)">console</a></span>, <span class='object_link'><a href="IO.html#cooked-instance_method" title="IO#cooked (method)">#cooked</a></span>, <span class='object_link'><a href="IO.html#cooked%21-instance_method" title="IO#cooked! (method)">#cooked!</a></span>, <span class='object_link'><a href="IO.html#copy_stream-class_method" title="IO.copy_stream (method)">copy_stream</a></span>, <span class='object_link'><a href="IO.html#each-instance_method" title="IO#each (method)">#each</a></span>, <span class='object_link'><a href="IO.html#each_byte-instance_method" title="IO#each_byte (method)">#each_byte</a></span>, <span class='object_link'><a href="IO.html#each_char-instance_method" title="IO#each_char (method)">#each_char</a></span>, <span class='object_link'><a href="IO.html#each_codepoint-instance_method" title="IO#each_codepoint (method)">#each_codepoint</a></span>, <span class='object_link'><a href="IO.html#each_line-instance_method" title="IO#each_line (method)">#each_line</a></span>, <span class='object_link'><a href="IO.html#echo%3D-instance_method" title="IO#echo= (method)">#echo=</a></span>, <span class='object_link'><a href="IO.html#echo%3F-instance_method" title="IO#echo? (method)">#echo?</a></span>, <span class='object_link'><a href="IO.html#eof-instance_method" title="IO#eof (method)">#eof</a></span>, <span class='object_link'><a href="IO.html#eof%3F-instance_method" title="IO#eof? (method)">#eof?</a></span>, <span class='object_link'><a href="IO.html#external_encoding-instance_method" title="IO#external_encoding (method)">#external_encoding</a></span>, <span class='object_link'><a href="IO.html#fcntl-instance_method" title="IO#fcntl (method)">#fcntl</a></span>, <span class='object_link'><a href="IO.html#fdatasync-instance_method" title="IO#fdatasync (method)">#fdatasync</a></span>, <span class='object_link'><a href="IO.html#fileno-instance_method" title="IO#fileno (method)">#fileno</a></span>, <span class='object_link'><a href="IO.html#flush-instance_method" title="IO#flush (method)">#flush</a></span>, <span class='object_link'><a href="IO.html#for_fd-class_method" title="IO.for_fd (method)">for_fd</a></span>, <span class='object_link'><a href="IO.html#foreach-class_method" title="IO.foreach (method)">foreach</a></span>, <span class='object_link'><a href="IO.html#fsync-instance_method" title="IO#fsync (method)">#fsync</a></span>, <span class='object_link'><a href="IO.html#getbyte-instance_method" title="IO#getbyte (method)">#getbyte</a></span>, <span class='object_link'><a href="IO.html#getc-instance_method" title="IO#getc (method)">#getc</a></span>, <span class='object_link'><a href="IO.html#getch-instance_method" title="IO#getch (method)">#getch</a></span>, <span class='object_link'><a href="IO.html#gets-instance_method" title="IO#gets (method)">#gets</a></span>, <span class='object_link'><a href="IO.html#iflush-instance_method" title="IO#iflush (method)">#iflush</a></span>, <span class='object_link'><a href="IO.html#initialize_copy-instance_method" title="IO#initialize_copy (method)">#initialize_copy</a></span>, <span class='object_link'><a href="IO.html#inspect-instance_method" title="IO#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="IO.html#internal_encoding-instance_method" title="IO#internal_encoding (method)">#internal_encoding</a></span>, <span class='object_link'><a href="IO.html#ioctl-instance_method" title="IO#ioctl (method)">#ioctl</a></span>, <span class='object_link'><a href="IO.html#ioflush-instance_method" title="IO#ioflush (method)">#ioflush</a></span>, <span class='object_link'><a href="IO.html#isatty-instance_method" title="IO#isatty (method)">#isatty</a></span>, <span class='object_link'><a href="IO.html#lineno-instance_method" title="IO#lineno (method)">#lineno</a></span>, <span class='object_link'><a href="IO.html#lineno%3D-instance_method" title="IO#lineno= (method)">#lineno=</a></span>, <span class='object_link'><a href="IO.html#lines-instance_method" title="IO#lines (method)">#lines</a></span>, <span class='object_link'><a href="IO.html#new-class_method" title="IO.new (method)">new</a></span>, <span class='object_link'><a href="IO.html#noecho-instance_method" title="IO#noecho (method)">#noecho</a></span>, <span class='object_link'><a href="IO.html#nread-instance_method" title="IO#nread (method)">#nread</a></span>, <span class='object_link'><a href="IO.html#oflush-instance_method" title="IO#oflush (method)">#oflush</a></span>, <span class='object_link'><a href="IO.html#old_thread_select-class_method" title="IO.old_thread_select (method)">old_thread_select</a></span>, <span class='object_link'><a href="IO.html#open-class_method" title="IO.open (method)">open</a></span>, <span class='object_link'><a href="IO.html#pid-instance_method" title="IO#pid (method)">#pid</a></span>, <span class='object_link'><a href="IO.html#pipe-class_method" title="IO.pipe (method)">pipe</a></span>, <span class='object_link'><a href="IO.html#popen-class_method" title="IO.popen (method)">popen</a></span>, <span class='object_link'><a href="IO.html#pos-instance_method" title="IO#pos (method)">#pos</a></span>, <span class='object_link'><a href="IO.html#pos%3D-instance_method" title="IO#pos= (method)">#pos=</a></span>, <span class='object_link'><a href="IO.html#print-instance_method" title="IO#print (method)">#print</a></span>, <span class='object_link'><a href="IO.html#printf-instance_method" title="IO#printf (method)">#printf</a></span>, <span class='object_link'><a href="IO.html#putc-instance_method" title="IO#putc (method)">#putc</a></span>, <span class='object_link'><a href="IO.html#puts-instance_method" title="IO#puts (method)">#puts</a></span>, <span class='object_link'><a href="IO.html#raw-instance_method" title="IO#raw (method)">#raw</a></span>, <span class='object_link'><a href="IO.html#raw%21-instance_method" title="IO#raw! (method)">#raw!</a></span>, <span class='object_link'><a href="IO.html#read-instance_method" title="IO#read (method)">#read</a></span>, <span class='object_link'><a href="IO.html#read-class_method" title="IO.read (method)">read</a></span>, <span class='object_link'><a href="IO.html#read_nonblock-instance_method" title="IO#read_nonblock (method)">#read_nonblock</a></span>, <span class='object_link'><a href="IO.html#readbyte-instance_method" title="IO#readbyte (method)">#readbyte</a></span>, <span class='object_link'><a href="IO.html#readchar-instance_method" title="IO#readchar (method)">#readchar</a></span>, <span class='object_link'><a href="IO.html#readline-instance_method" title="IO#readline (method)">#readline</a></span>, <span class='object_link'><a href="IO.html#readlines-instance_method" title="IO#readlines (method)">#readlines</a></span>, <span class='object_link'><a href="IO.html#readlines-class_method" title="IO.readlines (method)">readlines</a></span>, <span class='object_link'><a href="IO.html#readpartial-instance_method" title="IO#readpartial (method)">#readpartial</a></span>, <span class='object_link'><a href="IO.html#ready%3F-instance_method" title="IO#ready? (method)">#ready?</a></span>, <span class='object_link'><a href="IO.html#reopen-instance_method" title="IO#reopen (method)">#reopen</a></span>, <span class='object_link'><a href="IO.html#rewind-instance_method" title="IO#rewind (method)">#rewind</a></span>, <span class='object_link'><a href="IO.html#seek-instance_method" title="IO#seek (method)">#seek</a></span>, <span class='object_link'><a href="IO.html#select-class_method" title="IO.select (method)">select</a></span>, <span class='object_link'><a href="IO.html#set_encoding-instance_method" title="IO#set_encoding (method)">#set_encoding</a></span>, <span class='object_link'><a href="IO.html#stat-instance_method" title="IO#stat (method)">#stat</a></span>, <span class='object_link'><a href="IO.html#sync-instance_method" title="IO#sync (method)">#sync</a></span>, <span class='object_link'><a href="IO.html#sync%3D-instance_method" title="IO#sync= (method)">#sync=</a></span>, <span class='object_link'><a href="IO.html#sysopen-class_method" title="IO.sysopen (method)">sysopen</a></span>, <span class='object_link'><a href="IO.html#sysread-instance_method" title="IO#sysread (method)">#sysread</a></span>, <span class='object_link'><a href="IO.html#sysseek-instance_method" title="IO#sysseek (method)">#sysseek</a></span>, <span class='object_link'><a href="IO.html#syswrite-instance_method" title="IO#syswrite (method)">#syswrite</a></span>, <span class='object_link'><a href="IO.html#tell-instance_method" title="IO#tell (method)">#tell</a></span>, <span class='object_link'><a href="IO.html#to_io-instance_method" title="IO#to_io (method)">#to_io</a></span>, <span class='object_link'><a href="IO.html#try_convert-class_method" title="IO.try_convert (method)">try_convert</a></span>, <span class='object_link'><a href="IO.html#tty%3F-instance_method" title="IO#tty? (method)">#tty?</a></span>, <span class='object_link'><a href="IO.html#ungetbyte-instance_method" title="IO#ungetbyte (method)">#ungetbyte</a></span>, <span class='object_link'><a href="IO.html#ungetc-instance_method" title="IO#ungetc (method)">#ungetc</a></span>, <span class='object_link'><a href="IO.html#wait-instance_method" title="IO#wait (method)">#wait</a></span>, <span class='object_link'><a href="IO.html#wait_for_single_fd-class_method" title="IO.wait_for_single_fd (method)">wait_for_single_fd</a></span>, <span class='object_link'><a href="IO.html#winsize-instance_method" title="IO#winsize (method)">#winsize</a></span>, <span class='object_link'><a href="IO.html#winsize%3D-instance_method" title="IO#winsize= (method)">#winsize=</a></span>, <span class='object_link'><a href="IO.html#write-instance_method" title="IO#write (method)">#write</a></span>, <span class='object_link'><a href="IO.html#write-class_method" title="IO.write (method)">write</a></span>, <span class='object_link'><a href="IO.html#write_nonblock-instance_method" title="IO#write_nonblock (method)">#write_nonblock</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>([hostname,]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new server socket bound to <em>port</em>.</p>
+
+<p>If <em>hostname</em> is given, the socket is bound to it.</p>
+
+<pre class="code"><code class=""><span class='id identifier rubyid_serv'>serv</span> <span class='op'>=</span> <span class='const'>TCPServer</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>127.0.0.1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>28561</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='id identifier rubyid_serv'>serv</span><span class='period'>.</span><span class='id identifier rubyid_accept'>accept</span>
+<span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+<span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/tcpserver.c', line 26</span>
+
+static VALUE
+tcp_svr_init(int argc, VALUE *argv, VALUE sock)
+{
+    VALUE hostname, port;
+
+    rb_scan_args(argc, argv, &quot;011&quot;, &amp;hostname, &amp;port);
+    return rsock_init_inetsock(sock, hostname, port, Qnil, Qnil, INET_SERVER);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="accept-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>accept</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>TCPServer.open(“127.0.0.1”, 14641) {|serv|</p>
+
+<pre class="code"><code class="">  s = serv.accept
+  s.puts Time.now
+  s.close
+}</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/tcpserver.c', line 46</span>
+
+static VALUE
+tcp_accept(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_storage from;
+    socklen_t fromlen;
+
+    GetOpenFile(sock, fptr);
+    fromlen = (socklen_t)sizeof(from);
+    return rsock_s_accept(rb_cTCPSocket, fptr-&gt;fd,
+		          (struct sockaddr*)&amp;from, &amp;fromlen);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="accept_nonblock-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>accept_nonblock</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Accepts an incoming connection using accept(2) after O_NONBLOCK is set for
+the underlying file descriptor. It returns an accepted TCPSocket for the
+incoming connection.</p>
+
+<h3 id="label-Example">Example</h3>
+
+<p>require ‘socket’ 	serv = TCPServer.new(2202) 	begin # emulate blocking
+accept 	  sock = serv.accept_nonblock 	rescue IO::WaitReadable,
+Errno::EINTR 	  <a href="http://serv">IO.select(</a>) 	  retry 	end 	# sock
+is an accepted socket.</p>
+
+<p>Refer to Socket#accept for the exceptions that may be thrown if the call to
+TCPServer#accept_nonblock fails.</p>
+
+<p>TCPServer#accept_nonblock may raise any error corresponding to accept(2)
+failure, including Errno::EWOULDBLOCK.</p>
+
+<p>If the exception is Errno::EWOULDBLOCK, Errno::AGAIN, Errno::ECONNABORTED,
+Errno::EPROTO, it is extended by IO::WaitReadable. So IO::WaitReadable can
+be used to rescue the exceptions for retrying accept_nonblock.</p>
+
+<h3 id="label-See">See</h3>
+<ul><li>
+<p>TCPServer#accept</p>
+</li><li>
+<p>Socket#accept</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/tcpserver.c', line 92</span>
+
+static VALUE
+tcp_accept_nonblock(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_storage from;
+    socklen_t fromlen;
+
+    GetOpenFile(sock, fptr);
+    fromlen = (socklen_t)sizeof(from);
+    return rsock_s_accept_nonblock(rb_cTCPSocket, fptr,
+			           (struct sockaddr *)&amp;from, &amp;fromlen);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="listen-instance_method">
+  
+    - (<tt>0</tt>) <strong>listen</strong>(int) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Listens for connections, using the specified <code>int</code> as the
+backlog. A call to <em>listen</em> only applies if the <code>socket</code>
+is of type SOCK_STREAM or SOCK_SEQPACKET.</p>
+
+<h3 id="label-Parameter">Parameter</h3>
+<ul><li>
+<p><code>backlog</code> - the maximum length of the queue for pending
+connections.</p>
+</li></ul>
+
+<h3 id="label-Example+1">Example 1</h3>
+
+<p>require ‘socket’ 	include Socket::Constants 	socket = Socket.new( AF_INET,
+SOCK_STREAM, 0 ) 	sockaddr = Socket.pack_sockaddr_in( 2200, ‘localhost’ )
+	socket.bind( sockaddr ) 	socket.listen( 5 )</p>
+
+<h3 id="label-Example+2+%28listening+on+an+arbitrary+port%2C+unix-based+systems+only%29%3A">Example 2 (listening on an arbitrary port, unix-based systems only):</h3>
+
+<p>require ‘socket’ 	include Socket::Constants 	socket = Socket.new( AF_INET,
+SOCK_STREAM, 0 ) 	socket.listen( 1 )</p>
+
+<h3 id="label-Unix-based+Exceptions">Unix-based Exceptions</h3>
+
+<p>On unix based systems the above will work because a new
+<code>sockaddr</code> struct is created on the address ADDR_ANY, for an
+arbitrary port number as handed off by the kernel. It will not work on
+Windows, because Windows requires that the <code>socket</code> is bound by
+calling <em>bind</em> before it can <em>listen</em>.</p>
+
+<p>If the <em>backlog</em> amount exceeds the implementation-dependent maximum
+queue length, the implementation’s maximum queue length will be used.</p>
+
+<p>On unix-based based systems the following system exceptions may be raised
+if the call to <em>listen</em> fails:</p>
+<ul><li>
+<p>Errno::EBADF - the <em>socket</em> argument is not a valid file descriptor</p>
+</li><li>
+<p>Errno::EDESTADDRREQ - the <em>socket</em> is not bound to a local address,
+and the protocol does not support listening on an unbound socket</p>
+</li><li>
+<p>Errno::EINVAL - the <em>socket</em> is already connected</p>
+</li><li>
+<p>Errno::ENOTSOCK - the <em>socket</em> argument does not refer to a socket</p>
+</li><li>
+<p>Errno::EOPNOTSUPP - the <em>socket</em> protocol does not support listen</p>
+</li><li>
+<p>Errno::EACCES - the calling process does not have appropriate privileges</p>
+</li><li>
+<p>Errno::EINVAL - the <em>socket</em> has been shut down</p>
+</li><li>
+<p>Errno::ENOBUFS - insufficient resources are available in the system to
+complete the call</p>
+</li></ul>
+
+<h3 id="label-Windows+Exceptions">Windows Exceptions</h3>
+
+<p>On Windows systems the following system exceptions may be raised if the
+call to <em>listen</em> fails:</p>
+<ul><li>
+<p>Errno::ENETDOWN - the network is down</p>
+</li><li>
+<p>Errno::EADDRINUSE - the socket’s local address is already in use. This
+usually occurs during the execution of <em>bind</em> but could be delayed
+if the call to <em>bind</em> was to a partially wildcard address (involving
+ADDR_ANY) and if a specific address needs to be committed at the time of
+the call to <em>listen</em></p>
+</li><li>
+<p>Errno::EINPROGRESS - a Windows Sockets 1.1 call is in progress or the
+service provider is still processing a callback function</p>
+</li><li>
+<p>Errno::EINVAL - the <code>socket</code> has not been bound with a call to
+<em>bind</em>.</p>
+</li><li>
+<p>Errno::EISCONN - the <code>socket</code> is already connected</p>
+</li><li>
+<p>Errno::EMFILE - no more socket descriptors are available</p>
+</li><li>
+<p>Errno::ENOBUFS - no buffer space is available</p>
+</li><li>
+<p>Errno::ENOTSOC - <code>socket</code> is not a socket</p>
+</li><li>
+<p>Errno::EOPNOTSUPP - the referenced <code>socket</code> is not a type that
+supports the <em>listen</em> method</p>
+</li></ul>
+
+<h3 id="label-See">See</h3>
+<ul><li>
+<p>listen manual pages on unix-based systems</p>
+</li><li>
+<p>listen function in Microsoft’s Winsock functions reference</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/socket.c', line 497</span>
+
+VALUE
+rsock_sock_listen(VALUE sock, VALUE log)
+{
+    rb_io_t *fptr;
+    int backlog;
+
+    rb_secure(4);
+    backlog = NUM2INT(log);
+    GetOpenFile(sock, fptr);
+    if (listen(fptr-&gt;fd, backlog) &lt; 0)
+	rb_sys_fail(&quot;listen(2)&quot;);
+
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sysaccept-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sysaccept</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a file descriptor of a accepted connection.</p>
+
+<pre class="ruby"><span class="ruby-constant">TCPServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">28561</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">fd</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">sysaccept</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">for_fd</span>(<span class="ruby-identifier">fd</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">puts</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">close</span>
+}
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/socket/tcpserver.c', line 119</span>
+
+static VALUE
+tcp_sysaccept(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_storage from;
+    socklen_t fromlen;
+
+    GetOpenFile(sock, fptr);
+    fromlen = (socklen_t)sizeof(from);
+    return rsock_s_accept(0, fptr-&gt;fd, (struct sockaddr*)&amp;from, &amp;fromlen);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:18 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

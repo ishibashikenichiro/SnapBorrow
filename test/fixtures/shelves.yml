@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+shelf1:
+  shelf_id: 1
+  group_id: 1
+  name: shelf1
+  delete_date: 2014-06-09 12:54:42
+
+shelf2:
+  shelf_id: 2
+  group_id: 1
+  name: shelf2
+  delete_date: 2014-06-09 12:54:42
+
+shelf3:
+  shelf_id: 1
+  group_id: 2
+  name: shelf3
+  delete_date: 2014-06-09 12:54:42

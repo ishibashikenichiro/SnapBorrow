@@ -1,0 +1,39 @@
+<%= provide(:title, '備品テスト') %>
+<div align="center">
+<h1>備品識別ページ</h1>
+<h4>入力された写真</h4>
+<p>
+<img src="/equipment/rec_img?filename=<%= @ft2 %>" alt="" width="320" height="240" />
+</p>
+<h1>識別結果</h1>
+<table border="1">
+<tr>
+  <th><h1>
+    <div align="center">
+      <a href="<%= @brURL %>"><%= @test %></a>
+    </div>
+  </h1></th>
+</tr>
+<tr>
+  <th><a href="<%= @brURL %>"><img alt="test" src="/assets/<%= @test %>0.jpg" /></a></th>
+</tr>
+</table>
+
+<h1>その他の候補</h1>
+<%= stylesheet_link_tag "equipment" %>
+<table>
+  <tr>
+    <th><h3>No</h3></th>
+    <th><h3>備品名</h3></th>
+    <th><h3>写真</h3></th>
+  </tr>
+  <% @equipment_ary.each.with_index(1) do |set, i| %>
+  <tr>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s %>"><h2><%= "#{i}" %></h2></a></td>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s%>"><h2><%= set.equipment_classes_name %></h2></a></td>
+    <td><a href="<%= @URL = "/equipment/new?id=" + set.id.to_s %>"><img alt="equipment" src= "/assets/<%= set.equipment_classes_name %>0.jpg" width="320" height="240" /></a></td>
+  </tr>
+  <% end %>
+</table>
+<br />
+</div>

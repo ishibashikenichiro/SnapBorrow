@@ -1,0 +1,22 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<h1>本棚一覧</h1>
+
+<h4>所属するグループの本棚の一覧です</h4>
+<div class="table-respnsive">
+<table class="table table-bordered table-striped table-condensed" style="width:50%">
+  <tr>
+    <th>本棚名</th>
+    <th>登録冊数</th>
+  </tr>
+  <% @shelves.each do |shelf| %>
+    <tr>
+      <td><%= link_to shelf.name, '/shelf/' + shelf.shelf_id.to_s %></td>
+      <td><%= @each_shelf_book_num["#{shelf.shelf_id}"] %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+<br>
+<p><%= link_to "新しい本棚を登録する", '/shelf/new' %></p>

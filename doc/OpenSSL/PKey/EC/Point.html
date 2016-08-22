@@ -1,0 +1,1120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: OpenSSL::PKey::EC::Point
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!OpenSSL/PKey/EC/Point.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../OpenSSL.html" title="OpenSSL (module)">OpenSSL</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../PKey.html" title="OpenSSL::PKey (module)">PKey</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../EC.html" title="OpenSSL::PKey::EC (class)">EC</a></span></span>
+     &raquo; 
+    <span class="title">Point</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: OpenSSL::PKey::EC::Point
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">OpenSSL::PKey::EC::Point</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">ext/openssl/ossl_pkey_ec.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Point/Error.html" title="OpenSSL::PKey::EC::Point::Error (class)">Error</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eql%3F-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(point2) </a>
+    
+
+    
+      (also: #==)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#infinity%3F-instance_method" title="#infinity? (instance method)">- (Boolean) <strong>infinity?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_POINT_*.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invert%21-instance_method" title="#invert! (instance method)">- (self) <strong>invert!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#make_affine%21-instance_method" title="#make_affine! (instance method)">- (self) <strong>make_affine!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_curve%3F-instance_method" title="#on_curve? (instance method)">- (Boolean) <strong>on_curve?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_to_infinity%21-instance_method" title="#set_to_infinity! (instance method)">- (self) <strong>set_to_infinity!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_bn-instance_method" title="#to_bn (instance method)">- (OpenSSL::BN) <strong>to_bn</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See the OpenSSL documentation for EC_POINT_point2bn().</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Point.new</strong>(point) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Point.new</strong>(group) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="../../../Object.html" title="Object (class)">Object</a></span></tt>) <strong>OpenSSL::PKey::EC::Point.new</strong>(group, bn) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_POINT_*</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1241
+1242
+1243
+1244
+1245
+1246
+1247
+1248
+1249
+1250
+1251
+1252
+1253
+1254
+1255
+1256
+1257
+1258
+1259
+1260
+1261
+1262
+1263
+1264
+1265
+1266
+1267
+1268
+1269
+1270
+1271
+1272
+1273
+1274
+1275
+1276
+1277
+1278
+1279
+1280
+1281
+1282
+1283
+1284
+1285
+1286
+1287
+1288
+1289
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1299
+1300
+1301
+1302
+1303
+1304
+1305
+1306
+1307
+1308
+1309
+1310</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1241</span>
+
+static VALUE ossl_ec_point_initialize(int argc, VALUE *argv, VALUE self)
+{
+    ossl_ec_point *ec_point;
+    EC_POINT *point = NULL;
+    VALUE arg1, arg2;
+    VALUE group_v = Qnil;
+    const EC_GROUP *group = NULL;
+
+    Data_Get_Struct(self, ossl_ec_point, ec_point);
+    if (ec_point-&gt;point)
+        ossl_raise(eEC_POINT, &quot;EC_POINT already initialized&quot;);
+
+    switch (rb_scan_args(argc, argv, &quot;11&quot;, &amp;arg1, &amp;arg2)) {
+    case 1:
+        if (rb_obj_is_kind_of(arg1, cEC_POINT)) {
+            const EC_POINT *arg_point;
+
+            group_v = rb_iv_get(arg1, &quot;@group&quot;);
+            SafeRequire_EC_GROUP(group_v, group);
+            SafeRequire_EC_POINT(arg1, arg_point);
+
+            point = EC_POINT_dup(arg_point, group);
+        } else if (rb_obj_is_kind_of(arg1, cEC_GROUP)) {
+            group_v = arg1;
+            SafeRequire_EC_GROUP(group_v, group);
+
+            point = EC_POINT_new(group);
+        } else {
+            ossl_raise(eEC_POINT, &quot;wrong argument type: must be OpenSSL::PKey::EC::Point or OpenSSL::Pkey::EC::Group&quot;);
+        }
+
+        break;
+     case 2:
+        if (!rb_obj_is_kind_of(arg1, cEC_GROUP))
+            ossl_raise(rb_eArgError, &quot;1st argument must be OpenSSL::PKey::EC::Group&quot;);
+        group_v = arg1;
+        SafeRequire_EC_GROUP(group_v, group);
+
+        if (rb_obj_is_kind_of(arg2, cBN)) {
+            const BIGNUM *bn = GetBNPtr(arg2);
+
+            point = EC_POINT_bn2point(group, bn, NULL, ossl_bn_ctx);
+        } else {
+            BIO *in = ossl_obj2bio(arg1);
+
+/* BUG: finish me */
+
+            BIO_free(in);
+
+            if (point == NULL) {
+                ossl_raise(eEC_POINT, &quot;unknown type for 2nd arg&quot;);
+            }
+        }
+        break;
+    default:
+        ossl_raise(rb_eArgError, &quot;wrong number of arguments&quot;);
+    }
+
+    if (point == NULL)
+        ossl_raise(eEC_POINT, NULL);
+
+    if (NIL_P(group_v))
+        ossl_raise(rb_eRuntimeError, &quot;missing group (internal error)&quot;);
+
+    ec_point-&gt;point = point;
+
+    rb_iv_set(self, &quot;@group&quot;, group_v);
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="eql?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>==</strong>(point2) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='==-instance_method'>==</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1317
+1318
+1319
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328
+1329
+1330
+1331
+1332
+1333
+1334
+1335</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1317</span>
+
+static VALUE ossl_ec_point_eql(VALUE a, VALUE b)
+{
+    EC_POINT *point1, *point2;
+    VALUE group_v1 = rb_iv_get(a, &quot;@group&quot;);
+    VALUE group_v2 = rb_iv_get(b, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    if (ossl_ec_group_eql(group_v1, group_v2) == Qfalse)
+        return Qfalse;
+
+    Require_EC_POINT(a, point1);
+    SafeRequire_EC_POINT(b, point2);
+    SafeRequire_EC_GROUP(group_v1, group);
+
+    if (EC_POINT_cmp(group, point1, point2, ossl_bn_ctx) == 1)
+        return Qfalse;
+
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="infinity?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>infinity?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1342
+1343
+1344
+1345
+1346
+1347
+1348
+1349
+1350
+1351
+1352
+1353
+1354
+1355
+1356</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1342</span>
+
+static VALUE ossl_ec_point_is_at_infinity(VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    switch (EC_POINT_is_at_infinity(group, point)) {
+    case 1: return Qtrue;
+    case 0: return Qfalse;
+    default: ossl_raise(cEC_POINT, &quot;EC_POINT_is_at_infinity&quot;);
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert!-instance_method">
+  
+    - (<tt>self</tt>) <strong>invert!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1404
+1405
+1406
+1407
+1408
+1409
+1410
+1411
+1412
+1413
+1414
+1415
+1416
+1417</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1404</span>
+
+static VALUE ossl_ec_point_invert(VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    if (EC_POINT_invert(group, point, ossl_bn_ctx) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_invert&quot;);
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="make_affine!-instance_method">
+  
+    - (<tt>self</tt>) <strong>make_affine!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1384
+1385
+1386
+1387
+1388
+1389
+1390
+1391
+1392
+1393
+1394
+1395
+1396
+1397</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1384</span>
+
+static VALUE ossl_ec_point_make_affine(VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    if (EC_POINT_make_affine(group, point, ossl_bn_ctx) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_make_affine&quot;);
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_curve?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>on_curve?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1363
+1364
+1365
+1366
+1367
+1368
+1369
+1370
+1371
+1372
+1373
+1374
+1375
+1376
+1377</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1363</span>
+
+static VALUE ossl_ec_point_is_on_curve(VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    switch (EC_POINT_is_on_curve(group, point, ossl_bn_ctx)) {
+    case 1: return Qtrue;
+    case 0: return Qfalse;
+    default: ossl_raise(cEC_POINT, &quot;EC_POINT_is_on_curve&quot;);
+    }
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_to_infinity!-instance_method">
+  
+    - (<tt>self</tt>) <strong>set_to_infinity!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>self</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1424
+1425
+1426
+1427
+1428
+1429
+1430
+1431
+1432
+1433
+1434
+1435
+1436
+1437</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1424</span>
+
+static VALUE ossl_ec_point_set_to_infinity(VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    if (EC_POINT_set_to_infinity(group, point) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_set_to_infinity&quot;);
+
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_bn-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../BN.html" title="OpenSSL::BN (class)">OpenSSL::BN</a></span></tt>) <strong>to_bn</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See the OpenSSL documentation for EC_POINT_point2bn()</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../BN.html" title="OpenSSL::BN (class)">OpenSSL::BN</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1445
+1446
+1447
+1448
+1449
+1450
+1451
+1452
+1453
+1454
+1455
+1456
+1457
+1458
+1459
+1460
+1461
+1462
+1463
+1464
+1465
+1466</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/openssl/ossl_pkey_ec.c', line 1445</span>
+
+static VALUE ossl_ec_point_to_bn(VALUE self)
+{
+    EC_POINT *point;
+    VALUE bn_obj;
+    VALUE group_v = rb_iv_get(self, &quot;@group&quot;);
+    const EC_GROUP *group;
+    point_conversion_form_t form;
+    BIGNUM *bn;
+
+    Require_EC_POINT(self, point);
+    SafeRequire_EC_GROUP(group_v, group);
+
+    form = EC_GROUP_get_point_conversion_form(group);
+
+    bn_obj = rb_obj_alloc(cBN);
+    bn = GetBNPtr(bn_obj);
+
+    if (EC_POINT_point2bn(group, point, form, bn, ossl_bn_ctx) == NULL)
+        ossl_raise(eEC_POINT, &quot;EC_POINT_point2bn&quot;);
+
+    return bn_obj;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:17:10 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,6558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: StringIO
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!StringIO.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">StringIO</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: StringIO
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Data.html" title="Data (class)">Data</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="Data.html" title="Data (class)">Data</a></span></li>
+          
+            <li class="next">StringIO</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span>, <span class='object_link'><a href="IO/readable.html" title="IO::readable (module)">IO::readable</a></span>, <span class='object_link'><a href="IO/writable.html" title="IO::writable (module)">IO::writable</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">ext/stringio/stringio.c</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open-class_method" title="open (class method)">+ (Object) <strong>open</strong>(string = &quot;&quot;[, mode]) {|strio| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Equivalent to StringIO.new except that when it is called with a block, it
+yields with the new instance and closes it, and returns the result which
+returned from the block.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#binmode-instance_method" title="#binmode (instance method)">- (Object) <strong>binmode</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bytes-instance_method" title="#bytes (instance method)">- (Object) <strong>bytes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_byte {|byte| block }  -&gt; strio   strio.each_byte             
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chars-instance_method" title="#chars (instance method)">- (Object) <strong>chars</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_char {|char| block }  -&gt; strio   strio.each_char             
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">- (nil) <strong>close</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes strio.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close_read-instance_method" title="#close_read (instance method)">- (nil) <strong>close_read</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes the read end of a StringIO.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close_write-instance_method" title="#close_write (instance method)">- (nil) <strong>close_write</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes the write end of a StringIO.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed%3F-instance_method" title="#closed? (instance method)">- (Boolean) <strong>closed?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if <strong>strio</strong> is completely closed,
+<code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed_read%3F-instance_method" title="#closed_read? (instance method)">- (Boolean) <strong>closed_read?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if <strong>strio</strong> is not readable,
+<code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed_write%3F-instance_method" title="#closed_write? (instance method)">- (Boolean) <strong>closed_write?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if <strong>strio</strong> is not writable,
+<code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#codepoints-instance_method" title="#codepoints (instance method)">- (Object) <strong>codepoints</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_codepoint {|c| block }  -&gt; strio   strio.each_codepoint      
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">- (Object) <strong>each</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio  
+strio.each_line(limit) {|line| block }     -&gt; strio  
+strio.each_line(sep,limit) {|line| block } -&gt; strio   strio.each_line(…)
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_byte-instance_method" title="#each_byte (instance method)">- (Object) <strong>each_byte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_byte {|byte| block }  -&gt; strio   strio.each_byte             
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_char-instance_method" title="#each_char (instance method)">- (Object) <strong>each_char</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_char {|char| block }  -&gt; strio   strio.each_char             
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_codepoint-instance_method" title="#each_codepoint (instance method)">- (Object) <strong>each_codepoint</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_codepoint {|c| block }  -&gt; strio   strio.each_codepoint      
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_line-instance_method" title="#each_line (instance method)">- (Object) <strong>each_line</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio  
+strio.each_line(limit) {|line| block }     -&gt; strio  
+strio.each_line(sep,limit) {|line| block } -&gt; strio   strio.each_line(…)
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof-instance_method" title="#eof (instance method)">- (Object) <strong>eof</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if <strong>strio</strong> is at end of file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eof%3F-instance_method" title="#eof? (instance method)">- (Boolean) <strong>eof?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns true if <strong>strio</strong> is at end of file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#external_encoding-instance_method" title="#external_encoding (instance method)">- (Encoding) <strong>external_encoding</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the Encoding object that represents the encoding of the file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fcntl-instance_method" title="#fcntl (instance method)">- (Object) <strong>fcntl</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fileno-instance_method" title="#fileno (instance method)">- (Object) <strong>fileno</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#flush-instance_method" title="#flush (instance method)">- (Object) <strong>flush</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fsync-instance_method" title="#fsync (instance method)">- (Object) <strong>fsync</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getbyte-instance_method" title="#getbyte (instance method)">- (Fixnum<sup>?</sup>) <strong>getbyte</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#getbyte.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getc-instance_method" title="#getc (instance method)">- (String<sup>?</sup>) <strong>getc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#getc.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gets-instance_method" title="#gets (instance method)">- (Object) <strong>gets</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#gets.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#new (instance method)">- (Object) <strong>new</strong>(string = &quot;&quot;[, mode]) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates new StringIO instance from with <em>string</em> and <em>mode</em>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#internal_encoding-instance_method" title="#internal_encoding (instance method)">- (Encoding) <strong>internal_encoding</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the Encoding of the internal string if conversion is specified.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#isatty-instance_method" title="#isatty (instance method)">- (Object) <strong>isatty</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#length-instance_method" title="#size (instance method)">- (Integer) <strong>size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the size of the buffer string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno-instance_method" title="#lineno (instance method)">- (Integer) <strong>lineno</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current line number in <strong>strio</strong>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lineno%3D-instance_method" title="#lineno= (instance method)">- (Integer) <strong>lineno=</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Manually sets the current line number to the given value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#lines-instance_method" title="#lines (instance method)">- (Object) <strong>lines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio  
+strio.each_line(limit) {|line| block }     -&gt; strio  
+strio.each_line(sep,limit) {|line| block } -&gt; strio   strio.each_line(…)
+-&gt; anEnumerator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pid-instance_method" title="#pid (instance method)">- (Object) <strong>pid</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pos-instance_method" title="#pos (instance method)">- (Object) <strong>pos</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current offset (in bytes) of <strong>strio</strong>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pos%3D-instance_method" title="#pos= (instance method)">- (Integer) <strong>pos=</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Seeks to the given position (in bytes) in <strong>strio</strong>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#putc-instance_method" title="#putc (instance method)">- (Object) <strong>putc</strong>(obj) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#putc.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read-instance_method" title="#read (instance method)">- (String<sup>?</sup>) <strong>read</strong>([length [, buffer]]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#read.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readlines-instance_method" title="#readlines (instance method)">- (Object) <strong>readlines</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#readlines.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reopen-instance_method" title="#reopen (instance method)">- (Object) <strong>reopen</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reinitializes <strong>strio</strong> with the given other_StrIO or
+<em>string</em> and <em>mode</em> (see StringIO#new).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rewind-instance_method" title="#rewind (instance method)">- (0) <strong>rewind</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Positions <strong>strio</strong> to the beginning of input, resetting
+<code>lineno</code> to zero.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#seek-instance_method" title="#seek (instance method)">- (0) <strong>seek</strong>(amount, whence = SEEK_SET) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Seeks to a given offset <em>amount</em> in the stream according to the
+value of <em>whence</em> (see IO#seek).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_encoding-instance_method" title="#set_encoding (instance method)">- (Object) <strong>set_encoding</strong>(ext_enc, [int_enc[, opt]]) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify the encoding of the StringIO as ext_enc.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#size (instance method)">- (Integer) <strong>size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the size of the buffer string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#string-instance_method" title="#string (instance method)">- (String) <strong>string</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns underlying String object, the subject of IO.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#string%3D-instance_method" title="#string= (instance method)">- (String) <strong>string=</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Changes underlying String object, the subject of IO.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sync-instance_method" title="#sync (instance method)">- (true) <strong>sync</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> always.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sync%3D-instance_method" title="#sync= (instance method)">- (Object) <strong>sync=</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tell-instance_method" title="#tell (instance method)">- (Object) <strong>tell</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#truncate-instance_method" title="#truncate (instance method)">- (0) <strong>truncate</strong>(integer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Truncates the buffer string to at most <em>integer</em> bytes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tty%3F-instance_method" title="#tty? (instance method)">- (Boolean) <strong>tty?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetbyte-instance_method" title="#ungetbyte (instance method)">- (nil) <strong>ungetbyte</strong>(fixnum) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>See IO#ungetbyte.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ungetc-instance_method" title="#ungetc (instance method)">- (nil) <strong>ungetc</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Pushes back one character (passed as a parameter) onto
+<strong>strio</strong> such that a subsequent buffered read will return it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write-instance_method" title="#write (instance method)">- (Object) <strong>write</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Appends the given string to the underlying buffer string of
+<strong>strio</strong>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Enumerable.html" title="Enumerable (module)">Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Enumerable.html#all%3F-instance_method" title="Enumerable#all? (method)">#all?</a></span>, <span class='object_link'><a href="Enumerable.html#any%3F-instance_method" title="Enumerable#any? (method)">#any?</a></span>, <span class='object_link'><a href="Enumerable.html#chunk-instance_method" title="Enumerable#chunk (method)">#chunk</a></span>, <span class='object_link'><a href="Enumerable.html#collect-instance_method" title="Enumerable#collect (method)">#collect</a></span>, <span class='object_link'><a href="Enumerable.html#collect_concat-instance_method" title="Enumerable#collect_concat (method)">#collect_concat</a></span>, <span class='object_link'><a href="Enumerable.html#count-instance_method" title="Enumerable#count (method)">#count</a></span>, <span class='object_link'><a href="Enumerable.html#cycle-instance_method" title="Enumerable#cycle (method)">#cycle</a></span>, <span class='object_link'><a href="Enumerable.html#detect-instance_method" title="Enumerable#detect (method)">#detect</a></span>, <span class='object_link'><a href="Enumerable.html#drop-instance_method" title="Enumerable#drop (method)">#drop</a></span>, <span class='object_link'><a href="Enumerable.html#drop_while-instance_method" title="Enumerable#drop_while (method)">#drop_while</a></span>, <span class='object_link'><a href="Enumerable.html#each_cons-instance_method" title="Enumerable#each_cons (method)">#each_cons</a></span>, <span class='object_link'><a href="Enumerable.html#each_entry-instance_method" title="Enumerable#each_entry (method)">#each_entry</a></span>, <span class='object_link'><a href="Enumerable.html#each_slice-instance_method" title="Enumerable#each_slice (method)">#each_slice</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_index-instance_method" title="Enumerable#each_with_index (method)">#each_with_index</a></span>, <span class='object_link'><a href="Enumerable.html#each_with_object-instance_method" title="Enumerable#each_with_object (method)">#each_with_object</a></span>, <span class='object_link'><a href="Enumerable.html#entries-instance_method" title="Enumerable#entries (method)">#entries</a></span>, <span class='object_link'><a href="Enumerable.html#find-instance_method" title="Enumerable#find (method)">#find</a></span>, <span class='object_link'><a href="Enumerable.html#find_all-instance_method" title="Enumerable#find_all (method)">#find_all</a></span>, <span class='object_link'><a href="Enumerable.html#find_index-instance_method" title="Enumerable#find_index (method)">#find_index</a></span>, <span class='object_link'><a href="Enumerable.html#first-instance_method" title="Enumerable#first (method)">#first</a></span>, <span class='object_link'><a href="Enumerable.html#flat_map-instance_method" title="Enumerable#flat_map (method)">#flat_map</a></span>, <span class='object_link'><a href="Enumerable.html#grep-instance_method" title="Enumerable#grep (method)">#grep</a></span>, <span class='object_link'><a href="Enumerable.html#group_by-instance_method" title="Enumerable#group_by (method)">#group_by</a></span>, <span class='object_link'><a href="Enumerable.html#include%3F-instance_method" title="Enumerable#include? (method)">#include?</a></span>, <span class='object_link'><a href="Enumerable.html#inject-instance_method" title="Enumerable#inject (method)">#inject</a></span>, <span class='object_link'><a href="Enumerable.html#map-instance_method" title="Enumerable#map (method)">#map</a></span>, <span class='object_link'><a href="Enumerable.html#max-instance_method" title="Enumerable#max (method)">#max</a></span>, <span class='object_link'><a href="Enumerable.html#max_by-instance_method" title="Enumerable#max_by (method)">#max_by</a></span>, <span class='object_link'><a href="Enumerable.html#member%3F-instance_method" title="Enumerable#member? (method)">#member?</a></span>, <span class='object_link'><a href="Enumerable.html#min-instance_method" title="Enumerable#min (method)">#min</a></span>, <span class='object_link'><a href="Enumerable.html#min_by-instance_method" title="Enumerable#min_by (method)">#min_by</a></span>, <span class='object_link'><a href="Enumerable.html#minmax-instance_method" title="Enumerable#minmax (method)">#minmax</a></span>, <span class='object_link'><a href="Enumerable.html#minmax_by-instance_method" title="Enumerable#minmax_by (method)">#minmax_by</a></span>, <span class='object_link'><a href="Enumerable.html#none%3F-instance_method" title="Enumerable#none? (method)">#none?</a></span>, <span class='object_link'><a href="Enumerable.html#one%3F-instance_method" title="Enumerable#one? (method)">#one?</a></span>, <span class='object_link'><a href="Enumerable.html#partition-instance_method" title="Enumerable#partition (method)">#partition</a></span>, <span class='object_link'><a href="Enumerable.html#reduce-instance_method" title="Enumerable#reduce (method)">#reduce</a></span>, <span class='object_link'><a href="Enumerable.html#reject-instance_method" title="Enumerable#reject (method)">#reject</a></span>, <span class='object_link'><a href="Enumerable.html#reverse_each-instance_method" title="Enumerable#reverse_each (method)">#reverse_each</a></span>, <span class='object_link'><a href="Enumerable.html#select-instance_method" title="Enumerable#select (method)">#select</a></span>, <span class='object_link'><a href="Enumerable.html#slice_before-instance_method" title="Enumerable#slice_before (method)">#slice_before</a></span>, <span class='object_link'><a href="Enumerable.html#sort-instance_method" title="Enumerable#sort (method)">#sort</a></span>, <span class='object_link'><a href="Enumerable.html#sort_by-instance_method" title="Enumerable#sort_by (method)">#sort_by</a></span>, <span class='object_link'><a href="Enumerable.html#take-instance_method" title="Enumerable#take (method)">#take</a></span>, <span class='object_link'><a href="Enumerable.html#take_while-instance_method" title="Enumerable#take_while (method)">#take_while</a></span>, <span class='object_link'><a href="Enumerable.html#to_a-instance_method" title="Enumerable#to_a (method)">#to_a</a></span>, <span class='object_link'><a href="Enumerable.html#zip-instance_method" title="Enumerable#zip (method)">#zip</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="IO/readable.html" title="IO::readable (module)">IO::readable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO/readable.html#getch-instance_method" title="IO::readable#getch (method)">#getch</a></span>, <span class='object_link'><a href="IO/readable.html#read_nonblock-instance_method" title="IO::readable#read_nonblock (method)">#read_nonblock</a></span>, <span class='object_link'><a href="IO/readable.html#readbyte-instance_method" title="IO::readable#readbyte (method)">#readbyte</a></span>, <span class='object_link'><a href="IO/readable.html#readchar-instance_method" title="IO::readable#readchar (method)">#readchar</a></span>, <span class='object_link'><a href="IO/readable.html#readline-instance_method" title="IO::readable#readline (method)">#readline</a></span>, <span class='object_link'><a href="IO/readable.html#readpartial-instance_method" title="IO::readable#readpartial (method)">#readpartial</a></span>, <span class='object_link'><a href="IO/readable.html#sysread-instance_method" title="IO::readable#sysread (method)">#sysread</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="IO/writable.html" title="IO::writable (module)">IO::writable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="IO/writable.html#%3C%3C-instance_method" title="IO::writable#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="IO/writable.html#print-instance_method" title="IO::writable#print (method)">#print</a></span>, <span class='object_link'><a href="IO/writable.html#printf-instance_method" title="IO::writable#printf (method)">#printf</a></span>, <span class='object_link'><a href="IO/writable.html#puts-instance_method" title="IO::writable#puts (method)">#puts</a></span>, <span class='object_link'><a href="IO/writable.html#syswrite-instance_method" title="IO::writable#syswrite (method)">#syswrite</a></span>, <span class='object_link'><a href="IO/writable.html#write_nonblock-instance_method" title="IO::writable#write_nonblock (method)">#write_nonblock</a></span></p>
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>new</strong>(string = &quot;&quot;[, mode]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates new StringIO instance from with <em>string</em> and <em>mode</em>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 154</span>
+
+static VALUE
+strio_initialize(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = check_strio(self);
+
+    if (!ptr) {
+	DATA_PTR(self) = ptr = strio_alloc();
+    }
+    rb_call_super(0, 0);
+    strio_init(argc, argv, ptr);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="open-class_method">
+  
+    + (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>open</strong>(string = &quot;&quot;[, mode]) {|strio| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Equivalent to StringIO.new except that when it is called with a block, it
+yields with the new instance and closes it, and returns the result which
+returned from the block.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>strio</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+224
+225
+226
+227
+228
+229
+230</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 224</span>
+
+static VALUE
+strio_s_open(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE obj = rb_class_new_instance(argc, argv, klass);
+    if (!rb_block_given_p()) return obj;
+    return rb_ensure(rb_yield, obj, strio_finalize, obj);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="binmode-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>binmode</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bytes-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>bytes</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_byte {|byte| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_byte                  -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_byte.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>byte</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>bytes</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 628</span>
+
+static VALUE
+strio_each_byte(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    while (ptr-&gt;pos &lt; RSTRING_LEN(ptr-&gt;string)) {
+	char c = RSTRING_PTR(ptr-&gt;string)[ptr-&gt;pos++];
+	rb_yield(CHR2FIX(c));
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="chars-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>chars</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_char {|char| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_char                  -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_char.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>char</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>chars</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 838</span>
+
+static VALUE
+strio_each_char(VALUE self)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    while (!NIL_P(c = strio_getc(self))) {
+	rb_yield(c);
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    - (<tt>nil</tt>) <strong>close</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes strio.  The <strong>strio</strong> is unavailable for any further
+data operations; an <code>IOError</code> is raised if such an attempt is
+made.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 331</span>
+
+static VALUE
+strio_close(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (CLOSED(ptr)) {
+	rb_raise(rb_eIOError, &quot;closed stream&quot;);
+    }
+    ptr-&gt;flags &amp;= ~FMODE_READWRITE;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close_read-instance_method">
+  
+    - (<tt>nil</tt>) <strong>close_read</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes the read end of a StringIO.  Will raise an <code>IOError</code> if
+the <strong>strio</strong> is not readable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 349</span>
+
+static VALUE
+strio_close_read(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (!READABLE(ptr)) {
+	rb_raise(rb_eIOError, &quot;closing non-duplex IO for reading&quot;);
+    }
+    ptr-&gt;flags &amp;= ~FMODE_READABLE;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close_write-instance_method">
+  
+    - (<tt>nil</tt>) <strong>close_write</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes the write end of a StringIO.  Will raise an  <code>IOError</code> if
+the <strong>strio</strong> is not writeable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 367</span>
+
+static VALUE
+strio_close_write(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (!WRITABLE(ptr)) {
+	rb_raise(rb_eIOError, &quot;closing non-duplex IO for writing&quot;);
+    }
+    ptr-&gt;flags &amp;= ~FMODE_WRITABLE;
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>closed?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <strong>strio</strong> is completely closed,
+<code>false</code> otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+384
+385
+386
+387
+388
+389
+390</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 384</span>
+
+static VALUE
+strio_closed(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (!CLOSED(ptr)) return Qfalse;
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed_read?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>closed_read?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <strong>strio</strong> is not readable,
+<code>false</code> otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+398
+399
+400
+401
+402
+403
+404</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 398</span>
+
+static VALUE
+strio_closed_read(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (READABLE(ptr)) return Qfalse;
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed_write?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>closed_write?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if <strong>strio</strong> is not writable,
+<code>false</code> otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+412
+413
+414
+415
+416
+417
+418</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 412</span>
+
+static VALUE
+strio_closed_write(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    if (WRITABLE(ptr)) return Qfalse;
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="codepoints-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|c| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>codepoints</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_codepoint {|c| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_codepoint               -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_codepoint.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|c| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>c</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>codepoints</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 861</span>
+
+static VALUE
+strio_each_codepoint(VALUE self)
+{
+    struct StringIO *ptr;
+    rb_encoding *enc;
+    unsigned int c;
+    int n;
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    ptr = readable(StringIO(self));
+    enc = rb_enc_get(ptr-&gt;string);
+    for (;;) {
+	if (ptr-&gt;pos &gt;= RSTRING_LEN(ptr-&gt;string)) {
+	    return self;
+	}
+
+	c = rb_enc_codepoint_len(RSTRING_PTR(ptr-&gt;string)+ptr-&gt;pos,
+				 RSTRING_END(ptr-&gt;string), &amp;n, enc);
+	rb_yield(UINT2NUM(c));
+	ptr-&gt;pos += n;
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio</p>
+
+<pre class="ruby"><span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> } <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                       <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }        <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }         <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+</pre>
+
+<p>See IO#each.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1064</span>
+
+static VALUE
+strio_each(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    VALUE line;
+
+    RETURN_ENUMERATOR(self, argc, argv);
+
+    if (argc &gt; 0 &amp;&amp; !NIL_P(argv[argc-1]) &amp;&amp; NIL_P(rb_check_string_type(argv[argc-1])) &amp;&amp;
+	NUM2LONG(argv[argc-1]) == 0) {
+	rb_raise(rb_eArgError, &quot;invalid limit: 0 for each_line&quot;);
+    }
+
+    while (!NIL_P(line = strio_getline(argc, argv, readable(ptr)))) {
+	rb_yield(line);
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_byte-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>bytes</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_byte {|byte| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_byte                  -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_byte.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>bytes</strong> {|byte| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>byte</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>bytes</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 628</span>
+
+static VALUE
+strio_each_byte(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    while (ptr-&gt;pos &lt; RSTRING_LEN(ptr-&gt;string)) {
+	char c = RSTRING_PTR(ptr-&gt;string)[ptr-&gt;pos++];
+	rb_yield(CHR2FIX(c));
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_char-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>chars</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_char {|char| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_char                  -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_char.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>chars</strong> {|char| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>char</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>chars</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 838</span>
+
+static VALUE
+strio_each_char(VALUE self)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    while (!NIL_P(c = strio_getc(self))) {
+	rb_yield(c);
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_codepoint-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|c| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>codepoints</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_codepoint {|c| block }  -&gt; strio</p>
+
+<pre class="code"><code class="">strio.each_codepoint               -&gt; anEnumerator</code></pre>
+
+<p>See IO#each_codepoint.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>codepoints</strong> {|c| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>c</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>codepoints</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 861</span>
+
+static VALUE
+strio_each_codepoint(VALUE self)
+{
+    struct StringIO *ptr;
+    rb_encoding *enc;
+    unsigned int c;
+    int n;
+
+    RETURN_ENUMERATOR(self, 0, 0);
+
+    ptr = readable(StringIO(self));
+    enc = rb_enc_get(ptr-&gt;string);
+    for (;;) {
+	if (ptr-&gt;pos &gt;= RSTRING_LEN(ptr-&gt;string)) {
+	    return self;
+	}
+
+	c = rb_enc_codepoint_len(RSTRING_PTR(ptr-&gt;string)+ptr-&gt;pos,
+				 RSTRING_END(ptr-&gt;string), &amp;n, enc);
+	rb_yield(UINT2NUM(c));
+	ptr-&gt;pos += n;
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_line-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio</p>
+
+<pre class="ruby"><span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> } <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                       <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }        <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }         <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+</pre>
+
+<p>See IO#each.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1064</span>
+
+static VALUE
+strio_each(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    VALUE line;
+
+    RETURN_ENUMERATOR(self, argc, argv);
+
+    if (argc &gt; 0 &amp;&amp; !NIL_P(argv[argc-1]) &amp;&amp; NIL_P(rb_check_string_type(argv[argc-1])) &amp;&amp;
+	NUM2LONG(argv[argc-1]) == 0) {
+	rb_raise(rb_eArgError, &quot;invalid limit: 0 for each_line&quot;);
+    }
+
+    while (!NIL_P(line = strio_getline(argc, argv, readable(ptr)))) {
+	rb_yield(line);
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <strong>strio</strong> is at end of file. The stringio must
+be opened for reading or an <code>IOError</code> will be raised.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+428
+429
+430
+431
+432
+433
+434</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 428</span>
+
+static VALUE
+strio_eof(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    if (ptr-&gt;pos &lt; RSTRING_LEN(ptr-&gt;string)) return Qfalse;
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eof?-instance_method">
+  
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+    
+      <span class="overload">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if <strong>strio</strong> is at end of file. The stringio must
+be opened for reading or an <code>IOError</code> will be raised.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt>Boolean</tt>) <strong>eof?</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+428
+429
+430
+431
+432
+433
+434</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 428</span>
+
+static VALUE
+strio_eof(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    if (ptr-&gt;pos &lt; RSTRING_LEN(ptr-&gt;string)) return Qfalse;
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="external_encoding-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>) <strong>external_encoding</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the Encoding object that represents the encoding of the file. If
+strio is write mode and no encoding is specified, returns <code>nil</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1361
+1362
+1363
+1364
+1365</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1361</span>
+
+static VALUE
+strio_external_encoding(VALUE self)
+{
+    return rb_enc_from_encoding(rb_enc_get(StringIO(self)-&gt;string));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fcntl-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fcntl</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fileno-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fileno</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="flush-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>flush</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fsync-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>fsync</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getbyte-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt><sup>?</sup>) <strong>getbyte</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#getbyte.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Fixnum.html" title="Fixnum (class)">Fixnum</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 671</span>
+
+static VALUE
+strio_getbyte(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    int c;
+    if (ptr-&gt;pos &gt;= RSTRING_LEN(ptr-&gt;string)) {
+	return Qnil;
+    }
+    c = RSTRING_PTR(ptr-&gt;string)[ptr-&gt;pos++];
+    return CHR2FIX(c);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>getc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#getc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 648</span>
+
+static VALUE
+strio_getc(VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    rb_encoding *enc = rb_enc_get(ptr-&gt;string);
+    int len;
+    char *p;
+
+    if (ptr-&gt;pos &gt;= RSTRING_LEN(ptr-&gt;string)) {
+	return Qnil;
+    }
+    p = RSTRING_PTR(ptr-&gt;string)+ptr-&gt;pos;
+    len = rb_enc_mbclen(p, RSTRING_END(ptr-&gt;string), enc);
+    ptr-&gt;pos += len;
+    return rb_enc_str_new(p, len, rb_enc_get(ptr-&gt;string));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gets-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#gets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>gets</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1020</span>
+
+static VALUE
+strio_gets(int argc, VALUE *argv, VALUE self)
+{
+    VALUE str = strio_getline(argc, argv, readable(StringIO(self)));
+
+    rb_lastline_set(str);
+    return str;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>initialize_copy</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 437</span>
+
+static VALUE
+strio_copy(VALUE copy, VALUE orig)
+{
+    struct StringIO *ptr;
+
+    orig = rb_convert_type(orig, T_DATA, &quot;StringIO&quot;, &quot;to_strio&quot;);
+    if (copy == orig) return copy;
+    ptr = StringIO(orig);
+    if (check_strio(copy)) {
+	strio_free(DATA_PTR(copy));
+    }
+    DATA_PTR(copy) = ptr;
+    OBJ_INFECT(copy, orig);
+    ++ptr-&gt;count;
+    return copy;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="internal_encoding-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>) <strong>internal_encoding</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the Encoding of the internal string if conversion is specified. 
+Otherwise returns nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Encoding.html" title="Encoding (class)">Encoding</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1375
+1376
+1377
+1378
+1379</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1375</span>
+
+static VALUE
+strio_internal_encoding(VALUE self)
+{
+     return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="isatty-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>isatty</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="length-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the size of the buffer string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1320</span>
+
+static VALUE
+strio_size(VALUE self)
+{
+    VALUE string = StringIO(self)-&gt;string;
+    if (NIL_P(string)) {
+	rb_raise(rb_eIOError, &quot;not opened&quot;);
+    }
+    return ULONG2NUM(RSTRING_LEN(string));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>lineno</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current line number in <strong>strio</strong>. The stringio
+must be opened for reading. <code>lineno</code> counts the number of times 
+<code>gets</code> is called, rather than the number of newlines 
+encountered. The two values will differ if <code>gets</code> is  called
+with a separator other than newline.  See also the  <code>$.</code>
+variable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+464
+465
+466
+467
+468</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 464</span>
+
+static VALUE
+strio_get_lineno(VALUE self)
+{
+    return LONG2NUM(StringIO(self)-&gt;lineno);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lineno=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>lineno=</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Manually sets the current line number to the given value. <code>$.</code>
+is updated only on the next read.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+477
+478
+479
+480
+481
+482</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 477</span>
+
+static VALUE
+strio_set_lineno(VALUE self, VALUE lineno)
+{
+    StringIO(self)-&gt;lineno = NUM2LONG(lineno);
+    return lineno;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lines-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>strio.each_line(sep=$/) {|line| block }    -&gt; strio</p>
+
+<pre class="ruby"><span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> } <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">each_line</span>(<span class="ruby-operator">...</span>)                       <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-identifier">$/</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }        <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }         <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-identifier">sep</span>,<span class="ruby-identifier">limit</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span> }     <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strio</span>
+<span class="ruby-identifier">strio</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-operator">...</span>)                           <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">anEnumerator</span>
+</pre>
+
+<p>See IO#each.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep = $/) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>each</strong>(sep, limit) {|line| ... }</span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>line</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>) <strong>each</strong>(...) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Enumerator.html" title="Enumerator (class)">Enumerator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1064</span>
+
+static VALUE
+strio_each(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    VALUE line;
+
+    RETURN_ENUMERATOR(self, argc, argv);
+
+    if (argc &gt; 0 &amp;&amp; !NIL_P(argv[argc-1]) &amp;&amp; NIL_P(rb_check_string_type(argv[argc-1])) &amp;&amp;
+	NUM2LONG(argv[argc-1]) == 0) {
+	rb_raise(rb_eArgError, &quot;invalid limit: 0 for each_line&quot;);
+    }
+
+    while (!NIL_P(line = strio_getline(argc, argv, readable(ptr)))) {
+	rb_yield(line);
+    }
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pid-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>pid</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pos-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current offset (in bytes) of <strong>strio</strong>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>tell</strong> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+522
+523
+524
+525
+526</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 522</span>
+
+static VALUE
+strio_get_pos(VALUE self)
+{
+    return LONG2NUM(StringIO(self)-&gt;pos);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pos=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>pos=</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Seeks to the given position (in bytes) in <strong>strio</strong>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 534</span>
+
+static VALUE
+strio_set_pos(VALUE self, VALUE pos)
+{
+    struct StringIO *ptr = StringIO(self);
+    long p = NUM2LONG(pos);
+    if (p &lt; 0) {
+	error_inval(0);
+    }
+    ptr-&gt;pos = p;
+    return pos;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="putc-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>putc</strong>(obj) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#putc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1184
+1185
+1186
+1187
+1188
+1189
+1190
+1191
+1192
+1193
+1194
+1195
+1196
+1197
+1198
+1199
+1200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1184</span>
+
+static VALUE
+strio_putc(VALUE self, VALUE ch)
+{
+    struct StringIO *ptr = writable(StringIO(self));
+    int c = NUM2CHR(ch);
+    long olen;
+
+    check_modifiable(ptr);
+    olen = RSTRING_LEN(ptr-&gt;string);
+    if (ptr-&gt;flags &amp; FMODE_APPEND) {
+	ptr-&gt;pos = olen;
+    }
+    strio_extend(ptr, ptr-&gt;pos, 1);
+    RSTRING_PTR(ptr-&gt;string)[ptr-&gt;pos++] = c;
+    OBJ_INFECT(ptr-&gt;string, self);
+    return ch;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>?</sup>) <strong>read</strong>([length [, buffer]]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#read.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1216
+1217
+1218
+1219
+1220
+1221
+1222
+1223
+1224
+1225
+1226
+1227
+1228
+1229
+1230
+1231
+1232
+1233
+1234
+1235
+1236
+1237
+1238
+1239
+1240
+1241
+1242
+1243
+1244
+1245
+1246
+1247
+1248
+1249
+1250
+1251
+1252
+1253
+1254
+1255
+1256
+1257
+1258
+1259
+1260
+1261
+1262
+1263
+1264
+1265
+1266
+1267
+1268
+1269
+1270
+1271
+1272
+1273
+1274
+1275
+1276
+1277
+1278
+1279</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1216</span>
+
+static VALUE
+strio_read(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    VALUE str = Qnil;
+    long len;
+    int binary = 0;
+
+    switch (argc) {
+      case 2:
+	str = argv[1];
+	if (!NIL_P(str)) {
+	    StringValue(str);
+	    rb_str_modify(str);
+	}
+      case 1:
+	if (!NIL_P(argv[0])) {
+	    len = NUM2LONG(argv[0]);
+	    if (len &lt; 0) {
+		rb_raise(rb_eArgError, &quot;negative length %ld given&quot;, len);
+	    }
+	    if (len &gt; 0 &amp;&amp; ptr-&gt;pos &gt;= RSTRING_LEN(ptr-&gt;string)) {
+		if (!NIL_P(str)) rb_str_resize(str, 0);
+		return Qnil;
+	    }
+	    binary = 1;
+	    break;
+	}
+	/* fall through */
+      case 0:
+	len = RSTRING_LEN(ptr-&gt;string);
+	if (len &lt;= ptr-&gt;pos) {
+	    if (NIL_P(str)) {
+		str = rb_str_new(0, 0);
+	    }
+	    else {
+		rb_str_resize(str, 0);
+	    }
+	    return str;
+	}
+	else {
+	    len -= ptr-&gt;pos;
+	}
+	break;
+      default:
+	rb_raise(rb_eArgError, &quot;wrong number of arguments (%d for 0)&quot;, argc);
+    }
+    if (NIL_P(str)) {
+	str = strio_substr(ptr, ptr-&gt;pos, len);
+	if (binary) rb_enc_associate(str, rb_ascii8bit_encoding());
+    }
+    else {
+	long rest = RSTRING_LEN(ptr-&gt;string) - ptr-&gt;pos;
+	if (len &gt; rest) len = rest;
+	rb_str_resize(str, len);
+	MEMCPY(RSTRING_PTR(str), RSTRING_PTR(ptr-&gt;string) + ptr-&gt;pos, char, len);
+	if (binary)
+	    rb_enc_associate(str, rb_ascii8bit_encoding());
+	else
+	    rb_enc_copy(str, ptr-&gt;string);
+    }
+    ptr-&gt;pos += RSTRING_LEN(str);
+    return str;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="readlines-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#readlines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep = $/) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>) <strong>readlines</strong>(sep, limit) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1091
+1092
+1093
+1094
+1095
+1096
+1097
+1098
+1099
+1100
+1101
+1102
+1103
+1104
+1105
+1106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1091</span>
+
+static VALUE
+strio_readlines(int argc, VALUE *argv, VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    VALUE ary = rb_ary_new(), line;
+
+    if (argc &gt; 0 &amp;&amp; !NIL_P(argv[argc-1]) &amp;&amp; NIL_P(rb_check_string_type(argv[argc-1])) &amp;&amp;
+	NUM2LONG(argv[argc-1]) == 0) {
+	rb_raise(rb_eArgError, &quot;invalid limit: 0 for readlines&quot;);
+    }
+
+    while (!NIL_P(line = strio_getline(argc, argv, readable(ptr)))) {
+	rb_ary_push(ary, line);
+    }
+    return ary;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reopen-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reopen</strong>(other_StrIO) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>reopen</strong>(string, mode) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reinitializes <strong>strio</strong> with the given <em>other_StrIO</em> or
+<em>string</em> and <em>mode</em> (see StringIO#new).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 504</span>
+
+static VALUE
+strio_reopen(int argc, VALUE *argv, VALUE self)
+{
+    rb_io_taint_check(self);
+    if (argc == 1 &amp;&amp; TYPE(*argv) != T_STRING) {
+	return strio_copy(self, *argv);
+    }
+    strio_init(argc, argv, StringIO(self));
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rewind-instance_method">
+  
+    - (<tt>0</tt>) <strong>rewind</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Positions <strong>strio</strong> to the beginning of input, resetting
+<code>lineno</code> to zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+553
+554
+555
+556
+557
+558
+559
+560</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 553</span>
+
+static VALUE
+strio_rewind(VALUE self)
+{
+    struct StringIO *ptr = StringIO(self);
+    ptr-&gt;pos = 0;
+    ptr-&gt;lineno = 0;
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="seek-instance_method">
+  
+    - (<tt>0</tt>) <strong>seek</strong>(amount, whence = SEEK_SET) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Seeks to a given offset <em>amount</em> in the stream according to the
+value of <em>whence</em> (see IO#seek).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 569</span>
+
+static VALUE
+strio_seek(int argc, VALUE *argv, VALUE self)
+{
+    VALUE whence;
+    struct StringIO *ptr = StringIO(self);
+    long offset;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, NULL, &amp;whence);
+    offset = NUM2LONG(argv[0]);
+    if (CLOSED(ptr)) {
+	rb_raise(rb_eIOError, &quot;closed stream&quot;);
+    }
+    switch (NIL_P(whence) ? 0 : NUM2LONG(whence)) {
+      case 0:
+	break;
+      case 1:
+	offset += ptr-&gt;pos;
+	break;
+      case 2:
+	offset += RSTRING_LEN(ptr-&gt;string);
+	break;
+      default:
+	error_inval(&quot;invalid whence&quot;);
+    }
+    if (offset &lt; 0) {
+	error_inval(0);
+    }
+    ptr-&gt;pos = offset;
+    return INT2FIX(0);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_encoding-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>set_encoding</strong>(ext_enc, [int_enc[, opt]]) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Specify the encoding of the StringIO as <em>ext_enc</em>. Use the default
+external encoding if <em>ext_enc</em> is nil. 2nd argument <em>int_enc</em>
+and optional hash <em>opt</em> argument are ignored; they are for API
+compatibility to IO.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1391
+1392
+1393
+1394
+1395
+1396
+1397
+1398
+1399
+1400
+1401
+1402
+1403
+1404
+1405
+1406
+1407
+1408</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1391</span>
+
+static VALUE
+strio_set_encoding(int argc, VALUE *argv, VALUE self)
+{
+    rb_encoding* enc;
+    VALUE str = StringIO(self)-&gt;string;
+    VALUE ext_enc, int_enc, opt;
+
+    argc = rb_scan_args(argc, argv, &quot;11:&quot;, &amp;ext_enc, &amp;int_enc, &amp;opt);
+
+    if (NIL_P(ext_enc)) {
+	enc = rb_default_external_encoding();
+    }
+    else {
+	enc = rb_to_encoding(ext_enc);
+    }
+    rb_enc_associate(str, enc);
+    return self;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the size of the buffer string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1320
+1321
+1322
+1323
+1324
+1325
+1326
+1327
+1328</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1320</span>
+
+static VALUE
+strio_size(VALUE self)
+{
+    VALUE string = StringIO(self)-&gt;string;
+    if (NIL_P(string)) {
+	rb_raise(rb_eIOError, &quot;not opened&quot;);
+    }
+    return ULONG2NUM(RSTRING_LEN(string));
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="string-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>string</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns underlying String object, the subject of IO.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+298
+299
+300
+301
+302</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 298</span>
+
+static VALUE
+strio_get_string(VALUE self)
+{
+    return StringIO(self)-&gt;string;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="string=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>string=</strong>(string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Changes underlying String object, the subject of IO.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 310</span>
+
+static VALUE
+strio_set_string(VALUE self, VALUE string)
+{
+    struct StringIO *ptr = StringIO(self);
+
+    rb_io_taint_check(self);
+    ptr-&gt;flags &amp;= ~FMODE_READWRITE;
+    StringValue(string);
+    ptr-&gt;flags = OBJ_FROZEN(string) ? FMODE_READABLE : FMODE_READWRITE;
+    ptr-&gt;pos = 0;
+    ptr-&gt;lineno = 0;
+    return ptr-&gt;string = string;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sync-instance_method">
+  
+    - (<tt>true</tt>) <strong>sync</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> always.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+606
+607
+608
+609
+610
+611</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 606</span>
+
+static VALUE
+strio_get_sync(VALUE self)
+{
+    StringIO(self);
+    return Qtrue;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sync=-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>sync=</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tell-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>tell</strong> 
+  
+
+  
+
+  
+</h3>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="truncate-instance_method">
+  
+    - (<tt>0</tt>) <strong>truncate</strong>(integer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Truncates the buffer string to at most <em>integer</em> bytes. The
+<strong>strio</strong> must be opened for writing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1337
+1338
+1339
+1340
+1341
+1342
+1343
+1344
+1345
+1346
+1347
+1348
+1349
+1350
+1351</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1337</span>
+
+static VALUE
+strio_truncate(VALUE self, VALUE len)
+{
+    VALUE string = writable(StringIO(self))-&gt;string;
+    long l = NUM2LONG(len);
+    long plen = RSTRING_LEN(string);
+    if (l &lt; 0) {
+	error_inval(&quot;negative legnth&quot;);
+    }
+    rb_str_resize(string, l);
+    if (plen &lt; l) {
+	MEMZERO(RSTRING_PTR(string) + plen, char, l - plen);
+    }
+    return len;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tty?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>tty?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetbyte-instance_method">
+  
+    - (<tt>nil</tt>) <strong>ungetbyte</strong>(fixnum) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>See IO#ungetbyte</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 764</span>
+
+static VALUE
+strio_ungetbyte(VALUE self, VALUE c)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    char buf[1], *cp = buf;
+    long pos = ptr-&gt;pos, cl = 1;
+    VALUE str = ptr-&gt;string;
+
+    if (NIL_P(c)) return Qnil;
+    if (FIXNUM_P(c)) {
+	buf[0] = (char)FIX2INT(c);
+    }
+    else {
+	SafeStringValue(c);
+	cp = RSTRING_PTR(c);
+	cl = RSTRING_LEN(c);
+	if (cl == 0) return Qnil;
+    }
+    rb_str_modify(str);
+    if (cl &gt; pos) {
+	char *s;
+	long rest = RSTRING_LEN(str) - pos;
+	rb_str_resize(str, rest + cl);
+	s = RSTRING_PTR(str);
+	memmove(s + cl, s + pos, rest);
+	pos = 0;
+    }
+    else {
+	pos -= cl;
+    }
+    memcpy(RSTRING_PTR(str) + pos, cp, cl);
+    ptr-&gt;pos = pos;
+    RB_GC_GUARD(c);
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ungetc-instance_method">
+  
+    - (<tt>nil</tt>) <strong>ungetc</strong>(string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Pushes back one character (passed as a parameter) onto
+<strong>strio</strong> such that a subsequent buffered read will return it.
+There is no limitation for multiple pushbacks including pushing back behind
+the beginning of the buffer string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 709</span>
+
+static VALUE
+strio_ungetc(VALUE self, VALUE c)
+{
+    struct StringIO *ptr = readable(StringIO(self));
+    long lpos, clen;
+    char *p, *pend;
+    rb_encoding *enc, *enc2;
+
+    if (NIL_P(c)) return Qnil;
+    if (FIXNUM_P(c)) {
+	int cc = FIX2INT(c);
+	char buf[16];
+
+	enc = rb_enc_get(ptr-&gt;string);
+	rb_enc_mbcput(cc, buf, enc);
+	c = rb_enc_str_new(buf, rb_enc_codelen(cc, enc), enc);
+    }
+    else {
+	SafeStringValue(c);
+	enc = rb_enc_get(ptr-&gt;string);
+	enc2 = rb_enc_get(c);
+	if (enc != enc2 &amp;&amp; enc != rb_ascii8bit_encoding()) {
+	    c = rb_str_conv_enc(c, enc2, enc);
+	}
+    }
+    if (RSTRING_LEN(ptr-&gt;string) &lt; ptr-&gt;pos) {
+	long len = RSTRING_LEN(ptr-&gt;string);
+	rb_str_resize(ptr-&gt;string, ptr-&gt;pos - 1);
+	memset(RSTRING_PTR(ptr-&gt;string) + len, 0, ptr-&gt;pos - len - 1);
+	rb_str_concat(ptr-&gt;string, c);
+	ptr-&gt;pos--;
+    }
+    else {
+	/* get logical position */
+	lpos = 0; p = RSTRING_PTR(ptr-&gt;string); pend = p + ptr-&gt;pos;
+	for (;;) {
+	    clen = rb_enc_mbclen(p, pend, enc);
+	    if (p+clen &gt;= pend) break;
+	    p += clen;
+	    lpos++;
+	}
+	clen = p - RSTRING_PTR(ptr-&gt;string);
+	rb_str_update(ptr-&gt;string, lpos, ptr-&gt;pos ? 1 : 0, c);
+	ptr-&gt;pos = clen;
+    }
+
+    return Qnil;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>write</strong>(string) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>syswrite</strong>(string) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Appends the given string to the underlying buffer string of
+<strong>strio</strong>. The stream must be opened for writing.  If the
+argument is not a string, it will be converted to a string using
+<code>to_s</code>. Returns the number of bytes written.  See IO#write.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>write</strong>(string) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>) <strong>syswrite</strong>(string) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Integer.html" title="Integer (class)">Integer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1118
+1119
+1120
+1121
+1122
+1123
+1124
+1125
+1126
+1127
+1128
+1129
+1130
+1131
+1132
+1133
+1134
+1135
+1136
+1137
+1138
+1139
+1140
+1141
+1142
+1143
+1144
+1145
+1146
+1147
+1148
+1149
+1150
+1151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/stringio/stringio.c', line 1118</span>
+
+static VALUE
+strio_write(VALUE self, VALUE str)
+{
+    struct StringIO *ptr = writable(StringIO(self));
+    long len, olen;
+    rb_encoding *enc, *enc2;
+
+    RB_GC_GUARD(str);
+    if (TYPE(str) != T_STRING)
+	str = rb_obj_as_string(str);
+    enc = rb_enc_get(ptr-&gt;string);
+    enc2 = rb_enc_get(str);
+    if (enc != enc2 &amp;&amp; enc != rb_ascii8bit_encoding()) {
+	str = rb_str_conv_enc(str, enc2, enc);
+    }
+    len = RSTRING_LEN(str);
+    if (len == 0) return INT2FIX(0);
+    check_modifiable(ptr);
+    olen = RSTRING_LEN(ptr-&gt;string);
+    if (ptr-&gt;flags &amp; FMODE_APPEND) {
+	ptr-&gt;pos = olen;
+    }
+    if (ptr-&gt;pos == olen) {
+	rb_str_cat(ptr-&gt;string, RSTRING_PTR(str), len);
+    }
+    else {
+	strio_extend(ptr, ptr-&gt;pos, len);
+	memmove(RSTRING_PTR(ptr-&gt;string)+ptr-&gt;pos, RSTRING_PTR(str), len);
+	OBJ_INFECT(ptr-&gt;string, str);
+    }
+    OBJ_INFECT(ptr-&gt;string, self);
+    ptr-&gt;pos += len;
+    return LONG2NUM(len);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Nov 19 10:16:54 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

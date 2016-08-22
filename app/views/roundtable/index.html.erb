@@ -1,0 +1,64 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+
+<% provide(:title, '輪講一覧') %>
+<h1>輪講一覧</h1>
+
+<p><%= @output %>  </p>
+<h2>グループ<%= Group.find(session[:group_id]).name %></h2>
+<%= form_tag('/roundtable', :method => :get , :id =>"sorting" ) do %>
+	<table style="width: 40%">
+	<tr>
+	<td>表示順</td>
+	<td><%= radio_button_tag :sort, "0", checked = @sort==0?true:false , :onclick => "document.getElementById('sorting').submit();" %>新着順</td>
+	<td><%= radio_button_tag :sort, "1", checked = @sort==1?true:false , :onclick => "document.getElementById('sorting').submit();" %>最新更新順</td>
+	<td><%= radio_button_tag :sort, "2", checked = @sort==2?true:false, :onclick => "document.getElementById('sorting').submit();"  %>開始時間が近い順</td>
+	<td><%= radio_button_tag :sort, "3", checked = @sort==3?true:false, :onclick => "document.getElementById('sorting').submit();" %>名前順</td>
+	</tr>
+	</table>
+<% end %>
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed" style="width:80%">
+<tr>
+  <th><a href="/roundtable?sort=3">輪講名</a></th>
+  <th><a href="/roundtable?sort=2">時間</a></th>
+  <%  if Manager.find_by_user_id_and_group_id(session[:user_id],session[:group_id]) 
+		isManager = true %>
+  <th>管理</th>
+  <% else
+		isManager = false
+	 end %>
+</tr>
+<% 
+	@roundtables.each do |roundtable| 
+		roundtableURL = "/roundtable/view?id="+roundtable.id.to_s
+		roundtableeditURL = "/roundtable/edit?id="+roundtable.id.to_s
+		if roundtable.startdatetime != nil 
+			sStartdate = roundtable.startdatetime.strftime('%Y年%m月%d日 %H:%M:%S') 
+		else
+			sStartdate = "未定"
+		end
+		if roundtable.enddatetime != nil 
+			sEnddate = roundtable.enddatetime.strftime('%Y年%m月%d日 %H:%M:%S') 
+		else
+			sEnddate = "未定"
+		end    %>
+	<tr>
+		<td><a href="<%= roundtableURL %>"><%= roundtable.title %></a></td>
+		<td>
+			<%= sStartdate %> ~
+			<%= sEnddate %> 
+		</td>
+	  <% if isManager %>
+	  <td> 
+		 <a href="<%= roundtableeditURL %>">編集</a>
+	 </td>
+	  <% end %>
+  <% end %>
+</tr>
+</table>
+</div>
+
+<% if session[:manager] %>
+<%= link_to '輪講を新規登録', "/roundtable/new" %>
+<% end %>

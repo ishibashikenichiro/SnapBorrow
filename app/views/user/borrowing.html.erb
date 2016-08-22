@@ -1,0 +1,39 @@
+<%= render 'shared/redirect_not_login' %>
+<%= render 'shared/redirect_not_group' %>
+<% provide(:title, '借用中図書一覧') %>
+<h1>借用中図書一覧</h1>
+
+<p>借用している図書の一覧です。<br>
+返却するときはグループ欄と本棚欄を参照して返却してください。<br>
+所属本棚の情報が未登録の場合、返却するとき本棚への登録をお願いします。<br>
+</p>
+
+<div class="table-respnsive">
+  <table class="table table-bordered table-striped table-condensed">
+  <tr>
+    <th>図書タイトル</th>
+    <th>グループ</th>
+    <th>本棚</th>
+    <th>借用日</th>
+  </tr>
+  <% @lend_logs.each do |lendlog| %>
+  <% book = lendlog.book %>
+  <% group = Group.find_by_id(Book.find_by_id(lendlog.book_id).group_id) %>
+  <% shelf = Shelf.find_by_group_id_and_shelf_id(book.group_id, book.shelf_id)%>
+      <tr>
+        <td><%= @catalogs.find_by_book_code(book.book_code).title %></td>
+        <td><%= group.name %></td>
+        <% if shelf!=nil %>
+          <td><%= shelf.name%></td>
+        <% else %>
+          <td>未登録</td>
+        <% end %>
+        <td><%= lendlog.lend_date %></td>
+
+      </tr>
+  <% end %>
+
+
+
+</table>
+</div>
