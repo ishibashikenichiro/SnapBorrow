@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_equipment_register"
+        android:title="備品登録"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showAsAction="withText"/>
+    <item android:id="@+id/menu_equipment_list"
+        android:title="備品一覧"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showAsAction="withText"/>
+    <item android:id="@+id/menu_book"
+        android:title="図書管理"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showAsAction="withText"/>
+    <item android:id="@+id/menu_logout"
+        android:title="@string/menu_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showAsAction="withText"/>
+    <item android:id="@+id/menu_group_select"
+        android:title="@string/menu_group_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showAsAction="withText|ifRoom"
+        />
+
+</menu><!-- From: file:/C:/downtown/Bircle_04241/app/src/main/res/menu/equipment.xml -->

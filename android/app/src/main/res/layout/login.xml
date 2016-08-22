@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity" >
+
+    <ImageView
+        android:id="@+id/appImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loginIdText"
+        android:layout_alignLeft="@+id/loginIdText"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/loginIdText"
+        android:src="@drawable/rameicon" />
+
+    <EditText
+        android:id="@+id/loginIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="text|textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/loginIdText"
+        android:layout_alignRight="@+id/loginIdText"
+        android:layout_below="@+id/loginIdText"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="ログイン" />
+
+    <TextView
+        android:id="@+id/loginIdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/loginIdText"
+        android:layout_alignBottom="@+id/loginIdText"
+        android:layout_toLeftOf="@+id/loginIdText"
+        android:text="LOGIN ID: " />
+
+    <TextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/passwordText"
+        android:layout_alignBottom="@+id/passwordText"
+        android:layout_toLeftOf="@+id/passwordText"
+        android:text="PASSWORD: " />
+
+    <Button
+        android:id="@+id/webViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:text="ユーザ登録・グループの作成などはこちらから" />
+</RelativeLayout>

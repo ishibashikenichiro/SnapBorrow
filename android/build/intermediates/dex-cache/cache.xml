@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-039d1598c2bfeda7a702f86fc89d40d1021829ae.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-58eb0d3ee3061010a92f992535270be17c8c4c5e.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-44c2e2e5bd854d2d9e299a23190d5538ff510b53.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-54377a905dddd9345c7f44c01be1c970824c6adf.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="95758a2905669affbffc5ddd262921d375674fad">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-6686b2a613d805b50e547af3d93e009e8f3b4604.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-dfb248b91dc08ce564da4eee84a4ae03e6b6562d.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-d192b8aab75b42be6b6fdc90af0bcbf61f347592.jar" />
+    </item>
+    <item
+        jar="C:\sdk\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-b2333deedf9db18c06806b2ecb45a8d5086a7610.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-3f9029bb01c50cf34fb9d0759f8bf6466a2fac6f.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-1e945ef22a141de720699fcc10d1f2eea5843bd6.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-fa5553788fc3e6cf43c8ac761e9592218c8f7093.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\libs\gcm.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\gcm-de608e74644a2ea430f27725d5a724d3b3360e25.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="482de223655d06253cc6a4955d653f8994169500">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-62a301770917ab30a6872e15a94b1aed4339341f.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-47097f2576e251e8a9bd8d7d7319707b12a543f9.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-e0d6f402302d2657679a919af30deec406ead132.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\libs\javase-3.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="06fa0ae253f5bb2943fb64100c936d6a142832c2">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\javase-3.0.1-283f7a3ea016cb25cae6d7665eda1f41fdbeafb9.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-170eabbdbcc1b6004ee4c12e7daeb1abe6b31ab6.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-cba49edb7c53cd52cbe61da70e4047eb2d5e70a5.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-90bfc6c3d697542b84f0f50df917dddc75bc6310.jar" />
+    </item>
+    <item
+        jar="C:\Users\ショウ\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.0.0\2534c458682c73f5b9871131ab3098d3f987ca3\okio-1.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="02534c458682c73f5b9871131ab3098d3f987ca3">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\okio-1.0.0-ea08a2524e4c8df636151bb1a910ad7209298df2.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\libs\iSpeech-SDK-1.3.9.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6e10b09536b97fabb7d9b704fac73bd3b9cdd59c">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\iSpeech-SDK-1.3.9-b7d42f85488718ab06756fd8268cb14a6b30b77d.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\libs\core-3.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9ebf6cd580d67601fbf88fd007aab4703b19e4c2">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\core-3.0.1-6b801e58382729447c1f4c6241c2dd1c2f2c4656.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\libs\acra-4.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="44a5eb946e0d83eed4a0128d877ca1fd8168b83a">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\acra-4.5.0-092bc0e98ab8b577a1865a2cb047e116d4b8cebc.jar" />
+    </item>
+    <item
+        jar="C:\Users\ショウ\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.0.0\4c8d1536dba3812cc1592090dc20c47a4ed3c35e\okhttp-2.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4c8d1536dba3812cc1592090dc20c47a4ed3c35e">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\okhttp-2.0.0-992eddab012b03cf7f32716bdd686404f31dcdac.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-00326e6e1a17bc673199ae53a4436c1115a7481f.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-f4c4359d2c48237cbe8068b395932e908b43e834.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-d3b6296904d0c8ebd6c17ad7822c4248cc8e11c7.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-27d3c5cf21ae9829f06c6fe19da99b9ae6f31896.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-d9764aec6fdfe6f984ba44a5bf2f7ecc4b6f697b.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-d5066fec5286813fc6df181dc53e4f36cb4e1b85.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-a90506e9e0e12b0e5b7bc999e780dac52a8a200e.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-98cd8003c961c6a8aa579b154dfb2b89978f2bdb.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-988378dfb6af7367d9b1177fcfff2ff763c954d1.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-700a8bab2fa0e886fe6c26e23ffc598ee5f6c617.jar" />
+    </item>
+    <item
+        jar="C:\downtown\Bircle_04241\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="C:\downtown\Bircle_04241\app\build\intermediates\pre-dexed\debug\classes-25db616dc6d0b635e7ddc37e7729219f6f45479a.jar" />
+    </item>
+
+</items>

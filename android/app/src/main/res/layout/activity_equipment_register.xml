@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.bookkos.bircle.EquipmentRegisterActivity">
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="備品登録"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="備品名"
+        android:id="@+id/textView3"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginEnd="78dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <EditText
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Text_name"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toLeftOf="@+id/CheckButton"
+        android:layout_toEndOf="@+id/scrollView"
+        android:layout_toRightOf="@+id/scrollView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="個数"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/tableLayout"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginBottom="76dp" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker"
+
+        android:layout_below="@+id/Text_name"
+        android:layout_alignRight="@+id/Text_name"
+        android:layout_alignEnd="@+id/Text_name"
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp" />
+
+
+
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/button"
+        android:layout_below="@+id/numberPicker"
+        android:id="@+id/tableLayout">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+           <TextView
+               android:gravity="center"
+               android:layout_weight="3"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:textAppearance="?android:attr/textAppearanceMedium"
+               android:text="固有ID"
+               android:id="@+id/textView5"
+/>
+           <TextView
+               android:layout_weight="3"
+               android:gravity="center"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:textAppearance="?android:attr/textAppearanceMedium"
+               android:text="場所"
+               android:id="@+id/textView6"
+ />
+            <TextView
+                android:layout_weight="4"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="ノート"
+                android:id="@+id/textView7"
+                />
+       </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/register_table"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/button"
+        android:layout_below="@+id/numberPicker">
+
+    </TableLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:id="@+id/CheckButton"
+        android:layout_marginRight="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_alignTop="@+id/Text_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/texterror"
+        android:layout_alignBottom="@+id/Text_name"
+        android:layout_alignTop="@+id/Text_name"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_toLeftOf="@+id/scrollView"
+        android:layout_toStartOf="@+id/scrollView" />
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<stroke android:width="6px" android:color="#2980B9" />
+	<padding android:left="16px"
+			 android:top="16px"
+			 android:right="16px"
+			 android:bottom="16px" />
+	<solid android:color="#3498DB" />
+	<corners android:radius="8px" />
+</shape><!-- From: file:/C:/downtown/Bircle_04241/app/src/main/res/drawable/regist_text_border.xml -->
