@@ -9,9 +9,9 @@ struct svm_node *x_space;		// データ・パラメータ（svm_problemの下部変数）
 struct svm_model *model;		// 学習データ・パラメータ
 #endif //LIB_SVM
 
-#include <opencv2/nonfree/nonfree.hpp>
 #include <opencv2/opencv.hpp>
-#include <opencv2/nonfree/features2d.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/features2d.hpp>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,13 +26,6 @@ struct svm_model *model;		// 学習データ・パラメータ
 
 using namespace cv;
 using namespace std;
-const int DIM = 128;
-const int SURF_PARAM = 400;
-const int MAX_CLUSTER = 25;//クラスタkの数
-const string FEATURE_DETECTOR_TYPE = "SURF";      // SIFT, SURF
-const string DESCRIPTOR_EXTRACTOR_TYPE = "SURF";  // SIFT, SURF
-const int CLASS_COUNT = 10;                       // クラス数
-const int VISUAL_WORDS_COUNT = 2000;              // BOW特徴ベクトルの次元 (RGB:1成分あたり)
 
 
 int recognize(vector<string> file_list, vector<int> class_num, string group_id, string dec){
@@ -41,20 +34,22 @@ int recognize(vector<string> file_list, vector<int> class_num, string group_id, 
 	string group_dictionary = dec + "/libdictionary_" + group_id + ".xml";
 	string group_svm = dec + "/libsvm_" + group_id + ".xml";
 
-	// SURFeatureDetector, Extractorの設定
-	Ptr<FeatureDetector> detector;
-	initModule_nonfree();
-	detector = FeatureDetector::create(FEATURE_DETECTOR_TYPE);
-	detector->set("hessianThreshold", 100);     // 
-	detector->set("nOctaves", 4);				// 
-	detector->set("nOctaveLayers", 2);          // 
-	detector->set("extended", true);            // 
+	//アルゴリズムにAKAZEを使用する
+	Ptr<FeatureDetector> detector = AKAZE::create(AKAZE::DESCRIPTOR_MLDB, 0, 3, 0.00001f, 4, 20, KAZE::DIFF_PM_G2);
+	Mat featuresUnclustered(0, 0, CV_32F);
+	Mat features;
+	Mat features2;
+	vector<KeyPoint> keypoint;
 
 	// BOW特徴抽出器パラメータ設定
-	Ptr<DescriptorExtractor> extractor;
-	Ptr<DescriptorMatcher> matcher;
-	extractor = DescriptorExtractor::create(DESCRIPTOR_EXTRACTOR_TYPE);
-	matcher = DescriptorMatcher::create("FlannBased");
+	// FeatureDetectorオブジェクト
+	Ptr<FeatureDetector> detector_prob = AKAZE::create(AKAZE::DESCRIPTOR_MLDB, 0, 3, 0.00001f, 4, 20, KAZE::DIFF_PM_G2);
+
+	// DescriptionExtractorオブジェクトの生成
+	Ptr<DescriptorExtractor> extractor = AKAZE::create(AKAZE::DESCRIPTOR_MLDB, 0, 3, 0.00001f, 4, 20, KAZE::DIFF_PM_G2);
+
+	Ptr<DescriptorMatcher> matcher = DescriptorMatcher::create("BruteForce");
+
 	int clusterCount = 100;//クラスタkの数
 	TermCriteria tc(CV_TERMCRIT_ITER, 10, 0.001);
 	int attempts = 3;
@@ -70,19 +65,22 @@ int recognize(vector<string> file_list, vector<int> class_num, string group_id, 
 		if (img.empty()) {
 			cerr << "Error: Could not open one of the images." << endl;
 		}
-		vector<KeyPoint> keypoint;
-		Mat features;
-		detector->detect(img, keypoint);
-		extractor->compute(img, keypoint, features);
-		bowtrainer.add(features);//ここに追加していく．BOWKMeansTrainer型の変数
 
+		detector->detect(img, keypoint);
+		detector->compute(img, keypoint, features);
+		featuresUnclustered.push_back(features);
 	}
 	//辞書の作成
-	Mat dictionary = bowtrainer.cluster();
-	bowDE.setVocabulary(dictionary);
+	Mat featuresUnclusteredF(featuresUnclustered.rows, featuresUnclustered.cols, CV_32F);
+	featuresUnclustered.convertTo(featuresUnclusteredF, CV_32F);
+	Mat dictionary = bowtrainer.cluster(featuresUnclusteredF);
+	Mat dictionary_svm(dictionary.rows, dictionary.cols, CV_8U);
+	dictionary.convertTo(dictionary_svm, CV_8U);
+	resize(dictionary_svm, features2, cv::Size(), 2, 1);
+	bowDE.setVocabulary(dictionary_svm);
 	//辞書のファイルへの保存
 	FileStorage cvfs2(group_dictionary, CV_STORAGE_WRITE);
-	write(cvfs2, "dictionary", dictionary);
+	write(cvfs2, "dictionary", dictionary_svm);
 	cvfs2.release();
 	//SVM学習データ
 #ifdef LIB_SVM
