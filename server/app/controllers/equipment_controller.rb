@@ -40,7 +40,7 @@ class EquipmentController < ApplicationController
       @brURL = "/equipment/new?id=" + @equipment_id.to_s
     else
       strAry = @str.split(",")
-      @newary = strAry
+      @newary = strAry.reverse
       @equipment = EquipmentClass.find_by_id(@newary[0])
       @equipment_ary = Array.new
       @newary.each do |num|
